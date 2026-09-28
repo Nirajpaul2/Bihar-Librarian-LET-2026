@@ -21,6 +21,7 @@ import {
   ACCESS_PRICE_INR,
   type PaywallTab,
 } from '@/hooks/usePayment';
+import { trackPaywallView, trackAction } from '@/utils/telemetry';
 
 interface PaywallModalProps {
   isOpen: boolean;
@@ -57,9 +58,10 @@ export default function PaywallModal({
   const [copied, setCopied] = useState(false);
   const [justPaidId, setJustPaidId] = useState<string>('');
 
-  // Sync activeTab when modal opens
+  // Sync activeTab when modal opens & track paywall telemetry intent
   useEffect(() => {
     if (isOpen) {
+      trackPaywallView(contextText);
       setErrorMsg(null);
       setRestoreSuccess(false);
       setCopied(false);
@@ -71,7 +73,7 @@ export default function PaywallModal({
         setActiveTab(preferredTab);
       }
     }
-  }, [isOpen, isUnlocked, initialTab, paywallInitialTab]);
+  }, [isOpen, isUnlocked, initialTab, paywallInitialTab, contextText]);
 
   if (!isOpen) return null;
 
@@ -125,6 +127,7 @@ export default function PaywallModal({
         handler: function (response: any) {
           const paymentId = response.razorpay_payment_id || `pay_${Date.now()}`;
           unlockFullAccess(paymentId, 'Razorpay Checkout');
+          trackAction('payment_success', { paymentId, amount: ACCESS_PRICE_INR });
           setJustPaidId(paymentId);
           setLoading(false);
           setActiveTab('success');
@@ -157,6 +160,7 @@ export default function PaywallModal({
     if (res.success) {
       setRestoreSuccess(true);
       setJustPaidId(res.paymentId || restoreInput.trim());
+      trackAction('access_restored', { paymentId: res.paymentId });
       setTimeout(() => {
         setActiveTab('status');
       }, 1200);
@@ -176,6 +180,7 @@ export default function PaywallModal({
   const handleDemoUnlock = () => {
     const testId = `demo_pay_${Date.now()}`;
     unlockFullAccess(testId, 'Demo/Test Mode');
+    trackAction('demo_unlock_triggered', { paymentId: testId });
     setJustPaidId(testId);
     setActiveTab('success');
   };

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BookOpen, Github, ExternalLink } from 'lucide-react';
+import { BookOpen, Github, ExternalLink, BarChart3 } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -94,12 +94,23 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs">
+        <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-xs">
           <span>© 2026 Bihar Librarian Vacancy 2026 Preparation Platform. For educational purposes only.</span>
-          <span className="flex items-center gap-1">
-            <Github className="w-3.5 h-3.5" />
-            Open Source Project
-          </span>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('open-admin-analytics'))}
+              className="text-gray-400 hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer"
+              title="Admin: View real-time visitor journey & drop-off metrics"
+            >
+              <BarChart3 className="w-3.5 h-3.5 text-amber-500" />
+              <span>Visitor & Drop-Off Analytics</span>
+            </button>
+            <span className="text-gray-700">•</span>
+            <span className="flex items-center gap-1 text-gray-500">
+              <Github className="w-3.5 h-3.5" />
+              Open Source
+            </span>
+          </div>
         </div>
       </div>
     </footer>

@@ -27,3 +27,9 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+# Python & Local Telemetry DBs
+__pycache__/
+*.pyc
+analytics_db.json
+payments_db.json
