@@ -2,14 +2,26 @@
  * Bihar Librarian LET 2026 — Visitor & Drop-Off Telemetry Engine
  * Completely isolated from ComputerTeacher and other projects.
  *
- * Tracks:
- *  - Anonymous Unique Visitors & Candidate Sessions
- *  - Route & Screen Journey (Home, Syllabus, Practice, Mock Tests)
- *  - Time spent per screen & candidate session depth
- *  - Drop-off / Exit Screens (exact screens where candidates close or leave the site)
- *  - Freemium to ₹9 Unlock Conversion Funnel (Visitors -> Paywall Viewed -> Enrolled)
- *  - Dual Mode: Server API (/api/track-event, /api/track-exit) + Zero-Backend LocalStorage Fallback
+ * Integrated with Google Analytics (analytics.google.com):
+ *  - Measurement ID: G-SYWKVX2FLY
+ *  - Automatic SPA Page View Tracking
+ *  - Candidate Drop-off / Screen Exit Events
+ *  - ₹9 Paywall View & E-Commerce Purchase Conversions
+ *
+ * Dual Mode:
+ *  1. Google Analytics 4 (analytics.google.com)
+ *  2. Local server & offline localStorage fallback
  */
+
+export const GA_MEASUREMENT_ID = 'G-SYWKVX2FLY';
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    dataLayer?: any[];
+    GA_MEASUREMENT_ID?: string;
+  }
+}
 
 const STORAGE_VISITOR_KEY = 'library_visitor_id';
 const STORAGE_SESSION_KEY = 'library_session_id';
@@ -142,7 +154,7 @@ function recordLocalEvent(event: string, screenTitle: string, extra: Record<stri
   }
 }
 
-// 4. Send Event to Backend API (/api/track-event)
+// 4. Send Event to Backend API and Google Analytics (gtag)
 async function sendEvent(eventType: string, screenTitle: string, extraData: Record<string, any> = {}) {
   recordLocalEvent(eventType, screenTitle, extraData);
 
@@ -157,16 +169,47 @@ async function sendEvent(eventType: string, screenTitle: string, extraData: Reco
     data: extraData,
   };
 
+  // Dispatch to local/backend endpoint
   try {
     fetch('/api/track-event', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
       keepalive: true,
-    }).catch(() => {
-      // Backend not running, local recording already done
-    });
+    }).catch(() => {});
   } catch (e) {}
+
+  // Dispatch to Google Analytics 4 (G-SYWKVX2FLY)
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    if (eventType === 'screen_view' || eventType === 'session_start') {
+      window.gtag('event', 'page_view', {
+        page_title: screenTitle + ' | Bihar Librarian LET 2026',
+        page_location: window.location.href,
+        page_path: window.location.pathname + window.location.search,
+      });
+    }
+
+    if (eventType === 'paywall_view') {
+      window.gtag('event', 'view_item', {
+        items: [{ item_name: 'Bihar Librarian LET Full Pass', price: 9.0, currency: 'INR' }],
+        screen_name: screenTitle,
+        context: extraData.context || '',
+      });
+    } else if (eventType === 'payment_success' || extraData.action === 'payment_success') {
+      window.gtag('event', 'purchase', {
+        transaction_id: extraData.paymentId || `pay_${Date.now()}`,
+        value: 9.0,
+        currency: 'INR',
+        items: [{ item_name: 'Bihar Librarian LET Full Pass', price: 9.0 }],
+      });
+    }
+
+    window.gtag('event', eventType, {
+      screen_name: screenTitle,
+      device_category: deviceType,
+      ...extraData,
+    });
+  }
 }
 
 // 5. Send Exit / Drop-off Beacon on Tab Close
@@ -186,6 +229,7 @@ export function sendExitBeacon() {
     timestamp: new Date().toISOString(),
   };
 
+  // Dispatch exit to local backend
   try {
     const blob = new Blob([JSON.stringify(exitPayload)], { type: 'application/json' });
     if (navigator.sendBeacon) {
@@ -199,6 +243,14 @@ export function sendExitBeacon() {
       }).catch(() => {});
     }
   } catch (e) {}
+
+  // Dispatch exit to Google Analytics 4 (G-SYWKVX2FLY)
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('event', 'screen_exit', {
+      exit_screen_name: currentScreenTitle,
+      session_duration_seconds: durationSeconds,
+    });
+  }
 }
 
 // 6. Track Route Change
@@ -238,10 +290,26 @@ export function trackPaywallView(contextText?: string) {
   });
 }
 
-// 9. Initialize Telemetry Listeners
+// 9. Initialize Telemetry Listeners & Google Analytics Dynamic Bridge
 export function initTelemetry() {
   if (isInitialized || typeof window === 'undefined') return;
   isInitialized = true;
+
+  // Initialize GA4 tag if not already injected via index.html
+  if (!window.gtag) {
+    const gaId = window.GA_MEASUREMENT_ID || GA_MEASUREMENT_ID;
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () {
+      window.dataLayer?.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', gaId, { send_page_view: false });
+  }
 
   // Session start
   sendEvent('session_start', currentScreenTitle);

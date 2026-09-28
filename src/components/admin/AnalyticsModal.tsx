@@ -12,6 +12,7 @@ import {
   Lock,
   ShieldCheck,
   Smartphone,
+  ExternalLink,
 } from 'lucide-react';
 import {
   getAnalyticsSummary,
@@ -84,19 +85,32 @@ export default function AnalyticsModal({ isOpen, onClose }: AnalyticsModalProps)
           <X className="w-5 h-5" />
         </button>
 
-        {/* Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-2xl bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0">
-            <Users className="w-6 h-6" />
+        {/* Header with Google Analytics Badge */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-gray-100 dark:border-gray-800">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-indigo-100 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0">
+              <Users className="w-6 h-6" />
+            </div>
+            <div>
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
+                Visitor & Drop-Off Analytics
+              </h2>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                Bihar Librarian LET 2026 candidate journey, screen engagement & exit hotspots
+              </p>
+            </div>
           </div>
-          <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
-              Visitor & Drop-Off Analytics
-            </h2>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-              Bihar Librarian LET 2026 candidate journey, screen engagement & exit hotspots
-            </p>
-          </div>
+          <a
+            href="https://analytics.google.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 text-xs font-semibold hover:bg-blue-100 dark:hover:bg-blue-900/60 transition-colors shrink-0"
+            title="Open official Google Analytics Console for G-SYWKVX2FLY"
+          >
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            <span>GA4: G-SYWKVX2FLY</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
         </div>
 
         {/* Passcode Gate */}
