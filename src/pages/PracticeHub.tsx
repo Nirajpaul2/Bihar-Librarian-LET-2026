@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ChevronRight, Play, Zap, BookOpen, Lock, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ChevronRight, Play, Zap, BookOpen, Lock, Sparkles, CheckCircle2, Key } from 'lucide-react';
 import { subjects } from '@/data/subjects';
 import { allQuestions } from '@/data/questions';
 import { computeTopicCounts, subjectBadge } from '@/utils/questions';
 import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
-import PaywallModal from '@/components/payment/PaywallModal';
 
 const topicCounts = computeTopicCounts(allQuestions);
 
@@ -44,10 +43,7 @@ export default function PracticeHub() {
     isUnlocked,
     canAccessUnit,
     isUnitFree,
-    isPaywallOpen,
-    paywallContext,
     openPaywall,
-    closePaywall,
   } = usePayment();
 
   const filteredSubjects = subjectFilter
@@ -56,12 +52,6 @@ export default function PracticeHub() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 pb-24 md:pb-8">
-      {/* Paywall Modal */}
-      <PaywallModal
-        isOpen={isPaywallOpen}
-        onClose={closePaywall}
-        contextText={paywallContext}
-      />
 
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
@@ -96,26 +86,41 @@ export default function PracticeHub() {
                 Study and practice Unit 1 completely free. Unlock Units 2–6, General Paper (Bihar GK, Reasoning, Computer) and Full 150Q Mock Tests for just ₹{ACCESS_PRICE_INR} lifetime.
               </p>
             </div>
-            <button
-              onClick={() => openPaywall('Unlock all 6 Library Science units and Full Mock Tests')}
-              className="bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-brand-950 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all shrink-0 flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
-            >
-              <Sparkles className="w-4 h-4" />
-              Unlock All for ₹{ACCESS_PRICE_INR}
-            </button>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 shrink-0">
+              <button
+                onClick={() => openPaywall('Restore your access', 'restore')}
+                className="bg-brand-800/80 hover:bg-brand-700 text-brand-100 hover:text-white font-semibold px-3 py-2 rounded-xl text-xs transition-colors flex items-center justify-center gap-1 cursor-pointer border border-brand-600/50"
+              >
+                <Key className="w-3.5 h-3.5" />
+                <span>Already Paid? Restore</span>
+              </button>
+              <button
+                onClick={() => openPaywall('Unlock all 6 Library Science units and Full Mock Tests', 'pay')}
+                className="bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-brand-950 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+              >
+                <Sparkles className="w-4 h-4" />
+                Unlock All for ₹{ACCESS_PRICE_INR}
+              </button>
+            </div>
           </div>
         </div>
       )}
 
       {/* Unlocked banner */}
       {isUnlocked && (
-        <div className="mb-6 rounded-2xl bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 p-4 text-green-800 dark:text-green-300 text-xs flex items-center justify-between">
+        <div className="mb-6 rounded-2xl bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 p-4 text-green-800 dark:text-green-300 text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
             <span>
               <strong>Lifetime Full Access Active:</strong> All 6 Units, General Paper, and 150Q Mock Tests are unlocked.
             </span>
           </div>
+          <button
+            onClick={() => openPaywall('Your Active Pro Membership', 'pay')}
+            className="text-xs font-semibold text-green-700 dark:text-green-300 hover:text-green-900 dark:hover:text-white underline underline-offset-2 shrink-0 cursor-pointer"
+          >
+            View / Copy Payment ID →
+          </button>
         </div>
       )}
 

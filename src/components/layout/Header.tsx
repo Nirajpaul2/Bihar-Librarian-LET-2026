@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useDarkMode } from '@/hooks/useDarkMode';
 import { useBookmarks } from '@/hooks/useBookmarks';
 import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
-import PaywallModal from '@/components/payment/PaywallModal';
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -19,13 +18,7 @@ const navLinks = [
 export default function Header() {
   const { isDark, toggle } = useDarkMode();
   const { count } = useBookmarks();
-  const {
-    isUnlocked,
-    isPaywallOpen,
-    paywallContext,
-    openPaywall,
-    closePaywall,
-  } = usePayment();
+  const { isUnlocked, openPaywall } = usePayment();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -77,16 +70,20 @@ export default function Header() {
             {/* Paywall trigger or Unlocked status */}
             {!isUnlocked ? (
               <button
-                onClick={() => openPaywall(`Unlock full website access for ₹${ACCESS_PRICE_INR}`)}
+                onClick={() => openPaywall(`Unlock full website access for ₹${ACCESS_PRICE_INR}`, 'pay')}
                 className="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold text-xs px-3 py-1.5 rounded-xl shadow-xs transition-colors flex items-center gap-1 cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">Unlock for</span> ₹{ACCESS_PRICE_INR}
               </button>
             ) : (
-              <span className="hidden sm:inline-flex items-center gap-1 text-[11px] bg-green-100 dark:bg-green-950/60 text-green-700 dark:text-green-300 px-2.5 py-1 rounded-full font-bold">
+              <button
+                onClick={() => openPaywall('Your Bihar Librarian LET 2026 Pro Membership', 'pay')}
+                className="hidden sm:inline-flex items-center gap-1 text-[11px] bg-green-100 hover:bg-green-200 dark:bg-green-950/60 dark:hover:bg-green-900/60 text-green-700 dark:text-green-300 px-2.5 py-1 rounded-full font-bold transition-colors cursor-pointer"
+                title="Click to view or copy your Payment ID"
+              >
                 ⭐ Pro Unlocked
-              </span>
+              </button>
             )}
 
             {/* Bookmarks */}
@@ -128,16 +125,37 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 animate-fade-in">
           <nav className="px-4 py-3 flex flex-col gap-1">
-            {!isUnlocked && (
+            {!isUnlocked ? (
+              <div className="flex flex-col gap-1.5 mb-2">
+                <button
+                  onClick={() => {
+                    setMenuOpen(false);
+                    openPaywall(`Unlock full website access for ₹${ACCESS_PRICE_INR}`, 'pay');
+                  }}
+                  className="w-full bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold text-xs p-3 rounded-xl shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  <Sparkles className="w-4 h-4" />
+                  Unlock Full Access for ₹{ACCESS_PRICE_INR} (Unit 1 Free)
+                </button>
+                <button
+                  onClick={() => {
+                    setMenuOpen(false);
+                    openPaywall('Restore your access', 'restore');
+                  }}
+                  className="w-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold text-xs py-2 px-3 rounded-xl transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  Already Paid? Restore Access
+                </button>
+              </div>
+            ) : (
               <button
                 onClick={() => {
                   setMenuOpen(false);
-                  openPaywall(`Unlock full website access for ₹${ACCESS_PRICE_INR}`);
+                  openPaywall('View Pro Membership Details', 'pay');
                 }}
-                className="w-full bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold text-xs p-3 rounded-xl shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer mb-2"
+                className="w-full bg-green-50 dark:bg-green-950/40 text-green-700 dark:text-green-300 font-bold text-xs p-2.5 rounded-xl border border-green-200 dark:border-green-800 transition-colors flex items-center justify-center gap-1.5 cursor-pointer mb-2"
               >
-                <Sparkles className="w-4 h-4" />
-                Unlock Full Access for ₹{ACCESS_PRICE_INR} (Unit 1 Free)
+                ⭐ Pro Unlocked · View Payment ID
               </button>
             )}
             {navLinks.map(link => (
@@ -157,13 +175,6 @@ export default function Header() {
           </nav>
         </div>
       )}
-
-      {/* Paywall Modal */}
-      <PaywallModal
-        isOpen={isPaywallOpen}
-        onClose={closePaywall}
-        contextText={paywallContext}
-      />
     </header>
   );
 }

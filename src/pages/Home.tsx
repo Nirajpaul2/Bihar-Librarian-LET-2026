@@ -7,7 +7,6 @@ import { allQuestions } from '@/data/questions';
 import { subjects } from '@/data/subjects';
 import { mockTests } from '@/data/mock-tests';
 import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
-import PaywallModal from '@/components/payment/PaywallModal';
 import { fiveLawsOfLibraryScience, biharLibraryHeritage } from '@/data/cheat-sheets';
 
 const stats = [
@@ -45,21 +44,10 @@ const features = [
 ];
 
 export default function Home() {
-  const {
-    isUnlocked,
-    isPaywallOpen,
-    paywallContext,
-    openPaywall,
-    closePaywall,
-  } = usePayment();
+  const { isUnlocked, openPaywall } = usePayment();
 
   return (
     <div className="space-y-0">
-      <PaywallModal
-        isOpen={isPaywallOpen}
-        onClose={closePaywall}
-        contextText={paywallContext}
-      />
 
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white overflow-hidden">
@@ -134,13 +122,21 @@ export default function Home() {
                 Unit 1 (Foundations) is 100% Free! Unlock all remaining units & 150Q Mock Tests for just <strong>₹{ACCESS_PRICE_INR}</strong> (One-time lifetime access).
               </span>
             </div>
-            <button
-              onClick={() => openPaywall(`Unlock Full Access for ₹${ACCESS_PRICE_INR}`)}
-              className="bg-brand-900 hover:bg-brand-800 text-white font-bold px-4 py-1.5 rounded-xl text-xs transition-colors shrink-0 shadow flex items-center gap-1 cursor-pointer"
-            >
-              <Lock className="w-3.5 h-3.5" />
-              Pay ₹{ACCESS_PRICE_INR} & Unlock
-            </button>
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                onClick={() => openPaywall('Restore your access', 'restore')}
+                className="bg-amber-600/30 hover:bg-amber-600/40 text-brand-950 font-bold px-3 py-1.5 rounded-xl text-xs transition-colors cursor-pointer border border-brand-950/20"
+              >
+                Already Paid? Restore
+              </button>
+              <button
+                onClick={() => openPaywall(`Unlock Full Access for ₹${ACCESS_PRICE_INR}`, 'pay')}
+                className="bg-brand-900 hover:bg-brand-800 text-white font-bold px-4 py-1.5 rounded-xl text-xs transition-colors shrink-0 shadow flex items-center gap-1 cursor-pointer"
+              >
+                <Lock className="w-3.5 h-3.5" />
+                Pay ₹{ACCESS_PRICE_INR} & Unlock
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Clock, FileText, Trophy, ChevronRight, Lock, Sparkles } from 'lucide-react';
+import { Clock, FileText, Trophy, ChevronRight, Lock, Sparkles, Key } from 'lucide-react';
 import { mockTests } from '@/data/mock-tests';
 import { subjects } from '@/data/subjects';
 import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
-import PaywallModal from '@/components/payment/PaywallModal';
 
 function formatDuration(mins: number) {
   if (mins >= 60) return `${Math.floor(mins / 60)}h ${mins % 60 > 0 ? (mins % 60) + 'm' : ''}`.trim();
@@ -11,23 +10,10 @@ function formatDuration(mins: number) {
 }
 
 export default function MockTestList() {
-  const {
-    isUnlocked,
-    isPaywallOpen,
-    paywallContext,
-    openPaywall,
-    closePaywall,
-  } = usePayment();
+  const { isUnlocked, openPaywall } = usePayment();
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 pb-24 md:pb-8">
-      {/* Paywall Modal */}
-      <PaywallModal
-        isOpen={isPaywallOpen}
-        onClose={closePaywall}
-        contextText={paywallContext}
-      />
-
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
           📋 Mock Tests
@@ -51,13 +37,22 @@ export default function MockTestList() {
               Unit 1 is free! Unlock all 150Q mock tests, detailed result review, and remaining units with one-time payment.
             </p>
           </div>
-          <button
-            onClick={() => openPaywall(`Unlock all Mock Tests for ₹${ACCESS_PRICE_INR}`)}
-            className="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold px-4 py-2 rounded-xl text-xs sm:text-sm transition-colors shrink-0 flex items-center gap-1.5 shadow cursor-pointer"
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            Unlock for ₹{ACCESS_PRICE_INR}
-          </button>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 shrink-0">
+            <button
+              onClick={() => openPaywall('Restore your access', 'restore')}
+              className="bg-brand-800/80 hover:bg-brand-700 text-brand-100 hover:text-white font-semibold px-3 py-2 rounded-xl text-xs transition-colors flex items-center justify-center gap-1 cursor-pointer border border-brand-600/50"
+            >
+              <Key className="w-3.5 h-3.5" />
+              <span>Already Paid? Restore</span>
+            </button>
+            <button
+              onClick={() => openPaywall(`Unlock all Mock Tests for ₹${ACCESS_PRICE_INR}`, 'pay')}
+              className="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold px-4 py-2 rounded-xl text-xs sm:text-sm transition-colors flex items-center justify-center gap-1.5 shadow cursor-pointer"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              Unlock for ₹{ACCESS_PRICE_INR}
+            </button>
+          </div>
         </div>
       )}
 
