@@ -60,7 +60,7 @@ export default function PaywallModal({ isOpen, onClose, contextText }: PaywallMo
         currency: 'INR',
         name: 'Bihar Librarian LET 2026',
         description: 'Lifetime Full Access — All Units & 150Q Mock Tests',
-        image: '/favicon.svg',
+        image: '/logo.png',
         prefill: {
           name: '',
           email: '',
@@ -121,15 +121,27 @@ export default function PaywallModal({ isOpen, onClose, contextText }: PaywallMo
           <X className="w-5 h-5" />
         </button>
 
-        {/* Header Badge */}
-        <div className="flex items-center gap-2 mb-3">
-          <span className="bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5" />
-            Special Launch Offer · 91% OFF
-          </span>
-          <span className="text-xs text-green-600 dark:text-green-400 font-semibold">
-            Unit 1 Free
-          </span>
+        {/* Header with Logo */}
+        <div className="flex items-center gap-3 mb-3">
+          <img
+            src="/logo.png"
+            alt="Bihar Library LET 2026 Logo"
+            className="w-12 h-12 object-contain rounded-2xl bg-white p-1 border border-brand-100 dark:border-brand-800 shadow-sm shrink-0"
+          />
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 text-[11px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                <Sparkles className="w-3 h-3" />
+                Launch Offer · 91% OFF
+              </span>
+              <span className="text-xs text-green-600 dark:text-green-400 font-semibold">
+                Unit 1 Free
+              </span>
+            </div>
+            <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+              Bihar School Examination Board (BSEB) LET 2026
+            </div>
+          </div>
         </div>
 
         {/* Title */}

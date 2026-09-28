@@ -56,9 +56,11 @@ export default function Syllabus() {
       {/* Page Header */}
       <div className="mb-6">
         <div className="flex items-start gap-3 mb-3">
-          <div className="w-10 h-10 bg-brand-700 rounded-xl flex items-center justify-center shrink-0">
-            <BookOpen className="w-5 h-5 text-white" />
-          </div>
+          <img
+            src="/logo.png"
+            alt="Bihar Library LET 2026 Logo"
+            className="w-11 h-11 object-contain rounded-xl bg-white p-1 border border-gray-200 dark:border-gray-800 shadow-sm shrink-0"
+          />
           <div>
             <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
               Bihar Librarian LET 2026

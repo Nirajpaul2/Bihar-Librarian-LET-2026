@@ -44,12 +44,14 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 shrink-0" onClick={() => setMenuOpen(false)}>
-            <div className="w-9 h-9 bg-brand-700 rounded-xl flex items-center justify-center shadow-sm">
-              <BookOpen className="w-5 h-5 text-white" />
-            </div>
-            <div className="hidden sm:block">
-              <div className="font-bold text-gray-900 dark:text-white text-sm leading-tight">Bihar Librarian</div>
-              <div className="text-xs text-brand-600 dark:text-brand-400 font-medium">LET 2026 Preparation</div>
+            <img
+              src="/logo.png"
+              alt="Bihar Library LET 2026 Logo"
+              className="w-10 h-10 object-contain rounded-xl shadow-xs bg-white dark:bg-gray-800 p-0.5 border border-gray-100 dark:border-gray-700"
+            />
+            <div>
+              <div className="font-bold text-gray-900 dark:text-white text-sm sm:text-base leading-tight tracking-tight">Bihar Library</div>
+              <div className="text-[11px] text-brand-600 dark:text-brand-400 font-bold uppercase tracking-wider">LET 2026</div>
             </div>
           </Link>
 

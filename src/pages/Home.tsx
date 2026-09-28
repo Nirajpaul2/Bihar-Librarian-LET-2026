@@ -69,11 +69,18 @@ export default function Home() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
           <div className="max-w-3xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
-              <GraduationCap className="w-4 h-4 text-brand-200" />
-              <span>Bihar Librarian LET 2026 (BSEB)</span>
-              <span className="hidden sm:inline text-brand-300">· 150 Marks · No Negative Marking</span>
+            {/* Logo & Badge */}
+            <div className="flex items-center gap-3 sm:gap-4 mb-6">
+              <img
+                src="/logo.png"
+                alt="Bihar Library LET 2026 Logo"
+                className="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-2xl bg-white p-1.5 shadow-xl shrink-0 border border-white/20"
+              />
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium">
+                <GraduationCap className="w-4 h-4 text-brand-200" />
+                <span>Bihar Librarian LET 2026 (BSEB)</span>
+                <span className="hidden sm:inline text-brand-300">· 150 Marks · No Negative Marking</span>
+              </div>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">

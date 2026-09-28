@@ -8,17 +8,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="w-8 h-8 bg-brand-700 rounded-lg flex items-center justify-center">
-                <BookOpen className="w-4 h-4 text-white" />
-              </div>
+            <div className="flex items-center gap-3 mb-3">
+              <img
+                src="/logo.png"
+                alt="Bihar Library LET 2026 Logo"
+                className="w-10 h-10 object-contain rounded-xl bg-white p-0.5 shadow-sm"
+              />
               <div>
-                <div className="font-bold text-white text-sm">Bihar Librarian</div>
-                <div className="text-xs text-brand-400">Vacancy 2026</div>
+                <div className="font-bold text-white text-base leading-tight">Bihar Library</div>
+                <div className="text-xs text-amber-400 font-bold uppercase tracking-wider">LET 2026</div>
               </div>
             </div>
-            <p className="text-xs leading-relaxed">
-              Prepare Smart. Practice Daily. Crack Your Librarian Exam.
+            <p className="text-xs text-gray-400 leading-relaxed">
+              Prepare Smart. Practice Daily. Crack Bihar Librarian Eligibility Test 2026.
             </p>
           </div>
 

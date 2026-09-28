@@ -64,13 +64,20 @@ export default function PracticeHub() {
       />
 
       {/* Header */}
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-          📚 Practice Questions
-        </h1>
-        <p className="text-gray-500 dark:text-gray-400 text-sm">
-          Practice MCQs with instant feedback and explanations. Unit 1 is 100% Free!
-        </p>
+      <div className="flex items-center gap-3 mb-6">
+        <img
+          src="/logo.png"
+          alt="Bihar Library LET 2026 Logo"
+          className="w-11 h-11 object-contain rounded-xl bg-white p-1 border border-gray-200 dark:border-gray-800 shadow-sm shrink-0"
+        />
+        <div>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
+            Practice Questions
+          </h1>
+          <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm mt-0.5">
+            MCQs with instant feedback and explanations · Unit 1 is 100% Free!
+          </p>
+        </div>
       </div>
 
       {/* Promo banner if not unlocked */}
