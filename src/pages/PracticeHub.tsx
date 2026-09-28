@@ -5,6 +5,7 @@ import { subjects } from '@/data/subjects';
 import { allQuestions } from '@/data/questions';
 import { computeTopicCounts, subjectBadge } from '@/utils/questions';
 import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
+import { useSEO } from '@/hooks/useSEO';
 
 const topicCounts = computeTopicCounts(allQuestions);
 
@@ -45,6 +46,17 @@ export default function PracticeHub() {
     isUnitFree,
     openPaywall,
   } = usePayment();
+
+  const currentSubjectObj = subjects.find(s => s.id === subjectFilter);
+
+  useSEO({
+    title: currentSubjectObj
+      ? `${currentSubjectObj.label} MCQs Practice`
+      : 'Practice MCQs & Topic Quizzes',
+    description:
+      'Practice 210+ topic-wise MCQs for Bihar Librarian LET 2026. Unit 1 is free! Master Classification, Cataloguing, Reference Services, Digital Libraries, and General Paper.',
+    canonicalPath: '/practice',
+  });
 
   const filteredSubjects = subjectFilter
     ? subjects.filter(s => s.id === subjectFilter)

@@ -7,6 +7,7 @@ import { allQuestions } from '@/data/questions';
 import { subjects } from '@/data/subjects';
 import { mockTests } from '@/data/mock-tests';
 import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
+import { useSEO } from '@/hooks/useSEO';
 import { fiveLawsOfLibraryScience, biharLibraryHeritage } from '@/data/cheat-sheets';
 
 const stats = [
@@ -45,6 +46,12 @@ const features = [
 
 export default function Home() {
   const { isUnlocked, openPaywall } = usePayment();
+
+  useSEO({
+    title: 'Home — Exam Prep Portal',
+    description: 'Comprehensive preparation for BSEB Bihar Librarian LET 2026. Practice Unit 1 free, revise Dr. Ranganathan 5 Laws, classification, cataloguing, and full 150Q mock tests.',
+    canonicalPath: '/',
+  });
 
   return (
     <div className="space-y-0">

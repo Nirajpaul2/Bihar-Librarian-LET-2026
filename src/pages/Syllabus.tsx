@@ -25,6 +25,15 @@ const topicCounts = computeTopicCounts(allQuestions);
 type ActiveTab = 'overview' | 'weightage' | 'syllabus' | 'studyplan' | 'cheatsheet';
 
 import { useSearchParams } from 'react-router-dom';
+import { useSEO } from '@/hooks/useSEO';
+
+const tabTitles: Record<ActiveTab, string> = {
+  overview: 'Exam Pattern & Framework',
+  weightage: 'Topic Weightage Analysis',
+  syllabus: 'Detailed Technical Syllabus',
+  studyplan: '30-Day Master Study Plan',
+  cheatsheet: 'Quick Revision Cheat Sheets (DDC, CC, Acts)',
+};
 
 export default function Syllabus() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -32,6 +41,12 @@ export default function Syllabus() {
   const [activeTab, setActiveTabState] = useState<ActiveTab>(
     ['overview', 'weightage', 'syllabus', 'studyplan', 'cheatsheet'].includes(initialTab) ? initialTab : 'overview'
   );
+
+  useSEO({
+    title: `${tabTitles[activeTab]} — Syllabus`,
+    description: 'Detailed Bihar Librarian LET 2026 syllabus: 100 Marks Library Science, 50 Marks General Paper, DDC/CC classification, AACR2, and 19 Indian State Library Acts.',
+    canonicalPath: '/syllabus',
+  });
 
   const setActiveTab = (tab: ActiveTab) => {
     setActiveTabState(tab);

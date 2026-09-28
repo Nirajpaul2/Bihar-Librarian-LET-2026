@@ -1,0 +1,6 @@
+# robots.txt for Bihar Librarian LET 2026 Platform
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://biharlibrarian.in/sitemap.xml

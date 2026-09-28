@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { currentAffairs } from '@/data/current-affairs';
 import type { CACategory } from '@/types';
 import { ExternalLink, Calendar } from 'lucide-react';
+import { useSEO } from '@/hooks/useSEO';
 
 const categories: { key: CACategory | 'all'; label: string; emoji: string }[] = [
   { key: 'all', label: 'All', emoji: '🌐' },
@@ -32,6 +33,13 @@ const categoryColors: Record<string, string> = {
 
 export default function CurrentAffairs() {
   const [activeCategory, setActiveCategory] = useState<CACategory | 'all'>('all');
+
+  useSEO({
+    title: 'Current Affairs & Library Updates',
+    description:
+      'Latest Bihar and national current affairs, library science developments, NDLI updates, and government schemes for Bihar Librarian LET 2026.',
+    canonicalPath: '/current-affairs',
+  });
 
   const filtered = activeCategory === 'all'
     ? currentAffairs

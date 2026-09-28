@@ -3,6 +3,7 @@ import { Clock, FileText, Trophy, ChevronRight, Lock, Sparkles, Key } from 'luci
 import { mockTests } from '@/data/mock-tests';
 import { subjects } from '@/data/subjects';
 import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
+import { useSEO } from '@/hooks/useSEO';
 
 function formatDuration(mins: number) {
   if (mins >= 60) return `${Math.floor(mins / 60)}h ${mins % 60 > 0 ? (mins % 60) + 'm' : ''}`.trim();
@@ -11,6 +12,12 @@ function formatDuration(mins: number) {
 
 export default function MockTestList() {
   const { isUnlocked, openPaywall } = usePayment();
+
+  useSEO({
+    title: '150Q Full-Length Mock Tests',
+    description: 'Simulate the official BSEB Bihar Librarian LET 2026 exam with 150-Question timed mock tests (120 Mins), instant scorecards, and topic-wise performance analysis.',
+    canonicalPath: '/mock-test',
+  });
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 pb-24 md:pb-8">
