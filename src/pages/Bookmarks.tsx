@@ -1,23 +1,65 @@
 import { Link } from 'react-router-dom';
 import { Bookmark, Trash2, Play } from 'lucide-react';
 import { useBookmarks } from '@/hooks/useBookmarks';
+import { useLanguage } from '@/hooks/useLanguage';
 import { allQuestions } from '@/data/questions';
 import { subjectBadge, difficultyClass } from '@/utils/questions';
 
 export default function Bookmarks() {
   const { bookmarks, toggle, clearAll, count } = useBookmarks();
+  const { language, setLanguage } = useLanguage();
 
   const bookmarkedQuestions = allQuestions.filter(q => bookmarks.has(q.id));
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 pb-24 md:pb-8">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">🔖 Bookmarks</h1>
           <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
             {count === 0 ? 'No bookmarks yet' : `${count} question${count !== 1 ? 's' : ''} saved`}
           </p>
         </div>
+
+        {/* Language selector */}
+        {count > 0 && (
+          <div className="inline-flex items-center bg-gray-100 dark:bg-gray-800 p-0.5 rounded-lg text-xs border border-gray-200 dark:border-gray-700">
+            <button
+              type="button"
+              onClick={() => setLanguage('hi')}
+              className={`px-2 py-1 rounded-md font-medium transition-all cursor-pointer ${
+                language === 'hi'
+                  ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
+              }`}
+            >
+              हिन्दी
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('bilingual')}
+              className={`px-2 py-1 rounded-md font-medium transition-all cursor-pointer ${
+                language === 'bilingual'
+                  ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
+              }`}
+            >
+              Bilingual (द्विभाषी)
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('en')}
+              className={`px-2 py-1 rounded-md font-medium transition-all cursor-pointer ${
+                language === 'en'
+                  ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
+              }`}
+            >
+              English
+            </button>
+          </div>
+        )}
+
         {count > 0 && (
           <div className="flex gap-2">
             <Link
@@ -65,31 +107,76 @@ export default function Bookmarks() {
                       {q.difficulty}
                     </span>
                   </div>
-                  <p className="text-sm font-medium text-gray-900 dark:text-white leading-relaxed mb-3">
-                    {q.question}
-                  </p>
-                  <div className="grid grid-cols-2 gap-1.5">
-                    {(Object.entries(q.options) as [string, string][]).map(([key, text]) => (
-                      <div
-                        key={key}
-                        className={`text-xs px-2.5 py-1.5 rounded-lg border ${
-                          key === q.correct
-                            ? 'border-green-300 dark:border-green-700 bg-green-50 dark:bg-green-950/30 text-green-800 dark:text-green-300'
-                            : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400'
-                        }`}
-                      >
-                        <strong>{key}.</strong> {text}
-                      </div>
-                    ))}
+
+                  {language === 'hi' ? (
+                    <p className="text-sm font-medium text-gray-900 dark:text-white leading-relaxed mb-3">
+                      {q.questionHindi || q.question}
+                    </p>
+                  ) : language === 'bilingual' ? (
+                    <div className="space-y-1.5 mb-3">
+                      <p className="text-sm font-medium text-gray-900 dark:text-white leading-relaxed">
+                        {q.question}
+                      </p>
+                      {q.questionHindi && (
+                        <p className="text-sm font-medium text-brand-700 dark:text-brand-300 leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-1.5">
+                          {q.questionHindi}
+                        </p>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="text-sm font-medium text-gray-900 dark:text-white leading-relaxed mb-3">
+                      {q.question}
+                    </p>
+                  )}
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                    {(Object.entries(q.options) as [string, string][]).map(([key, text]) => {
+                      const textHindi = q.optionsHindi?.[key as import('@/types').AnswerKey];
+                      return (
+                        <div
+                          key={key}
+                          className={`text-xs px-2.5 py-1.5 rounded-lg border ${
+                            key === q.correct
+                              ? 'border-green-300 dark:border-green-700 bg-green-50 dark:bg-green-950/30 text-green-800 dark:text-green-300'
+                              : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400'
+                          }`}
+                        >
+                          <strong>{key}.</strong>{' '}
+                          {language === 'hi' ? (
+                            textHindi || text
+                          ) : language === 'bilingual' ? (
+                            <span>
+                              {text}
+                              {textHindi && <span className="block text-[11px] text-brand-700 dark:text-brand-300 mt-0.5">{textHindi}</span>}
+                            </span>
+                          ) : (
+                            text
+                          )}
+                        </div>
+                      );
+                    })}
                   </div>
-                  {q.explanation && (
+                  {(q.explanation || q.explanationHindi) && (
                     <details className="mt-3">
                       <summary className="text-xs text-brand-700 dark:text-brand-400 font-medium cursor-pointer">
-                        Show Explanation
+                        {language === 'hi' ? 'व्याख्या देखें' : 'Show Explanation'}
                       </summary>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 leading-relaxed">
-                        {q.explanation}
-                      </p>
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mt-2 leading-relaxed space-y-1">
+                        {language === 'hi' ? (
+                          <p>{q.explanationHindi || q.explanation}</p>
+                        ) : language === 'bilingual' ? (
+                          <>
+                            <p>{q.explanation}</p>
+                            {q.explanationHindi && (
+                              <p className="text-brand-800 dark:text-brand-300 border-t border-gray-100 dark:border-gray-800 pt-1">
+                                {q.explanationHindi}
+                              </p>
+                            )}
+                          </>
+                        ) : (
+                          <p>{q.explanation}</p>
+                        )}
+                      </div>
                     </details>
                   )}
                 </div>

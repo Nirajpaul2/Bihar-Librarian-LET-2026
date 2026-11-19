@@ -10,6 +10,7 @@ import TestHeader from '@/components/mock-test/TestHeader';
 import QuestionNav from '@/components/mock-test/QuestionNav';
 import { Clock, FileText, Trophy, Lock, Sparkles } from 'lucide-react';
 import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
+import { useLanguage } from '@/hooks/useLanguage';
 import PaywallModal from '@/components/payment/PaywallModal';
 
 function formatDuration(mins: number) {
@@ -109,6 +110,8 @@ export default function MockTestPage() {
     openPaywall,
     closePaywall,
   } = usePayment();
+
+  const { language, setLanguage } = useLanguage();
 
   const [phase, setPhase] = useState<TestPhase>('info');
   const [questions, setQuestions] = useState<ReturnType<typeof allQuestions.filter>>([]);
@@ -248,51 +251,134 @@ export default function MockTestPage() {
         {/* Main question area */}
         <div className="flex-1 min-w-0 space-y-5">
           {/* Meta */}
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
-              Q {currentIndex + 1} of {questions.length}
-            </span>
-            {currentQ && (
-              <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-full">
-                {currentQ.topicLabel}
+          <div className="flex items-center justify-between gap-2 flex-wrap">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                Q {currentIndex + 1} of {questions.length}
               </span>
-            )}
-            {isCurrentMarked && (
-              <span className="text-xs px-2 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-full">
-                Marked for Review
-              </span>
-            )}
+              {currentQ && (
+                <span className="text-xs px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded-full">
+                  {currentQ.topicLabel}
+                </span>
+              )}
+              {isCurrentMarked && (
+                <span className="text-xs px-2 py-0.5 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 rounded-full">
+                  Marked for Review
+                </span>
+              )}
+            </div>
+
+            {/* Language Selector Pill */}
+            <div className="inline-flex items-center bg-gray-100 dark:bg-gray-800 p-0.5 rounded-lg text-xs border border-gray-200 dark:border-gray-700">
+              <button
+                type="button"
+                onClick={() => setLanguage('hi')}
+                className={`px-2 py-0.5 rounded-md font-medium transition-all cursor-pointer ${
+                  language === 'hi'
+                    ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                }`}
+                title="हिन्दी में देखें"
+              >
+                हिन्दी
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage('bilingual')}
+                className={`px-2 py-0.5 rounded-md font-medium transition-all cursor-pointer ${
+                  language === 'bilingual'
+                    ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                }`}
+                title="द्विभाषी (Bilingual) देखें"
+              >
+                Bilingual (द्विभाषी)
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage('en')}
+                className={`px-2 py-0.5 rounded-md font-medium transition-all cursor-pointer ${
+                  language === 'en'
+                    ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                    : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+                }`}
+                title="View in English"
+              >
+                English
+              </button>
+            </div>
           </div>
 
           {/* Question */}
           {currentQ && (
             <>
               <div className="card p-5">
-                <p className="text-base sm:text-lg font-medium text-gray-900 dark:text-white leading-relaxed">
-                  {currentQ.question}
-                </p>
+                {language === 'hi' ? (
+                  <p className="text-base sm:text-lg font-medium text-gray-900 dark:text-white leading-relaxed">
+                    {currentQ.questionHindi || currentQ.question}
+                  </p>
+                ) : language === 'bilingual' ? (
+                  <div className="space-y-2.5">
+                    <p className="text-base sm:text-lg font-medium text-gray-900 dark:text-white leading-relaxed">
+                      {currentQ.question}
+                    </p>
+                    {currentQ.questionHindi && (
+                      <p className="text-base sm:text-lg font-medium text-brand-700 dark:text-brand-300 leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-2.5">
+                        {currentQ.questionHindi}
+                      </p>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-base sm:text-lg font-medium text-gray-900 dark:text-white leading-relaxed">
+                    {currentQ.question}
+                  </p>
+                )}
               </div>
 
               {/* Options */}
               <div className="space-y-3">
-                {(Object.entries(currentQ.options) as [AnswerKey, string][]).map(([key, text]) => (
-                  <button
-                    key={key}
-                    onClick={() => handleAnswer(key)}
-                    className={optionClass(key)}
-                  >
-                    <div className="flex items-start gap-3">
-                      <span className={`shrink-0 w-7 h-7 rounded-lg text-sm font-bold flex items-center justify-center transition-colors ${
-                        currentAnswer === key
-                          ? 'bg-brand-600 text-white'
-                          : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
-                      }`}>
-                        {key}
-                      </span>
-                      <span className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed pt-0.5">{text}</span>
-                    </div>
-                  </button>
-                ))}
+                {(Object.entries(currentQ.options) as [AnswerKey, string][]).map(([key, text]) => {
+                  const textHindi = currentQ.optionsHindi?.[key];
+                  return (
+                    <button
+                      key={key}
+                      onClick={() => handleAnswer(key)}
+                      className={optionClass(key)}
+                    >
+                      <div className="flex items-start gap-3 w-full">
+                        <span className={`shrink-0 w-7 h-7 rounded-lg text-sm font-bold flex items-center justify-center transition-colors ${
+                          currentAnswer === key
+                            ? 'bg-brand-600 text-white'
+                            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
+                        }`}>
+                          {key}
+                        </span>
+                        <div className="text-left flex-1">
+                          {language === 'hi' ? (
+                            <span className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed block pt-0.5">
+                              {textHindi || text}
+                            </span>
+                          ) : language === 'bilingual' ? (
+                            <div className="space-y-0.5">
+                              <span className="text-gray-800 dark:text-gray-200 text-sm font-medium leading-relaxed block pt-0.5">
+                                {text}
+                              </span>
+                              {textHindi && (
+                                <span className="text-brand-700 dark:text-brand-300 text-xs leading-relaxed block">
+                                  {textHindi}
+                                </span>
+                              )}
+                            </div>
+                          ) : (
+                            <span className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed block pt-0.5">
+                              {text}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
 
               {/* Action buttons */}
@@ -448,6 +534,7 @@ function MockTestResultInline({
   questions: import('@/types').Question[];
   answers: Record<string, AnswerKey | null>;
 }) {
+  const { language, setLanguage } = useLanguage();
   const [showReview, setShowReview] = useState(false);
   const [reviewIndex, setReviewIndex] = useState(0);
 
@@ -470,43 +557,158 @@ function MockTestResultInline({
     const isCorrect = ans === q.correct;
     return (
       <div className="max-w-2xl mx-auto px-4 py-6 pb-24 md:pb-6">
-        <button onClick={() => setShowReview(false)} className="btn-ghost mb-4 -ml-2">
-          <ArrowLeft className="w-4 h-4" />
-          Back to Result
-        </button>
+        <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+          <button onClick={() => setShowReview(false)} className="btn-ghost -ml-2 cursor-pointer">
+            <ArrowLeft className="w-4 h-4" />
+            Back to Result
+          </button>
+
+          {/* Language Selector in Review */}
+          <div className="inline-flex items-center bg-gray-100 dark:bg-gray-800 p-0.5 rounded-lg text-xs border border-gray-200 dark:border-gray-700">
+            <button
+              type="button"
+              onClick={() => setLanguage('hi')}
+              className={`px-2 py-1 rounded-md font-medium transition-all cursor-pointer ${
+                language === 'hi'
+                  ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
+              }`}
+            >
+              हिन्दी
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('bilingual')}
+              className={`px-2 py-1 rounded-md font-medium transition-all cursor-pointer ${
+                language === 'bilingual'
+                  ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
+              }`}
+            >
+              Bilingual (द्विभाषी)
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('en')}
+              className={`px-2 py-1 rounded-md font-medium transition-all cursor-pointer ${
+                language === 'en'
+                  ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900'
+              }`}
+            >
+              English
+            </button>
+          </div>
+        </div>
+
         <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">
           Reviewing Q {reviewIndex + 1} of {questions.length}
         </div>
+
         <div className="card p-5 mb-4">
-          <p className="font-medium text-gray-900 dark:text-white">{q.question}</p>
+          {language === 'hi' ? (
+            <p className="font-medium text-gray-900 dark:text-white leading-relaxed">
+              {q.questionHindi || q.question}
+            </p>
+          ) : language === 'bilingual' ? (
+            <div className="space-y-2">
+              <p className="font-medium text-gray-900 dark:text-white leading-relaxed">
+                {q.question}
+              </p>
+              {q.questionHindi && (
+                <p className="font-medium text-brand-700 dark:text-brand-300 leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-2">
+                  {q.questionHindi}
+                </p>
+              )}
+            </div>
+          ) : (
+            <p className="font-medium text-gray-900 dark:text-white leading-relaxed">
+              {q.question}
+            </p>
+          )}
         </div>
+
         <div className="space-y-3 mb-4">
           {(Object.entries(q.options) as [AnswerKey, string][]).map(([key, text]) => {
             const isSelected = ans === key;
             const isCorrKey = key === q.correct;
+            const textHindi = q.optionsHindi?.[key];
             const cls = isCorrKey ? 'option-btn option-btn-correct' : isSelected ? 'option-btn option-btn-incorrect' : 'option-btn border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800';
             const labelCls = isCorrKey ? 'bg-green-500 text-white' : isSelected ? 'bg-red-500 text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400';
             return (
               <div key={key} className={cls}>
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3 w-full">
                   <span className={`shrink-0 w-7 h-7 rounded-lg text-sm font-bold flex items-center justify-center ${labelCls}`}>{key}</span>
-                  <span className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed pt-0.5">{text}</span>
+                  <div className="text-left flex-1">
+                    {language === 'hi' ? (
+                      <span className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed block pt-0.5">
+                        {textHindi || text}
+                      </span>
+                    ) : language === 'bilingual' ? (
+                      <div className="space-y-0.5">
+                        <span className="text-gray-800 dark:text-gray-200 text-sm font-medium leading-relaxed block pt-0.5">
+                          {text}
+                        </span>
+                        {textHindi && (
+                          <span className="text-brand-700 dark:text-brand-300 text-xs leading-relaxed block">
+                            {textHindi}
+                          </span>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed block pt-0.5">
+                        {text}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
+
         <div className={`rounded-xl p-4 ${isCorrect ? 'bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800' : 'bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800'}`}>
           <p className={`font-semibold text-sm mb-1 ${isCorrect ? 'text-green-800 dark:text-green-300' : 'text-red-800 dark:text-red-300'}`}>
-            {isCorrect ? '✅ Correct!' : ans ? `❌ Wrong. Correct: (${q.correct}) ${q.options[q.correct]}` : `⬜ Skipped. Answer: (${q.correct}) ${q.options[q.correct]}`}
+            {isCorrect
+              ? (language === 'hi' ? '✅ सही उत्तर!' : '✅ Correct!')
+              : ans
+              ? (language === 'hi'
+                  ? `❌ गलत उत्तर। सही विकल्प: (${q.correct}) ${q.optionsHindi?.[q.correct] || q.options[q.correct]}`
+                  : `❌ Wrong. Correct: (${q.correct}) ${q.options[q.correct]}`)
+              : (language === 'hi'
+                  ? `⬜ अनुत्तरित (छोड़ा गया)। सही उत्तर: (${q.correct}) ${q.optionsHindi?.[q.correct] || q.options[q.correct]}`
+                  : `⬜ Skipped. Answer: (${q.correct}) ${q.options[q.correct]}`)}
           </p>
-          <p className="text-sm text-gray-700 dark:text-gray-300">{q.explanation}</p>
+          {language === 'hi' ? (
+            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+              <span className="font-semibold text-gray-900 dark:text-gray-100">व्याख्या: </span>
+              {q.explanationHindi || q.explanation}
+            </p>
+          ) : language === 'bilingual' ? (
+            <div className="space-y-1.5 mt-2">
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                <span className="font-semibold text-gray-900 dark:text-gray-100">Explanation: </span>
+                {q.explanation}
+              </p>
+              {q.explanationHindi && (
+                <p className="text-sm text-brand-900 dark:text-brand-200 leading-relaxed border-t border-gray-200/60 dark:border-gray-700/60 pt-1.5">
+                  <span className="font-semibold">हिन्दी व्याख्या: </span>
+                  {q.explanationHindi}
+                </p>
+              )}
+            </div>
+          ) : (
+            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+              <span className="font-semibold text-gray-900 dark:text-gray-100">Explanation: </span>
+              {q.explanation}
+            </p>
+          )}
         </div>
         <div className="flex gap-3 mt-4">
-          <button onClick={() => setReviewIndex(i => Math.max(0, i - 1))} disabled={reviewIndex === 0} className="btn-secondary flex-1 disabled:opacity-40">
+          <button onClick={() => setReviewIndex(i => Math.max(0, i - 1))} disabled={reviewIndex === 0} className="btn-secondary flex-1 disabled:opacity-40 cursor-pointer">
             <ArrowLeft className="w-4 h-4" /> Prev
           </button>
-          <button onClick={() => setReviewIndex(i => Math.min(questions.length - 1, i + 1))} disabled={reviewIndex === questions.length - 1} className="btn-primary flex-1 disabled:opacity-40">
+          <button onClick={() => setReviewIndex(i => Math.min(questions.length - 1, i + 1))} disabled={reviewIndex === questions.length - 1} className="btn-primary flex-1 disabled:opacity-40 cursor-pointer">
             Next <ArrowRight className="w-4 h-4" />
           </button>
         </div>

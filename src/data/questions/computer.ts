@@ -1,28 +1,15 @@
-type Difficulty = 'easy' | 'medium' | 'hard';
-type SubjectKey = 'library-science' | 'general-knowledge' | 'bihar-gk' | 'reasoning' | 'computer';
-type AnswerKey = 'A' | 'B' | 'C' | 'D';
-
-export interface Question {
-  id: string;
-  question: string;
-  options: Record<AnswerKey, string>;
-  correct: AnswerKey;
-  explanation: string;
-  subject: SubjectKey;
-  unit: string;
-  topic: string;
-  topicLabel: string;
-  difficulty: Difficulty;
-  tags?: string[];
-}
+import type { Question } from '@/types';
 
 export const computerQuestions: Question[] = [
   {
     id: 'cp-001',
     question: 'Which component is considered the "brain" of a computer system?',
+    questionHindi: 'कंप्यूटर सिस्टम का "मस्तिष्क" (Brain) किस घटक को कहा जाता है?',
     options: { A: 'RAM', B: 'CPU', C: 'Hard Drive', D: 'Motherboard' },
+    optionsHindi: { A: 'रैम (RAM)', B: 'सीपीयू (CPU - Central Processing Unit)', C: 'हार्ड ड्राइव (Hard Drive)', D: 'मदरबोर्ड (Motherboard)' },
     correct: 'B',
     explanation: 'The Central Processing Unit (CPU) is often called the brain of the computer because it handles all instructions it receives from hardware and software.',
+    explanationHindi: 'सेंट्रल प्रोसेसिंग यूनिट (CPU) को कंप्यूटर का मस्तिष्क कहा जाता है क्योंकि यह सभी अंकगणितीय, तार्किक और इनपुट/आउटपुट निर्देशों को निष्पादित करता है।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'hardware-software',
@@ -32,9 +19,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-002',
     question: 'What does RAM stand for in computer terminology?',
+    questionHindi: 'कंप्यूटर शब्दावली में RAM का पूर्ण रूप (Full Form) क्या है?',
     options: { A: 'Read Access Memory', B: 'Random Access Memory', C: 'Rapid Action Memory', D: 'Run Anywhere Memory' },
+    optionsHindi: { A: 'रीड एक्सेस मेमोरी', B: 'रैंडम एक्सेस मेमोरी (Random Access Memory)', C: 'रैपिड एक्शन मेमोरी', D: 'रन एनीव्हेयर मेमोरी' },
     correct: 'B',
     explanation: 'RAM stands for Random Access Memory. It is the temporary, volatile memory used by the system to store active applications and data.',
+    explanationHindi: 'RAM का अर्थ रैंडम एक्सेस मेमोरी है। यह प्राथमिक और अस्थिर (Volatile) मेमोरी है, जिसमें सिस्टम चालू रहने तक सक्रिय डेटा व प्रोग्राम संग्रहीत रहते हैं।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'hardware-software',
@@ -44,9 +34,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-003',
     question: 'Which of the following is an example of an input device?',
+    questionHindi: 'निम्नलिखित में से कौन सा एक इनपुट डिवाइस (Input Device) का उदाहरण है?',
     options: { A: 'Monitor', B: 'Printer', C: 'Keyboard', D: 'Speaker' },
+    optionsHindi: { A: 'मॉनिटर', B: 'प्रिंटर', C: 'कीबोर्ड (Keyboard)', D: 'स्पीकर' },
     correct: 'C',
     explanation: 'A keyboard is an input device used to enter data into a computer. Monitors, printers, and speakers are all output devices.',
+    explanationHindi: 'कीबोर्ड एक प्राथमिक इनपुट डिवाइस है जिसके द्वारा उपयोगकर्ता कंप्यूटर में डेटा और निर्देश प्रविष्ट करता है। मॉनिटर, प्रिंटर और स्पीकर आउटपुट डिवाइस हैं।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'hardware-software',
@@ -56,9 +49,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-004',
     question: 'Which type of software is an Operating System (OS)?',
+    questionHindi: 'ऑपरेटिंग सिस्टम (OS) किस प्रकार का सॉफ्टवेयर है?',
     options: { A: 'Application Software', B: 'System Software', C: 'Utility Software', D: 'Malware' },
+    optionsHindi: { A: 'एप्लिकेशन सॉफ्टवेयर', B: 'सिस्टम सॉफ्टवेयर (System Software)', C: 'यूटिलिटी सॉफ्टवेयर', D: 'मैलवेयर' },
     correct: 'B',
     explanation: 'An Operating System is system software that manages computer hardware, software resources, and provides common services for computer programs.',
+    explanationHindi: 'ऑपरेटिंग सिस्टम एक सिस्टम सॉफ्टवेयर है जो कंप्यूटर हार्डवेयर और उपयोगकर्ता/एप्लिकेशन प्रोग्राम के बीच इंटरफेस का कार्य करता है।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'operating-systems',
@@ -68,9 +64,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-005',
     question: 'What is the standard keyboard shortcut to undo an action in Microsoft Word?',
+    questionHindi: 'माइक्रोसॉफ्ट वर्ड (MS Word) में किसी अंतिम क्रिया को पूर्ववत (Undo) करने का शॉर्टकट क्या है?',
     options: { A: 'Ctrl + C', B: 'Ctrl + Y', C: 'Ctrl + Z', D: 'Ctrl + V' },
+    optionsHindi: { A: 'Ctrl + C', B: 'Ctrl + Y', C: 'Ctrl + Z', D: 'Ctrl + V' },
     correct: 'C',
     explanation: 'Ctrl + Z is the universal keyboard shortcut for "Undo" in Windows environments, including Microsoft Word.',
+    explanationHindi: 'Ctrl + Z अनडू (Undo) का सार्वभौमिक कीबोर्ड शॉर्टकट है। Ctrl + Y रीडू (Redo), Ctrl + C कॉपी (Copy) तथा Ctrl + V पेस्ट (Paste) के लिए प्रयुक्त होता है।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'ms-office',
@@ -80,9 +79,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-006',
     question: 'In Microsoft Excel, all formulas must begin with which character?',
+    questionHindi: 'माइक्रोसॉफ्ट एक्सेल (MS Excel) में सभी फॉर्मूले अनिवार्य रूप से किस चिह्न से शुरू होने चाहिए?',
     options: { A: '+', B: '@', C: '=', D: '#' },
+    optionsHindi: { A: 'प्लस (+)', B: 'एट (@)', C: 'बराबर (=)', D: 'हैश (#)' },
     correct: 'C',
     explanation: 'Every formula in Microsoft Excel must start with an equals sign (=). This tells the software to calculate the following string as an equation.',
+    explanationHindi: 'MS Excel में प्रत्येक फॉर्मूला या फंक्शन हमेशा बराबर के चिह्न (=) से प्रारंभ होता है। इससे एक्सेल समझता है कि आगे की प्रविष्टि एक गणना सूत्र है।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'ms-office',
@@ -92,9 +94,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-007',
     question: 'Which Windows feature allows you to manage files and folders?',
+    questionHindi: 'विंडोज का कौन सा फीचर आपको फाइलों और फोल्डरों को प्रबंधित व व्यवस्थित करने की अनुमति देता है?',
     options: { A: 'Task Manager', B: 'Control Panel', C: 'Command Prompt', D: 'File Explorer' },
+    optionsHindi: { A: 'टास्क मैनेजर', B: 'कंट्रोल पैनल', C: 'कमांड प्रॉम्प्ट', D: 'फाइल एक्सप्लोरर (File Explorer)' },
     correct: 'D',
     explanation: 'File Explorer (formerly Windows Explorer) is the graphical file management utility for the Microsoft Windows operating system.',
+    explanationHindi: 'फाइल एक्सप्लोरर (पूर्व नाम विंडोज एक्सप्लोरर) विंडोज ऑपरेटिंग सिस्टम में डिस्क ड्राइव, फोल्डर्स और फाइल्स को ब्राउज व मैनेज करने की मुख्य उपयोगिता है।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'operating-systems',
@@ -104,9 +109,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-008',
     question: 'What does HTTP stand for in networking?',
+    questionHindi: 'कंप्यूटर नेटवर्किंग में HTTP का पूर्ण रूप क्या है?',
     options: { A: 'HyperText Transfer Protocol', B: 'HyperText Transmission Process', C: 'Hyper Transfer Text Protocol', D: 'HyperText Technology Protocol' },
+    optionsHindi: { A: 'हाइपरटेक्स्ट ट्रांसफर प्रोटोकॉल (HyperText Transfer Protocol)', B: 'हाइपरटेक्स्ट ट्रांसमिशन प्रोसेस', C: 'हाइपर ट्रांसफर टेक्स्ट प्रोटोकॉल', D: 'हाइपरटेक्स्ट टेक्नोलॉजी प्रोटोकॉल' },
     correct: 'A',
     explanation: 'HTTP stands for HyperText Transfer Protocol, the foundational protocol used for transmitting web pages over the internet.',
+    explanationHindi: 'HTTP का अर्थ हाइपरटेक्स्ट ट्रांसफर प्रोटोकॉल है। यह वर्ल्ड वाइड वेब (WWW) पर वेब पेजों और डेटा के आदान-प्रदान के लिए उपयोग किया जाने वाला मुख्य प्रोटोकॉल है।',
     subject: 'computer',
     unit: 'internet-security',
     topic: 'internet-email',
@@ -116,9 +124,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-009',
     question: 'In an email, what does the "BCC" field stand for?',
+    questionHindi: 'ईमेल में "BCC" फील्ड का पूर्ण रूप क्या होता है?',
     options: { A: 'Basic Carbon Copy', B: 'Blind Carbon Copy', C: 'Bulk Carbon Copy', D: 'Back Carbon Copy' },
+    optionsHindi: { A: 'बेसिक कार्बन कॉपी', B: 'ब्लाइंड कार्बन कॉपी (Blind Carbon Copy)', C: 'बल्क कार्बन कॉपी', D: 'बैक कार्बन कॉपी' },
     correct: 'B',
     explanation: 'BCC stands for Blind Carbon Copy. It sends a copy of the email to the recipient without showing their email address to other recipients.',
+    explanationHindi: 'BCC का अर्थ ब्लाइंड कार्बन कॉपी है। इसमें दर्ज किए गए प्राप्तकर्ताओं के ईमेल पते अन्य किसी भी प्राप्तकर्ता (To या CC) को दिखाई नहीं देते हैं।',
     subject: 'computer',
     unit: 'internet-security',
     topic: 'internet-email',
@@ -128,9 +139,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-010',
     question: 'Which of the following refers to a malicious program that disguises itself as legitimate software?',
+    questionHindi: 'निम्नलिखित में से कौन सा एक दुर्भावनापूर्ण प्रोग्राम (Malware) है जो खुद को उपयोगी सॉफ्टवेयर के रूप में प्रस्तुत करता है?',
     options: { A: 'Worm', B: 'Ransomware', C: 'Trojan Horse', D: 'Spyware' },
+    optionsHindi: { A: 'वर्म (Worm)', B: 'रैनसमवेयर (Ransomware)', C: 'ट्रोजन हॉर्स (Trojan Horse)', D: 'स्पायवेयर (Spyware)' },
     correct: 'C',
     explanation: 'A Trojan Horse is a type of malware that misleads users of its true intent by disguising itself as a standard, legitimate file or program.',
+    explanationHindi: 'ट्रोजन हॉर्स एक ऐसा घातक प्रोग्राम है जो ऊपर से सुरक्षित व उपयोगी सॉफ्टवेयर दिखता है, किन्तु सिस्टम में इंस्टॉल होते ही सुरक्षा में सेंध लगा देता है।',
     subject: 'computer',
     unit: 'internet-security',
     topic: 'cyber-security',
@@ -140,9 +154,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-011',
     question: 'What is phishing?',
+    questionHindi: 'साइबर सुरक्षा में "फ़िशिंग" (Phishing) क्या है?',
     options: { A: 'A type of computer game', B: 'A cyber attack aimed at stealing sensitive information', C: 'A networking hardware component', D: 'A process of updating software' },
+    optionsHindi: { A: 'एक प्रकार का कंप्यूटर गेम', B: 'संवेदनशील जानकारी (पासवर्ड, बैंक डिटेल) चुराने का फर्जी साइबर हमला', C: 'एक नेटवर्किंग हार्डवेयर घटक', D: 'सॉफ्टवेयर अपडेट करने की प्रक्रिया' },
     correct: 'B',
     explanation: 'Phishing is a fraudulent attempt, usually via email, to obtain sensitive information like usernames, passwords, or credit card details by pretending to be a trustworthy entity.',
+    explanationHindi: 'फ़िशिंग एक धोखाधड़ीपूर्ण साइबर हमला है जिसमें फर्जी ईमेल या वेबसाइट बनाकर उपयोगकर्ताओं से पासवर्ड, ओटीपी और बैंक विवरण चुराए जाते हैं।',
     subject: 'computer',
     unit: 'internet-security',
     topic: 'cyber-security',
@@ -152,9 +169,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-012',
     question: 'What is a firewall in computer networking?',
+    questionHindi: 'कंप्यूटर नेटवर्किंग में "फ़ायरवॉल" (Firewall) क्या होता है?',
     options: { A: 'A cooling system for servers', B: 'A backup power supply', C: 'A security system monitoring and controlling network traffic', D: 'A type of hard drive partition' },
+    optionsHindi: { A: 'सर्वर के लिए कूलिंग सिस्टम', B: 'बैकअप पावर सप्लाई (UPS)', C: 'नेटवर्क ट्रैफिक की निगरानी और अनधिकृत प्रवेश रोकने वाली सुरक्षा प्रणाली', D: 'हार्ड ड्राइव का विभाजन' },
     correct: 'C',
     explanation: 'A firewall is a network security device or software that monitors incoming and outgoing network traffic and blocks unauthorized access according to security rules.',
+    explanationHindi: 'फ़ायरवॉल हार्डवेयर या सॉफ्टवेयर आधारित एक सुरक्षा प्रणाली है जो पूर्वनिर्धारित नियमों के आधार पर आने-जाने वाले नेटवर्क ट्रैफिक की जांच कर अनधिकृत पहुंच को रोकती है।',
     subject: 'computer',
     unit: 'internet-security',
     topic: 'cyber-security',
@@ -164,9 +184,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-013',
     question: 'Which of the following is considered the most secure practice for passwords?',
+    questionHindi: 'पासवर्ड सुरक्षा के लिए निम्नलिखित में से किसे सर्वोत्तम और सबसे सुरक्षित माना जाता है?',
     options: { A: 'Using a single complex password for all sites', B: 'Using personal information like birthdates', C: 'Using a combination of letters, numbers, and symbols, and unique passwords for different sites', D: 'Writing passwords on a sticky note attached to the monitor' },
+    optionsHindi: { A: 'सभी साइटों के लिए एक ही पासवर्ड रखना', B: 'जन्मदिन या मोबाइल नंबर का उपयोग करना', C: 'अक्षरों, संख्याओं और विशेष प्रतीकों का मिश्रण तथा प्रत्येक खाते के लिए अलग पासवर्ड रखना', D: 'मॉनिटर पर स्टिकी नोट चिपकाकर लिखना' },
     correct: 'C',
     explanation: 'Strong security practice involves using long, complex passwords (mix of cases, numbers, symbols) and never reusing the same password across multiple services.',
+    explanationHindi: 'मजबूत और सुरक्षित पासवर्ड में अपरकेस, लोअरकेस, अंक तथा विशेष चिह्नों (@, #, $) का मिश्रण होना चाहिए और विभिन्न वेबसाइटों पर अलग-अलग पासवर्ड होना चाहिए।',
     subject: 'computer',
     unit: 'internet-security',
     topic: 'cyber-security',
@@ -176,9 +199,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-014',
     question: 'What is the purpose of the Cache Memory in a computer?',
+    questionHindi: 'कंप्यूटर में कैश मेमोरी (Cache Memory) का मुख्य उद्देश्य क्या है?',
     options: { A: 'To permanently store user data', B: 'To provide high-speed data access to the CPU', C: 'To cool down the processor', D: 'To display graphics on the monitor' },
+    optionsHindi: { A: 'डेटा को स्थायी रूप से संचित करना', B: 'सीपीयू (CPU) को अत्यधिक तीव्र गति से डेटा और निर्देश उपलब्ध कराना', C: 'प्रोसेसर का तापमान कम करना', D: 'मॉनिटर पर ग्राफिक्स प्रदर्शित करना' },
     correct: 'B',
     explanation: 'Cache memory is a small-sized, high-speed volatile memory that provides the CPU with rapid access to frequently used instructions and data.',
+    explanationHindi: 'कैश मेमोरी सीपीयू और मुख्य मेमोरी (RAM) के मध्य स्थित एक अति-तीव्र मेमोरी है, जो बार-बार प्रयोग होने वाले डेटा को रखती है ताकि सीपीयू की गति बढ़ सके।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'hardware-software',
@@ -188,9 +214,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-015',
     question: 'Which protocol is commonly used to securely browse websites (indicated by a padlock in the browser)?',
+    questionHindi: 'सुरक्षित वेब ब्राउजिंग के लिए सामान्यतः किस प्रोटोकॉल का उपयोग किया जाता है (ब्राउज़र में पैडलॉक/ताले के चिह्न द्वारा प्रदर्शित)?',
     options: { A: 'FTP', B: 'HTTP', C: 'HTTPS', D: 'SMTP' },
+    optionsHindi: { A: 'एफ़टीपी (FTP)', B: 'एचटीटीपी (HTTP)', C: 'एचटीटीपीएस (HTTPS - HyperText Transfer Protocol Secure)', D: 'एसएमटीपी (SMTP)' },
     correct: 'C',
     explanation: 'HTTPS (HyperText Transfer Protocol Secure) uses encryption (like TLS/SSL) for secure communication over a computer network, widely used on the Internet.',
+    explanationHindi: 'HTTPS डेटा को एन्क्रिप्ट (SSL/TLS) करके सुरक्षित रूप से प्रेषित करता है, जिससे डेटा को हैकर्स द्वारा बीच में पढ़ा या बदला नहीं जा सकता।',
     subject: 'computer',
     unit: 'internet-security',
     topic: 'internet-email',
@@ -200,9 +229,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-016',
     question: 'What is the function of a router in a computer network?',
+    questionHindi: 'कंप्यूटर नेटवर्क में राउटर (Router) का मुख्य कार्य क्या होता है?',
     options: { A: 'To protect the computer from viruses', B: 'To forward data packets between different computer networks', C: 'To print documents over Wi-Fi', D: 'To store backups of files' },
+    optionsHindi: { A: 'कंप्यूटर को वायरस से बचाना', B: 'विभिन्न नेटवर्कों के बीच डेटा पैकेटों को सही पते पर अग्रेषित (Forward/Route) करना', C: 'वाई-फाई द्वारा प्रिंट निकालना', D: 'फाइलों का बैकअप स्टोर करना' },
     correct: 'B',
     explanation: 'A router is a networking device that forwards data packets between computer networks. They direct traffic on the Internet.',
+    explanationHindi: 'राउटर एक ओएसआई नेटवर्क लेयर (Layer 3) डिवाइस है जो आईपी पते के आधार पर सर्वोत्तम मार्ग चुनकर विभिन्न नेटवर्कों के बीच डेटा पैकेट भेजता है।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'internet-email',
@@ -212,9 +244,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-017',
     question: 'In Microsoft Excel, what function is used to find the highest number in a range of cells?',
+    questionHindi: 'माइक्रोसॉफ्ट एक्सेल (MS Excel) में सेलों की रेंज में से सबसे बड़ी संख्या ज्ञात करने के लिए किस फंक्शन का उपयोग किया जाता है?',
     options: { A: '=TOP()', B: '=HIGHEST()', C: '=MAX()', D: '=SUM()' },
+    optionsHindi: { A: '=TOP()', B: '=HIGHEST()', C: '=MAX()', D: '=SUM()' },
     correct: 'C',
     explanation: 'The =MAX() function in Excel evaluates a range of cells and returns the largest (maximum) numeric value found within that range.',
+    explanationHindi: '=MAX() फंक्शन दी गई सेल रेंज में से अधिकतम (Maximum) मान लौटाता है। न्यूनतम मान के लिए =MIN() और योग के लिए =SUM() का उपयोग होता है।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'ms-office',
@@ -224,9 +259,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-018',
     question: 'Which of the following is an open-source operating system?',
+    questionHindi: 'निम्नलिखित में से कौन सा एक ओपन-सोर्स (Open-Source) ऑपरेटिंग सिस्टम है?',
     options: { A: 'Windows 10', B: 'macOS', C: 'Linux', D: 'iOS' },
+    optionsHindi: { A: 'विंडोज 10', B: 'मैक ओएस (macOS)', C: 'लिनक्स (Linux)', D: 'आईओएस (iOS)' },
     correct: 'C',
     explanation: 'Linux is a prominent example of free and open-source software, whereas Windows, macOS, and iOS are proprietary operating systems.',
+    explanationHindi: 'लिनक्स (Linux) एक स्वतंत्र और ओपन-सोर्स ऑपरेटिंग सिस्टम है, जिसका सोर्स कोड सार्वजनिक रूप से उपलब्ध है। विंडोज और मैक मालिकाना (Proprietary) सॉफ्टवेयर हैं।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'operating-systems',
@@ -236,9 +274,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-019',
     question: 'What type of memory is ROM?',
+    questionHindi: 'रोम (ROM - Read-Only Memory) किस प्रकार की मेमोरी है?',
     options: { A: 'Volatile', B: 'Non-volatile', C: 'Temporary', D: 'Virtual' },
+    optionsHindi: { A: 'परिवर्तनशील / अस्थिर (Volatile)', B: 'अपरिवर्तनशील / स्थायी (Non-volatile)', C: 'अस्थायी (Temporary)', D: 'वर्चुअल (Virtual)' },
     correct: 'B',
     explanation: 'ROM (Read-Only Memory) is non-volatile memory, meaning it retains its contents even when the computer is powered off. It typically stores firmware.',
+    explanationHindi: 'ROM एक गैर-वाष्पशील (Non-volatile) और स्थायी मेमोरी है, जिसमें कंप्यूटर का पावर बंद होने पर भी डेटा (BIOS/Firmware) सुरक्षित रहता है।',
     subject: 'computer',
     unit: 'computer-basics',
     topic: 'hardware-software',
@@ -248,9 +289,12 @@ export const computerQuestions: Question[] = [
   {
     id: 'cp-020',
     question: 'What is a URL?',
+    questionHindi: 'इंटरनेट में URL क्या होता है?',
     options: { A: 'A hardware address for a network card', B: 'A web browser developed by Google', C: 'The global address of documents and other resources on the World Wide Web', D: 'A type of computer virus' },
+    optionsHindi: { A: 'नेटवर्क कार्ड का हार्डवेयर पता (MAC)', B: 'गूगल द्वारा विकसित ब्राउज़र', C: 'वर्ल्ड वाइड वेब पर किसी वेब पेज या संसाधन का वैश्विक वेब पता', D: 'एक प्रकार का कंप्यूटर वायरस' },
     correct: 'C',
     explanation: 'URL stands for Uniform Resource Locator. It is a reference (an address) to a resource on the Internet, specifying its location and the protocol used to access it.',
+    explanationHindi: 'URL का पूर्ण रूप यूनिफ़ॉर्म रिसोर्स लोकेटर (Uniform Resource Locator) है, जो इंटरनेट पर किसी भी विशिष्ट वेब पेज, फाइल या संसाधन का अद्वितीय पता होता है।',
     subject: 'computer',
     unit: 'internet-security',
     topic: 'internet-email',

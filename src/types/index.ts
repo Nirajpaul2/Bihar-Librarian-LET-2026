@@ -7,9 +7,12 @@ export type AnswerKey = 'A' | 'B' | 'C' | 'D';
 export interface Question {
   id: string;
   question: string;
+  questionHindi?: string;
   options: Record<AnswerKey, string>;
+  optionsHindi?: Record<AnswerKey, string>;
   correct: AnswerKey;
   explanation: string;
+  explanationHindi?: string;
   subject: SubjectKey;
   unit: string;      // unit slug e.g. "foundations"
   topic: string;     // topic slug e.g. "five-laws"

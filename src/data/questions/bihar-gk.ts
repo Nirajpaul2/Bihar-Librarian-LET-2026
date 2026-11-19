@@ -1,28 +1,15 @@
-type Difficulty = 'easy' | 'medium' | 'hard';
-type SubjectKey = 'library-science' | 'general-knowledge' | 'bihar-gk' | 'reasoning' | 'computer';
-type AnswerKey = 'A' | 'B' | 'C' | 'D';
-
-export interface Question {
-  id: string;
-  question: string;
-  options: Record<AnswerKey, string>;
-  correct: AnswerKey;
-  explanation: string;
-  subject: SubjectKey;
-  unit: string;
-  topic: string;
-  topicLabel: string;
-  difficulty: Difficulty;
-  tags?: string[];
-}
+import type { Question } from '@/types';
 
 export const biharGKQuestions: Question[] = [
   {
     id: 'bh-001',
     question: 'Who is considered the founder of Pataliputra?',
+    questionHindi: 'पाटलिपुत्र का संस्थापक किसे माना जाता है?',
     options: { A: 'Bimbisara', B: 'Ajatashatru', C: 'Udayin', D: 'Chandragupta Maurya' },
+    optionsHindi: { A: 'बिम्बिसार', B: 'अजातशत्रु', C: 'उदायिन (उदयभद्र)', D: 'चन्द्रगुप्त मौर्य' },
     correct: 'C',
     explanation: 'Udayin (or Udayabhadra), the son of Ajatashatru, is credited with laying the foundation of the city of Pataliputra at the confluence of the Son and Ganges rivers.',
+    explanationHindi: 'अजातशत्रु के पुत्र उदायिन (उदयभद्र) ने सोन और गंगा नदी के संगम पर पाटलिपुत्र नगर की नींव रखी और अपनी राजधानी राजगृह से पाटलिपुत्र स्थानांतरित की।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'history-of-bihar',
@@ -32,9 +19,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-002',
     question: 'Which ancient university was located in present-day Bihar and was a great center of learning in the 5th century CE?',
+    questionHindi: 'वर्तमान बिहार में स्थित कौन सा प्राचीन विश्वविद्यालय 5वीं शताब्दी ईस्वी में शिक्षा का महान केंद्र था?',
     options: { A: 'Taxila', B: 'Nalanda', C: 'Vikramshila', D: 'Vallabhi' },
+    optionsHindi: { A: 'तक्षशिला', B: 'नालंदा', C: 'विक्रमशिला', D: 'वल्लभी' },
     correct: 'B',
     explanation: 'Nalanda University was a renowned Mahavihara (Buddhist monastery) and a great center of learning in ancient Magadha (modern-day Bihar).',
+    explanationHindi: 'नालंदा विश्वविद्यालय प्राचीन मगध (वर्तमान बिहार) में स्थित एक प्रसिद्ध बौद्ध महाविहार और विश्व प्रसिद्ध शिक्षण केंद्र था, जिसकी स्थापना गुप्त शासक कुमारगुप्त प्रथम ने की थी।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'history-of-bihar',
@@ -44,9 +34,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-003',
     question: 'The famous Vikramshila University was established by which Pala ruler?',
+    questionHindi: 'प्रसिद्ध विक्रमशिला विश्वविद्यालय की स्थापना किस पाल शासक ने की थी?',
     options: { A: 'Gopala', B: 'Dharmapala', C: 'Devapala', D: 'Ramapala' },
+    optionsHindi: { A: 'गोपाल', B: 'धर्मपाल', C: 'देवपाल', D: 'रामपाल' },
     correct: 'B',
     explanation: 'Vikramshila University was established by King Dharmapala of the Pala dynasty in response to a supposed decline in the quality of scholarship at Nalanda.',
+    explanationHindi: 'विक्रमशिला विश्वविद्यालय की स्थापना पाल वंश के राजा धर्मपाल ने भागलपुर जिले (अंतीचक) में की थी, जो तंत्रयान बौद्ध धर्म का प्रमुख केंद्र था।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'history-of-bihar',
@@ -56,9 +49,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-004',
     question: 'Bodh Gaya, the place where Gautama Buddha attained enlightenment, is situated on the banks of which river?',
+    questionHindi: 'बोधगया, जहाँ गौतम बुद्ध को ज्ञान की प्राप्ति हुई थी, किस नदी के तट पर स्थित है?',
     options: { A: 'Ganga', B: 'Falgu', C: 'Son', D: 'Gandak' },
+    optionsHindi: { A: 'गंगा', B: 'फल्गु (निरंजना)', C: 'सोन', D: 'गंडक' },
     correct: 'B',
     explanation: 'Bodh Gaya is located on the banks of the Falgu River. It is one of the most important pilgrimage sites for Buddhists worldwide.',
+    explanationHindi: 'बोधगया फल्गु नदी (प्राचीन निरंजना नदी) के तट पर स्थित है, जहाँ भगवान बुद्ध को बोधिवृक्ष के नीचे कैवल्य/ज्ञान की प्राप्ति हुई थी।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'geography-of-bihar',
@@ -68,9 +64,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-005',
     question: 'Which river is known as the "Sorrow of Bihar" due to its frequent and devastating floods?',
+    questionHindi: 'बार-बार आने वाली विनाशकारी बाढ़ के कारण किस नदी को "बिहार का शोक" कहा जाता है?',
     options: { A: 'Kosi', B: 'Ganga', C: 'Gandak', D: 'Bagmati' },
+    optionsHindi: { A: 'कोसी', B: 'गंगा', C: 'गंडक', D: 'बागमती' },
     correct: 'A',
     explanation: 'The Kosi River is known as the "Sorrow of Bihar" because of its unstable nature and the severe flooding it causes in the plains of northern Bihar.',
+    explanationHindi: 'कोसी नदी अपने मार्ग परिवर्तन और उत्तरी बिहार में भारी तबाही मचाने वाली बाढ़ के कारण "बिहार का शोक" (Sorrow of Bihar) कहलाती है।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'geography-of-bihar',
@@ -80,9 +79,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-006',
     question: 'How many districts are there currently in the state of Bihar?',
+    questionHindi: 'वर्तमान समय में बिहार राज्य में कुल कितने जिले हैं?',
     options: { A: '35', B: '37', C: '38', D: '40' },
+    optionsHindi: { A: '35', B: '37', C: '38', D: '40' },
     correct: 'C',
     explanation: 'Bihar is currently divided into 38 administrative districts, which are further grouped into 9 divisions.',
+    explanationHindi: 'बिहार राज्य में वर्तमान में कुल 38 प्रशासनिक जिले हैं, जिन्हें 9 प्रमंडलों (Divisions) में विभाजित किया गया है। सबसे नवीनतम 38वाँ जिला अरवल है।',
     subject: 'bihar-gk',
     unit: 'bihar-economy-admin',
     topic: 'bihar-government',
@@ -92,9 +94,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-007',
     question: 'Chhath Puja, the most prominent festival of Bihar, is dedicated to which deity?',
+    questionHindi: 'बिहार का सबसे प्रमुख महापर्व छठ पूजा किस देवता को समर्पित है?',
     options: { A: 'Lord Shiva', B: 'Lord Krishna', C: 'Sun God (Surya)', D: 'Goddess Durga' },
+    optionsHindi: { A: 'भगवान शिव', B: 'भगवान कृष्ण', C: 'भगवान सूर्य (सूर्य देव)', D: 'माँ दुर्गा' },
     correct: 'C',
     explanation: 'Chhath Puja is an ancient Hindu Vedic festival dedicated to Surya, the Sun God, and Chhathi Maiya, to thank them for bestowing the bounties of life on earth.',
+    explanationHindi: 'छठ पूजा बिहार का सबसे पवित्र लोकपर्व है, जो प्रत्यक्ष देवता भगवान सूर्य और छठी मइया को समर्पित है, जिसमें डूबते और उगते सूर्य को अर्घ्य दिया जाता है।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'culture-festivals',
@@ -104,9 +109,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-008',
     question: 'Madhubani painting, a famous art form of Bihar, is also known by which other name?',
+    questionHindi: 'बिहार की प्रसिद्ध लोक चित्रकला मधुबनी पेंटिंग को अन्य किस नाम से भी जाना जाता है?',
     options: { A: 'Mithila Art', B: 'Bhojpuri Art', C: 'Angika Art', D: 'Magahi Art' },
+    optionsHindi: { A: 'मिथिला चित्रकला (Mithila Art)', B: 'भोजपुरी कला', C: 'अंगिका कला', D: 'मगही कला' },
     correct: 'A',
     explanation: 'Madhubani painting is also known as Mithila Art. It is practiced in the Mithila region of India and Nepal, characterized by eye-catching geometrical patterns.',
+    explanationHindi: 'मधुबनी पेंटिंग को मिथिला चित्रकला भी कहा जाता है। यह बिहार के मिथिला क्षेत्र (मधुबनी, दरभंगा आदि) की विश्वविख्यात पारंपरिक हस्तकला है।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'culture-festivals',
@@ -116,9 +124,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-009',
     question: 'Which of the following is the staple crop of Bihar?',
+    questionHindi: 'निम्नलिखित में से कौन सी बिहार की मुख्य खाद्य फसल (Staple Crop) है?',
     options: { A: 'Wheat', B: 'Rice', C: 'Maize', D: 'Sugarcane' },
+    optionsHindi: { A: 'गेहूँ', B: 'चावल (धान)', C: 'मक्का', D: 'गन्ना' },
     correct: 'B',
     explanation: 'Rice is the staple crop of Bihar, grown in almost all districts of the state, especially in the fertile plains of the Ganges basin.',
+    explanationHindi: 'बिहार की मुख्य खाद्य फसल चावल (धान) है, जो गंगा के उपजाऊ मैदानी भाग में सर्वाधिक क्षेत्रफल में उगाई जाती है।',
     subject: 'bihar-gk',
     unit: 'bihar-economy-admin',
     topic: 'bihar-economy',
@@ -128,9 +139,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-010',
     question: 'Who was the first Chief Minister of Bihar?',
+    questionHindi: 'बिहार के प्रथम मुख्यमंत्री कौन थे?',
     options: { A: 'Sri Krishna Sinha', B: 'Anugrah Narayan Sinha', C: 'Karpoori Thakur', D: 'Satyendra Narayan Sinha' },
+    optionsHindi: { A: 'डॉ. श्री कृष्ण सिंह', B: 'अनुग्रह नारायण सिंह', C: 'कर्पूरी ठाकुर', D: 'सत्येंद्र नारायण सिन्हा' },
     correct: 'A',
     explanation: 'Dr. Sri Krishna Sinha, affectionately called Sri Babu, was the first Chief Minister of the Indian state of Bihar (1946-1961).',
+    explanationHindi: 'डॉ. श्री कृष्ण सिंह (जिन्हें आदरपूर्वक "श्री बाबू" या "बिहार केसरी" कहा जाता है) 1946 से 1961 तक स्वतंत्र भारत में बिहार के पहले मुख्यमंत्री रहे।',
     subject: 'bihar-gk',
     unit: 'bihar-economy-admin',
     topic: 'bihar-personalities',
@@ -140,9 +154,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-011',
     question: 'Under which scheme does the Bihar Government provide ₹50,000 to unmarried girls who complete their graduation?',
+    questionHindi: 'बिहार सरकार किस योजना के तहत स्नातक (Graduation) उत्तीर्ण करने वाली अविवाहित छात्राओं को ₹50,000 की वित्तीय सहायता प्रदान करती है?',
     options: { A: 'Kanya Kanya Yojna', B: 'Mukhyamantri Kanya Utthan Yojana', C: 'Balika Shiksha Yojna', D: 'Beti Bachao Beti Padhao' },
+    optionsHindi: { A: 'कन्या सुरक्षा योजना', B: 'मुख्यमंत्री कन्या उत्थान योजना', C: 'बालिका शिक्षा योजना', D: 'बेटी बचाओ बेटी पढ़ाओ' },
     correct: 'B',
     explanation: 'Mukhyamantri Kanya Utthan Yojana is an initiative by the Bihar Government to promote female education, offering ₹50,000 to unmarried girls passing graduation.',
+    explanationHindi: 'मुख्यमंत्री कन्या उत्थान योजना के अंतर्गत बालिका शिक्षा को प्रोत्साहन देने तथा बाल विवाह रोकने के उद्देश्य से स्नातक पास करने पर ₹50,000 की प्रोत्साहन राशि दी जाती है।',
     subject: 'bihar-gk',
     unit: 'bihar-economy-admin',
     topic: 'bihar-government',
@@ -152,9 +169,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-012',
     question: 'Which major agricultural product of Bihar has received the Geographical Indication (GI) tag recently?',
+    questionHindi: 'बिहार के किस प्रमुख कृषि उत्पाद को भौगोलिक उपदर्शन (GI टैग) प्राप्त हुआ है?',
     options: { A: 'Shahi Litchi', B: 'Malda Mango', C: 'Chiniya Banana', D: 'Hajipur Litchi' },
+    optionsHindi: { A: 'शाही लीची (मुजफ्फरपुर)', B: 'मालदा आम', C: 'चिनिया केला', D: 'हाजीपुर लीची' },
     correct: 'A',
     explanation: 'Shahi Litchi from Muzaffarpur, Bihar, is renowned for its sweet and juicy flavor and has been granted the Geographical Indication (GI) tag.',
+    explanationHindi: 'मुजफ्फरपुर की प्रसिद्ध "शाही लीची" को विशिष्ट मिठास और खुशबू के लिए भौगोलिक उपदर्शन (GI टैग) प्रदान किया गया है। कतरनी चावल और मगही पान को भी जीआई टैग मिल चुका है।',
     subject: 'bihar-gk',
     unit: 'bihar-economy-admin',
     topic: 'bihar-economy',
@@ -164,9 +184,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-013',
     question: 'Which national park is the only tiger reserve in Bihar?',
+    questionHindi: 'बिहार राज्य का एकमात्र राष्ट्रीय उद्यान और टाइगर रिजर्व कौन सा है?',
     options: { A: 'Rajgir Wildlife Sanctuary', B: 'Valmiki National Park', C: 'Kaimur Wildlife Sanctuary', D: 'Bhimbandh Wildlife Sanctuary' },
+    optionsHindi: { A: 'राजगीर वन्यजीव अभयारण्य', B: 'वाल्मीकि राष्ट्रीय उद्यान', C: 'कैमूर वन्यजीव अभयारण्य', D: 'भीमबांध वन्यजीव अभयारण्य' },
     correct: 'B',
     explanation: 'Valmiki National Park, Tiger Reserve and Wildlife Sanctuary is located at the India-Nepal border in the West Champaran district of Bihar. It is the only national park in the state.',
+    explanationHindi: 'वाल्मीकि राष्ट्रीय उद्यान (Valmiki National Park) बिहार के पश्चिमी चंपारण जिले में भारत-नेपाल सीमा पर स्थित है और यह राज्य का एकमात्र राष्ट्रीय उद्यान व टाइगर रिजर्व है।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'geography-of-bihar',
@@ -176,9 +199,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-014',
     question: 'Who among the following from Bihar served as the first President of India?',
+    questionHindi: 'बिहार से संबंधित निम्नलिखित में से कौन स्वतंत्र भारत के प्रथम राष्ट्रपति बने?',
     options: { A: 'Dr. Zakir Husain', B: 'Dr. Rajendra Prasad', C: 'Jayaprakash Narayan', D: 'V. V. Giri' },
+    optionsHindi: { A: 'डॉ. जाकिर हुसैन', B: 'डॉ. राजेन्द्र प्रसाद', C: 'जयप्रकाश नारायण', D: 'वी. वी. गिरि' },
     correct: 'B',
     explanation: 'Dr. Rajendra Prasad, who was born in the Siwan district of Bihar, served as the first President of independent India.',
+    explanationHindi: 'डॉ. राजेन्द्र प्रसाद का जन्म बिहार के सीवान जिले के जीरादेई गाँव में हुआ था। वे संविधान सभा के स्थायी अध्यक्ष तथा भारत के पहले राष्ट्रपति (1950–1962) रहे।',
     subject: 'bihar-gk',
     unit: 'bihar-economy-admin',
     topic: 'bihar-personalities',
@@ -188,9 +214,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-015',
     question: 'The famous Mahabodhi Temple is located in which city?',
+    questionHindi: 'विश्व प्रसिद्ध महाबोधि मंदिर बिहार के किस नगर में स्थित है?',
     options: { A: 'Rajgir', B: 'Patna', C: 'Bodh Gaya', D: 'Vaishali' },
+    optionsHindi: { A: 'राजगीर', B: 'पटना', C: 'बोधगया', D: 'वैशाली' },
     correct: 'C',
     explanation: 'The Mahabodhi Temple Complex is a UNESCO World Heritage Site located in Bodh Gaya, Bihar. It marks the location where the Buddha is said to have attained enlightenment.',
+    explanationHindi: 'महाबोधि मंदिर यूनेस्को की विश्व धरोहर स्थल है, जो गया जिले के बोधगया में स्थित है। यहाँ सम्राट अशोक द्वारा प्रथम मंदिर बनवाया गया था।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'history-of-bihar',
@@ -200,9 +229,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-016',
     question: 'The river Gandak enters Bihar in which district?',
+    questionHindi: 'गंडक नदी नेपाल से बिहार के किस जिले में सर्वप्रथम प्रवेश करती है?',
     options: { A: 'Saran', B: 'West Champaran', C: 'Gopalganj', D: 'Muzaffarpur' },
+    optionsHindi: { A: 'सारण', B: 'पश्चिमी चंपारण (वाल्मीकिनगर/भैंसालोटन)', C: 'गोपालगंज', D: 'मुजफ्फरपुर' },
     correct: 'B',
     explanation: 'The river Gandak enters Bihar in the West Champaran district from Nepal and eventually joins the Ganges near Hajipur.',
+    explanationHindi: 'गंडक नदी नेपाल के तराई क्षेत्र से निकलकर बिहार के पश्चिमी चंपारण जिले में वाल्मीकिनगर/त्रिवेणी के निकट प्रवेश करती है और सोनपुर/हाजीपुर के पास गंगा में मिलती है।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'geography-of-bihar',
@@ -212,9 +244,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-017',
     question: 'Which city in Bihar is famous for its silk industry?',
+    questionHindi: 'बिहार का कौन सा शहर अपने रेशम उद्योग (Silk Industry) के लिए "सिल्क सिटी" के रूप में प्रसिद्ध है?',
     options: { A: 'Patna', B: 'Bhagalpur', C: 'Gaya', D: 'Darbhanga' },
+    optionsHindi: { A: 'पटना', B: 'भागलपुर', C: 'गया', D: 'दरभंगा' },
     correct: 'B',
     explanation: 'Bhagalpur is known as the "Silk City" of India, famous for its Tussar silk and Bhagalpuri silk sarees.',
+    explanationHindi: 'भागलपुर को भारत का "सिल्क सिटी" (Silk City) कहा जाता है। यह तसर सिल्क और भागलपुरी साड़ियों के उत्कृष्ट उत्पादन के लिए देश-विदेश में प्रसिद्ध है।',
     subject: 'bihar-gk',
     unit: 'bihar-economy-admin',
     topic: 'bihar-economy',
@@ -224,9 +259,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-018',
     question: 'Who led the Revolt of 1857 in Bihar?',
+    questionHindi: 'बिहार में 1857 के प्रथम स्वतंत्रता संग्राम का नेतृत्व किसने किया था?',
     options: { A: 'Tantia Tope', B: 'Mangal Pandey', C: 'Kunwar Singh', D: 'Nana Sahib' },
+    optionsHindi: { A: 'तात्या टोपे', B: 'मंगल पांडे', C: 'वीर कुंवर सिंह', D: 'नाना साहिब' },
     correct: 'C',
     explanation: 'Veer Kunwar Singh of Jagdishpur was a notable leader during the Indian Rebellion of 1857, leading armed forces against the British East India Company in Bihar.',
+    explanationHindi: 'जगदीशपुर (भोजपुर) के 80 वर्षीय वीर बाबू कुंवर सिंह ने बिहार में 1857 के महासंग्राम का अदम्य नेतृत्व किया और अंग्रेजों को कई मोर्चों पर पराजित किया।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'history-of-bihar',
@@ -236,9 +274,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-019',
     question: 'When is Bihar Diwas celebrated every year?',
+    questionHindi: 'प्रतिवर्ष "बिहार दिवस" किस तिथि को मनाया जाता है?',
     options: { A: '1st April', B: '22nd March', C: '15th November', D: '26th January' },
+    optionsHindi: { A: '1 अप्रैल', B: '22 मार्च', C: '15 नवम्बर', D: '26 जनवरी' },
     correct: 'B',
     explanation: 'Bihar Diwas is celebrated on 22nd March every year to commemorate the carving out of the state of Bihar from the Bengal Presidency by the British in 1912.',
+    explanationHindi: '22 मार्च 1912 को बंगाल प्रेसीडेंसी से अलग होकर बिहार एक नए राज्य के रूप में अस्तित्व में आया था, इसलिए हर वर्ष 22 मार्च को बिहार दिवस मनाया जाता है।',
     subject: 'bihar-gk',
     unit: 'bihar-history-geo',
     topic: 'culture-festivals',
@@ -248,9 +289,12 @@ export const biharGKQuestions: Question[] = [
   {
     id: 'bh-020',
     question: 'What is the main objective of the "Saat Nischay" (Seven Resolves) program of the Bihar Government?',
+    questionHindi: 'बिहार सरकार के महत्वाकांक्षी "सात निश्चय" (Seven Resolves) कार्यक्रम का मुख्य उद्देश्य क्या है?',
     options: { A: 'To improve industrial development', B: 'To focus on basic infrastructure and human development', C: 'To promote foreign direct investment', D: 'To eradicate malaria from the state' },
+    optionsHindi: { A: 'भारी औद्योगिक विकास करना', B: 'बुनियादी ढांचा (सड़क, नल का जल, बिजली) और मानव संसाधन विकास', C: 'विदेशी प्रत्यक्ष निवेश आकर्षित करना', D: 'राज्य से मलेरिया उन्मूलन करना' },
     correct: 'B',
     explanation: 'The "Saat Nischay" program aims at basic infrastructure improvement (like roads, electricity, water) and human development (education, skill development) in Bihar.',
+    explanationHindi: 'बिहार सरकार का "सात निश्चय" कार्यक्रम बुनियादी सुविधाओं (हर घर नल का जल, पक्की नाली-गली, बिजली, शौचालय) और युवाओं के कौशल व शिक्षा (मानव विकास) पर केंद्रित है।',
     subject: 'bihar-gk',
     unit: 'bihar-economy-admin',
     topic: 'bihar-government',

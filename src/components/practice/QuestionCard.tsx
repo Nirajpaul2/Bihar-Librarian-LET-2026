@@ -1,16 +1,19 @@
 import type { Question, AnswerKey } from '@/types';
 import { Bookmark, BookmarkCheck, Flag } from 'lucide-react';
 import { difficultyClass, subjectBadge } from '@/utils/questions';
+import { useLanguage, type LanguageMode } from '@/hooks/useLanguage';
 
 interface OptionButtonProps {
   optionKey: AnswerKey;
   text: string;
+  textHindi?: string;
+  language: LanguageMode;
   state: 'default' | 'selected' | 'correct' | 'incorrect' | 'reveal-correct';
   disabled: boolean;
   onClick: () => void;
 }
 
-function OptionButton({ optionKey, text, state, disabled, onClick }: OptionButtonProps) {
+function OptionButton({ optionKey, text, textHindi, language, state, disabled, onClick }: OptionButtonProps) {
   const stateClass = {
     default: 'option-btn-default',
     selected: 'option-btn-selected',
@@ -34,11 +37,32 @@ function OptionButton({ optionKey, text, state, disabled, onClick }: OptionButto
       disabled={disabled}
       aria-pressed={state === 'selected'}
     >
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-3 w-full">
         <span className={`shrink-0 w-7 h-7 rounded-lg text-sm font-bold flex items-center justify-center transition-colors ${labelClass}`}>
           {optionKey}
         </span>
-        <span className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed pt-0.5">{text}</span>
+        <div className="text-left flex-1">
+          {language === 'hi' ? (
+            <span className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed block pt-0.5">
+              {textHindi || text}
+            </span>
+          ) : language === 'bilingual' ? (
+            <div className="space-y-0.5">
+              <span className="text-gray-800 dark:text-gray-200 text-sm font-medium leading-relaxed block pt-0.5">
+                {text}
+              </span>
+              {textHindi && (
+                <span className="text-brand-700 dark:text-brand-300 text-xs leading-relaxed block">
+                  {textHindi}
+                </span>
+              )}
+            </div>
+          ) : (
+            <span className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed block pt-0.5">
+              {text}
+            </span>
+          )}
+        </div>
       </div>
     </button>
   );
@@ -66,6 +90,8 @@ export default function QuestionCard({
   onAnswer,
   onBookmark,
 }: QuestionCardProps) {
+  const { language, setLanguage } = useLanguage();
+
   const getOptionState = (key: AnswerKey): 'default' | 'selected' | 'correct' | 'incorrect' | 'reveal-correct' => {
     if (!isAnswered) {
       return selectedAnswer === key ? 'selected' : 'default';
@@ -90,22 +116,82 @@ export default function QuestionCard({
             {question.topicLabel}
           </span>
         </div>
-        <button
-          onClick={onBookmark}
-          className="btn-ghost p-2 text-brand-600 dark:text-brand-400"
-          aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark this question'}
-        >
-          {isBookmarked
-            ? <BookmarkCheck className="w-5 h-5 fill-brand-600 dark:fill-brand-400" />
-            : <Bookmark className="w-5 h-5" />}
-        </button>
+
+        <div className="flex items-center gap-2">
+          {/* Language Selector Pill */}
+          <div className="inline-flex items-center bg-gray-100 dark:bg-gray-800 p-0.5 rounded-lg text-xs border border-gray-200 dark:border-gray-700">
+            <button
+              type="button"
+              onClick={() => setLanguage('hi')}
+              className={`px-2 py-1 rounded-md font-medium transition-all cursor-pointer ${
+                language === 'hi'
+                  ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+              }`}
+              title="हिन्दी में प्रश्न देखें"
+            >
+              हिन्दी
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('bilingual')}
+              className={`px-2 py-1 rounded-md font-medium transition-all cursor-pointer ${
+                language === 'bilingual'
+                  ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+              }`}
+              title="द्विभाषी (English + हिन्दी) देखें"
+            >
+              Bilingual (द्विभाषी)
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('en')}
+              className={`px-2 py-1 rounded-md font-medium transition-all cursor-pointer ${
+                language === 'en'
+                  ? 'bg-brand-600 text-white shadow-xs font-semibold'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+              }`}
+              title="View in English"
+            >
+              English
+            </button>
+          </div>
+
+          <button
+            onClick={onBookmark}
+            className="btn-ghost p-2 text-brand-600 dark:text-brand-400 cursor-pointer"
+            aria-label={isBookmarked ? 'Remove bookmark' : 'Bookmark this question'}
+          >
+            {isBookmarked
+              ? <BookmarkCheck className="w-5 h-5 fill-brand-600 dark:fill-brand-400" />
+              : <Bookmark className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Question text */}
       <div className="card p-5">
-        <p className="text-base sm:text-lg font-medium text-gray-900 dark:text-white leading-relaxed">
-          {question.question}
-        </p>
+        {language === 'hi' ? (
+          <p className="text-base sm:text-lg font-medium text-gray-900 dark:text-white leading-relaxed">
+            {question.questionHindi || question.question}
+          </p>
+        ) : language === 'bilingual' ? (
+          <div className="space-y-2.5">
+            <p className="text-base sm:text-lg font-medium text-gray-900 dark:text-white leading-relaxed">
+              {question.question}
+            </p>
+            {question.questionHindi && (
+              <p className="text-base sm:text-lg font-medium text-brand-700 dark:text-brand-300 leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-2.5">
+                {question.questionHindi}
+              </p>
+            )}
+          </div>
+        ) : (
+          <p className="text-base sm:text-lg font-medium text-gray-900 dark:text-white leading-relaxed">
+            {question.question}
+          </p>
+        )}
       </div>
 
       {/* Options */}
@@ -115,6 +201,8 @@ export default function QuestionCard({
             key={key}
             optionKey={key}
             text={text}
+            textHindi={question.optionsHindi?.[key]}
+            language={language}
             state={getOptionState(key)}
             disabled={isAnswered}
             onClick={() => onAnswer(key)}
@@ -139,15 +227,40 @@ export default function QuestionCard({
                   ? 'text-green-800 dark:text-green-300'
                   : 'text-red-800 dark:text-red-300'
               }`}>
-                {selectedAnswer === question.correct ? 'Correct!' : `Incorrect! Correct answer: (${question.correct}) ${question.options[question.correct]}`}
+                {selectedAnswer === question.correct
+                  ? (language === 'hi' ? 'सही उत्तर!' : 'Correct!')
+                  : (language === 'hi'
+                      ? `गलत उत्तर! सही विकल्प: (${question.correct}) ${question.optionsHindi?.[question.correct] || question.options[question.correct]}`
+                      : `Incorrect! Correct answer: (${question.correct}) ${question.options[question.correct]}`
+                    )}
               </p>
             </div>
           </div>
           <div className="ml-7">
-            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-              <span className="font-semibold text-gray-900 dark:text-gray-100">Explanation: </span>
-              {question.explanation}
-            </p>
+            {language === 'hi' ? (
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                <span className="font-semibold text-gray-900 dark:text-gray-100">व्याख्या: </span>
+                {question.explanationHindi || question.explanation}
+              </p>
+            ) : language === 'bilingual' ? (
+              <div className="space-y-2">
+                <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <span className="font-semibold text-gray-900 dark:text-gray-100">Explanation: </span>
+                  {question.explanation}
+                </p>
+                {question.explanationHindi && (
+                  <p className="text-sm text-brand-900 dark:text-brand-200 leading-relaxed border-t border-gray-200/60 dark:border-gray-700/60 pt-2">
+                    <span className="font-semibold">हिन्दी व्याख्या: </span>
+                    {question.explanationHindi}
+                  </p>
+                )}
+              </div>
+            ) : (
+              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                <span className="font-semibold text-gray-900 dark:text-gray-100">Explanation: </span>
+                {question.explanation}
+              </p>
+            )}
             {question.tags && question.tags.length > 0 && (
               <div className="flex flex-wrap gap-1 mt-2">
                 {question.tags.map(tag => (
@@ -164,7 +277,7 @@ export default function QuestionCard({
       {/* Report question */}
       {isAnswered && (
         <div className="flex justify-end">
-          <button className="btn-ghost text-xs text-gray-400 gap-1.5">
+          <button className="btn-ghost text-xs text-gray-400 gap-1.5 cursor-pointer">
             <Flag className="w-3.5 h-3.5" />
             Report issue
           </button>
