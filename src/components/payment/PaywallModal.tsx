@@ -13,12 +13,17 @@ import {
   CheckCircle2,
   ArrowRight,
   HelpCircle,
+  MessageCircle,
 } from 'lucide-react';
 import {
   usePayment,
   RAZORPAY_KEY_ID,
   RAZORPAY_FALLBACK_LINK,
   ACCESS_PRICE_INR,
+  WHATSAPP_SUPPORT_NUMBER,
+  WHATSAPP_DISPLAY_PHONE,
+  WHATSAPP_SUPPORT_URL,
+  getWhatsAppRestoreUrl,
   type PaywallTab,
 } from '@/hooks/usePayment';
 import { trackPaywallView, trackAction } from '@/utils/telemetry';
@@ -174,15 +179,6 @@ export default function PaywallModal({
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
-  };
-
-  // Quick Demo Simulator for instant testing
-  const handleDemoUnlock = () => {
-    const testId = `demo_pay_${Date.now()}`;
-    unlockFullAccess(testId, 'Demo/Test Mode');
-    trackAction('demo_unlock_triggered', { paymentId: testId });
-    setJustPaidId(testId);
-    setActiveTab('success');
   };
 
   const currentDisplayId =
@@ -379,7 +375,7 @@ export default function PaywallModal({
               </button>
             </div>
 
-            {/* Direct Link & Demo Unlock */}
+            {/* Direct Link & WhatsApp Support */}
             <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500 dark:text-gray-400">
               <a
                 href={RAZORPAY_FALLBACK_LINK}
@@ -390,12 +386,15 @@ export default function PaywallModal({
                 Direct Payment Link <ExternalLink className="w-3 h-3" />
               </a>
 
-              <button
-                onClick={handleDemoUnlock}
-                className="text-[11px] text-gray-400 hover:text-brand-600 dark:hover:text-brand-400 underline underline-offset-2 transition-colors cursor-pointer"
+              <a
+                href={getWhatsAppRestoreUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-semibold transition-colors"
               >
-                ⚡ Test Unlock (Demo Mode)
-              </button>
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>WhatsApp: {WHATSAPP_SUPPORT_NUMBER}</span>
+              </a>
             </div>
 
             {/* Security badges */}
@@ -418,26 +417,57 @@ export default function PaywallModal({
                 <Key className="w-4 h-4" />
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
-                Restore Your Access
+                Restore via Master Key
               </h2>
             </div>
 
-            <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
-              Did you pay ₹9 on another phone, computer, or in private browsing? Enter your Razorpay Payment ID or registered mobile number to restore access immediately.
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+              Did you pay on another device, phone, or private browser? Connect with us on WhatsApp or enter your Master Access Key below.
             </p>
 
-            <form onSubmit={handleRestoreSubmit} className="space-y-4">
+            {/* WhatsApp Connect Box */}
+            <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-2xl p-3.5 mb-4 text-xs text-emerald-900 dark:text-emerald-200 shadow-xs">
+              <div className="flex items-start gap-3">
+                <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <MessageCircle className="w-5 h-5" />
+                </div>
+                <div className="flex-1">
+                  <div className="font-bold text-emerald-950 dark:text-emerald-100 mb-0.5">
+                    Connect on WhatsApp for Instant Key
+                  </div>
+                  <p className="text-[11px] leading-relaxed text-emerald-800 dark:text-emerald-300 mb-2">
+                    Send your payment receipt / screenshot to our official WhatsApp support number <strong>{WHATSAPP_DISPLAY_PHONE}</strong> to get your Master Key instantly.
+                  </p>
+                  <a
+                    href={getWhatsAppRestoreUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold py-1.5 px-3 rounded-xl text-xs transition-colors shadow-xs"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span>Chat on WhatsApp: {WHATSAPP_SUPPORT_NUMBER}</span>
+                    <ExternalLink className="w-3 h-3 opacity-80" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <form onSubmit={handleRestoreSubmit} className="space-y-3.5">
               <div>
-                <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1.5">
-                  Payment ID or Mobile Number
+                <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1.5 flex items-center justify-between">
+                  <span>Enter Master Access Key</span>
+                  <span className="text-[11px] text-gray-400 font-normal">Official Key</span>
                 </label>
                 <div className="relative">
                   <input
                     type="text"
                     value={restoreInput}
-                    onChange={e => setRestoreInput(e.target.value)}
-                    placeholder="e.g. pay_XXXXX or 9876543210"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+                    onChange={e => {
+                      setRestoreInput(e.target.value);
+                      if (errorMsg) setErrorMsg(null);
+                    }}
+                    placeholder="e.g. BPSC-LIB-MASTER-9942 or BL26-XXXX-XXXX"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm uppercase tracking-wider font-mono focus:outline-hidden focus:ring-2 focus:ring-brand-500"
                     autoFocus
                   />
                   {restoreInput && (
@@ -452,28 +482,26 @@ export default function PaywallModal({
                 </div>
               </div>
 
-              {/* Helpful Tips Box */}
-              <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900/50 rounded-xl p-3 text-xs text-blue-800 dark:text-blue-300 space-y-1">
-                <div className="font-semibold flex items-center gap-1.5">
-                  <HelpCircle className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
-                  Where to find your Payment ID?
-                </div>
-                <p className="text-[11px] leading-relaxed text-blue-700 dark:text-blue-300/80">
-                  After paying ₹9, Razorpay sent an <strong>SMS and WhatsApp / Email</strong> containing your receipt and a Payment ID starting with <code>pay_...</code>. You can also use the 10-digit mobile number entered during checkout.
-                </p>
-              </div>
-
               {/* Status & Error */}
               {errorMsg && (
-                <div className="bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-xl p-3 text-xs text-red-700 dark:text-red-300">
-                  {errorMsg}
+                <div className="bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-xl p-3 text-xs text-red-700 dark:text-red-300 space-y-1.5">
+                  <p className="leading-relaxed">{errorMsg}</p>
+                  <a
+                    href={getWhatsAppRestoreUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-bold text-emerald-700 dark:text-emerald-300 hover:underline pt-0.5"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span>Get Key from WhatsApp: {WHATSAPP_SUPPORT_NUMBER} →</span>
+                  </a>
                 </div>
               )}
 
               {restoreSuccess && (
                 <div className="bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-xl p-3 text-xs text-green-700 dark:text-green-300 flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0" />
-                  <span>Access verified! Unlocking all units and mock tests...</span>
+                  <span>Master Key verified! Unlocking all units and mock tests...</span>
                 </div>
               )}
 
@@ -482,7 +510,7 @@ export default function PaywallModal({
                 className="w-full bg-brand-700 hover:bg-brand-800 active:bg-brand-900 text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 text-sm cursor-pointer"
               >
                 <Key className="w-4 h-4" />
-                <span>Verify & Restore Access</span>
+                <span>Verify Key & Unlock Access</span>
               </button>
             </form>
 
@@ -545,15 +573,24 @@ export default function PaywallModal({
               </div>
             </div>
 
-            {/* Advice box for 2nd device */}
-            <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 rounded-2xl p-3.5 mb-5 text-left text-xs text-amber-900 dark:text-amber-200">
-              <div className="font-bold flex items-center gap-1.5 mb-1">
-                <Smartphone className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
-                <span>How to use on your 2nd device or phone:</span>
+            {/* Advice box for 2nd device with WhatsApp contact */}
+            <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/50 rounded-2xl p-3.5 mb-5 text-left text-xs text-emerald-900 dark:text-emerald-200 space-y-2">
+              <div className="font-bold flex items-center gap-1.5">
+                <Smartphone className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <span>Restore on another browser / phone:</span>
               </div>
-              <p className="text-[11px] leading-relaxed text-amber-800 dark:text-amber-300/90">
-                Keep this Payment ID safe. If you open this site on another phone, laptop, or private browser, simply click <strong>"Already Paid? Restore"</strong> and enter this ID or your phone number to re-unlock everything for free!
+              <p className="text-[11px] leading-relaxed text-emerald-800 dark:text-emerald-300/90">
+                To unlock on another laptop, mobile, or private tab, message your Payment ID to WhatsApp <strong>{WHATSAPP_DISPLAY_PHONE}</strong> to receive your Master Access Key.
               </p>
+              <a
+                href={getWhatsAppRestoreUrl({ paymentId: currentDisplayId })}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-1.5 px-3 rounded-xl text-xs transition-colors shadow-xs"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>Send Payment ID to WhatsApp ({WHATSAPP_SUPPORT_NUMBER})</span>
+              </a>
             </div>
 
             {/* Action button */}
@@ -640,6 +677,20 @@ export default function PaywallModal({
               </div>
             </div>
 
+            {/* WhatsApp Support Notice */}
+            <div className="mb-4 p-3 bg-gray-50 dark:bg-gray-800/60 rounded-xl border border-gray-200 dark:border-gray-700 text-xs flex items-center justify-between">
+              <span className="text-gray-600 dark:text-gray-300">Need help on other devices?</span>
+              <a
+                href={getWhatsAppRestoreUrl({ paymentId: currentDisplayId })}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>WhatsApp ({WHATSAPP_SUPPORT_NUMBER})</span>
+              </a>
+            </div>
+
             <div className="flex gap-2">
               <button
                 type="button"
@@ -655,9 +706,9 @@ export default function PaywallModal({
                   setActiveTab('restore');
                 }}
                 className="px-3 py-2.5 rounded-xl border border-gray-300 dark:border-gray-700 text-xs font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer"
-                title="Enter another Payment ID"
+                title="Enter another Master Key"
               >
-                Switch ID
+                Enter Key
               </button>
             </div>
           </div>

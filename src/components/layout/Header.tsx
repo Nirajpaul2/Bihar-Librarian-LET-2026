@@ -140,12 +140,20 @@ export default function Header() {
                 <button
                   onClick={() => {
                     setMenuOpen(false);
-                    openPaywall('Restore your access', 'restore');
+                    openPaywall('Restore your access via Master Key', 'restore');
                   }}
                   className="w-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-semibold text-xs py-2 px-3 rounded-xl transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  Already Paid? Restore Access
+                  Already Paid? Enter Master Key
                 </button>
+                <a
+                  href="https://wa.me/919942419837?text=Hello!%20I%20need%20help%20with%20Bihar%20Librarian%20LET%202026%20Access."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-emerald-600 dark:text-emerald-400 font-semibold text-xs py-1 px-3 text-center transition-colors flex items-center justify-center gap-1"
+                >
+                  <span>💬 WhatsApp Support: 9942419837</span>
+                </a>
               </div>
             ) : (
               <button

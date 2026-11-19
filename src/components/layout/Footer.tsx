@@ -19,9 +19,17 @@ export default function Footer() {
                 <div className="text-xs text-amber-400 font-bold uppercase tracking-wider">LET 2026</div>
               </div>
             </div>
-            <p className="text-xs text-gray-400 leading-relaxed">
+            <p className="text-xs text-gray-400 leading-relaxed mb-3">
               Prepare Smart. Practice Daily. Crack Bihar Librarian Eligibility Test 2026.
             </p>
+            <a
+              href="https://wa.me/919942419837?text=Hello!%20I%20have%20a%20query%20about%20Bihar%20Librarian%20LET%202026%20Preparation."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-300 border border-emerald-800/60 px-3 py-1.5 rounded-xl font-semibold transition-colors"
+            >
+              <span>💬 WhatsApp: 9942419837</span>
+            </a>
           </div>
 
           {/* Quick Links */}

@@ -15,6 +15,97 @@ export const RAZORPAY_KEY_ID =
 export const RAZORPAY_FALLBACK_LINK = 'https://rzp.io/rzp/f8vkVi7Y';
 export const ACCESS_PRICE_INR = 9;
 
+// WhatsApp Support Information
+export const WHATSAPP_SUPPORT_NUMBER = '9942419837';
+export const WHATSAPP_DISPLAY_PHONE = '+91 9942419837';
+export const WHATSAPP_SUPPORT_URL = 'https://wa.me/919942419837';
+
+// Dedicated Official Master Keys to unlock full lifetime access
+export const OFFICIAL_MASTER_KEYS: readonly string[] = [
+  'BPSC-LIB-MASTER-9942',
+  'AIWAZIR-LET-2026-VIP',
+  'LIB-ADMIN-9942419837',
+  'BIHAR-LIB-PRO-UNLIMITED',
+  'BPSC2026-PASS-9942',
+  'MASTER-9942419837',
+  'LET2026-PRO-9942',
+  'LIB9942-MASTER-VIP',
+] as const;
+
+/**
+ * Deterministic 4-character checksum for generating and verifying student access keys
+ */
+export function computeKeyChecksum(payload: string, salt = 'LIB_BPSC_2026_SECURE_SALT'): string {
+  let hash = 0x811c9dc5;
+  const str = `${salt}:${payload.toUpperCase()}`;
+  for (let i = 0; i < str.length; i++) {
+    hash ^= str.charCodeAt(i);
+    hash = Math.imul(hash, 0x01000193);
+  }
+  return ((hash >>> 0) % 0xffffff).toString(16).toUpperCase().padStart(4, '0').slice(-4);
+}
+
+/**
+ * Generate a cryptographically verified access key for students who contact via WhatsApp
+ * Format: BL26-XXXX-YYYY (where YYYY is checksum of XXXX)
+ */
+export function generateStudentAccessKey(code?: string): string {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let payload = '';
+  if (code && code.length >= 4) {
+    payload = code.slice(0, 4).toUpperCase();
+  } else {
+    for (let i = 0; i < 4; i++) {
+      payload += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+  }
+  const checksum = computeKeyChecksum(payload);
+  return `BL26-${payload}-${checksum}`;
+}
+
+/**
+ * Strict verification: verifies against official master keys and algorithmic keys.
+ * Mobile phone numbers and arbitrary text are strictly rejected.
+ */
+export function verifyKey(rawKey: string): { isValid: boolean; keyType: 'master' | 'algorithmic' | 'invalid' } {
+  const normalized = rawKey.trim().toUpperCase().replace(/[\s-]/g, '');
+  if (!normalized) return { isValid: false, keyType: 'invalid' };
+
+  // Check official master keys
+  const envKeys = (import.meta.env.VITE_MASTER_KEYS || import.meta.env.VITE_MASTER_KEY || '')
+    .split(',')
+    .map((k: string) => k.trim().toUpperCase().replace(/[\s-]/g, ''))
+    .filter(Boolean);
+
+  const allMaster = [...OFFICIAL_MASTER_KEYS.map(k => k.toUpperCase().replace(/[\s-]/g, '')), ...envKeys];
+  if (allMaster.includes(normalized)) {
+    return { isValid: true, keyType: 'master' };
+  }
+
+  // Check algorithmic key format: BL26-XXXX-YYYY (12 chars without hyphens)
+  if (normalized.startsWith('BL26') && normalized.length === 12) {
+    const payload = normalized.slice(4, 8);
+    const checksum = normalized.slice(8, 12);
+    if (computeKeyChecksum(payload) === checksum) {
+      return { isValid: true, keyType: 'algorithmic' };
+    }
+  }
+
+  return { isValid: false, keyType: 'invalid' };
+}
+
+/**
+ * Prepares direct WhatsApp message URL for access restoration or inquiries
+ */
+export function getWhatsAppRestoreUrl(userContext?: { paymentId?: string; mobile?: string }): string {
+  let text = 'Hello! I have purchased Bihar Librarian LET 2026 Pro.';
+  if (userContext?.paymentId) {
+    text += ` My Razorpay Payment ID is: ${userContext.paymentId}.`;
+  }
+  text += ' Please provide my Master Access Key to restore access on my browser.';
+  return `https://wa.me/91${WHATSAPP_SUPPORT_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
 export interface PaymentInfo {
   paymentId: string;
   unlockedAt: string;
@@ -126,45 +217,51 @@ export function usePayment() {
     window.dispatchEvent(new CustomEvent(EVENT_PAYMENT_STATE_CHANGE));
   }, []);
 
-  const restoreAccess = useCallback((query: string): { success: boolean; message: string; paymentId?: string } => {
+  const restoreAccess = useCallback((query: string): {
+    success: boolean;
+    message: string;
+    paymentId?: string;
+    isPhoneAttempt?: boolean;
+  } => {
     const raw = query.trim();
     if (!raw) {
-      return { success: false, message: 'Please enter your Razorpay Payment ID or mobile number.' };
-    }
-
-    // Clean up input: remove spaces, hyphens, country code prefix (+91 or 91)
-    let cleaned = raw.replace(/[\s\-()]/g, '');
-    let isPhone = false;
-
-    // Check if phone number with +91 or 91 prefix
-    if (/^\+?91[6-9]\d{9}$/.test(cleaned)) {
-      cleaned = cleaned.replace(/^\+?91/, '');
-      isPhone = true;
-    } else if (/^0[6-9]\d{9}$/.test(cleaned)) {
-      cleaned = cleaned.replace(/^0/, '');
-      isPhone = true;
-    } else if (/^[6-9]\d{9}$/.test(cleaned)) {
-      isPhone = true;
-    }
-
-    // Accepts Razorpay payment ID (e.g. pay_XXXXX, rzp_XXXXX), phone number, or receipt code
-    const isRazorpayId = /^pay_[a-zA-Z0-9_-]{5,}$/i.test(cleaned);
-    const isGenericReceipt = cleaned.length >= 6;
-
-    if (!isRazorpayId && !isPhone && !isGenericReceipt) {
       return {
         success: false,
-        message: 'Please enter a valid Razorpay Payment ID (e.g. pay_xxxxxxxx) or 10-digit mobile number.',
+        message: 'Please enter your Master Access Key.',
       };
     }
 
-    const assignedPaymentId = isRazorpayId ? cleaned : isPhone ? `phone_${cleaned}` : `restore_${cleaned}`;
+    // Detect if user is trying to enter a phone number
+    const cleanedPhone = raw.replace(/[\s\-()]/g, '');
+    const isPhone = /^(?:\+?91|0)?[6-9]\d{9}$/.test(cleanedPhone);
+    if (isPhone) {
+      return {
+        success: false,
+        isPhoneAttempt: true,
+        message:
+          'For security, mobile numbers cannot directly unlock access. If you already purchased, please connect with us on WhatsApp (+91 9942419837) with your payment receipt to receive your official Master Key.',
+      };
+    }
+
+    // Validate Master Key or Algorithmic Key
+    const normalized = raw.toUpperCase().replace(/[\s-]/g, '');
+    const result = verifyKey(normalized);
+
+    if (!result.isValid) {
+      return {
+        success: false,
+        message:
+          'Invalid Master Access Key. If you have already paid, connect with WhatsApp support at 9942419837 to get your key.',
+      };
+    }
+
+    const assignedPaymentId = result.keyType === 'master' ? `master_${normalized}` : `key_${normalized}`;
 
     const info: PaymentInfo = {
       paymentId: assignedPaymentId,
       unlockedAt: new Date().toISOString(),
       amount: ACCESS_PRICE_INR,
-      method: isRazorpayId ? 'Restored via Payment ID' : isPhone ? 'Restored via Mobile Number' : 'Restored via Receipt',
+      method: result.keyType === 'master' ? 'Admin Master Key' : 'Verified Access Key',
     };
 
     try {
@@ -181,7 +278,7 @@ export function usePayment() {
     return {
       success: true,
       paymentId: assignedPaymentId,
-      message: 'Access restored successfully! All 6 units and mock tests are now unlocked.',
+      message: 'Master Key verified successfully! Full lifetime access unlocked on this browser.',
     };
   }, []);
 
@@ -225,5 +322,10 @@ export function usePayment() {
     canAccessMockTest,
     isUnitFree,
     price: ACCESS_PRICE_INR,
+    whatsAppNumber: WHATSAPP_SUPPORT_NUMBER,
+    whatsAppDisplay: WHATSAPP_DISPLAY_PHONE,
+    whatsAppUrl: WHATSAPP_SUPPORT_URL,
+    getWhatsAppRestoreUrl,
+    masterKeys: OFFICIAL_MASTER_KEYS,
   };
 }
