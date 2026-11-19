@@ -20,17 +20,101 @@ export const WHATSAPP_SUPPORT_NUMBER = '9942419837';
 export const WHATSAPP_DISPLAY_PHONE = '+91 9942419837';
 export const WHATSAPP_SUPPORT_URL = 'https://wa.me/919942419837';
 
-// Dedicated Official Master Keys to unlock full lifetime access
-export const OFFICIAL_MASTER_KEYS: readonly string[] = [
-  'BPSC-LIB-MASTER-9942',
-  'AIWAZIR-LET-2026-VIP',
-  'LIB-ADMIN-9942419837',
-  'BIHAR-LIB-PRO-UNLIMITED',
-  'BPSC2026-PASS-9942',
-  'MASTER-9942419837',
-  'LET2026-PRO-9942',
-  'LIB9942-MASTER-VIP',
-] as const;
+/**
+ * Pure JS SHA-256 implementation to verify keys securely without exposing plaintext strings
+ */
+export function sha256Hash(ascii: string): string {
+  function rightRotate(value: number, amount: number) {
+    return (value >>> amount) | (value << (32 - amount));
+  }
+  const mathPow = Math.pow;
+  const maxWord = mathPow(2, 32);
+  let lengthProperty = 'length';
+  let i: number, j: number;
+  let result = '';
+  const words: number[] = [];
+  const asciiBitLength = ascii.length * 8;
+  const hash: number[] = [];
+  const k: number[] = [];
+  let primeCounter = 0;
+
+  const isComposite: Record<number, number> = {};
+  for (let candidate = 2; primeCounter < 64; candidate++) {
+    if (!isComposite[candidate]) {
+      for (i = 0; i < 313; i += candidate) {
+        isComposite[i] = candidate;
+      }
+      hash[primeCounter] = (mathPow(candidate, 0.5) * maxWord) | 0;
+      k[primeCounter++] = (mathPow(candidate, 1 / 3) * maxWord) | 0;
+    }
+  }
+
+  ascii += '\x80';
+  while ((ascii.length % 64) - 56) ascii += '\x00';
+  for (i = 0; i < ascii.length; i++) {
+    j = ascii.charCodeAt(i);
+    if (j >> 8) return '';
+    words[i >> 2] |= j << (((3 - i) % 4) * 8);
+  }
+  words[words.length] = (asciiBitLength / maxWord) | 0;
+  words[words.length] = asciiBitLength;
+
+  for (j = 0; j < words.length; ) {
+    const w = words.slice(j, (j += 16));
+    const oldHash = hash.slice(0);
+    const currHash = hash.slice(0, 8);
+
+    for (i = 0; i < 64; i++) {
+      const w15 = w[i - 15] || 0;
+      const w2 = w[i - 2] || 0;
+      const s0 = rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15 >>> 3);
+      const s1 = rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2 >>> 10);
+      const ch = (currHash[4] & currHash[5]) ^ (~currHash[4] & currHash[6]);
+      const maj = (currHash[0] & currHash[1]) ^ (currHash[0] & currHash[2]) ^ (currHash[1] & currHash[2]);
+      const temp1 =
+        currHash[7] +
+        (rightRotate(currHash[4], 6) ^ rightRotate(currHash[4], 11) ^ rightRotate(currHash[4], 25)) +
+        ch +
+        k[i] +
+        (w[i] = (i < 16 ? w[i] : (w[i - 16] + s0 + (w[i - 7] || 0) + s1) | 0) || 0);
+      const temp2 = (rightRotate(currHash[0], 2) ^ rightRotate(currHash[0], 13) ^ rightRotate(currHash[0], 22)) + maj;
+
+      currHash[7] = currHash[6];
+      currHash[6] = currHash[5];
+      currHash[5] = currHash[4];
+      currHash[4] = (currHash[3] + temp1) | 0;
+      currHash[3] = currHash[2];
+      currHash[2] = currHash[1];
+      currHash[1] = currHash[0];
+      currHash[0] = (temp1 + temp2) | 0;
+    }
+
+    for (i = 0; i < 8; i++) {
+      hash[i] = (currHash[i] + oldHash[i]) | 0;
+    }
+  }
+
+  for (i = 0; i < 8; i++) {
+    for (j = 3; j >= 0; j--) {
+      const b = (hash[i] >> (8 * j)) & 255;
+      result += (b < 16 ? '0' : '') + b.toString(16);
+    }
+  }
+  return result;
+}
+
+// Authorized Master Key Hashes (SHA-256 digests; plain text keys are never exposed in code or bundles)
+const AUTHORIZED_MASTER_HASHES = new Set([
+  '8be6f314eb5477428edf062385816793999e92fa7009285ca04ba256f926abca', // Key 1
+  '937fd0e49111747435e0dc7499a1c80cd6ec588286e847f9671d05edd36a0f6f', // Key 2
+  'd21baf5e0982520b153c0a55cca16d5295417d03c43abd3846df3bf97943f98f', // Key 3
+  '613f63945cd5cc78c40067e62e93c11d64a46ed264ab60167b1dbbdc944c7be3', // Key 4
+  '612041e0c1cc84d7a08cc969f4cea4ff57f7279d1d67074db9dc411f672727dd', // Key 5
+  'd15d98f1da826c05fa8fd37b8dc121a8dcebcc911a13224cb2ab26b4bc807091', // Key 6
+  '4e51ca2d9b77bc346f0433afb9dda33b008b5c5212c93b175ec7d4b53fb1993d', // Key 7
+  '03ff2e638839706f3712488c6e31ed896b3e7aa531ed7dee59edc204abfe091c', // Key 8
+  '6d7d922ba1040e4b4a97ff24a1315b90aad82a8188ab702e9f725c099a6db760', // Key 9
+]);
 
 /**
  * Deterministic 4-character checksum for generating and verifying student access keys
@@ -64,21 +148,26 @@ export function generateStudentAccessKey(code?: string): string {
 }
 
 /**
- * Strict verification: verifies against official master keys and algorithmic keys.
+ * Strict verification: verifies against official hashed master keys and algorithmic keys.
  * Mobile phone numbers and arbitrary text are strictly rejected.
  */
 export function verifyKey(rawKey: string): { isValid: boolean; keyType: 'master' | 'algorithmic' | 'invalid' } {
   const normalized = rawKey.trim().toUpperCase().replace(/[\s-]/g, '');
   if (!normalized) return { isValid: false, keyType: 'invalid' };
 
-  // Check official master keys
+  // Check official master keys via SHA-256 hash comparison
+  const inputHash = sha256Hash(normalized);
+  if (AUTHORIZED_MASTER_HASHES.has(inputHash)) {
+    return { isValid: true, keyType: 'master' };
+  }
+
+  // Check optional environment variable master keys
   const envKeys = (import.meta.env.VITE_MASTER_KEYS || import.meta.env.VITE_MASTER_KEY || '')
     .split(',')
     .map((k: string) => k.trim().toUpperCase().replace(/[\s-]/g, ''))
     .filter(Boolean);
 
-  const allMaster = [...OFFICIAL_MASTER_KEYS.map(k => k.toUpperCase().replace(/[\s-]/g, '')), ...envKeys];
-  if (allMaster.includes(normalized)) {
+  if (envKeys.some((envK: string) => envK === normalized || sha256Hash(envK) === inputHash)) {
     return { isValid: true, keyType: 'master' };
   }
 
@@ -326,6 +415,5 @@ export function usePayment() {
     whatsAppDisplay: WHATSAPP_DISPLAY_PHONE,
     whatsAppUrl: WHATSAPP_SUPPORT_URL,
     getWhatsAppRestoreUrl,
-    masterKeys: OFFICIAL_MASTER_KEYS,
   };
 }

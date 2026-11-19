@@ -135,14 +135,14 @@ export default function AnalyticsModal({ isOpen, onClose }: AnalyticsModalProps)
                     setPasscode(e.target.value);
                     setPassError(false);
                   }}
-                  placeholder="Enter Passcode (e.g. ADMIN2026)"
+                  placeholder="Enter Admin Passcode"
                   className="w-full px-4 py-2.5 text-center text-sm rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-brand-500"
                   autoFocus
                 />
 
                 {passError && (
                   <p className="text-xs text-red-500 font-semibold">
-                    ❌ Invalid passcode. Hint: ADMIN2026
+                    ❌ Invalid passcode. Please try again.
                   </p>
                 )}
 

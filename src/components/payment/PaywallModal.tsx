@@ -466,8 +466,8 @@ export default function PaywallModal({
                       setRestoreInput(e.target.value);
                       if (errorMsg) setErrorMsg(null);
                     }}
-                    placeholder="e.g. BPSC-LIB-MASTER-9942 or BL26-XXXX-XXXX"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm uppercase tracking-wider font-mono focus:outline-hidden focus:ring-2 focus:ring-brand-500"
+                    placeholder="Enter Master Access Key"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm uppercase tracking-wider font-mono placeholder:normal-case placeholder:font-sans placeholder:tracking-normal placeholder:text-gray-400 focus:outline-hidden focus:ring-2 focus:ring-brand-500"
                     autoFocus
                   />
                   {restoreInput && (
