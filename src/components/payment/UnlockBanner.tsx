@@ -22,7 +22,7 @@ export default function UnlockBanner({ onOpenPaywall }: UnlockBannerProps) {
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           <div className="flex items-center gap-1.5 mx-auto sm:mx-0">
             <CheckCircle2 className="w-3.5 h-3.5 text-green-200 shrink-0" />
-            <span>Full Access Active · All 6 Units & Full 150Q Mock Tests Unlocked!</span>
+            <span>Full Access Active · All 6 Units, 420+ MCQs & Full Mock Tests Unlocked!</span>
           </div>
           <button
             onClick={() => openPaywall('View Pro Membership Details', 'pay')}
@@ -44,7 +44,7 @@ export default function UnlockBanner({ onOpenPaywall }: UnlockBannerProps) {
             Launch Offer
           </span>
           <span className="text-brand-100 text-xs">
-            <strong>Unit 1 is 100% Free!</strong> Unlock all remaining units & 150Q Mock Tests for just <strong>₹{ACCESS_PRICE_INR}</strong>
+            <strong>Unit 1 is 100% Free!</strong> Unlock all remaining units, 420+ MCQs & Full Mock Tests for just <strong>₹{ACCESS_PRICE_INR}</strong>
           </span>
         </div>
         <div className="flex items-center gap-2">

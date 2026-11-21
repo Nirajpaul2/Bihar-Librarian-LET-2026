@@ -167,7 +167,7 @@ export default function PracticeSession() {
           {sessionLabel} is Locked
         </h2>
         <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mb-6 leading-relaxed">
-          Unit 1 (Foundations of Library Science) is 100% Free! Unlock this unit, all remaining units, and full 150Q mock tests for just <strong>₹{ACCESS_PRICE_INR}</strong> lifetime access.
+          Unit 1 (Foundations of Library Science) is 100% Free! Unlock this unit, all remaining units, 420+ MCQs & Full Mock Tests for just <strong>₹{ACCESS_PRICE_INR}</strong> lifetime access.
         </p>
         <div className="flex flex-col gap-3">
           <button

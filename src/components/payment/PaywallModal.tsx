@@ -290,7 +290,7 @@ export default function PaywallModal({
               </p>
             ) : (
               <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
-                Unit 1 is 100% Free! Unlock remaining units, full 150Q mock tests, and complete preparation with a one-time ₹{ACCESS_PRICE_INR} payment.
+                Unit 1 is 100% Free! Unlock remaining units, 420+ MCQs, and Full Mock Tests with a one-time ₹{ACCESS_PRICE_INR} payment.
               </p>
             )}
 

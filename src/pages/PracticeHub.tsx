@@ -95,7 +95,7 @@ export default function PracticeHub() {
                 Unit 1 (Foundations) is 100% Free!
               </h2>
               <p className="text-xs text-brand-200 mt-1 max-w-xl leading-relaxed">
-                Study and practice Unit 1 completely free. Unlock Units 2–6, General Paper (Bihar GK, Reasoning, Computer) and Full 150Q Mock Tests for just ₹{ACCESS_PRICE_INR} lifetime.
+                Study and practice Unit 1 completely free. Unlock Units 2–6, General Paper (Bihar GK, Reasoning, Computer), 420+ MCQs & Full Mock Tests for just ₹{ACCESS_PRICE_INR} lifetime.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 shrink-0">
