@@ -2810,5 +2810,2710 @@ export const libraryScienceQuestions: Question[] = [
       "seven pillars",
       "user education"
     ]
+  },
+  {
+    "id": "ls-111",
+    "question": "The National Library of India (Kolkata) was officially opened to the public at Belvedere House by Maulana Abul Kalam Azad on:",
+    "questionHindi": "कोलकाता स्थित 'भारतीय राष्ट्रीय पुस्तकालय' (बेलवेडियर हाउस) को आधिकारिक रूप से मौलाना अबुल कलाम आजाद द्वारा जनता के लिए कब खोला गया था?",
+    "options": {
+      "A": "15th August 1947",
+      "B": "26th January 1950",
+      "C": "1st February 1953",
+      "D": "12th August 1954"
+    },
+    "optionsHindi": {
+      "A": "15 अगस्त 1947",
+      "B": "26 जनवरी 1950",
+      "C": "1 फरवरी 1953 (मौलाना आजाद द्वारा)",
+      "D": "12 अगस्त 1954"
+    },
+    "correct": "C",
+    "explanation": "On 1st February 1953, the Imperial Library (renamed National Library under the National Library of India Act 1948) at Belvedere, Alipore, Kolkata was declared open to the public by Education Minister Maulana Abul Kalam Azad.",
+    "explanationHindi": "1 फरवरी 1953 को तत्कालीन केंद्रीय शिक्षा मंत्री मौलाना अबुल कलाम आजाद ने कोलकाता के बेलवेडियर हाउस में 'नेशनल लाइब्रेरी ऑफ इंडिया' का औपचारिक उद्घाटन कर जनता को समर्पित किया था।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "history-development",
+    "topicLabel": "History & Development",
+    "difficulty": "medium",
+    "tags": [
+      "national library",
+      "belvedere",
+      "maulana azad"
+    ]
+  },
+  {
+    "id": "ls-112",
+    "question": "The Delivery of Books (Public Libraries) Act of India, passed in 1954, was amended in which year to include 'Newspapers and Periodicals'?",
+    "questionHindi": "भारत में 1954 में पारित 'डिलीवरी ऑफ बुक्स (पब्लिक लाइब्रेरीज़) एक्ट' में किस वर्ष संशोधन कर 'समाचार पत्रों एवं पत्रिकाओं' को शामिल किया गया?",
+    "options": {
+      "A": "1956",
+      "B": "1960",
+      "C": "1965",
+      "D": "1972"
+    },
+    "optionsHindi": {
+      "A": "1956 (29 दिसंबर 1956)",
+      "B": "1960",
+      "C": "1965",
+      "D": "1972"
+    },
+    "correct": "A",
+    "explanation": "The Delivery of Books Act 1954 was amended in 1956 to mandate that Indian publishers deliver copies of newspapers and periodicals as well to the four designated Depository Libraries.",
+    "explanationHindi": "1954 के डिलीवरी ऑफ बुक्स एक्ट में 1956 में संशोधन किया गया, जिसके तहत प्रकाशकों के लिए पुस्तकों के साथ-साथ समाचार पत्रों और सामयिकी (Periodicals) की प्रतियां भी 4 डिपॉजिटरी पुस्तकालयों को भेजना अनिवार्य कर दिया गया।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "history-development",
+    "topicLabel": "Library Legislation & Acts",
+    "difficulty": "easy",
+    "tags": [
+      "delivery of books act",
+      "legislation",
+      "depository libraries"
+    ]
+  },
+  {
+    "id": "ls-113",
+    "question": "Which of the following is NOT one of the four designated Depository Libraries under the Delivery of Books Act in India?",
+    "questionHindi": "निम्नलिखित में से कौन सा पुस्तकालय डिलीवरी ऑफ बुक्स एक्ट के तहत भारत का 4 नामित डिपॉजिटरी पुस्तकालयों में शामिल नहीं है?",
+    "options": {
+      "A": "National Library, Kolkata",
+      "B": "Connemara Public Library, Chennai",
+      "C": "Khuda Bakhsh Oriental Public Library, Patna",
+      "D": "Delhi Public Library, Delhi"
+    },
+    "optionsHindi": {
+      "A": "राष्ट्रीय पुस्तकालय, कोलकाता",
+      "B": "कन्निमेरा पब्लिक लाइब्रेरी, चेन्नई",
+      "C": "खुदा बख्श ओरिएंटल पब्लिक लाइब्रेरी, पटना",
+      "D": "दिल्ली पब्लिक लाइब्रेरी, दिल्ली"
+    },
+    "correct": "C",
+    "explanation": "The four official Depository Libraries are: 1. National Library (Kolkata), 2. Connemara Public Library (Chennai), 3. Asiatic Society Library (Mumbai), and 4. Delhi Public Library (Delhi). Khuda Bakhsh Library is an institution of national importance, not a Delivery of Books depository.",
+    "explanationHindi": "डिलीवरी ऑफ बुक्स एक्ट के 4 डिपॉजिटरी पुस्तकालय हैं: 1. नेशनल लाइब्रेरी (कोलकाता), 2. कन्निमेरा पब्लिक लाइब्रेरी (चेन्नई), 3. एशियाटिक सोसाइटी लाइब्रेरी (मुंबई), 4. दिल्ली पब्लिक लाइब्रेरी। खुदा बख्श लाइब्रेरी इसमें शामिल नहीं है।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "history-development",
+    "topicLabel": "Depository Libraries",
+    "difficulty": "medium",
+    "tags": [
+      "depository libraries",
+      "delivery of books act"
+    ]
+  },
+  {
+    "id": "ls-114",
+    "question": "The Raja Rammohun Roy Library Foundation (RRRLF), established in 1972 by the Ministry of Culture, has its headquarters at:",
+    "questionHindi": "संस्कृति मंत्रालय द्वारा 1972 में स्थापित 'राजा राममोहन राय लाइब्रेरी फाउंडेशन' (RRRLF) का मुख्यालय कहाँ स्थित है?",
+    "options": {
+      "A": "New Delhi",
+      "B": "Kolkata",
+      "C": "Chennai",
+      "D": "Mumbai"
+    },
+    "optionsHindi": {
+      "A": "नई दिल्ली",
+      "B": "कोलकाता (Kolkata)",
+      "C": "चेन्नई",
+      "D": "मुंबई"
+    },
+    "correct": "B",
+    "explanation": "RRRLF was established in May 1972 (to commemorate the bicentenary of Raja Rammohun Roy) in Salt Lake, Kolkata, to support and promote public library services throughout India.",
+    "explanationHindi": "RRRLF की स्थापना मई 1972 में राजा राममोहन राय की 200वीं जयंती पर कोलकाता (साल्ट लेक) में की गई थी, जो भारत में सार्वजनिक पुस्तकालयों के संवर्धन हेतु वित्तीय सहायता प्रदान करता है।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "library-associations",
+    "topicLabel": "Library Organizations",
+    "difficulty": "easy",
+    "tags": [
+      "rrrlf",
+      "public libraries",
+      "kolkata"
+    ]
+  },
+  {
+    "id": "ls-115",
+    "question": "In India, the National Agency for assigning International Standard Book Numbers (ISBN) operates under which organization?",
+    "questionHindi": "भारत में अंतरराष्ट्रीय मानक पुस्तक संख्या (ISBN) आवंटित करने वाली 'राजा राममोहन राय राष्ट्रीय ISBN एजेंसी' किसके अधीन कार्यरत है?",
+    "options": {
+      "A": "National Library, Kolkata",
+      "B": "RRRLF / Ministry of Education",
+      "C": "INSDOC / NIScPR",
+      "D": "National Book Trust (NBT)"
+    },
+    "optionsHindi": {
+      "A": "राष्ट्रीय पुस्तकालय, कोलकाता",
+      "B": "राजा राममोहन राय राष्ट्रीय ISBN एजेंसी (RRRLF / शिक्षा मंत्रालय)",
+      "C": "निस्पर (NIScPR)",
+      "D": "नेशनल बुक ट्रस्ट (NBT)"
+    },
+    "correct": "B",
+    "explanation": "Raja Rammohun Roy National Agency for ISBN (RRNA for ISBN) is the governmental agency responsible for ISBN allotment to Indian authors and publishers.",
+    "explanationHindi": "भारत में प्रकाशकों और लेखकों को ISBN (13 अंकों का विशिष्ट कोड) आवंटित करने का कार्य 'राजा राममोहन राय नेशनल एजेंसी फॉर ISBN' करती है।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "library-associations",
+    "topicLabel": "ISBN Agency",
+    "difficulty": "medium",
+    "tags": [
+      "isbn",
+      "rrna",
+      "rrrlf"
+    ]
+  },
+  {
+    "id": "ls-116",
+    "question": "An International Standard Book Number (ISBN) assigned after 1st January 2007 consists of how many digits?",
+    "questionHindi": "1 जनवरी 2007 के बाद जारी किए जाने वाले 'अंतरराष्ट्रीय मानक पुस्तक संख्या' (ISBN) में कुल कितने अंक होते हैं?",
+    "options": {
+      "A": "10 digits",
+      "B": "12 digits",
+      "C": "13 digits",
+      "D": "15 digits"
+    },
+    "optionsHindi": {
+      "A": "10 अंक (2007 से पूर्व)",
+      "B": "12 अंक",
+      "C": "13 अंक (13 Digits - EAN-13 अनुरूप)",
+      "D": "15 अंक"
+    },
+    "correct": "C",
+    "explanation": "Since January 1, 2007, the ISBN format expanded from 10 to 13 digits (starting with 978 or 979 prefix) to align with global EAN barcodes.",
+    "explanationHindi": "1 जनवरी 2007 से ISBN को 10 अंकों से बढ़ाकर 13 अंकों (5 भागों में विभक्त: GS1 उपसर्ग 978/979, देश, प्रकाशक, शीर्षक और चेक अंक) का कर दिया गया।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "bibliographic-description",
+    "topicLabel": "ISBN Standards",
+    "difficulty": "easy",
+    "tags": [
+      "isbn",
+      "13 digits",
+      "standards"
+    ]
+  },
+  {
+    "id": "ls-117",
+    "question": "An International Standard Serial Number (ISSN) used for identifying periodicals and journals consists of how many digits?",
+    "questionHindi": "पत्रिकाओं, सामयिकियों और जर्नल्स की पहचान हेतु प्रयुक्त 'ISSN' में कुल कितने अंक होते हैं?",
+    "options": {
+      "A": "8 digits (divided into two groups of 4)",
+      "B": "10 digits",
+      "C": "13 digits",
+      "D": "16 digits"
+    },
+    "optionsHindi": {
+      "A": "8 अंक (4-4 अंकों के दो समूहों में हाइफन सहित)",
+      "B": "10 अंक",
+      "C": "13 अंक",
+      "D": "16 अंक"
+    },
+    "correct": "A",
+    "explanation": "ISSN (International Standard Serial Number) consists of 8 digits divided by a hyphen into two groups of four digits (e.g. ISSN 1234-5679). In India, CSIR-NIScPR assigns ISSNs.",
+    "explanationHindi": "ISSN 8 अंकों का एक अद्वितीय पहचान कोड होता है जो 4-4 अंकों के दो समूहों में हाइफन (-) द्वारा अलग होता है (उदा. 2049-3630)। भारत में NIScPR द्वारा ISSN जारी किया जाता है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "bibliographic-description",
+    "topicLabel": "ISSN Standards",
+    "difficulty": "easy",
+    "tags": [
+      "issn",
+      "8 digits",
+      "serials"
+    ]
+  },
+  {
+    "id": "ls-118",
+    "question": "Which edition of the UNESCO Public Library Manifesto was jointly prepared and published in collaboration with IFLA in 1994?",
+    "questionHindi": "1994 में यूनेस्को (UNESCO) ने इफ्ला (IFLA) के सहयोग से पब्लिक लाइब्रेरी मेनिफेस्टो का कौन सा संशोधित संस्करण जारी किया था?",
+    "options": {
+      "A": "First Edition (1949)",
+      "B": "Second Edition (1972)",
+      "C": "Third Edition (1994 - IFLA/UNESCO Manifesto)",
+      "D": "Fourth Edition (2022)"
+    },
+    "optionsHindi": {
+      "A": "प्रथम संस्करण (1949)",
+      "B": "द्वितीय संस्करण (1972)",
+      "C": "तृतीय संस्करण (1994 - इफ्ला/यूनेस्को घोषणापत्र)",
+      "D": "नवीनतम संस्करण (2022)"
+    },
+    "correct": "C",
+    "explanation": "The UNESCO Public Library Manifesto was first proclaimed in 1949, revised in 1972 for International Book Year, and substantially adopted with IFLA in 1994 (further updated in 2022).",
+    "explanationHindi": "यूनेस्को पब्लिक लाइब्रेरी मेनिफेस्टो 1949 में जारी हुआ था, 1972 में संशोधित हुआ, तथा 1994 में इफ्ला-यूनेस्को संयुक्त मेनिफेस्टो के रूप में विश्वभर में अपनाया गया।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "library-associations",
+    "topicLabel": "UNESCO & IFLA",
+    "difficulty": "medium",
+    "tags": [
+      "unesco",
+      "ifla",
+      "public library manifesto"
+    ]
+  },
+  {
+    "id": "ls-119",
+    "question": "The National Knowledge Commission (NKC) of India, constituted in 2005 under the chairmanship of Sam Pitroda, set up a Working Group on Libraries headed by:",
+    "questionHindi": "2005 में सैम पित्रोदा की अध्यक्षता में गठित 'राष्ट्रीय ज्ञान आयोग' (NKC) द्वारा पुस्तकालयों पर गठित कार्यकारी समूह के अध्यक्ष कौन थे?",
+    "options": {
+      "A": "Prof. Yash Pal",
+      "B": "Dr. S.R. Ranganathan",
+      "C": "Kalpana Dasgupta",
+      "D": "Dr. P.B. Mangla"
+    },
+    "optionsHindi": {
+      "A": "प्रो. यशपाल",
+      "B": "डॉ. एस.आर. रंगनाथन",
+      "C": "कल्पना दासगुप्ता (पूर्व निदेशक, राष्ट्रीय पुस्तकालय)",
+      "D": "डॉ. पी.बी. मंगला"
+    },
+    "correct": "C",
+    "explanation": "The National Knowledge Commission (NKC) appointed a Working Group on Libraries chaired by Smt. Kalpana Dasgupta in 2006, which submitted recommendations on setting up a National Mission on Libraries (NML).",
+    "explanationHindi": "राष्ट्रीय ज्ञान आयोग (NKC) ने 2006 में श्रीमती कल्पना दासगुप्ता की अध्यक्षता में पुस्तकालय कार्यकारी समूह बनाया, जिसकी संस्तुतियों पर 'नेशनल मिशन ऑन लाइब्रेरीज़' (NML) आरंभ हुआ।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "history-development",
+    "topicLabel": "National Knowledge Commission",
+    "difficulty": "hard",
+    "tags": [
+      "nkc",
+      "kalpana dasgupta",
+      "national mission on libraries"
+    ]
+  },
+  {
+    "id": "ls-120",
+    "question": "The 'National Mission on Libraries' (NML) was formally launched by the Government of India in which year?",
+    "questionHindi": "भारत सरकार के संस्कृति मंत्रालय द्वारा 'नेशनल मिशन ऑन लाइब्रेरीज़' (NML) का औपचारिक शुभारंभ किस वर्ष किया गया?",
+    "options": {
+      "A": "2010",
+      "B": "2012",
+      "C": "2014",
+      "D": "2018"
+    },
+    "optionsHindi": {
+      "A": "2010",
+      "B": "2012",
+      "C": "2014 (राष्ट्रपति प्रणब मुखर्जी द्वारा)",
+      "D": "2018"
+    },
+    "correct": "C",
+    "explanation": "The National Mission on Libraries (NML) was formally launched by President Pranab Mukherjee in February 2014 to upgrade district libraries, digitize rare collections, and create a National Virtual Library of India (NVLI).",
+    "explanationHindi": "नेशनल मिशन ऑन लाइब्रेरीज़ (NML) का शुभारंभ फरवरी 2014 में राष्ट्रपति प्रणब मुखर्जी द्वारा किया गया था, जिसका उद्देश्य पुस्तकालयों का आधुनिकीकरण और डिजिटलीकरण करना है।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "history-development",
+    "topicLabel": "National Mission on Libraries",
+    "difficulty": "medium",
+    "tags": [
+      "nml",
+      "ministry of culture",
+      "2014"
+    ]
+  },
+  {
+    "id": "ls-121",
+    "question": "Which state in India was the very first to enact a Public Library Act?",
+    "questionHindi": "स्वतंत्र भारत में सार्वजनिक पुस्तकालय अधिनियम (Public Library Act) पारित करने वाला पहला राज्य कौन सा था?",
+    "options": {
+      "A": "Andhra Pradesh (1960)",
+      "B": "Madras / Tamil Nadu (1948)",
+      "C": "Karnataka (1965)",
+      "D": "Maharashtra (1967)"
+    },
+    "optionsHindi": {
+      "A": "आंध्र प्रदेश (1960)",
+      "B": "मद्रास / तमिलनाडु (1948 - मद्रास पब्लिक लाइब्रेरी एक्ट)",
+      "C": "कर्नाटक (1965)",
+      "D": "महाराष्ट्र (1967)"
+    },
+    "correct": "B",
+    "explanation": "The Madras Public Libraries Act was enacted in 1948, drafted with the instrumental help of Dr. S.R. Ranganathan, making Madras (Tamil Nadu) the first state with library legislation.",
+    "explanationHindi": "1948 में मद्रास (तमिलनाडु) सार्वजनिक पुस्तकालय अधिनियम पारित करने वाला देश का पहला राज्य बना। इस अधिनियम का प्रारूप डॉ. एस.आर. रंगनाथन ने तैयार किया था।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "history-development",
+    "topicLabel": "Library Legislation",
+    "difficulty": "easy",
+    "tags": [
+      "madras act 1948",
+      "legislation",
+      "first state"
+    ]
+  },
+  {
+    "id": "ls-122",
+    "question": "In Colon Classification (CC 6th edition), which connecting symbol is assigned to the facet 'Time' [T]?",
+    "questionHindi": "कोलन क्लासिफिकेशन (CC 6th Edition) में 'काल' (Time - [T]) पक्ष को जोड़ने के लिए किस योजक चिह्न (Connecting Symbol) का प्रयोग किया जाता है?",
+    "options": {
+      "A": "Comma ( , )",
+      "B": "Semicolon ( ; )",
+      "C": "Colon ( : )",
+      "D": "Single Quote / Inverted Comma ( ' )"
+    },
+    "optionsHindi": {
+      "A": "अल्पविराम - Comma ( , ) [Personality]",
+      "B": "अर्द्धविराम - Semicolon ( ; ) [Matter]",
+      "C": "कोलन - Colon ( : ) [Energy]",
+      "D": "सिंगल इनवर्टेड कॉमा - Single Quote ( ' ) [Time]"
+    },
+    "correct": "D",
+    "explanation": "In CC 6th ed. (reprint), the connecting symbols for PMEST are: Personality = comma ( , ), Matter = semicolon ( ; ), Energy = colon ( : ), Space = dot ( . ), and Time = single inverted comma ( ' ). In earlier editions, dot was shared by Space and Time.",
+    "explanationHindi": "CC में PMEST के योजक चिह्न हैं: P (,), M (;), E (:), S (.), तथा T ( ' - सिंगल इनवर्टेड कॉमा)।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "colon-classification",
+    "topicLabel": "Colon Classification (CC)",
+    "difficulty": "easy",
+    "tags": [
+      "colon classification",
+      "pmest",
+      "connecting symbols"
+    ]
+  },
+  {
+    "id": "ls-123",
+    "question": "In Dewey Decimal Classification (DDC), what is the Main Class number for 'Language'?",
+    "questionHindi": "डीडीसी (Dewey Decimal Classification) में 'भाषा' (Language) का मुख्य वर्ग (Main Class) क्या है?",
+    "options": {
+      "A": "100",
+      "B": "400",
+      "C": "800",
+      "D": "900"
+    },
+    "optionsHindi": {
+      "A": "100 (दर्शनशास्त्र और मनोविज्ञान)",
+      "B": "400 (भाषा / Language)",
+      "C": "800 (साहित्य / Literature)",
+      "D": "900 (इतिहास और भूगोल)"
+    },
+    "correct": "B",
+    "explanation": "In DDC: 000 Computer Science & Info, 100 Philosophy, 200 Religion, 300 Social Sciences, 400 Language, 500 Science, 600 Technology, 700 Arts, 800 Literature, 900 History & Geography.",
+    "explanationHindi": "DDC में वर्ग संख्या 400 'भाषा' (Language) को निरूपित करता है, जबकि 800 'साहित्य' (Literature) का वर्ग है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "ddc",
+    "topicLabel": "Dewey Decimal Classification (DDC)",
+    "difficulty": "easy",
+    "tags": [
+      "ddc",
+      "main classes",
+      "400 language"
+    ]
+  },
+  {
+    "id": "ls-124",
+    "question": "In DDC 19th edition, how many auxiliary tables are provided for synthesizing compound class numbers?",
+    "questionHindi": "डीडीसी (DDC) के 19वें संस्करण में संख्या निर्माण हेतु कुल कितनी सहायक सारणियाँ (Auxiliary Tables) प्रदान की गई हैं?",
+    "options": {
+      "A": "4 Tables",
+      "B": "6 Tables",
+      "C": "7 Tables",
+      "D": "10 Tables"
+    },
+    "optionsHindi": {
+      "A": "4 सारणियाँ",
+      "B": "6 सारणियाँ (21वें और 22वें संस्करण में)",
+      "C": "7 सारणियाँ (DDC 19th Edition में कुल 7 Tables)",
+      "D": "10 सारणियाँ"
+    },
+    "correct": "C",
+    "explanation": "DDC 19th edition (published in 1979 in 3 volumes) contained exactly 7 auxiliary tables (Table 1: Standard Subdivisions, Table 2: Geographic Areas, Table 3: Individual Literatures, Table 4: Individual Languages, Table 5: Racial/Ethnic, Table 6: Languages, Table 7: Persons).",
+    "explanationHindi": "DDC के 19वें संस्करण (1979) में कुल 7 सहायक सारणियाँ (Tables 1 to 7) थीं। (बाद के 21वें संस्करण में Table 7 को हटाकर 6 सारणियाँ कर दी गईं)।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "ddc",
+    "topicLabel": "DDC Auxiliary Tables",
+    "difficulty": "medium",
+    "tags": [
+      "ddc 19th",
+      "auxiliary tables",
+      "classification"
+    ]
+  },
+  {
+    "id": "ls-125",
+    "question": "Which auxiliary table in DDC represents 'Standard Subdivisions' (applicable across virtually all subject classes)?",
+    "questionHindi": "DDC में 'मानक उपविभाजन' (Standard Subdivisions - जैसे शब्दकोश, पत्रिकाएं, इतिहास) किस तालिका द्वारा दर्शाए जाते हैं?",
+    "options": {
+      "A": "Table 1",
+      "B": "Table 2",
+      "C": "Table 3",
+      "D": "Table 5"
+    },
+    "optionsHindi": {
+      "A": "टेबल 1 (Table 1 - Standard Subdivisions)",
+      "B": "टेबल 2 (भौगोलिक क्षेत्र - Geographic Areas)",
+      "C": "टेबल 3 (साहित्य उपविभाजन)",
+      "D": "टेबल 5 (जातीय और राष्ट्रीय समूह)"
+    },
+    "correct": "A",
+    "explanation": "Table 1 in DDC provides Standard Subdivisions (e.g. -01 Philosophy & theory, -02 Miscellany, -03 Dictionaries, -05 Serial publications) which can be added to any base number.",
+    "explanationHindi": "DDC की टेबल 1 'मानक उपविभाजनों' (Standard Subdivisions) की सारणी है जिसे बिना किसी विशेष निर्देश के किसी भी मुख्य वर्ग संख्या के साथ जोड़ा जा सकता है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "ddc",
+    "topicLabel": "DDC Auxiliary Tables",
+    "difficulty": "easy",
+    "tags": [
+      "ddc",
+      "table 1",
+      "standard subdivisions"
+    ]
+  },
+  {
+    "id": "ls-126",
+    "question": "In AACR-2 (Anglo-American Cataloguing Rules, 2nd ed.), what is the designated punctuation mark preceding the name of the publisher in the Publication/Distribution area?",
+    "questionHindi": "AACR-2 में प्रकाशन एवं वितरण क्षेत्र में प्रकाशक के नाम (Name of Publisher) से ठीक पहले कौन सा विराम चिह्न (Punctuation) लगाया जाता है?",
+    "options": {
+      "A": "Semicolon ( ; )",
+      "B": "Colon ( : )",
+      "C": "Comma ( , )",
+      "D": "Slash ( / )"
+    },
+    "optionsHindi": {
+      "A": "अर्द्धविराम - Semicolon ( ; )",
+      "B": "कोलन - Colon ( : )",
+      "C": "अल्पविराम - Comma ( , )",
+      "D": "स्लैश - Slash ( / )"
+    },
+    "correct": "B",
+    "explanation": "Under ISBD and AACR-2 rules: Place of publication : Name of publisher, Date of publication. A space-colon-space ( : ) precedes the publisher name.",
+    "explanationHindi": "AACR-2 में प्रकाशन क्षेत्र का प्रारूप होता है: [प्रकाशन स्थान] : [प्रकाशक का नाम], [वर्ष]। अतः प्रकाशक के नाम से पूर्व स्पेस-कोलन-स्पेस ( : ) लगाया जाता है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "aacr2",
+    "topicLabel": "Cataloguing Rules (AACR-2)",
+    "difficulty": "medium",
+    "tags": [
+      "aacr2",
+      "isbd",
+      "punctuation"
+    ]
+  },
+  {
+    "id": "ls-127",
+    "question": "In MARC 21 Bibliographic Format, which field tag is reserved for the 'Title Statement' (Title Proper, Subtitle, Statement of Responsibility)?",
+    "questionHindi": "मार्क 21 (MARC 21) ग्रंथपरक प्रारूप में पुस्तक के 'शीर्षक विवरण' (Title Statement) के लिए कौन सा टैग निर्धारित है?",
+    "options": {
+      "A": "100",
+      "B": "245",
+      "C": "260",
+      "D": "300"
+    },
+    "optionsHindi": {
+      "A": "100 (व्यक्तिगत लेखक - Main Entry)",
+      "B": "245 (शीर्षक विवरण - Title Statement)",
+      "C": "260 / 264 (प्रकाशन विवरण - Publication)",
+      "D": "300 (भौतिक विवरण - Physical Description)"
+    },
+    "correct": "B",
+    "explanation": "Tag 245 in MARC21 is Title Statement ($a for title proper, $b for subtitle/other title, $c for statement of responsibility).",
+    "explanationHindi": "MARC 21 में टैग 245 मुख्य शीर्षक (Title Statement) के लिए होता है जिसमें $a मुख्य शीर्षक, $b उपशीर्षक और $c लेखक/जिम्मेदारी कथन को दर्शाता है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "marc",
+    "topicLabel": "MARC 21 Format",
+    "difficulty": "easy",
+    "tags": [
+      "marc 21",
+      "tag 245",
+      "title statement"
+    ]
+  },
+  {
+    "id": "ls-128",
+    "question": "In MARC 21, which field tag represents the Personal Name Main Entry (primary author)?",
+    "questionHindi": "MARC 21 में व्यक्तिगत लेखक (Personal Author Main Entry) के लिए किस टैग का प्रयोग किया जाता है?",
+    "options": {
+      "A": "100",
+      "B": "110",
+      "C": "111",
+      "D": "700"
+    },
+    "optionsHindi": {
+      "A": "100 (व्यक्तिगत लेखक - Personal Name Main Entry)",
+      "B": "110 (कॉर्पोरेट निकाय - Corporate Name)",
+      "C": "111 (सम्मेलन का नाम - Meeting Name)",
+      "D": "700 (अतिरिक्त लेखक - Added Entry Personal Name)"
+    },
+    "correct": "A",
+    "explanation": "Field 100 is used for Personal Author Main Entry, Field 110 for Corporate Body, Field 111 for Conference/Meeting, and Field 700 for Added Entry Personal Authors.",
+    "explanationHindi": "MARC 21 में टैग 100 मुख्य प्रविष्टि व्यक्तिगत लेखक (Personal Author) के लिए निर्धारित है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "marc",
+    "topicLabel": "MARC 21 Format",
+    "difficulty": "easy",
+    "tags": [
+      "marc 21",
+      "tag 100",
+      "author"
+    ]
+  },
+  {
+    "id": "ls-129",
+    "question": "The 'Chain Procedure' for deriving alphabetical subject index entries from classified class numbers was devised by:",
+    "questionHindi": "वर्गीकृत वर्ग संख्याओं से विषय अनुक्रमणिका (Subject Headings) तैयार करने की 'शृंखला प्रक्रिया' (Chain Procedure) का प्रतिपादन किसने किया था?",
+    "options": {
+      "A": "Melvil Dewey",
+      "B": "Dr. S.R. Ranganathan",
+      "C": "Derek Austin",
+      "D": "Ganesh Bhattacharyya"
+    },
+    "optionsHindi": {
+      "A": "मेल्विल डेवी",
+      "B": "डॉ. एस.आर. रंगनाथन (1938)",
+      "C": "डेरेक ऑस्टिन (PRECIS)",
+      "D": "गणेश भट्टाचार्य (POPSI)"
+    },
+    "correct": "B",
+    "explanation": "Dr. S.R. Ranganathan introduced the Chain Procedure (Chain Indexing) in 1938 in his book 'Theory of Library Catalogue' to systematically generate subject headings from classification digits.",
+    "explanationHindi": "डॉ. एस.आर. रंगनाथन ने 1938 में अपनी पुस्तक 'Theory of Library Catalogue' में शृंखला प्रक्रिया (Chain Indexing) का आविष्कार किया था।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "cataloguing",
+    "topicLabel": "Subject Indexing",
+    "difficulty": "easy",
+    "tags": [
+      "chain procedure",
+      "ranganathan",
+      "subject indexing"
+    ]
+  },
+  {
+    "id": "ls-130",
+    "question": "PRECIS (Preserved Context Index System), developed for the British National Bibliography (BNB) in 1971, was designed by:",
+    "questionHindi": "1971 में ब्रिटिश नेशनल बिब्लियोग्राफी (BNB) के लिए 'PRECIS' (प्रिजर्व्ड कॉन्टेक्स्ट इंडेक्स सिस्टम) का विकास किसने किया था?",
+    "options": {
+      "A": "E.J. Coates",
+      "B": "Derek Austin",
+      "C": "H.P. Luhn",
+      "D": "Mortimer Taube"
+    },
+    "optionsHindi": {
+      "A": "ई.जे. कोट्स",
+      "B": "डेरेक ऑस्टिन (Derek Austin)",
+      "C": "एच.पी. लूह्न",
+      "D": "मोर्टिमर टॉबे"
+    },
+    "correct": "B",
+    "explanation": "Derek Austin designed PRECIS (Preserved Context Index System) to replace Chain Procedure in BNB using primary and secondary role operators.",
+    "explanationHindi": "डेरेक ऑस्टिन ने ब्रिटिश नेशनल बिब्लियोग्राफी (BNB) में विषय अनुक्रमणिका तैयार करने हेतु कंप्यूटर-आधारित PRECIS प्रणाली विकसित की थी।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "cataloguing",
+    "topicLabel": "Indexing Systems",
+    "difficulty": "medium",
+    "tags": [
+      "precis",
+      "derek austin",
+      "bnb"
+    ]
+  },
+  {
+    "id": "ls-131",
+    "question": "POPSI (Postulate-based Permuted Subject Indexing) was developed by which Indian library scientist at DRTC Bangalore?",
+    "questionHindi": "DRTC बैंगलोर में 'पॉपसी' (POPSI - पोस्टुलेट-बेस्ड परम्यूटेड सब्जेक्ट इंडेक्सिंग) का विकास किस भारतीय पुस्तकालय वैज्ञानिक द्वारा किया गया?",
+    "options": {
+      "A": "Dr. S.R. Ranganathan",
+      "B": "Prof. Ganesh Bhattacharyya",
+      "C": "P.N. Kaula",
+      "D": "A. Neelameghan"
+    },
+    "optionsHindi": {
+      "A": "डॉ. एस.आर. रंगनाथन",
+      "B": "प्रो. गणेश भट्टाचार्य (Ganesh Bhattacharyya)",
+      "C": "पी.एन. कौला",
+      "D": "ए. नीलमेघन"
+    },
+    "correct": "B",
+    "explanation": "Ganesh Bhattacharyya developed POPSI at Documentation Research and Training Centre (DRTC), Bangalore, based on Ranganathan's general theory of subject headings.",
+    "explanationHindi": "प्रो. गणेश भट्टाचार्य ने DRTC बैंगलोर में रंगनाथन के सिद्धांतों पर आधारित POPSI विषय अनुक्रमण प्रणाली विकसित की थी।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "cataloguing",
+    "topicLabel": "Indexing Systems",
+    "difficulty": "medium",
+    "tags": [
+      "popsi",
+      "ganesh bhattacharyya",
+      "drtc"
+    ]
+  },
+  {
+    "id": "ls-132",
+    "question": "In the FRBR (Functional Requirements for Bibliographic Records) conceptual model, which four entities form Group 1 representing products of intellectual or artistic endeavor?",
+    "questionHindi": "FRBR मॉडल में बौद्धिक अथवा कलात्मक सृजन के उत्पादों का प्रतिनिधित्व करने वाली 'ग्रुप 1' की चार संस्थाएं (WEMI) कौन सी हैं?",
+    "options": {
+      "A": "Work, Expression, Manifestation, Item (WEMI)",
+      "B": "Person, Family, Corporate Body, Work",
+      "C": "Concept, Object, Event, Place",
+      "D": "Author, Title, Publisher, Date"
+    },
+    "optionsHindi": {
+      "A": "वर्क (Work), एक्सप्रेशन (Expression), मैनिफेस्टेशन (Manifestation), आइटम (Item)",
+      "B": "पर्सन, फैमिली, कॉर्पोरेट बॉडी, वर्क",
+      "C": "कॉन्सेप्ट, ऑब्जेक्ट, इवेंट, प्लेस",
+      "D": "ऑथर, टाइटल, पब्लिशर, डेट"
+    },
+    "correct": "A",
+    "explanation": "FRBR Group 1 entities are known by the acronym WEMI: Work (distinct intellectual creation), Expression (intellectual realization), Manifestation (physical embodiment/publication), and Item (single physical exemplar).",
+    "explanationHindi": "FRBR के ग्रुप 1 में चार मूलभूत संस्थाएं (WEMI) होती हैं: 1. वर्क (कृति), 2. एक्सप्रेशन (अभिव्यक्ति), 3. मैनिफेस्टेशन (प्रकाशन रूप), और 4. आइटम (पुस्तकालय में रखी भौतिक प्रति)।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "rda",
+    "topicLabel": "FRBR & RDA",
+    "difficulty": "hard",
+    "tags": [
+      "frbr",
+      "wemi",
+      "rda",
+      "ifla"
+    ]
+  },
+  {
+    "id": "ls-133",
+    "question": "RDA (Resource Description and Access), the modern standard designed for the digital world to replace AACR-2, was officially published in:",
+    "questionHindi": "डिजिटल परिवेश हेतु AACR-2 के स्थान पर विकसित आधुनिक कैटलॉगिंग मानक 'RDA' (रिसोर्स डिस्क्रिप्शन एंड एक्सेस) किस वर्ष जारी किया गया था?",
+    "options": {
+      "A": "2000",
+      "B": "2005",
+      "C": "2010",
+      "D": "2015"
+    },
+    "optionsHindi": {
+      "A": "2000",
+      "B": "2005",
+      "C": "2010 (जून 2010)",
+      "D": "2015"
+    },
+    "correct": "C",
+    "explanation": "RDA (Resource Description and Access) was initially released in June 2010 as an online toolkit built on FRBR and FRAD conceptual frameworks.",
+    "explanationHindi": "AACR-2 के उत्तराधिकारी के रूप में 'RDA' को जून 2010 में जारी किया गया था, जो FRBR मॉडल पर आधारित अंतरराष्ट्रीय मानक है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "rda",
+    "topicLabel": "FRBR & RDA",
+    "difficulty": "medium",
+    "tags": [
+      "rda",
+      "aacr2",
+      "2010"
+    ]
+  },
+  {
+    "id": "ls-134",
+    "question": "What is the standard dimensions of an international standard physical catalogue card?",
+    "questionHindi": "पुस्तकालय सूची पत्रक (Library Catalogue Card) का अंतरराष्ट्रीय मानक आकार क्या होता है?",
+    "options": {
+      "A": "12.5 cm × 7.5 cm (approx. 5\" × 3\")",
+      "B": "15 cm × 10 cm",
+      "C": "10 cm × 5 cm",
+      "D": "20 cm × 12.5 cm"
+    },
+    "optionsHindi": {
+      "A": "12.5 सेमी × 7.5 सेमी (या 5 इंच × 3 इंच)",
+      "B": "15 सेमी × 10 सेमी",
+      "C": "10 सेमी × 5 सेमी",
+      "D": "20 सेमी × 12.5 सेमी"
+    },
+    "correct": "A",
+    "explanation": "The globally accepted standard catalog card size (introduced in late 19th century by Library Bureau) is 12.5 cm in width by 7.5 cm in height (5 inches × 3 inches).",
+    "explanationHindi": "पुस्तकालय कैटलॉग कार्ड का मानक आकार 12.5 सेमी चौड़ा और 7.5 सेमी ऊँचा (5 × 3 इंच) होता है, जिसके निचले भाग में मध्य में छिद्र होता है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "catalogue-types",
+    "topicLabel": "Catalogue Card Standards",
+    "difficulty": "easy",
+    "tags": [
+      "catalogue card",
+      "12.5 x 7.5 cm",
+      "standard"
+    ]
+  },
+  {
+    "id": "ls-135",
+    "question": "The acronym 'POSDCORB', defining the essential core functions of administrative management, was coined by:",
+    "questionHindi": "प्रशासनिक प्रबंधन के मूल कार्यों को निरूपित करने वाला प्रसिद्ध संक्षिप्त शब्द 'POSDCORB' किसने गढ़ा था?",
+    "options": {
+      "A": "Henri Fayol",
+      "B": "Luther Gulick and Lyndall Urwick",
+      "C": "F.W. Taylor",
+      "D": "Peter Drucker"
+    },
+    "optionsHindi": {
+      "A": "हेनरी फेयोल",
+      "B": "लूथर गुलिक और लिंडाल उर्विक (1937)",
+      "C": "एफ.डब्ल्यू. टेलर",
+      "D": "पीटर ड्रकर"
+    },
+    "correct": "B",
+    "explanation": "Luther Gulick and Lyndall Urwick coined POSDCORB in 1937: Planning, Organizing, Staffing, Directing, Coordinating, Reporting, and Budgeting.",
+    "explanationHindi": "1937 में लूथर गुलिक एवं लिंडाल उर्विक ने प्रबंधन के 7 कार्यों हेतु 'POSDCORB' (Planning, Organizing, Staffing, Directing, Coordinating, Reporting, Budgeting) शब्द दिया था।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "library-administration",
+    "topicLabel": "Management Principles",
+    "difficulty": "easy",
+    "tags": [
+      "posdcorb",
+      "luther gulick",
+      "management"
+    ]
+  },
+  {
+    "id": "ls-136",
+    "question": "Zero-Based Budgeting (ZBB), where every expenditure must be justified afresh starting from a zero baseline for each fiscal year, was developed by:",
+    "questionHindi": "शून्य-आधारित बजट (Zero-Based Budgeting - ZBB), जिसमें प्रत्येक मद की नए सिरे से शून्य से शुरुआत मानकर पुष्टि करनी होती है, किसके द्वारा विकसित किया गया था?",
+    "options": {
+      "A": "Peter Phyrr",
+      "B": "Luther Gulick",
+      "C": "Robert McNamara",
+      "D": "Adam Smith"
+    },
+    "optionsHindi": {
+      "A": "पीटर ए. पायर (Peter Phyrr - 1970)",
+      "B": "लूथर गुलिक",
+      "C": "रॉबर्ट मैकनामारा (PPBS)",
+      "D": "एडम स्मिथ"
+    },
+    "correct": "A",
+    "explanation": "Peter Phyrr developed Zero-Based Budgeting (ZBB) in 1970 at Texas Instruments. In ZBB, the budget starts from scratch (zero) without relying on the prior year's budget.",
+    "explanationHindi": "पीटर पायर (Peter Phyrr) ने 1970 में टेक्सास इंस्ट्रूमेंट्स में शून्य-आधारित बजट (ZBB) प्रणाली विकसित की थी।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "budget-accounting",
+    "topicLabel": "Budgeting Methods",
+    "difficulty": "medium",
+    "tags": [
+      "zero based budgeting",
+      "zbb",
+      "peter phyrr"
+    ]
+  },
+  {
+    "id": "ls-137",
+    "question": "PPBS (Planning Programming Budgeting System), linking program planning with budget allocations, was originally introduced in the US Department of Defense by:",
+    "questionHindi": "'पीपीबीएस' (PPBS - प्लानिंग प्रोग्रामिंग बजटिंग सिस्टम) को मूल रूप से अमेरिकी रक्षा विभाग में किसके द्वारा पेश किया गया था?",
+    "options": {
+      "A": "Peter Phyrr",
+      "B": "Robert McNamara",
+      "C": "Lyndon Johnson",
+      "D": "David Ricardo"
+    },
+    "optionsHindi": {
+      "A": "पीटर पायर",
+      "B": "रॉबर्ट मैकनामारा (Robert McNamara - 1961)",
+      "C": "लिंडन जॉनसन",
+      "D": "डेविड रिकार्डो"
+    },
+    "correct": "B",
+    "explanation": "Robert McNamara introduced the Planning Programming Budgeting System (PPBS) in the 1960s in the US Department of Defense.",
+    "explanationHindi": "1960 के दशक में रॉबर्ट मैकनामारा ने रक्षा विभाग में PPBS बजटिंग प्रणाली लागू की, जिसे बाद में पुस्तकालयों और सार्वजनिक विभागों में अपनाया गया।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "budget-accounting",
+    "topicLabel": "Budgeting Methods",
+    "difficulty": "hard",
+    "tags": [
+      "ppbs",
+      "robert mcnamara",
+      "budgeting"
+    ]
+  },
+  {
+    "id": "ls-138",
+    "question": "The Browne Circulation Issue System, using book pockets and reader borrower tickets, was invented in 1895 by:",
+    "questionHindi": "1895 में पुस्तक पॉकेट और पाठक टिकट पर आधारित 'ब्राउन निर्गम प्रणाली' (Browne Circulation System) का आविष्कार किसने किया था?",
+    "options": {
+      "A": "John Cotton Dana",
+      "B": "Nina E. Browne",
+      "C": "Charles Ammi Cutter",
+      "D": "Melvil Dewey"
+    },
+    "optionsHindi": {
+      "A": "जॉन कॉटन डाना (नेवार्क प्रणाली - 1900)",
+      "B": "नीना ई. ब्राउन (Nina E. Browne - 1895)",
+      "C": "चार्ल्स एमी कटर",
+      "D": "मेल्विल डेवी"
+    },
+    "correct": "B",
+    "explanation": "Nina E. Browne invented the Browne Charging/Issue System in 1895 while serving as librarian of the Boston Athenaeum.",
+    "explanationHindi": "नीना ई. ब्राउन ने 1895 में ब्राउन चार्जिंग प्रणाली का आविष्कार किया था, जो पुस्तकालयों में पुस्तक लेन-देन (Circulation) की अत्यंत लोकप्रिय प्रणाली बनी।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "circulation",
+    "topicLabel": "Circulation Systems",
+    "difficulty": "easy",
+    "tags": [
+      "browne system",
+      "circulation",
+      "1895"
+    ]
+  },
+  {
+    "id": "ls-139",
+    "question": "The Newark Circulation System, which introduced the reader's identification card and due date slips, was devised in 1900 by:",
+    "questionHindi": "1900 में पाठक पहचान पत्र और देय तिथि पर्ची वाली 'नेवार्क निर्गम प्रणाली' (Newark System) का प्रतिपादन किसने किया था?",
+    "options": {
+      "A": "Nina E. Browne",
+      "B": "John Cotton Dana",
+      "C": "Herbert Putnam",
+      "D": "W.C. Berwick Sayers"
+    },
+    "optionsHindi": {
+      "A": "नीना ई. ब्राउन",
+      "B": "जॉन कॉटन डाना (John Cotton Dana - नेवार्क पब्लिक लाइब्रेरी)",
+      "C": "हर्बर्ट पुटनाम",
+      "D": "डब्लू.सी. बेरविक सेयर्स"
+    },
+    "correct": "B",
+    "explanation": "John Cotton Dana introduced the Newark Charging System in 1900 at the Newark Public Library in New Jersey.",
+    "explanationHindi": "जॉन कॉटन डाना ने 1900 में नेवार्क पब्लिक लाइब्रेरी (न्यू जर्सी) में नेवार्क चार्जिंग सिस्टम की शुरुआत की थी।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "circulation",
+    "topicLabel": "Circulation Systems",
+    "difficulty": "medium",
+    "tags": [
+      "newark system",
+      "john cotton dana",
+      "circulation"
+    ]
+  },
+  {
+    "id": "ls-140",
+    "question": "In library RFID (Radio Frequency Identification) automation systems, what standard radio frequency is universally used for item tagging?",
+    "questionHindi": "पुस्तकालय ऑटोमेशन में RFID (रेडियो फ्रीक्वेंसी आइडेंटिफिकेशन) टैग्स के लिए अंतरराष्ट्रीय स्तर पर कौन सी मानक रेडियो आवृत्ति प्रयुक्त होती है?",
+    "options": {
+      "A": "125 kHz (Low Frequency)",
+      "B": "13.56 MHz (High Frequency - HF)",
+      "C": "860–960 MHz (UHF)",
+      "D": "2.4 GHz (Microwave)"
+    },
+    "optionsHindi": {
+      "A": "125 kHz",
+      "B": "13.56 MHz (उच्च आवृत्ति / High Frequency - ISO 15693 / 18000-3)",
+      "C": "860–960 MHz",
+      "D": "2.4 GHz"
+    },
+    "correct": "B",
+    "explanation": "13.56 MHz (High Frequency HF band under ISO 15693 and ISO 18000-3 standards) is the global library standard for book tagging, self-checkout, and anti-theft security gates.",
+    "explanationHindi": "पुस्तकालयों में RFID टैग और स्मार्ट गेट्स के लिए 13.56 MHz (High Frequency) मानक आवृत्ति का उपयोग किया जाता है।",
+    "subject": "library-science",
+    "unit": "it-computer",
+    "topic": "library-automation",
+    "topicLabel": "RFID in Libraries",
+    "difficulty": "medium",
+    "tags": [
+      "rfid",
+      "13.56 mhz",
+      "library automation"
+    ]
+  },
+  {
+    "id": "ls-141",
+    "question": "Which prominent library pioneer stated the classic book selection principle: 'The best reading for the largest number at the least cost'?",
+    "questionHindi": "'न्यूनतम लागत पर अधिकतम पाठकों के लिए सर्वोत्तम पठन सामग्री' (The best reading for the largest number at the least cost) पुस्तक चयन का यह सिद्धांत किसने दिया था?",
+    "options": {
+      "A": "Dr. S.R. Ranganathan",
+      "B": "Melvil Dewey",
+      "C": "F.K.W. Drury",
+      "D": "H.E. Bliss"
+    },
+    "optionsHindi": {
+      "A": "डॉ. एस.आर. रंगनाथन",
+      "B": "मेल्विल डेवी (Melvil Dewey - 1876)",
+      "C": "एफ.के.डब्ल्यू. ड्रूरी",
+      "D": "एच.ई. ब्लिस"
+    },
+    "correct": "B",
+    "explanation": "Melvil Dewey formulated the motto of the American Library Association (ALA) in 1876: 'The best reading for the largest number at the least cost'.",
+    "explanationHindi": "मेल्विल डेवी ने 1876 में पुस्तक चयन का सुप्रसिद्ध सिद्धांत दिया: 'The best reading for the largest number at the least cost'।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "acquisition",
+    "topicLabel": "Book Selection Principles",
+    "difficulty": "easy",
+    "tags": [
+      "melvil dewey",
+      "book selection",
+      "ala"
+    ]
+  },
+  {
+    "id": "ls-142",
+    "question": "F.K.W. Drury's classic book selection principle states that the primary purpose of selection is to provide:",
+    "questionHindi": "एफ.के.डब्ल्यू. ड्रूरी (F.K.W. Drury - 1930) का पुस्तक चयन सिद्धांत क्या प्रतिपादित करता है?",
+    "options": {
+      "A": "Books are for use",
+      "B": "To provide the right book to the right reader at the right time",
+      "C": "Every reader his book",
+      "D": "Every book its reader"
+    },
+    "optionsHindi": {
+      "A": "पुस्तकें उपयोग के लिए हैं",
+      "B": "सही समय पर सही पाठक को सही पुस्तक उपलब्ध कराना (Right book to right reader at right time)",
+      "C": "प्रत्येक पाठक को उसकी पुस्तक",
+      "D": "प्रत्येक पुस्तक को उसका पाठक"
+    },
+    "correct": "B",
+    "explanation": "In his 1930 book 'Book Selection', Francis K.W. Drury stated: 'To provide the right book to the right reader at the right time.'",
+    "explanationHindi": "ड्रूरी ने 1930 में सिद्धांत दिया: 'सही पाठक को सही समय पर सही पुस्तक उपलब्ध कराना' (To provide the right book to the right reader at the right time)।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "acquisition",
+    "topicLabel": "Book Selection Principles",
+    "difficulty": "easy",
+    "tags": [
+      "drury",
+      "book selection",
+      "principles"
+    ]
+  },
+  {
+    "id": "ls-143",
+    "question": "Selective Dissemination of Information (SDI), a customized computerized alerting service for individual researchers, was conceived in 1958 by:",
+    "questionHindi": "शोधकर्ताओं हेतु व्यक्तिगत रुचि प्रोफाइल पर आधारित 'चयनात्मक सूचना प्रसार' (SDI - Selective Dissemination of Information) की अवधारणा 1958 में किसने प्रस्तुत की थी?",
+    "options": {
+      "A": "S.R. Ranganathan",
+      "B": "Hans Peter Luhn (H.P. Luhn)",
+      "C": "Eugene Garfield",
+      "D": "F.W. Lancaster"
+    },
+    "optionsHindi": {
+      "A": "एस.आर. रंगनाथन",
+      "B": "हंस पीटर लूह्न (H.P. Luhn - IBM)",
+      "C": "यूजीन गारफील्ड",
+      "D": "एफ.डब्ल्यू. लैंकेस्टर"
+    },
+    "correct": "B",
+    "explanation": "H.P. Luhn of IBM introduced the concept of Selective Dissemination of Information (SDI) in 1958, matching user interest profiles with document profiles.",
+    "explanationHindi": "आईबीएम (IBM) के वैज्ञानिक एच.पी. लूह्न (H.P. Luhn) ने 1958 में कंप्यूटर आधारित SDI सेवा का आविष्कार किया था।",
+    "subject": "library-science",
+    "unit": "reference-services",
+    "topic": "reference-service",
+    "topicLabel": "CAS & SDI Services",
+    "difficulty": "easy",
+    "tags": [
+      "sdi",
+      "hp luhn",
+      "reference service"
+    ]
+  },
+  {
+    "id": "ls-144",
+    "question": "What is the primary difference between a Current Awareness Service (CAS) and a Selective Dissemination of Information (SDI) service?",
+    "questionHindi": "सामयिक अभिज्ञता सेवा (CAS) और चयनात्मक सूचना प्रसार (SDI) में मुख्य अंतर क्या है?",
+    "options": {
+      "A": "CAS is retrospective, whereas SDI is current",
+      "B": "CAS is a broad general alerting service for groups, whereas SDI is personalized for individual user profiles",
+      "C": "CAS requires payment, whereas SDI is always free",
+      "D": "CAS is only manual, whereas SDI cannot use computers"
+    },
+    "optionsHindi": {
+      "A": "CAS पूर्वव्यापी है, जबकि SDI सामयिक है",
+      "B": "CAS सामान्य समूह-उन्मुख सेवा है, जबकि SDI यूजर प्रोफाइल आधारित व्यक्तिगत सेवा है",
+      "C": "CAS सशुल्क है और SDI निःशुल्क",
+      "D": "कोई अंतर नहीं है"
+    },
+    "correct": "B",
+    "explanation": "CAS is broad and disseminates recent additions generally to a wide audience. SDI is customized, matching incoming documents against a specific researcher's User Interest Profile.",
+    "explanationHindi": "CAS सभी पाठकों के लिए सामान्य रूप से नवीनतम जानकारी (जैसे नई पुस्तकों की सूची) उपलब्ध कराती है, जबकि SDI किसी विशिष्ट यूजर की प्रोफाइल से मेल खाने वाली चयनित सामग्री ही भेजती है।",
+    "subject": "library-science",
+    "unit": "reference-services",
+    "topic": "reference-service",
+    "topicLabel": "CAS & SDI Services",
+    "difficulty": "medium",
+    "tags": [
+      "cas",
+      "sdi",
+      "reference service"
+    ]
+  },
+  {
+    "id": "ls-145",
+    "question": "According to Dr. S.R. Ranganathan, what distinguishes 'Long-Range Reference Service' (LRRS) from 'Ready Reference Service'?",
+    "questionHindi": "डॉ. एस.आर. रंगनाथन के अनुसार 'दीर्घ-कालीन संदर्भ सेवा' (Long-Range Reference Service) की मुख्य विशेषता क्या है?",
+    "options": {
+      "A": "It can be answered in less than 5 minutes using fact books",
+      "B": "It requires in-depth search across multiple sources and may take hours, days, or weeks",
+      "C": "It is provided only via telephone",
+      "D": "It is meant exclusively for children"
+    },
+    "optionsHindi": {
+      "A": "यह 5 मिनट से कम समय में दी जाती है (रेडी रेफरेंस)",
+      "B": "इसमें विस्तृत खोज की आवश्यकता होती है और कई घंटे, दिन या सप्ताह लग सकते हैं",
+      "C": "यह केवल फोन पर दी जाती है",
+      "D": "यह केवल बाल पाठकों के लिए है"
+    },
+    "correct": "B",
+    "explanation": "Ready Reference Service provides immediate answers (facts, definitions, dates) in minutes. Long-Range Reference Service involves complex bibliographic searches across specialized treatises and may take days or weeks.",
+    "explanationHindi": "रेडी रेफरेंस सेवा में त्वरित तथ्यात्मक उत्तर (कुछ मिनटों में) दिए जाते हैं, जबकि दीर्घ-कालीन संदर्भ सेवा (LRRS) में गहन शोध की आवश्यकता होती है और इसमें कई दिन लग सकते हैं।",
+    "subject": "library-science",
+    "unit": "reference-services",
+    "topic": "reference-service",
+    "topicLabel": "Reference Services",
+    "difficulty": "medium",
+    "tags": [
+      "long range reference",
+      "ready reference",
+      "ranganathan"
+    ]
+  },
+  {
+    "id": "ls-146",
+    "question": "Who created the Science Citation Index (SCI) in 1964 and founded the Institute for Scientific Information (ISI)?",
+    "questionHindi": "1964 में 'साइंस साइटेशन इंडेक्स' (SCI) की स्थापना और 'इंस्टीट्यूट फॉर साइंटिफिक इंफॉर्मेशन' (ISI) की स्थापना किसने की थी?",
+    "options": {
+      "A": "Derek de Solla Price",
+      "B": "Eugene Garfield",
+      "C": "F.W. Lancaster",
+      "D": "Jorge E. Hirsch"
+    },
+    "optionsHindi": {
+      "A": "डेरेक डी सोला प्राइस",
+      "B": "डॉ. यूजीन गारफील्ड (Eugene Garfield)",
+      "C": "एफ.डब्ल्यू. लैंकेस्टर",
+      "D": "जॉर्ज ई. हिर्श (h-index)"
+    },
+    "correct": "B",
+    "explanation": "Eugene Garfield pioneered citation indexing for scientific literature, founding the Institute for Scientific Information (ISI) and launching the Science Citation Index in 1964 (now Web of Science).",
+    "explanationHindi": "डॉ. यूजीन गारफील्ड ने 1964 में साइंस साइटेशन इंडेक्स (SCI) और जर्नल इम्पैक्ट फैक्टर (JIF) की शुरुआत की थी, जो वर्तमान में Web of Science का आधार है।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "bibliometrics",
+    "topicLabel": "Bibliometrics & Citation Indexing",
+    "difficulty": "easy",
+    "tags": [
+      "eugene garfield",
+      "sci",
+      "citation index",
+      "isi"
+    ]
+  },
+  {
+    "id": "ls-147",
+    "question": "The 'h-index', a metric proposed in 2005 to evaluate both the productivity and citation impact of a researcher's publications, was devised by:",
+    "questionHindi": "शोधकर्ता की उत्पादकता और प्रभाव को एक साथ मापने वाला 'h-इंडेक्स' (h-index) 2005 में किस वैज्ञानिक द्वारा प्रतिपादित किया गया था?",
+    "options": {
+      "A": "Eugene Garfield",
+      "B": "Jorge E. Hirsch",
+      "C": "Leo Egghe",
+      "D": "Alan Pritchard"
+    },
+    "optionsHindi": {
+      "A": "यूजीन गारफील्ड",
+      "B": "जॉर्ज ई. हिर्श (Jorge E. Hirsch)",
+      "C": "लियो एघे (g-index)",
+      "D": "एलन प्रिचार्ड (Bibliometrics शब्द)"
+    },
+    "correct": "B",
+    "explanation": "Physicist Jorge E. Hirsch proposed the h-index in 2005. A scientist has index h if h of his/her papers have at least h citations each.",
+    "explanationHindi": "भौतिक विज्ञानी जॉर्ज ई. हिर्श ने 2005 में h-इंडेक्स का प्रतिपादन किया था। एक वैज्ञानिक का h-इंडेक्स 'h' होता है यदि उसके 'h' शोधपत्रों को कम से कम 'h' उद्धरण प्राप्त हुए हों।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "bibliometrics",
+    "topicLabel": "Bibliometrics & Citation Metrics",
+    "difficulty": "medium",
+    "tags": [
+      "h-index",
+      "jorge hirsch",
+      "bibliometrics"
+    ]
+  },
+  {
+    "id": "ls-148",
+    "question": "Who originally coined the term 'Bibliometrics' in 1969 to replace the earlier term 'Statistical Bibliography'?",
+    "questionHindi": "1969 में 'स्टैटिस्टिकल बिब्लियोग्राफी' के स्थान पर 'बिब्लियोमेट्रिक्स' (Bibliometrics) शब्द सर्वप्रथम किसने गढ़ा था?",
+    "options": {
+      "A": "E.W. Hulme",
+      "B": "Alan Pritchard",
+      "C": "S.R. Ranganathan",
+      "D": "Derek de Solla Price"
+    },
+    "optionsHindi": {
+      "A": "ई.डब्ल्यू. हुल्मे (1923)",
+      "B": "एलन प्रिचार्ड (Alan Pritchard - 1969)",
+      "C": "एस.आर. रंगनाथन (Librametry - 1948)",
+      "D": "डेरेक डी सोला प्राइस"
+    },
+    "correct": "B",
+    "explanation": "Alan Pritchard introduced the term 'Bibliometrics' in 1969 in his paper 'Statistical Bibliography or Bibliometrics?' to define the application of mathematics and statistical methods to books and other media.",
+    "explanationHindi": "एलन प्रिचार्ड ने 1969 में पुस्तकों और पत्रिकाओं के गणितीय व सांख्यिकीय विश्लेषण हेतु 'बिब्लियोमेट्रिक्स' (Bibliometrics) शब्द प्रतिपादित किया था।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "bibliometrics",
+    "topicLabel": "Bibliometrics History",
+    "difficulty": "medium",
+    "tags": [
+      "bibliometrics",
+      "alan pritchard",
+      "1969"
+    ]
+  },
+  {
+    "id": "ls-149",
+    "question": "Which of the following is an open-source Integrated Library Management System (ILMS) software widely adopted globally?",
+    "questionHindi": "निम्नलिखित में से कौन सा एक विश्वप्रसिद्ध ओपन-सोर्स इंटीग्रेटेड लाइब्रेरी मैनेजमेंट सिस्टम (ILMS) सॉफ्टवेयर है?",
+    "options": {
+      "A": "LibSys",
+      "B": "Virtua",
+      "C": "Koha",
+      "D": "SLIM"
+    },
+    "optionsHindi": {
+      "A": "लिबसिस (वाणिज्यिक)",
+      "B": "वर्चुआ (वाणिज्यिक)",
+      "C": "कोहा (Koha - पूर्णतः ओपन-सोर्स ILMS)",
+      "D": "स्लिम (वाणिज्यिक)"
+    },
+    "correct": "C",
+    "explanation": "Koha was the world's first open-source ILMS, created in 1999 in New Zealand. It includes full circulation, cataloguing (MARC21/UNIMARC), OPAC, and serials management.",
+    "explanationHindi": "कोहा (Koha) विश्व का पहला और सर्वाधिक लोकप्रिय ओपन-सोर्स एकीकृत पुस्तकालय प्रबंधन सॉफ्टवेयर है, जिसे 1999 में न्यूजीलैंड में विकसित किया गया था।",
+    "subject": "library-science",
+    "unit": "it-computer",
+    "topic": "library-software",
+    "topicLabel": "Library Automation Software",
+    "difficulty": "easy",
+    "tags": [
+      "koha",
+      "open source",
+      "ilms"
+    ]
+  },
+  {
+    "id": "ls-150",
+    "question": "SOUL (Software for University Libraries) is an integrated library management package developed in India by:",
+    "questionHindi": "'सोल' (SOUL - सॉफ्टवेयर फॉर यूनिवर्सिटी लाइब्रेरीज़) भारत में किस प्रतिष्ठित संस्था द्वारा विकसित किया गया लाइब्रेरी सॉफ्टवेयर है?",
+    "options": {
+      "A": "NIC (National Informatics Centre)",
+      "B": "INFLIBNET Centre, Gandhinagar",
+      "C": "DELNET, New Delhi",
+      "D": "DESIDOC, Delhi"
+    },
+    "optionsHindi": {
+      "A": "एनआईसी (e-Granthalaya विकसित किया)",
+      "B": "इन्फ्लिबनेट केंद्र, गांधीनगर (INFLIBNET)",
+      "C": "डेलनेट (DELNET)",
+      "D": "डेसीडॉक (DESIDOC)"
+    },
+    "correct": "B",
+    "explanation": "SOUL (versions 1.0, 2.0, and 3.0) was created by the Information and Library Network (INFLIBNET) Centre specifically to automate Indian university and college libraries.",
+    "explanationHindi": "SOUL सॉफ्टवेयर को यूजीसी के अंतर-विश्वविद्यालयीय केंद्र 'इन्फ्लिबनेट' (INFLIBNET, गांधीनगर) द्वारा भारतीय शैक्षणिक पुस्तकालयों के ऑटोमेशन हेतु विकसित किया गया है।",
+    "subject": "library-science",
+    "unit": "it-computer",
+    "topic": "library-software",
+    "topicLabel": "SOUL Software",
+    "difficulty": "easy",
+    "tags": [
+      "soul",
+      "inflibnet",
+      "library software"
+    ]
+  },
+  {
+    "id": "ls-151",
+    "question": "'e-Granthalaya' library automation and networking software is designed and maintained by which government agency?",
+    "questionHindi": "'ई-ग्रंथालय' (e-Granthalaya) डिजिटल पुस्तकालय सॉफ्टवेयर किस सरकारी एजेंसी द्वारा विकसित और अनुरक्षित किया जाता है?",
+    "options": {
+      "A": "INFLIBNET",
+      "B": "National Informatics Centre (NIC)",
+      "C": "NIScPR",
+      "D": "C-DAC"
+    },
+    "optionsHindi": {
+      "A": "इन्फ्लिबनेट",
+      "B": "राष्ट्रीय सूचना विज्ञान केंद्र (NIC - इलेक्ट्रॉनिक्स और आईटी मंत्रालय)",
+      "C": "निस्पर",
+      "D": "सी-डैक"
+    },
+    "correct": "B",
+    "explanation": "e-Granthalaya is an integrated cloud-ready library management software developed by the National Informatics Centre (NIC), Ministry of Electronics and IT, Government of India.",
+    "explanationHindi": "ई-ग्रंथालय भारत सरकार के इलेक्ट्रॉनिक्स एवं सूचना प्रौद्योगिकी मंत्रालय के अंतर्गत राष्ट्रीय सूचना विज्ञान केंद्र (NIC) द्वारा विकसित सॉफ्टवेयर है।",
+    "subject": "library-science",
+    "unit": "it-computer",
+    "topic": "library-software",
+    "topicLabel": "e-Granthalaya",
+    "difficulty": "easy",
+    "tags": [
+      "e-granthalaya",
+      "nic",
+      "library software"
+    ]
+  },
+  {
+    "id": "ls-152",
+    "question": "Which open-source software is globally recognized as the premier institutional repository platform for archiving and disseminating digital research papers and theses?",
+    "questionHindi": "डिजिटल शोधपत्रों, शोध प्रबंधों (Theses) और संस्थागत रिपॉजिटरी के प्रबंधन हेतु विश्वभर में सर्वाधिक प्रयुक्त ओपन-सोर्स सॉफ्टवेयर कौन सा है?",
+    "options": {
+      "A": "DSpace",
+      "B": "Koha",
+      "C": "SOUL",
+      "D": "Joomla"
+    },
+    "optionsHindi": {
+      "A": "डीस्पेस (DSpace - MIT & HP द्वारा विकसित)",
+      "B": "कोहा (ILMS)",
+      "C": "सोल (ILMS)",
+      "D": "जूमला (CMS)"
+    },
+    "correct": "A",
+    "explanation": "DSpace, jointly developed by MIT Libraries and Hewlett-Packard (HP) Labs in 2002, is the world's leading open-source digital institutional repository platform.",
+    "explanationHindi": "DSpace डिजिटल रिपॉजिटरी सॉफ्टवेयर है जिसका उपयोग शोधपत्रों, शोध-प्रबंधों (ETDs) और डिजिटल अभिलेखागारों के ऑनलाइन संग्रह और प्रसार हेतु किया जाता है।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "digital-libraries",
+    "topicLabel": "Digital Repositories (DSpace)",
+    "difficulty": "easy",
+    "tags": [
+      "dspace",
+      "institutional repository",
+      "digital library"
+    ]
+  },
+  {
+    "id": "ls-153",
+    "question": "The Simple Dublin Core Metadata Element Set (DCMES) consists of how many basic metadata elements?",
+    "questionHindi": "डबलिन कोर मेटाडेटा तत्व सेट (Dublin Core Metadata Element Set - DCMES) में कुल कितने मूल तत्व (Elements) होते हैं?",
+    "options": {
+      "A": "10 elements",
+      "B": "12 elements",
+      "C": "15 elements",
+      "D": "21 elements"
+    },
+    "optionsHindi": {
+      "A": "10 तत्व",
+      "B": "12 तत्व",
+      "C": "15 तत्व (15 Core Elements - ISO 15836)",
+      "D": "21 तत्व"
+    },
+    "correct": "C",
+    "explanation": "Simple Dublin Core comprises exactly 15 metadata elements (Title, Creator, Subject, Description, Publisher, Contributor, Date, Type, Format, Identifier, Source, Language, Relation, Coverage, Rights).",
+    "explanationHindi": "डबलिन कोर (Dublin Core) में कुल 15 बुनियादी मेटाडेटा तत्व होते हैं (जैसे Title, Creator, Subject, Publisher, Date, Format, Rights आदि)। यह ISO 15836 मानक है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "bibliographic-description",
+    "topicLabel": "Dublin Core Metadata",
+    "difficulty": "easy",
+    "tags": [
+      "dublin core",
+      "15 elements",
+      "metadata"
+    ]
+  },
+  {
+    "id": "ls-154",
+    "question": "Which international standard client-server protocol (ISO 23950) is used to search and retrieve bibliographic records across diverse remote library databases?",
+    "questionHindi": "दूरस्थ विभिन्न पुस्तकालय डेटाबेसों में ग्रंथपरक रिकॉर्ड खोजने और डाउनलोड करने के लिए किस मानक प्रोटोकॉल (Z39.50) का उपयोग किया जाता है?",
+    "options": {
+      "A": "HTTP",
+      "B": "Z39.50",
+      "C": "FTP",
+      "D": "SNMP"
+    },
+    "optionsHindi": {
+      "A": "HTTP",
+      "B": "Z39.50 (ANSI/NISO Z39.50 / ISO 23950)",
+      "C": "FTP",
+      "D": "SNMP"
+    },
+    "correct": "B",
+    "explanation": "Z39.50 is an international client-server protocol for searching and retrieving information from remote databases (allowing one library OPAC to query other catalogues).",
+    "explanationHindi": "Z39.50 एक अंतरराष्ट्रीय मानक नेटवर्क प्रोटोकॉल है जो एक पुस्तकालय कैटलॉग को दुनिया भर के अन्य पुस्तकालयों के डेटाबेस में सर्च करने और रिकॉर्ड आयात करने की सुविधा देता है।",
+    "subject": "library-science",
+    "unit": "it-computer",
+    "topic": "internet-networking",
+    "topicLabel": "Information Retrieval Protocols",
+    "difficulty": "medium",
+    "tags": [
+      "z39.50",
+      "protocol",
+      "information retrieval"
+    ]
+  },
+  {
+    "id": "ls-155",
+    "question": "'Shodhganga' is a digital repository set up by INFLIBNET Centre for Indian universities to host and provide open access to:",
+    "questionHindi": "इन्फ्लिबनेट (INFLIBNET) द्वारा संचालित 'शोधगंगा' (Shodhganga) डिजिटल रिपॉजिटरी में किस प्रकार की सामग्री संग्रहीत की जाती है?",
+    "options": {
+      "A": "Undergraduate textbooks",
+      "B": "Full-text Electronic Theses and Dissertations (ETDs) of Indian universities",
+      "C": "School curriculum video lectures",
+      "D": "Newspaper archives"
+    },
+    "optionsHindi": {
+      "A": "कॉलेज पाठ्यपुस्तकें",
+      "B": "भारतीय विश्वविद्यालयों के पूर्ण-पाठ्य इलेक्ट्रॉनिक शोध प्रबंध एवं थीसिस (ETDs)",
+      "C": "स्कूल वीडियो लेक्चर्स",
+      "D": "समाचार पत्र अभिलेखागार"
+    },
+    "correct": "B",
+    "explanation": "Shodhganga is a national digital repository of Indian electronic theses and dissertations (ETDs) submitted to universities, enabling open access research sharing.",
+    "explanationHindi": "शोधगंगा भारतीय विश्वविद्यालयों में स्वीकृत पीएचडी शोध-प्रबंधों (Theses and Dissertations) का राष्ट्रीय डिजिटल भंडार है जो ओपन एक्सेस में उपलब्ध है।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "inflibnet-delnet",
+    "topicLabel": "INFLIBNET Initiatives",
+    "difficulty": "easy",
+    "tags": [
+      "shodhganga",
+      "inflibnet",
+      "etd",
+      "theses"
+    ]
+  },
+  {
+    "id": "ls-156",
+    "question": "What is 'ShodhGangotri', an initiative established by INFLIBNET in India?",
+    "questionHindi": "इन्फ्लिबनेट द्वारा शुरू किया गया 'शोधगंगोत्री' (ShodhGangotri) पोर्टल किस उद्देश्य के लिए है?",
+    "options": {
+      "A": "Repository of ongoing PhD research proposals and approved synopses in Indian universities",
+      "B": "A union catalogue of public library books",
+      "C": "A digital archive of ancient Sanskrit manuscripts",
+      "D": "An anti-plagiarism software tool"
+    },
+    "optionsHindi": {
+      "A": "भारतीय विश्वविद्यालयों में पंजीकृत चालू पीएचडी शोध प्रस्तावों एवं स्वीकृत सिनोप्सिस (Synopses) का भंडार",
+      "B": "सार्वजनिक पुस्तकालयों की संयुक्त सूची",
+      "C": "संस्कृत पांडुलिपियों का भंडार",
+      "D": "साहित्यिक चोरी रोधी सॉफ्टवेयर"
+    },
+    "correct": "A",
+    "explanation": "ShodhGangotri hosts approved electronic synopses and research proposals submitted by research scholars in Indian universities to avoid duplication of research topics.",
+    "explanationHindi": "शोधगंगोत्री शोधार्थियों द्वारा पीएचडी के लिए प्रस्तुत स्वीकृत शोध प्रस्तावों और सिनोप्सिस का ऑनलाइन भंडार है, ताकि एक ही विषय पर शोध की पुनरावृत्ति न हो।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "inflibnet-delnet",
+    "topicLabel": "INFLIBNET Initiatives",
+    "difficulty": "medium",
+    "tags": [
+      "shodhgangotri",
+      "synopsis",
+      "inflibnet"
+    ]
+  },
+  {
+    "id": "ls-157",
+    "question": "The National Digital Library of India (NDLI), integrating millions of digital learning resources across all disciplines, was developed by:",
+    "questionHindi": "भारत सरकार के शिक्षा मंत्रालय द्वारा समर्थित 'नेशनल डिजिटल लाइब्रेरी ऑफ इंडिया' (NDLI) को किस संस्थान द्वारा विकसित और प्रबंधित किया गया है?",
+    "options": {
+      "A": "IIT Delhi",
+      "B": "IIT Kharagpur",
+      "C": "IIT Bombay",
+      "D": "IISc Bangalore"
+    },
+    "optionsHindi": {
+      "A": "आईआईटी दिल्ली",
+      "B": "आईआईटी खड़गपुर (IIT Kharagpur)",
+      "C": "आईआईटी बॉम्बे",
+      "D": "आईआईएससी बैंगलोर"
+    },
+    "correct": "B",
+    "explanation": "National Digital Library of India (NDLI) is a virtual repository under the Ministry of Education, developed and operated by the Indian Institute of Technology (IIT) Kharagpur.",
+    "explanationHindi": "नेशनल डिजिटल लाइब्रेरी ऑफ इंडिया (NDLI) परियोजना का विकास और संचालन आईआईटी खड़गपुर (IIT Kharagpur) द्वारा किया जा रहा है।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "digital-libraries",
+    "topicLabel": "Digital Libraries",
+    "difficulty": "easy",
+    "tags": [
+      "ndli",
+      "iit kharagpur",
+      "digital library"
+    ]
+  },
+  {
+    "id": "ls-158",
+    "question": "DELNET (originally Delhi Library Network, now Developing Library Network) was established in 1988 with initial financial support from:",
+    "questionHindi": "1988 में स्थापित डेलनेट (DELNET - डेवलपिंग लाइब्रेरी नेटवर्क) की स्थापना में प्रारंभिक वित्तीय सहायता किस संस्था ने दी थी?",
+    "options": {
+      "A": "UGC",
+      "B": "NISSAT / DSIR",
+      "C": "RRRLF",
+      "D": "CSIR"
+    },
+    "optionsHindi": {
+      "A": "यूजीसी (UGC)",
+      "B": "निसात (NISSAT - नेशनल इंफॉर्मेशन सिस्टम फॉर साइंस एंड टेक्नोलॉजी)",
+      "C": "आरआरआरएलएफ",
+      "D": "सीएसआईआर"
+    },
+    "correct": "B",
+    "explanation": "DELNET was launched in 1988 with financial support from NISSAT (Department of Scientific and Industrial Research) and promoted by the India International Centre (IIC).",
+    "explanationHindi": "DELNET को 1988 में NISSAT (विज्ञान और प्रौद्योगिकी विभाग) के वित्तीय सहयोग से शुरू किया गया था, जो भारत में इंटर-लाइब्रेरी लोन (ILL) और यूनियन कैटलॉग की प्रमुख संस्था है।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "inflibnet-delnet",
+    "topicLabel": "DELNET",
+    "difficulty": "medium",
+    "tags": [
+      "delnet",
+      "nissat",
+      "resource sharing"
+    ]
+  },
+  {
+    "id": "ls-159",
+    "question": "Which protocol is the global standard for harvesting metadata records from Open Access repositories (such as DSpace and EPrints)?",
+    "questionHindi": "ओपन एक्सेस रिपॉजिटरीज़ (जैसे DSpace) से स्वचालित रूप से मेटाडेटा संकलित (Harvest) करने का वैश्विक मानक प्रोटोकॉल कौन सा है?",
+    "options": {
+      "A": "OAI-PMH",
+      "B": "SOAP",
+      "C": "IMAP",
+      "D": "FTP"
+    },
+    "optionsHindi": {
+      "A": "OAI-PMH (ओपन आर्काइव्स इनिशिएटिव प्रोटोकॉल फॉर मेटाडेटा हार्वेस्टिंग)",
+      "B": "SOAP",
+      "C": "IMAP",
+      "D": "FTP"
+    },
+    "correct": "A",
+    "explanation": "OAI-PMH (Open Archives Initiative Protocol for Metadata Harvesting) is the universal mechanism enabling digital archives to expose their Dublin Core metadata to harvesters and search engines.",
+    "explanationHindi": "OAI-PMH डिजिटल लाइब्रेरी और रिपॉजिटरी के बीच मेटाडेटा का आदान-प्रदान और संकलन करने का मानक इंटरनेट प्रोटोकॉल है।",
+    "subject": "library-science",
+    "unit": "it-computer",
+    "topic": "digital-technology",
+    "topicLabel": "Digital Library Protocols",
+    "difficulty": "medium",
+    "tags": [
+      "oai-pmh",
+      "metadata harvesting",
+      "open access"
+    ]
+  },
+  {
+    "id": "ls-160",
+    "question": "The Budapest Open Access Initiative (BOAI), which launched the worldwide Open Access movement, was convened in which year?",
+    "questionHindi": "विश्वव्यापी 'ओपन एक्सेस' (मुक्त पहुंच) आंदोलन को औपचारिक रूप देने वाली 'बुडापेस्ट ओपन एक्सेस इनिशिएटिव' (BOAI) किस वर्ष आयोजित हुई थी?",
+    "options": {
+      "A": "1995",
+      "B": "1998",
+      "C": "2002",
+      "D": "2008"
+    },
+    "optionsHindi": {
+      "A": "1995",
+      "B": "1998",
+      "C": "2002 (फरवरी 2002 - BOAI घोषणापत्र)",
+      "D": "2008"
+    },
+    "correct": "C",
+    "explanation": "The Budapest Open Access Initiative (BOAI) met in December 2001 and released its landmark declaration in February 2002, formally launching the modern Open Access scholarly movement.",
+    "explanationHindi": "फरवरी 2002 में जारी 'बुडापेस्ट ओपन एक्सेस इनिशिएटिव' (BOAI) ने शोध साहित्य को बिना किसी वित्तीय या कानूनी बाधा के इंटरनेट पर निःशुल्क सुलभ कराने का संकल्प लिया।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "digital-libraries",
+    "topicLabel": "Open Access Movement",
+    "difficulty": "medium",
+    "tags": [
+      "boai",
+      "open access",
+      "budapest"
+    ]
+  },
+  {
+    "id": "ls-161",
+    "question": "In Open Access publishing, what is the distinction between 'Gold Open Access' and 'Green Open Access'?",
+    "questionHindi": "ओपन एक्सेस प्रकाशन में 'गोल्ड ओपन एक्सेस' और 'ग्रीन ओपन एक्सेस' में क्या मौलिक अंतर है?",
+    "options": {
+      "A": "Gold OA is published directly in open-access journals; Green OA involves self-archiving in an institutional repository",
+      "B": "Gold OA is print only; Green OA is digital only",
+      "C": "Gold OA requires an institutional subscription; Green OA is purely commercial",
+      "D": "There is no difference"
+    },
+    "optionsHindi": {
+      "A": "गोल्ड OA में शोधपत्र सीधे ओपन-एक्सेस जर्नल में प्रकाशित होता है; ग्रीन OA में लेखक अपने लेख को संस्थागत रिपॉजिटरी में स्वयं आर्काइव (Self-archiving) करता है",
+      "B": "गोल्ड OA केवल प्रिंट है और ग्रीन केवल डिजिटल",
+      "C": "गोल्ड OA में सरकारी रोक होती है",
+      "D": "दोनों समान हैं"
+    },
+    "correct": "A",
+    "explanation": "Gold Open Access refers to articles made immediately free upon publication by the journal publisher. Green Open Access refers to author self-archiving of pre-print/post-print versions in repositories.",
+    "explanationHindi": "गोल्ड ओपन एक्सेस का अर्थ है जर्नल द्वारा प्रकाशित होते ही पाठक हेतु लेख मुफ्त उपलब्ध होना। ग्रीन ओपन एक्सेस का अर्थ है लेखक द्वारा अपने शोधपत्र की प्रति संस्थागत रिपॉजिटरी (DSpace आदि) में सुरक्षित करना।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "digital-libraries",
+    "topicLabel": "Open Access Publishing",
+    "difficulty": "medium",
+    "tags": [
+      "gold open access",
+      "green open access",
+      "self archiving"
+    ]
+  },
+  {
+    "id": "ls-162",
+    "question": "The 'Creative Commons' (CC) licensing framework was founded in 2001 by a team of cyberlaw scholars led by:",
+    "questionHindi": "डिजिटल बौद्धिक संपदा के उपयोग को सुगम बनाने वाले 'क्रिएटिव कॉमन्स' (Creative Commons - CC) लाइसेंसिंग सिस्टम की स्थापना 2001 में किसके नेतृत्व में हुई थी?",
+    "options": {
+      "A": "Richard Stallman",
+      "B": "Lawrence Lessig",
+      "C": "Tim Berners-Lee",
+      "D": "Jimmy Wales"
+    },
+    "optionsHindi": {
+      "A": "रिचर्ड स्टालमैन (GNU)",
+      "B": "लॉरेंस लेसिग (Lawrence Lessig)",
+      "C": "टिम बर्नर्स-ली (WWW)",
+      "D": "जिमी वेल्स (Wikipedia)"
+    },
+    "correct": "B",
+    "explanation": "Harvard and Stanford law professor Lawrence Lessig founded Creative Commons in 2001 to provide standardized copyright licenses (like CC BY, CC BY-SA) for creative and educational works.",
+    "explanationHindi": "लॉरेंस लेसिग ने 2001 में क्रिएटिव कॉमन्स की स्थापना की, जो कॉपीराइट स्वामी को अपनी रचनाओं के उपयोग (जैसे CC BY, CC BY-NC) की खुली अनुमति देने के मानक लाइसेंस प्रदान करता है।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "library-associations",
+    "topicLabel": "Copyright & Creative Commons",
+    "difficulty": "hard",
+    "tags": [
+      "creative commons",
+      "lawrence lessig",
+      "copyright"
+    ]
+  },
+  {
+    "id": "ls-163",
+    "question": "Which Creative Commons license is the most open and permissive, requiring only attribution to the original author?",
+    "questionHindi": "कौन सा क्रिएटिव कॉमन्स (CC) लाइसेंस सर्वाधिक उदार है, जिसमें केवल मूल लेखक को श्रेय (Attribution) देना अनिवार्य होता है?",
+    "options": {
+      "A": "CC BY",
+      "B": "CC BY-NC",
+      "C": "CC BY-ND",
+      "D": "CC BY-NC-ND"
+    },
+    "optionsHindi": {
+      "A": "CC BY (केवल एट्रिब्यूशन / श्रेय अनिवार्य)",
+      "B": "CC BY-NC (गैर-व्यावसायिक)",
+      "C": "CC BY-ND (अपरिवर्तनीय)",
+      "D": "CC BY-NC-ND (सर्वाधिक प्रतिबंधात्मक)"
+    },
+    "correct": "A",
+    "explanation": "CC BY (Attribution) lets others distribute, remix, adapt, and build upon the work, even commercially, as long as credit is given to the original creator.",
+    "explanationHindi": "CC BY लाइसेंस सबसे खुला लाइसेंस है जो दूसरों को सामग्री का पुनः उपयोग, संशोधन और व्यावसायिक उपयोग करने की पूरी अनुमति देता है, बशर्ते मूल रचनाकार को श्रेय दिया जाए।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "library-associations",
+    "topicLabel": "Creative Commons Licenses",
+    "difficulty": "easy",
+    "tags": [
+      "cc by",
+      "creative commons",
+      "licensing"
+    ]
+  },
+  {
+    "id": "ls-164",
+    "question": "The 'N-LIST' (National Library and Information Services Infrastructure for Scholarly Content) college consortium is jointly funded and executed by:",
+    "questionHindi": "कॉलेज के शिक्षकों और विद्यार्थियों को लाखों ई-बुक्स और जर्नल्स सुलभ कराने वाली 'N-LIST' परियोजना का संचालन किसके द्वारा किया जाता है?",
+    "options": {
+      "A": "INFLIBNET Centre and e-ShodhSindhu",
+      "B": "DELNET",
+      "C": "AICTE",
+      "D": "CSIR"
+    },
+    "optionsHindi": {
+      "A": "इन्फ्लिबनेट केंद्र (INFLIBNET) एवं ई-शोधसिंधु",
+      "B": "डेलनेट (DELNET)",
+      "C": "एआईसीटीई",
+      "D": "सीएसआईआर"
+    },
+    "correct": "A",
+    "explanation": "N-LIST, operated by INFLIBNET Centre Gandhinagar under the e-ShodhSindhu consortium, provides remote access to 6,000+ e-journals and 31 lakh+ e-books to colleges covered under UGC 12B/2F.",
+    "explanationHindi": "N-LIST इन्फ्लिबनेट का एक प्रमुख कार्यक्रम है जो देश भर के कॉलेजों के छात्रों और प्राध्यापकों को लाखों ई-बुक्स और अंतरराष्ट्रीय जर्नल्स का सब्सक्रिप्शन निःशुल्क/सस्ते में उपलब्ध कराता है।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "inflibnet-delnet",
+    "topicLabel": "N-LIST Project",
+    "difficulty": "medium",
+    "tags": [
+      "n-list",
+      "inflibnet",
+      "consortia"
+    ]
+  },
+  {
+    "id": "ls-165",
+    "question": "The 'Digital Millennium Copyright Act' (DMCA), a landmark United States copyright law addressing digital intellectual property and safe harbor provisions, was enacted in:",
+    "questionHindi": "डिजिटल बौद्धिक संपदा अधिकारों और इंटरनेट कॉपीराइट संरक्षण से संबंधित प्रसिद्ध कानून 'DMCA' किस वर्ष लागू हुआ था?",
+    "options": {
+      "A": "1994",
+      "B": "1998",
+      "C": "2001",
+      "D": "2005"
+    },
+    "optionsHindi": {
+      "A": "1994",
+      "B": "1998 (Digital Millennium Copyright Act)",
+      "C": "2001",
+      "D": "2005"
+    },
+    "correct": "B",
+    "explanation": "The DMCA was passed by the US Congress in October 1998 to implement WIPO treaties and regulate digital copyright infringement and anti-circumvention measures.",
+    "explanationHindi": "DMCA (डिजिटल मिलेनियम कॉपीराइट एक्ट) को 1998 में लागू किया गया था, जो इंटरनेट पर सामग्री की अनधिकृत कॉपी और ऑनलाइन पाइरेसी पर रोक लगाता है।",
+    "subject": "library-science",
+    "unit": "it-computer",
+    "topic": "digital-technology",
+    "topicLabel": "Digital Copyright & DMCA",
+    "difficulty": "hard",
+    "tags": [
+      "dmca",
+      "copyright",
+      "1998"
+    ]
+  },
+  {
+    "id": "ls-166",
+    "question": "In Colon Classification (CC), what term did Dr. S.R. Ranganathan give to digits like '0' and 'z' which possess ordinal value but represent no subject by themselves?",
+    "questionHindi": "कोलन क्लासिफिकेशन (CC) में डॉ. रंगनाथन ने उन अंकों को क्या नाम दिया जिनका अपना कोई विषयगत अर्थ नहीं होता, किन्तु वे क्रम (Ordinal Value) तय करते हैं?",
+    "options": {
+      "A": "Significant Digits",
+      "B": "Empty Digits and Emptying Digits",
+      "C": "Connecting Symbols",
+      "D": "Mnemonics"
+    },
+    "optionsHindi": {
+      "A": "सार्थक अंक",
+      "B": "रिक्त अंक (Empty Digits) एवं रिक्तिकारी अंक (Emptying Digits)",
+      "C": "योजक चिह्न",
+      "D": "स्मृति सहायक अंक"
+    },
+    "correct": "B",
+    "explanation": "Ranganathan introduced 'Empty Digits' (digits having only ordinal value but no semantic value, like z, 0) and 'Emptying Digits' (T, V, X) to interpolate new subjects indefinitely in an array.",
+    "explanationHindi": "रंगनाथन ने नई श्रेणियों और विषयों को बीच में जोड़ने (Interpolation) के लिए 'Empty Digits' और 'Emptying Digits' का नवाचार प्रस्तुत किया था।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "colon-classification",
+    "topicLabel": "Notational Techniques in CC",
+    "difficulty": "hard",
+    "tags": [
+      "colon classification",
+      "empty digits",
+      "notation"
+    ]
+  },
+  {
+    "id": "ls-167",
+    "question": "In Colon Classification, the 'Zone Analysis' concept divides the notational array into how many broad zones?",
+    "questionHindi": "कोलन क्लासिफिकेशन (CC) में 'जोन एनालिसिस' (Zone Analysis) के अंतर्गत अंकन पंक्ति को कुल कितने जोनों में विभाजित किया गया है?",
+    "options": {
+      "A": "2 Zones",
+      "B": "3 Zones",
+      "C": "4 Zones",
+      "D": "5 Zones"
+    },
+    "optionsHindi": {
+      "A": "2 जोन",
+      "B": "3 जोन",
+      "C": "4 जोन (Zone 1: Indo-Arabic, Zone 2: Roman Caps, Zone 3: Roman Smalls, Zone 4: Bracketed)",
+      "D": "5 जोन"
+    },
+    "correct": "C",
+    "explanation": "Ranganathan's Zone Analysis divides the array into 4 zones based on character species: Zone 1 (Indo-Arabic numerals), Zone 2 (Roman capital letters), Zone 3 (Roman small letters), Zone 4 (Packet notation/brackets).",
+    "explanationHindi": "रंगनाथन के ज़ोन विश्लेषण (Zone Analysis) में अंकन पंक्ति को 4 जोनों में बांटा गया है: 1. इंडो-अरेबिक अंक, 2. रोमन बड़े अक्षर, 3. रोमन छोटे अक्षर, 4. कोष्ठक अंकन।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "colon-classification",
+    "topicLabel": "Zone Analysis",
+    "difficulty": "hard",
+    "tags": [
+      "zone analysis",
+      "colon classification",
+      "ranganathan"
+    ]
+  },
+  {
+    "id": "ls-168",
+    "question": "What is the Main Class notation for 'Library and Information Science' in Dewey Decimal Classification (DDC)?",
+    "questionHindi": "DDC (Dewey Decimal Classification) में 'पुस्तकालय एवं सूचना विज्ञान' (Library Science) की वर्ग संख्या क्या है?",
+    "options": {
+      "A": "010",
+      "B": "020",
+      "C": "050",
+      "D": "070"
+    },
+    "optionsHindi": {
+      "A": "010 (ग्रंथ सूची - Bibliography)",
+      "B": "020 (पुस्तकालय एवं सूचना विज्ञान - Library & Information Science)",
+      "C": "050 (सामयिक पत्रिकाएं)",
+      "D": "070 (पत्रकारिता और समाचार पत्र)"
+    },
+    "correct": "B",
+    "explanation": "Under DDC Class 000 (Computer Science, Information & General Works), the subdivision 020 is dedicated to Library and Information Science.",
+    "explanationHindi": "DDC के वर्ग 000 में वर्ग संख्या '020' लाइब्रेरी एवं इंफॉर्मेशन साइंस (Library & Information Science) के लिए निर्धारित है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "ddc",
+    "topicLabel": "DDC Class Numbers",
+    "difficulty": "easy",
+    "tags": [
+      "ddc",
+      "020",
+      "library science"
+    ]
+  },
+  {
+    "id": "ls-169",
+    "question": "In Colon Classification (CC 6th edition), what is the Main Class letter notation for 'Library Science'?",
+    "questionHindi": "कोलन क्लासिफिकेशन (CC 6th Edition) में 'पुस्तकालय विज्ञान' (Library Science) का मुख्य वर्ग अक्षर क्या है?",
+    "options": {
+      "A": "1",
+      "B": "2",
+      "C": "A",
+      "D": "Z"
+    },
+    "optionsHindi": {
+      "A": "1 (ब्रह्मांड ज्ञान - Universe of Knowledge)",
+      "B": "2 (पुस्तकालय विज्ञान - Library Science)",
+      "C": "A (प्राकृतिक विज्ञान)",
+      "D": "Z (कानून)"
+    },
+    "correct": "B",
+    "explanation": "In CC, the digit '2' represents the Main Class Library Science (e.g. 2:51 for classification, 2:55 for cataloguing).",
+    "explanationHindi": "कोलन क्लासिफिकेशन में अंक '2' मुख्य वर्ग पुस्तकालय विज्ञान (Library Science) को दर्शाता है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "colon-classification",
+    "topicLabel": "Colon Classification Classes",
+    "difficulty": "easy",
+    "tags": [
+      "colon classification",
+      "main class 2",
+      "library science"
+    ]
+  },
+  {
+    "id": "ls-170",
+    "question": "What is the Main Class notation for 'Medicine' in Colon Classification?",
+    "questionHindi": "कोलन क्लासिफिकेशन (CC) में 'चिकित्सा विज्ञान' (Medicine) का मुख्य वर्ग अक्षर क्या है?",
+    "options": {
+      "A": "G",
+      "B": "H",
+      "C": "L",
+      "D": "M"
+    },
+    "optionsHindi": {
+      "A": "G (जीव विज्ञान - Biology)",
+      "B": "H (भूविज्ञान - Geology)",
+      "C": "L (चिकित्सा विज्ञान - Medicine)",
+      "D": "M (उपयोगी कलाएं - Useful Arts)"
+    },
+    "correct": "C",
+    "explanation": "In Colon Classification, 'L' stands for Medicine (e.g. L:4 represents diseases).",
+    "explanationHindi": "कोलन क्लासिफिकेशन में मुख्य वर्ग 'L' चिकित्सा विज्ञान (Medicine) के लिए प्रयुक्त होता है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "colon-classification",
+    "topicLabel": "Colon Classification Classes",
+    "difficulty": "easy",
+    "tags": [
+      "colon classification",
+      "medicine",
+      "main class l"
+    ]
+  },
+  {
+    "id": "ls-171",
+    "question": "Universal Decimal Classification (UDC) was developed by Paul Otlet and Henri La Fontaine based upon which existing classification scheme?",
+    "questionHindi": "पॉल ओटलेट और हेनरी ला फॉन्टेन द्वारा विकसित 'यूनिवर्सल डेसिमल क्लासिफिकेशन' (UDC) किस पूर्ववर्ती वर्गीकरण पद्धति पर आधारित है?",
+    "options": {
+      "A": "Colon Classification",
+      "B": "Dewey Decimal Classification (DDC 5th edition)",
+      "C": "Library of Congress Classification",
+      "D": "Expansive Classification"
+    },
+    "optionsHindi": {
+      "A": "कोलन क्लासिफिकेशन",
+      "B": "डीडीसी (DDC - Dewey Decimal Classification)",
+      "C": "लाइब्रेरी ऑफ कांग्रेस",
+      "D": "एक्सपेंसिव क्लासिफिकेशन"
+    },
+    "correct": "B",
+    "explanation": "In 1895, Paul Otlet and Henri La Fontaine adapted Melvil Dewey's DDC (specifically the 5th edition) with permission to create the Universal Decimal Classification (UDC).",
+    "explanationHindi": "UDC को पॉल ओटलेट और हेनरी ला फॉन्टेन ने 1895 में मेल्विल डेवी की DDC पद्धति के आधार पर विकसित किया था।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "udc",
+    "topicLabel": "Universal Decimal Classification",
+    "difficulty": "easy",
+    "tags": [
+      "udc",
+      "ddc",
+      "paul otlet",
+      "la fontaine"
+    ]
+  },
+  {
+    "id": "ls-172",
+    "question": "In Universal Decimal Classification (UDC), which auxiliary symbol is used to denote 'Place' (Geographic aspect)?",
+    "questionHindi": "यूनिवर्सल डेसिमल क्लासिफिकेशन (UDC) में 'स्थान' (Place) के सामान्य सहायक चिह्न के रूप में किसका प्रयोग होता है?",
+    "options": {
+      "A": "= (Equals sign)",
+      "B": "(1/9) (Round brackets enclosing numbers)",
+      "C": "\" \" (Quotation marks)",
+      "D": ": (Colon)"
+    },
+    "optionsHindi": {
+      "A": "= (भाषा के लिए)",
+      "B": "(1/9) [गोल कोष्ठक - स्थान के लिए]",
+      "C": "\" \" [उद्धरण चिह्न - काल / समय के लिए]",
+      "D": ": [संबंध / Relation के लिए]"
+    },
+    "correct": "B",
+    "explanation": "In UDC: (1/9) denotes Common Auxiliaries of Place; \"...\" denotes Time; = denotes Language; (0...) denotes Form.",
+    "explanationHindi": "UDC में स्थान (Place) को दर्शाने के लिए कोष्ठक (1/9) का उपयोग किया जाता है, जबकि समय (Time) को \" \" (उद्धरण चिह्न) द्वारा दर्शाया जाता है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "udc",
+    "topicLabel": "UDC Auxiliaries",
+    "difficulty": "medium",
+    "tags": [
+      "udc",
+      "place auxiliary",
+      "symbols"
+    ]
+  },
+  {
+    "id": "ls-173",
+    "question": "The 'Classified Catalogue Code' (CCC) of Dr. S.R. Ranganathan was first published in which year?",
+    "questionHindi": "डॉ. एस.आर. रंगनाथन द्वारा रचित भारत की प्रथम संपूर्ण सूचीकरण संहिता 'क्लासीफाइड कैटलॉग कोड' (CCC) का प्रथम संस्करण किस वर्ष प्रकाशित हुआ था?",
+    "options": {
+      "A": "1931",
+      "B": "1934",
+      "C": "1938",
+      "D": "1945"
+    },
+    "optionsHindi": {
+      "A": "1931 (Five Laws of Library Science)",
+      "B": "1934 (Classified Catalogue Code - CCC 1st ed.)",
+      "C": "1938 (Theory of Library Catalogue)",
+      "D": "1945"
+    },
+    "correct": "B",
+    "explanation": "Dr. Ranganathan published the first edition of the Classified Catalogue Code (CCC) in 1934 while serving at Madras University Library (its 5th and final edition appeared in 1964).",
+    "explanationHindi": "क्लासीफाइड कैटलॉग कोड (CCC) का प्रथम संस्करण 1934 में मद्रास लाइब्रेरी एसोसिएशन द्वारा प्रकाशित किया गया था।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "cataloguing",
+    "topicLabel": "Classified Catalogue Code (CCC)",
+    "difficulty": "medium",
+    "tags": [
+      "ccc",
+      "ranganathan",
+      "1934",
+      "cataloguing"
+    ]
+  },
+  {
+    "id": "ls-174",
+    "question": "In CCC (Classified Catalogue Code), the Main Entry consists of how many distinct sections in order?",
+    "questionHindi": "क्लासीफाइड कैटलॉग कोड (CCC) की मुख्य प्रविष्टि (Main Entry) में कुल कितने अनुभाग (Sections) होते हैं?",
+    "options": {
+      "A": "4 Sections",
+      "B": "5 Sections",
+      "C": "6 Sections",
+      "D": "8 Sections"
+    },
+    "optionsHindi": {
+      "A": "4 अनुभाग",
+      "B": "5 अनुभाग",
+      "C": "6 अनुभाग (Leading, Heading, Title, Note, Accession, Tracing)",
+      "D": "8 अनुभाग"
+    },
+    "correct": "C",
+    "explanation": "The Main Entry of CCC has 6 sections: 1. Leading Section, 2. Heading Section, 3. Title Section, 4. Note Section, 5. Accession Number, 6. Tracing Section.",
+    "explanationHindi": "CCC की मुख्य प्रविष्टि में 6 अनुभाग होते हैं: 1. लीडिंग सेक्शन, 2. हेडिंग सेक्शन, 3. टाइटल सेक्शन, 4. नोट सेक्शन, 5. एक्सेशन नंबर, 6. ट्रेसिंग सेक्शन (कार्ड के पीछे)।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "cataloguing",
+    "topicLabel": "CCC Main Entry Sections",
+    "difficulty": "medium",
+    "tags": [
+      "ccc",
+      "main entry",
+      "6 sections"
+    ]
+  },
+  {
+    "id": "ls-175",
+    "question": "In CCC, in which section of the Main Entry card is the 'Call Number' recorded?",
+    "questionHindi": "CCC में मुख्य प्रविष्टि कार्ड पर 'कॉल नंबर' (Call Number) किस अनुभाग में पेंसिल से लिखा जाता है?",
+    "options": {
+      "A": "Leading Section",
+      "B": "Heading Section",
+      "C": "Title Section",
+      "D": "Accession Section"
+    },
+    "optionsHindi": {
+      "A": "अग्र अनुच्छेद / लीडिंग सेक्शन (Leading Section)",
+      "B": "शीर्षक अनुच्छेद (Heading Section)",
+      "C": "आख्या अनुच्छेद (Title Section)",
+      "D": "परिग्रहण अनुच्छेद (Accession Section)"
+    },
+    "correct": "A",
+    "explanation": "In CCC, the Leading Section is the top-most line of the card and records the Call Number (Class Number + Book Number) in pencil.",
+    "explanationHindi": "CCC में सबसे ऊपर पहली पंक्ति 'लीडिंग सेक्शन' होती है, जिसमें कॉल नंबर को पेंसिल से दर्ज किया जाता है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "cataloguing",
+    "topicLabel": "CCC Sections",
+    "difficulty": "easy",
+    "tags": [
+      "ccc",
+      "leading section",
+      "call number"
+    ]
+  },
+  {
+    "id": "ls-176",
+    "question": "What is the full expansion of the international metadata standard 'MARC'?",
+    "questionHindi": "पुस्तकालय ऑटोमेशन में प्रयुक्त अंतरराष्ट्रीय प्रारूप 'MARC' का पूर्ण रूप क्या है?",
+    "options": {
+      "A": "Machine-Readable Cataloging",
+      "B": "Manual Record Automation Code",
+      "C": "Management and Archival Retrieval Code",
+      "D": "Modern Automated Record Classification"
+    },
+    "optionsHindi": {
+      "A": "मशीन-रीडेबल कैटलॉगिंग (Machine-Readable Cataloging)",
+      "B": "मैनुअल रिकॉर्ड ऑटोमेशन कोड",
+      "C": "मैनेजमेंट एंड आर्काइवल कोड",
+      "D": "मॉडर्न ऑटोमेटेड रिकॉर्ड क्लासिफिकेशन"
+    },
+    "correct": "A",
+    "explanation": "MARC stands for MAchine-Readable Cataloging, developed by Henriette Avram at the Library of Congress in the 1960s to enable computers to process and share catalog cards.",
+    "explanationHindi": "MARC का पूर्ण रूप 'Machine-Readable Cataloging' है, जिसे 1960 के दशक में हेनरीएट अवराम (Library of Congress) ने कंप्यूटर द्वारा ग्रंथपरक डेटा पढ़ने हेतु विकसित किया था।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "marc",
+    "topicLabel": "MARC Format",
+    "difficulty": "easy",
+    "tags": [
+      "marc",
+      "henriette avram",
+      "cataloging"
+    ]
+  },
+  {
+    "id": "ls-177",
+    "question": "In MARC 21, which field tag is reserved for the International Standard Book Number (ISBN)?",
+    "questionHindi": "MARC 21 में अंतरराष्ट्रीय मानक पुस्तक संख्या (ISBN) दर्ज करने हेतु कौन सा टैग प्रयुक्त होता है?",
+    "options": {
+      "A": "020",
+      "B": "022",
+      "C": "040",
+      "D": "082"
+    },
+    "optionsHindi": {
+      "A": "020 (ISBN - इंटरनेशनल स्टैंडर्ड बुक नंबर)",
+      "B": "022 (ISSN - पत्रिकाओं हेतु)",
+      "C": "040 (कैटलॉगिंग स्रोत)",
+      "D": "082 (DDC कॉल नंबर)"
+    },
+    "correct": "A",
+    "explanation": "Tag 020 is for ISBN and Tag 022 is for ISSN in the MARC21 standard.",
+    "explanationHindi": "MARC 21 में टैग 020 का उपयोग ISBN के लिए तथा टैग 022 का उपयोग ISSN के लिए किया जाता है। टैग 082 DDC नंबर के लिए होता है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "marc",
+    "topicLabel": "MARC 21 Tags",
+    "difficulty": "easy",
+    "tags": [
+      "marc 21",
+      "tag 020",
+      "isbn"
+    ]
+  },
+  {
+    "id": "ls-178",
+    "question": "Which management pioneer is hailed as the 'Father of Scientific Management' for his time-and-motion studies and principles of worker productivity?",
+    "questionHindi": "कार्य दक्षता, समय और गति अध्ययन पर आधारित 'वैज्ञानिक प्रबंधन का जनक' (Father of Scientific Management) किसे कहा जाता है?",
+    "options": {
+      "A": "Henri Fayol",
+      "B": "Frederick Winslow Taylor (F.W. Taylor)",
+      "C": "Max Weber",
+      "D": "Elton Mayo"
+    },
+    "optionsHindi": {
+      "A": "हेनरी फेयोल (प्रशासनिक प्रबंधन के जनक)",
+      "B": "फ्रेडरिक विंसलो टेलर (F.W. Taylor - वैज्ञानिक प्रबंधन के जनक)",
+      "C": "मैक्स वेबर (नौकरशाही मॉडल)",
+      "D": "एल्टन मेयो (मानव संबंध सिद्धांत)"
+    },
+    "correct": "B",
+    "explanation": "F.W. Taylor published 'The Principles of Scientific Management' in 1911, earning him the title of Father of Scientific Management.",
+    "explanationHindi": "एफ.डब्ल्यू. टेलर (F.W. Taylor) को वैज्ञानिक प्रबंधन का जनक कहा जाता है। उन्होंने श्रमिकों की कार्यप्रणाली में वैज्ञानिक तरीकों के प्रयोग पर बल दिया।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "library-administration",
+    "topicLabel": "Scientific Management",
+    "difficulty": "easy",
+    "tags": [
+      "fw taylor",
+      "scientific management",
+      "administration"
+    ]
+  },
+  {
+    "id": "ls-179",
+    "question": "Henri Fayol, known as the father of administrative management, identified how many general principles of management?",
+    "questionHindi": "प्रशासनिक प्रबंधन के जनक हेनरी फेयोल (Henri Fayol) ने प्रबंधन के कुल कितने सामान्य सिद्धांतों का प्रतिपादन किया था?",
+    "options": {
+      "A": "10 principles",
+      "B": "12 principles",
+      "C": "14 principles",
+      "D": "16 principles"
+    },
+    "optionsHindi": {
+      "A": "10 सिद्धांत",
+      "B": "12 सिद्धांत",
+      "C": "14 सिद्धांत (14 Principles of Management - जैसे कार्य विभाजन, अनुशासन)",
+      "D": "16 सिद्धांत"
+    },
+    "correct": "C",
+    "explanation": "Henri Fayol outlined 14 Principles of Management in his 1916 work 'General and Industrial Management' (including Division of Work, Authority & Responsibility, Unity of Command, Unity of Direction).",
+    "explanationHindi": "हेनरी फेयोल ने 1916 में प्रबंधन के 14 मूलभूत सिद्धांतों (जैसे आदेश की एकता, निर्देश की एकता, श्रम विभाजन, अनुशासन आदि) का प्रतिपादन किया।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "library-administration",
+    "topicLabel": "Fayol's 14 Principles",
+    "difficulty": "easy",
+    "tags": [
+      "henri fayol",
+      "14 principles",
+      "management"
+    ]
+  },
+  {
+    "id": "ls-180",
+    "question": "'Theory X and Theory Y', representing two contrasting models of employee motivation and human nature in organizations, was developed by:",
+    "questionHindi": "मानव व्यवहार और कार्य प्रेरणा से संबंधित 'थ्योरी X और थ्योरी Y' (Theory X & Theory Y) का प्रतिपादन किसने किया था?",
+    "options": {
+      "A": "Abraham Maslow",
+      "B": "Douglas McGregor",
+      "C": "Frederick Herzberg",
+      "D": "Peter Drucker"
+    },
+    "optionsHindi": {
+      "A": "अब्राहम मास्लो (आवश्यकता पदानुक्रम)",
+      "B": "डगलस मैकग्रेगर (Douglas McGregor - 1960)",
+      "C": "फ्रेडरिक हर्जबर्ग (दो-कारक सिद्धांत)",
+      "D": "पीटर ड्रकर (MBO)"
+    },
+    "correct": "B",
+    "explanation": "Douglas McGregor proposed Theory X (authoritarian, assumes employees dislike work) and Theory Y (participative, assumes employees are self-motivated) in his 1960 book 'The Human Side of Enterprise'.",
+    "explanationHindi": "डगलस मैकग्रेगर ने 1960 में 'Theory X and Theory Y' का सिद्धांत दिया। थ्योरी X नकारात्मक दृष्टिकोण मानती है, जबकि थ्योरी Y सकारात्मक व स्व-प्रेरित दृष्टिकोण रखती है।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "human-resource",
+    "topicLabel": "HR Management & Motivation",
+    "difficulty": "medium",
+    "tags": [
+      "mcgregor",
+      "theory x theory y",
+      "motivation"
+    ]
+  },
+  {
+    "id": "ls-181",
+    "question": "In library building design and preservation, what is considered the ideal relative humidity (RH) for paper book storage?",
+    "questionHindi": "पुस्तकालय भवन और पांडुलिपि संरक्षण में कागजी पुस्तकों के दीर्घायु भंडारण हेतु आदर्श सापेक्ष आर्द्रता (Relative Humidity) क्या मानी जाती है?",
+    "options": {
+      "A": "20% to 30%",
+      "B": "45% to 55%",
+      "C": "70% to 80%",
+      "D": "Above 85%"
+    },
+    "optionsHindi": {
+      "A": "20% से 30% (अत्यधिक शुष्क - कागज भंगुर हो जाता है)",
+      "B": "45% से 55% (आदर्श आर्द्रता स्तर)",
+      "C": "70% से 80% (कवक और फफूंद का खतरा)",
+      "D": "85% से अधिक"
+    },
+    "correct": "B",
+    "explanation": "The international archival standard for preserving paper collections recommends a temperature of 18–22 °C and a relative humidity between 45% and 55% to prevent mold growth and paper embrittlement.",
+    "explanationHindi": "पुस्तकालय संरक्षण मानकों के अनुसार तापमान 20-22°C तथा सापेक्ष आर्द्रता 45% से 55% के बीच आदर्श होती है, जिससे फफूंद और कागज के टूटने का खतरा नहीं रहता।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "stock-verification",
+    "topicLabel": "Preservation & Conservation",
+    "difficulty": "medium",
+    "tags": [
+      "preservation",
+      "relative humidity",
+      "conservation"
+    ]
+  },
+  {
+    "id": "ls-182",
+    "question": "What is the process of removing obsolete, damaged, unread, or duplicate books from active library shelves called in library administration?",
+    "questionHindi": "पुस्तकालय संग्रह से अनुपयोगी, जीर्ण-शीर्ण, अप्रासंगिक और अत्यधिक फटी पुरानी पुस्तकों को हटाने की प्रक्रिया को क्या कहते हैं?",
+    "options": {
+      "A": "Stock Verification",
+      "B": "Weeding Out / Deselection",
+      "C": "Accessioning",
+      "D": "Shelf Rectification"
+    },
+    "optionsHindi": {
+      "A": "स्टॉक सत्यापन (भौतिक जांच)",
+      "B": "वीडिंग आउट / छँटाई (Weeding Out / Deselection)",
+      "C": "एक्सेशनिंग",
+      "D": "शेल्फ रेक्टिफिकेशन"
+    },
+    "correct": "B",
+    "explanation": "Weeding out (deselection/pruning) is the systematic removal of worn out, unrepairable, outdated, or duplicate resources to maintain the vitality and spatial capacity of the collection (aligned with Ranganathan's Fifth Law).",
+    "explanationHindi": "वीडिंग आउट (Weeding out) का अर्थ अनुपयोगी या पुरानी सामग्री को संग्रह से बाहर करना है ताकि जीवित और अद्यतन पुस्तकें शेल्फ पर जगह पा सकें (पांचवां सूत्र: पुस्तकालय एक वर्धनशील संस्था है)।",
+    "subject": "library-science",
+    "unit": "library-management",
+    "topic": "stock-verification",
+    "topicLabel": "Stock Management & Weeding",
+    "difficulty": "easy",
+    "tags": [
+      "weeding out",
+      "stock verification",
+      "fifth law"
+    ]
+  },
+  {
+    "id": "ls-183",
+    "question": "The Indian National Bibliography (INB), recording publications issued in India, is compiled and published monthly by:",
+    "questionHindi": "भारत में प्रकाशित पुस्तकों की आधिकारिक राष्ट्रीय ग्रंथसूची 'इंडियन नेशनल बिब्लियोग्राफी' (INB) का संकलन और प्रकाशन किसके द्वारा किया जाता है?",
+    "options": {
+      "A": "National Archives of India, New Delhi",
+      "B": "Central Reference Library (CRL), Kolkata",
+      "C": "National Book Trust (NBT)",
+      "D": "Sahitya Akademi"
+    },
+    "optionsHindi": {
+      "A": "राष्ट्रीय अभिलेखागार, नई दिल्ली",
+      "B": "सेंट्रल रेफरेंस लाइब्रेरी (CRL), कोलकाता",
+      "C": "नेशनल बुक ट्रस्ट (NBT)",
+      "D": "साहित्य अकादेमी"
+    },
+    "correct": "B",
+    "explanation": "The Central Reference Library (CRL), situated at Belvedere Kolkata under the Ministry of Culture, compiles and publishes the Indian National Bibliography (INB) under the Delivery of Books Act.",
+    "explanationHindi": "सेंट्रल रेफरेंस लाइब्रेरी (CRL, कोलकाता) द्वारा डिलीवरी ऑफ बुक्स एक्ट के तहत प्राप्त पुस्तकों के आधार पर 'इंडियन नेशनल बिब्लियोग्राफी' (INB) का प्रकाशन किया जाता है।",
+    "subject": "library-science",
+    "unit": "reference-services",
+    "topic": "bibliographies",
+    "topicLabel": "National Bibliographies (INB)",
+    "difficulty": "easy",
+    "tags": [
+      "inb",
+      "crl kolkata",
+      "national bibliography"
+    ]
+  },
+  {
+    "id": "ls-184",
+    "question": "In which year did the publication of the Indian National Bibliography (INB) begin?",
+    "questionHindi": "इंडियन नेशनल बिब्लियोग्राफी (INB) का नियमित प्रकाशन किस वर्ष आरंभ हुआ था?",
+    "options": {
+      "A": "1950",
+      "B": "1954",
+      "C": "1957 (Quarterly initially, monthly from 1964)",
+      "D": "1965"
+    },
+    "optionsHindi": {
+      "A": "1950",
+      "B": "1954",
+      "C": "1957 (त्रैमासिक रूप में 1957-58 से)",
+      "D": "1965"
+    },
+    "correct": "C",
+    "explanation": "The Indian National Bibliography (INB) began publication in 1957 (first issue published in 1958) following the implementation of the Delivery of Books Act 1954.",
+    "explanationHindi": "INB का प्रकाशन वर्ष 1957 में प्रारंभ हुआ (प्रारंभ में त्रैमासिक तथा 1964 से मासिक रूप में)।",
+    "subject": "library-science",
+    "unit": "reference-services",
+    "topic": "bibliographies",
+    "topicLabel": "INB History",
+    "difficulty": "medium",
+    "tags": [
+      "inb",
+      "1957",
+      "central reference library"
+    ]
+  },
+  {
+    "id": "ls-185",
+    "question": "Which prominent classification system was developed in the United States in 1897 specifically for the largest library in the world?",
+    "questionHindi": "1897 में संयुक्त राज्य अमेरिका में विश्व के सबसे बड़े पुस्तकालय हेतु कौन सी वर्गीकरण प्रणाली विकसित की गई थी?",
+    "options": {
+      "A": "Library of Congress Classification (LCC)",
+      "B": "Dewey Decimal Classification",
+      "C": "Bibliographic Classification",
+      "D": "Subject Classification"
+    },
+    "optionsHindi": {
+      "A": "लाइब्रेरी ऑफ कांग्रेस क्लासिफिकेशन (LCC)",
+      "B": "डीडीसी (1876)",
+      "C": "ब्लिस बिब्लियोग्राफिक क्लासिफिकेशन",
+      "D": "सब्जेक्ट क्लासिफिकेशन (जे.डी. ब्राउन)"
+    },
+    "correct": "A",
+    "explanation": "The Library of Congress Classification (LCC) was devised by Dr. Herbert Putnam in 1897 using mixed notation (letters A-Z for main classes) to organize the colossal Library of Congress collections.",
+    "explanationHindi": "लाइब्रेरी ऑफ कांग्रेस क्लासिफिकेशन (LCC) प्रणाली 1897 में हर्बर्ट पुटनाम द्वारा वाशिंगटन स्थित लाइब्रेरी ऑफ कांग्रेस के विशाल संग्रह के लिए बनाई गई थी।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "classification-principles",
+    "topicLabel": "Classification Schemes",
+    "difficulty": "medium",
+    "tags": [
+      "lcc",
+      "library of congress",
+      "herbert putnam"
+    ]
+  },
+  {
+    "id": "ls-186",
+    "question": "What is the primary role of a 'Thesaurus' in information retrieval and indexing?",
+    "questionHindi": "सूचना पुनर्प्राप्ति और विषय अनुक्रमण में 'थिसॉरस' (Thesaurus) का मुख्य कार्य क्या होता है?",
+    "options": {
+      "A": "To list books alphabetically by author",
+      "B": "To provide a controlled vocabulary showing hierarchical (BT/NT) and associative (RT) relationships between terms",
+      "C": "To translate French text to English",
+      "D": "To verify library accession numbers"
+    },
+    "optionsHindi": {
+      "A": "लेखक के नाम से पुस्तकों की सूची बनाना",
+      "B": "नियंत्रित शब्दावली प्रदान करना जो शब्दों के बीच व्यापक (BT), संकीर्ण (NT) और संबंधित (RT) संबंध दर्शाती है",
+      "C": "भाषा अनुवाद करना",
+      "D": "एक्सेशन नंबर सत्यापित करना"
+    },
+    "correct": "B",
+    "explanation": "A thesaurus is a controlled indexing vocabulary that standardizes synonyms and explicitly displays Broader Terms (BT), Narrower Terms (NT), Related Terms (RT), and Used For (UF).",
+    "explanationHindi": "थिसॉरस एक नियंत्रित शब्दावली उपकरण है जो समानार्थी शब्दों को मानकीकृत करता है और अवधारणाओं के बीच पदानुक्रमिक (BT/NT) तथा संबंधित (RT) संबंधों को प्रदर्शित करता है।",
+    "subject": "library-science",
+    "unit": "knowledge-organisation",
+    "topic": "cataloguing",
+    "topicLabel": "Thesaurus & Controlled Vocabulary",
+    "difficulty": "easy",
+    "tags": [
+      "thesaurus",
+      "controlled vocabulary",
+      "indexing"
+    ]
+  },
+  {
+    "id": "ls-187",
+    "question": "Which of the following is considered a 'Tertiary Source' of information?",
+    "questionHindi": "निम्नलिखित में से कौन सा सूचना का एक 'तृतीयक स्रोत' (Tertiary Source) माना जाता है?",
+    "options": {
+      "A": "Research Journal Article",
+      "B": "Patent",
+      "C": "Bibliography of Bibliographies / Directory of Directories",
+      "D": "Textbook"
+    },
+    "optionsHindi": {
+      "A": "शोध पत्रिका का मूल लेख (प्राथमिक स्रोत)",
+      "B": "पेटेंट (प्राथमिक स्रोत)",
+      "C": "ग्रंथसूचियों की ग्रंथसूची / गाइड टू लिटरेचर (तृतीयक स्रोत)",
+      "D": "पाठ्यपुस्तक (द्वितीयक स्रोत)"
+    },
+    "correct": "C",
+    "explanation": "Primary sources = original research/patents; Secondary sources = textbooks/encyclopedias/bibliographies; Tertiary sources = guides to literature, directories of directories, bibliography of bibliographies.",
+    "explanationHindi": "तृतीयक स्रोत वे होते हैं जो प्राथमिक और द्वितीयक स्रोतों को खोजने में मार्गदर्शन करते हैं (जैसे: ग्रंथसूचियों की ग्रंथसूची, डायरेक्टरीज़ की डायरेक्टरी, गाइड टू रेफरेंस सोर्सेज)।",
+    "subject": "library-science",
+    "unit": "reference-services",
+    "topic": "reference-sources",
+    "topicLabel": "Information Sources",
+    "difficulty": "medium",
+    "tags": [
+      "tertiary source",
+      "information sources",
+      "reference"
+    ]
+  },
+  {
+    "id": "ls-188",
+    "question": "What type of information source is an Indian Patent or a PhD Thesis classified as?",
+    "questionHindi": "एक भारतीय पेटेंट (Patent) अथवा पीएचडी शोध-प्रबंध (Thesis) सूचना के किस प्रकार के स्रोत में आता है?",
+    "options": {
+      "A": "Primary Source",
+      "B": "Secondary Source",
+      "C": "Tertiary Source",
+      "D": "Informal Source"
+    },
+    "optionsHindi": {
+      "A": "प्राथमिक स्रोत (Primary Source - मूल अप्रकाशित/प्रथम शोध)",
+      "B": "द्वितीयक स्रोत",
+      "C": "तृतीयक स्रोत",
+      "D": "अनौपचारिक स्रोत"
+    },
+    "correct": "A",
+    "explanation": "Patents, dissertations/theses, conference proceedings, laboratory notebooks, and journal research reports are primary sources of information because they contain original first-hand discoveries.",
+    "explanationHindi": "पेटेंट और पीएचडी थीसिस 'प्राथमिक स्रोत' (Primary Sources) कहलाते हैं क्योंकि इनमें मौलिक, मूल और प्रत्यक्ष वैज्ञानिक खोजें दर्ज होती हैं।",
+    "subject": "library-science",
+    "unit": "reference-services",
+    "topic": "reference-sources",
+    "topicLabel": "Primary Sources",
+    "difficulty": "easy",
+    "tags": [
+      "primary source",
+      "patents",
+      "theses"
+    ]
+  },
+  {
+    "id": "ls-189",
+    "question": "Which of the following is considered a 'Secondary Source' of information?",
+    "questionHindi": "निम्नलिखित में से कौन सा सूचना का एक 'द्वितीयक स्रोत' (Secondary Source) है?",
+    "options": {
+      "A": "Encyclopedia",
+      "B": "Original Patent Document",
+      "C": "Diary of an Explorer",
+      "D": "Laboratory Research Notes"
+    },
+    "optionsHindi": {
+      "A": "विश्वकोश / इनसाइक्लोपीडिया (Encyclopedia - द्वितीयक स्रोत)",
+      "B": "मूल पेटेंट दस्तावेज (प्राथमिक)",
+      "C": "मूल डायरी (प्राथमिक)",
+      "D": "प्रयोगशाला अनुसंधान नोट्स (प्राथमिक)"
+    },
+    "correct": "A",
+    "explanation": "Secondary sources compile, synthesize, analyze, or index primary information (e.g. encyclopedias, textbooks, indexing/abstracting journals).",
+    "explanationHindi": "विश्वकोश (Encyclopedia), शब्दकोश, समीक्षाएं और पाठ्यपुस्तकें 'द्वितीयक स्रोत' (Secondary Sources) होती हैं जो प्राथमिक स्रोतों की सामग्री को संकलित व सुलभ करती हैं।",
+    "subject": "library-science",
+    "unit": "reference-services",
+    "topic": "reference-sources",
+    "topicLabel": "Secondary Sources",
+    "difficulty": "easy",
+    "tags": [
+      "secondary source",
+      "encyclopedia",
+      "reference"
+    ]
+  },
+  {
+    "id": "ls-190",
+    "question": "What is the standard frequency of publication of the international abstracting service 'Chemical Abstracts'?",
+    "questionHindi": "विश्वप्रसिद्ध रासायनिक सारकरण सेवा 'केमिकल एब्स्ट्रैक्ट्स' (Chemical Abstracts) की मूल प्रकाशन आवृत्ति क्या रही है?",
+    "options": {
+      "A": "Weekly",
+      "B": "Monthly",
+      "C": "Quarterly",
+      "D": "Annual"
+    },
+    "optionsHindi": {
+      "A": "साप्ताहिक (Weekly)",
+      "B": "मासिक",
+      "C": "त्रैमासिक",
+      "D": "वार्षिक"
+    },
+    "correct": "A",
+    "explanation": "Chemical Abstracts, established by the American Chemical Society in 1907, was published weekly in print (now accessed electronically via SciFinder).",
+    "explanationHindi": "केमिकल एब्स्ट्रैक्ट्स (CAS द्वारा 1907 में स्थापित) रसायन विज्ञान का सबसे बड़ा सारकरण पत्र है जिसकी मुद्रित आवृत्ति साप्ताहिक (Weekly) थी।",
+    "subject": "library-science",
+    "unit": "reference-services",
+    "topic": "reference-sources",
+    "topicLabel": "Abstracting Periodicals",
+    "difficulty": "medium",
+    "tags": [
+      "chemical abstracts",
+      "abstracting service",
+      "weekly"
+    ]
+  },
+  {
+    "id": "ls-191",
+    "question": "The 'OpenURL' standard (ANSI/NISO Z39.88) is widely deployed in academic and digital libraries for what primary purpose?",
+    "questionHindi": "डिजिटल और अकादमिक पुस्तकालयों में 'OpenURL' (Z39.88) तकनीक का मुख्य उपयोग किसलिए किया जाता है?",
+    "options": {
+      "A": "To compress digital video files",
+      "B": "Context-sensitive dynamic linking to provide full-text articles directly to authorized users",
+      "C": "To block spam emails on library networks",
+      "D": "To scan barcodes at the circulation desk"
+    },
+    "optionsHindi": {
+      "A": "वीडियो फाइल संपीड़ित करना",
+      "B": "संदर्भ-संवेदी डायनामिक लिंकिंग द्वारा शोधकर्ताओं को सीधे पूर्ण-पाठ्य लेख (Full-Text Link Resolving) तक पहुँचाना",
+      "C": "स्पैम ईमेल रोकना",
+      "D": "बारकोड स्कैन करना"
+    },
+    "correct": "B",
+    "explanation": "OpenURL carries metadata in a web query string to a link resolver (e.g. SFX), dynamically connecting a citation to the licensed electronic full-text version.",
+    "explanationHindi": "OpenURL प्रोटोकॉल शोधपत्रों के उद्धरण से सीधे विश्वविद्यालय के अधिकृत ई-जर्नल पूर्ण-पाठ (Full Text) तक पहुँचने के लिए लिंक रिज़ॉल्वर का कार्य करता है।",
+    "subject": "library-science",
+    "unit": "it-computer",
+    "topic": "digital-technology",
+    "topicLabel": "Link Resolvers & OpenURL",
+    "difficulty": "hard",
+    "tags": [
+      "openurl",
+      "link resolver",
+      "z39.88"
+    ]
+  },
+  {
+    "id": "ls-192",
+    "question": "Which prominent library consortium in the United States was founded in 1967 in Ohio by Frederick Kilgour, initially named the Ohio College Library Center?",
+    "questionHindi": "1967 में ओहायो में फ्रेडरिक किलगोर द्वारा स्थापित 'ओसीएलसी' (OCLC) का मूल नाम क्या था?",
+    "options": {
+      "A": "Ohio College Library Center",
+      "B": "Online Computer Library Center",
+      "C": "Open Consortium Library Community",
+      "D": "Organized Cataloguing Library Center"
+    },
+    "optionsHindi": {
+      "A": "ओहायो कॉलेज लाइब्रेरी सेंटर (Ohio College Library Center - मूल नाम)",
+      "B": "ऑनलाइन कंप्यूटर लाइब्रेरी सेंटर (1981 में नया नाम)",
+      "C": "ओपन कंसोर्टियम लाइब्रेरी कम्युनिटी",
+      "D": "ऑर्गेनाइज्ड कैटलॉगिंग लाइब्रेरी सेंटर"
+    },
+    "correct": "A",
+    "explanation": "OCLC was founded by Frederick Kilgour in 1967 as the Ohio College Library Center, and later changed its corporate name to Online Computer Library Center in 1981 while creating WorldCat.",
+    "explanationHindi": "OCLC की स्थापना 1967 में 'Ohio College Library Center' के रूप में हुई थी। बाद में 1981 में इसका नाम 'Online Computer Library Center' कर दिया गया, जो विश्व का सबसे बड़ा यूनियन कैटलॉग (WorldCat) चलाता है।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "library-networks",
+    "topicLabel": "Library Networks (OCLC)",
+    "difficulty": "medium",
+    "tags": [
+      "oclc",
+      "frederick kilgour",
+      "worldcat"
+    ]
+  },
+  {
+    "id": "ls-193",
+    "question": "What is 'WorldCat', operated and maintained by OCLC?",
+    "questionHindi": "OCLC द्वारा संचालित 'वर्ल्डकैट' (WorldCat) क्या है?",
+    "options": {
+      "A": "A commercial online bookstore",
+      "B": "The world's largest union catalogue of library collections across thousands of libraries globally",
+      "C": "An operating system for supercomputers",
+      "D": "A classification scheme for children's literature"
+    },
+    "optionsHindi": {
+      "A": "एक ऑनलाइन किताबों की दुकान",
+      "B": "विश्व का सबसे बड़ा वैश्विक संयुक्त पुस्तकालय कैटलॉग (Global Union Catalog)",
+      "C": "सुपरकंप्यूटर ऑपरेटिंग सिस्टम",
+      "D": "बाल साहित्य की वर्गीकरण प्रणाली"
+    },
+    "correct": "B",
+    "explanation": "WorldCat is the world's most comprehensive database of information about library collections, indexing over 500 million records across tens of thousands of global libraries.",
+    "explanationHindi": "WorldCat विश्व का सबसे विशाल ऑनलाइन यूनियन कैटलॉग है जिसमें दुनिया भर के हजारों पुस्तकालयों के 50 करोड़ से अधिक ग्रंथपरक रिकॉर्ड समाहित हैं।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "library-networks",
+    "topicLabel": "WorldCat & Union Catalogues",
+    "difficulty": "easy",
+    "tags": [
+      "worldcat",
+      "oclc",
+      "union catalogue"
+    ]
+  },
+  {
+    "id": "ls-194",
+    "question": "Which of the following is considered the primary benefit of Resource Sharing and Library Consortia among academic institutions?",
+    "questionHindi": "शैक्षणिक संस्थानों के बीच 'संसाधन सहभागिता' (Resource Sharing) और 'लाइब्रेरी कंसोर्टिया' का प्रमुख लाभ क्या है?",
+    "options": {
+      "A": "To reduce electricity consumption",
+      "B": "Collective bargaining to acquire expensive electronic journals and databases at discounted subscription rates",
+      "C": "To eliminate the need for library professionals",
+      "D": "To avoid cataloguing books"
+    },
+    "optionsHindi": {
+      "A": "बिजली की बचत करना",
+      "B": "सामूहिक सौदेबाजी द्वारा महंगे ई-जर्नल्स और डेटाबेस को रियायती दरों पर साझा करना",
+      "C": "पुस्तकालय कर्मचारियों की आवश्यकता समाप्त करना",
+      "D": "कैटलॉगिंग से बचना"
+    },
+    "correct": "B",
+    "explanation": "Consortia leverage collective purchasing power to obtain site licenses for high-cost electronic journals and databases, maximizing access while minimizing institutional expenditure.",
+    "explanationHindi": "लाइब्रेरी कंसोर्टियम कई पुस्तकालयों को एक मंच पर लाकर महंगे अंतरराष्ट्रीय शोध जर्नल्स और डेटाबेस को भारी छूट पर साझा सब्सक्रिप्शन के साथ सुलभ बनाता है।",
+    "subject": "library-science",
+    "unit": "networks-digital",
+    "topic": "library-networks",
+    "topicLabel": "Library Consortia",
+    "difficulty": "easy",
+    "tags": [
+      "consortia",
+      "resource sharing",
+      "cost saving"
+    ]
+  },
+  {
+    "id": "ls-195",
+    "question": "Which Indian organization was established in 1952 with technical and financial assistance from UNESCO to provide centralized documentation and reprographic services?",
+    "questionHindi": "1952 में यूनेस्को की सहायता से भारत में वैज्ञानिक प्रलेखन और अनुवाद सेवाएं प्रदान करने हेतु किस संस्थान की स्थापना हुई थी?",
+    "options": {
+      "A": "INSDOC (now NIScPR)",
+      "B": "DESIDOC",
+      "C": "NASSDOC",
+      "D": "SENDOC"
+    },
+    "optionsHindi": {
+      "A": "इंसडॉक (INSDOC - इंडियन नेशनल साइंटिफिक डॉक्यूमेंटेशन सेंटर)",
+      "B": "डेसीडॉक (DESIDOC - रक्षा प्रलेखन)",
+      "C": "नैस्डॉक (NASSDOC - सामाजिक विज्ञान)",
+      "D": "सेंडॉक (SENDOC - लघु उद्योग)"
+    },
+    "correct": "A",
+    "explanation": "INSDOC (Indian National Scientific Documentation Centre) was established in 1952 in New Delhi with UNESCO support. In 2002, it merged with NISCOM to form NISCAIR (now CSIR-NIScPR).",
+    "explanationHindi": "INSDOC की स्थापना 1952 में नई दिल्ली में यूनेस्को के सहयोग से हुई थी। बाद में 2002 में इसका NISCAIR (वर्तमान में NIScPR) में विलय हो गया।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "library-associations",
+    "topicLabel": "National Documentation Centres",
+    "difficulty": "medium",
+    "tags": [
+      "insdoc",
+      "niscpr",
+      "unesco",
+      "1952"
+    ]
+  },
+  {
+    "id": "ls-196",
+    "question": "The National Social Science Documentation Centre (NASSDOC) in New Delhi was established in 1970 under which research council?",
+    "questionHindi": "नई दिल्ली स्थित 'नेशनल सोशल साइंस डॉक्यूमेंटेशन सेंटर' (NASSDOC) 1970 में किस शोध परिषद के अधीन स्थापित किया गया था?",
+    "options": {
+      "A": "CSIR",
+      "B": "ICSSR (Indian Council of Social Science Research)",
+      "C": "ICHR",
+      "D": "ICAR"
+    },
+    "optionsHindi": {
+      "A": "सीएसआईआर (CSIR)",
+      "B": "आईसीएसएसआर (ICSSR - भारतीय सामाजिक विज्ञान अनुसंधान परिषद)",
+      "C": "आईसीएचआर (इतिहास शोध)",
+      "D": "आईसीएआर (कृषि शोध)"
+    },
+    "correct": "B",
+    "explanation": "NASSDOC was established in 1970 by the Indian Council of Social Science Research (ICSSR) to provide documentation and bibliographic support to social science scholars in India.",
+    "explanationHindi": "NASSDOC की स्थापना 1970 में भारतीय सामाजिक विज्ञान अनुसंधान परिषद (ICSSR) द्वारा सामाजिक विज्ञान में शोध और प्रलेखन सेवाओं हेतु की गई थी।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "library-associations",
+    "topicLabel": "NASSDOC",
+    "difficulty": "medium",
+    "tags": [
+      "nassdoc",
+      "icssr",
+      "social science documentation"
+    ]
+  },
+  {
+    "id": "ls-197",
+    "question": "What is the primary function of DESIDOC (Defence Scientific Information & Documentation Centre) in India?",
+    "questionHindi": "भारत में 'डेसीडॉक' (DESIDOC) का प्राथमिक दायित्व क्या है?",
+    "options": {
+      "A": "To provide scientific and technical documentation support to DRDO laboratories and defence scientists",
+      "B": "To supervise school libraries in rural India",
+      "C": "To assign ISBN to defence publications",
+      "D": "To classify agriculture literature"
+    },
+    "optionsHindi": {
+      "A": "डीआरडीओ (DRDO) प्रयोगशालाओं और रक्षा वैज्ञानिकों को वैज्ञानिक एवं तकनीकी सूचना व प्रलेखन प्रदान करना",
+      "B": "ग्रामीण स्कूल पुस्तकालयों का निरीक्षण करना",
+      "C": "रक्षा पुस्तकों को ISBN देना",
+      "D": "कृषि साहित्य का वर्गीकरण"
+    },
+    "correct": "A",
+    "explanation": "DESIDOC, situated at Metcalfe House in Delhi, is a constituent laboratory of the Defence Research and Development Organisation (DRDO) providing scientific and technical information support.",
+    "explanationHindi": "डेसीडॉक (DESIDOC) डीआरडीओ के तहत कार्यरत भारत का प्रमुख रक्षा वैज्ञानिक सूचना और प्रलेखन केंद्र है।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "library-associations",
+    "topicLabel": "DESIDOC",
+    "difficulty": "easy",
+    "tags": [
+      "desidoc",
+      "drdo",
+      "defence documentation"
+    ]
+  },
+  {
+    "id": "ls-198",
+    "question": "The famous library science law 'Library is a growing organism' directly impacts which administrative decisions in a library?",
+    "questionHindi": "'पुस्तकालय एक वर्धनशील संस्था है' (Library is a growing organism) यह पंचम सूत्र पुस्तकालय के किन प्रशासनिक निर्णयों को सर्वाधिक प्रभावित करता है?",
+    "options": {
+      "A": "Only the library opening hours",
+      "B": "Planning for future physical space (stack rooms, reading halls), collection growth, staff recruitment, and weeding out",
+      "C": "Only cataloguing punctuation marks",
+      "D": "Printing library identity cards"
+    },
+    "optionsHindi": {
+      "A": "केवल पुस्तकालय खुलने का समय",
+      "B": "भविष्य के स्थान नियोजन (स्टैक रूम, रीडिंग हॉल), पुस्तक संग्रह की वृद्धि, कर्मचारियों की नियुक्ति एवं वीडिंग आउट (छँटाई)",
+      "C": "कैटलॉगिंग विराम चिह्न",
+      "D": "पहचान पत्र मुद्रण"
+    },
+    "correct": "B",
+    "explanation": "The Fifth Law ('Library is a growing organism') teaches that as books, readers, and staff expand continuously over time, libraries must plan adaptable physical buildings, modern shelving, technology integration, and systematic weeding out.",
+    "explanationHindi": "पंचम सूत्र जैविक वृद्धि की भांति पुस्तकालय के सभी अंगों (पुस्तकों, पाठकों, कर्मचारियों, और भवन) के सतत विस्तार और नियोजन (स्पेस प्लानिंग व अनुपयोगी पुस्तकों की छँटाई) पर बल देता है।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "five-laws",
+    "topicLabel": "Five Laws of Library Science",
+    "difficulty": "easy",
+    "tags": [
+      "fifth law",
+      "growing organism",
+      "ranganathan"
+    ]
+  },
+  {
+    "id": "ls-199",
+    "question": "Which Law of Library Science advocates for open access shelving, convenient central location, pleasant library ambience, and long opening hours to maximize utility?",
+    "questionHindi": "पुस्तकालय विज्ञान का कौन सा सूत्र खुली प्रवेश प्रणाली (Open Access System), उपयुक्त केंद्रीय स्थान, आकर्षक वातावरण और लंबे समय तक पुस्तकालय खुला रखने की वकालत करता है?",
+    "options": {
+      "A": "First Law (Books are for use)",
+      "B": "Second Law (Every reader his/her book)",
+      "C": "Third Law (Every book its reader)",
+      "D": "Fourth Law (Save the time of the reader)"
+    },
+    "optionsHindi": {
+      "A": "प्रथम सूत्र: 'पुस्तकें उपयोग के लिए हैं' (Books are for use)",
+      "B": "द्वितीय सूत्र: 'प्रत्येक पाठक को उसकी पुस्तक'",
+      "C": "तृतीय सूत्र: 'प्रत्येक पुस्तक को उसका पाठक'",
+      "D": "चतुर्थ सूत्र: 'पाठक का समय बचाइए'"
+    },
+    "correct": "A",
+    "explanation": "The First Law ('Books are for use') revolutionized library philosophy from mere preservation/custody of locked books to open access, friendly hours, pleasant furniture, and maximum usability.",
+    "explanationHindi": "प्रथम सूत्र ('पुस्तकें उपयोग के लिए हैं') बंद अलमारियों के स्थान पर ओपन एक्सेस, सुविधाजनक स्थान, आकर्षक फर्नीचर और लंबे समय तक पुस्तकालय खोलने पर बल देता है ताकि पुस्तकों का अधिक से अधिक उपयोग हो सके।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "five-laws",
+    "topicLabel": "Five Laws of Library Science",
+    "difficulty": "easy",
+    "tags": [
+      "first law",
+      "open access",
+      "books are for use"
+    ]
+  },
+  {
+    "id": "ls-200",
+    "question": "The implementation of computer computerized circulation (barcode / RFID scanning), simplified library layout, and efficient classification schemes is a direct fulfillment of which Law of Library Science?",
+    "questionHindi": "पुस्तकालय में बारकोड/RFID द्वारा त्वरित पुस्तक निर्गम, स्पष्ट दिशा-सूचक और कुशल कैटलॉगिंग व्यवस्था मुख्य रूप से किस सूत्र का अनुपालन करती है?",
+    "options": {
+      "A": "First Law",
+      "B": "Second Law",
+      "C": "Fourth Law (Save the time of the reader)",
+      "D": "Fifth Law"
+    },
+    "optionsHindi": {
+      "A": "प्रथम सूत्र",
+      "B": "द्वितीय सूत्र",
+      "C": "चतुर्थ सूत्र: 'पाठक का समय बचाइए' (Save the time of the reader)",
+      "D": "पंचम सूत्र"
+    },
+    "correct": "C",
+    "explanation": "The Fourth Law ('Save the time of the reader') demands minimum delay in locating and borrowing books, which is accomplished via OPAC search, barcode/RFID self-checkouts, and open access.",
+    "explanationHindi": "चतुर्थ सूत्र ('पाठक का समय बचाइए') पाठक के बहुमूल्य समय को बचाने के लिए कम्प्यूटरीकृत खोज (OPAC), बारकोड/RFID स्कैनिंग और त्वरित संदर्भ सेवा पर जोर देता है।",
+    "subject": "library-science",
+    "unit": "foundations",
+    "topic": "five-laws",
+    "topicLabel": "Five Laws of Library Science",
+    "difficulty": "easy",
+    "tags": [
+      "fourth law",
+      "save the time of the reader",
+      "rfid"
+    ]
   }
 ];

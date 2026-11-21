@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ChevronRight, Play, Zap, BookOpen, Lock, Sparkles, CheckCircle2, Key } from 'lucide-react';
+import { ChevronRight, Play, Zap, BookOpen, Lock, Sparkles, CheckCircle2, Key, Flame, ArrowRight } from 'lucide-react';
 import { subjects } from '@/data/subjects';
 import { allQuestions } from '@/data/questions';
 import { computeTopicCounts, subjectBadge } from '@/utils/questions';
@@ -54,7 +54,7 @@ export default function PracticeHub() {
       ? `${currentSubjectObj.label} MCQs Practice`
       : 'Practice MCQs & Topic Quizzes',
     description:
-      'Practice 210+ topic-wise MCQs for Bihar Librarian LET 2026. Unit 1 is free! Master Classification, Cataloguing, Reference Services, Digital Libraries, and General Paper.',
+      'Practice 420+ topic-wise bilingual MCQs and 10 Marathon Practice Sets for Bihar Librarian LET 2026. Unit 1 and Day 1 are 100% Free! Complete Hindi & English solutions.',
     canonicalPath: '/practice',
   });
 
@@ -74,10 +74,10 @@ export default function PracticeHub() {
         />
         <div>
           <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
-            Practice Questions
+            Practice Questions ({allQuestions.length}+ MCQs)
           </h1>
           <p className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm mt-0.5">
-            MCQs with instant feedback and explanations · Unit 1 is 100% Free!
+            Bilingual English & Hindi with instant explanations · Unit 1 & Marathon Day 1 are 100% Free!
           </p>
         </div>
       </div>
@@ -165,6 +165,93 @@ export default function PracticeHub() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      )}
+
+      {/* 10 Practice Sets (Daily Marathon) */}
+      {!subjectFilter && (
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <span className="text-xl">🏃</span>
+              <div>
+                <h2 className="text-base font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                  <span>10 Practice Sets (Daily Marathon)</span>
+                  <span className="text-[10px] bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 px-2 py-0.5 rounded-full font-bold">
+                    DAY 1 TO 10
+                  </span>
+                </h2>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  25 Curated questions per set (15 Library Science + 10 General Paper) · Day 1 is 100% Free!
+                </p>
+              </div>
+            </div>
+            <Link
+              to="/marathon"
+              className="text-xs font-semibold text-brand-700 dark:text-brand-400 hover:underline flex items-center gap-1 shrink-0"
+            >
+              <span>Full Marathon Hub</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+            {Array.from({ length: 10 }, (_, i) => i + 1).map(setNum => {
+              const isSetFree = setNum === 1;
+              const hasSetAccess = isSetFree || isUnlocked;
+
+              return (
+                <div
+                  key={setNum}
+                  className={`card p-3 rounded-xl flex flex-col justify-between transition-all ${
+                    isSetFree
+                      ? 'border-green-300 dark:border-green-800 bg-green-50/30 dark:bg-green-950/20'
+                      : 'hover:border-brand-200 dark:hover:border-brand-700'
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-1 mb-1.5">
+                      <span className="text-xs font-bold text-gray-900 dark:text-white">
+                        Set {setNum}
+                      </span>
+                      {isSetFree ? (
+                        <span className="text-[9px] bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300 font-extrabold px-1.5 py-0.5 rounded">
+                          FREE
+                        </span>
+                      ) : hasSetAccess ? (
+                        <span className="text-[9px] bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 font-bold px-1.5 py-0.5 rounded">
+                          PRO
+                        </span>
+                      ) : (
+                        <Lock className="w-3 h-3 text-amber-500" />
+                      )}
+                    </div>
+                    <div className="text-[11px] text-gray-500 dark:text-gray-400 leading-tight">
+                      Day {setNum} · 25 Qs
+                    </div>
+                  </div>
+
+                  <div className="mt-3">
+                    {hasSetAccess ? (
+                      <Link
+                        to={`/practice/session?mode=marathon&day=${setNum}`}
+                        className="w-full text-center block text-[11px] font-bold bg-brand-600 hover:bg-brand-700 text-white py-1.5 rounded-lg transition-colors"
+                      >
+                        Start
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => openPaywall(`Unlock Practice Set ${setNum} for ₹${ACCESS_PRICE_INR}`)}
+                        className="w-full text-center block text-[11px] font-bold bg-amber-500 hover:bg-amber-600 text-white py-1.5 rounded-lg transition-colors cursor-pointer"
+                      >
+                        Unlock
+                      </button>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

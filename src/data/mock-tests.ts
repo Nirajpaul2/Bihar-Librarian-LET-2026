@@ -117,4 +117,206 @@ export const mockTests: MockTestConfig[] = [
       { id: 'sec-w4', label: 'Computer',          subjectId: 'computer',          questionCount: 2  },
     ],
   },
+  {
+    id: 'mt-006',
+    title: 'Full LET Mock Test — Set 2',
+    description:
+      'Comprehensive 100-question full-length simulator matching the official BSEB Bihar Librarian LET 2026 pattern (50 Core Library Science + 50 General Paper).',
+    totalQuestions: 100,
+    durationMinutes: 120,
+    marksPerQuestion: 1,
+    negativeMarks: 0,
+    instructions: [
+      'Simulates full BSEB Bihar Librarian LET 2026 examination.',
+      'Total: 100 questions | Duration: 120 minutes | No negative marking.',
+      'Part 1: 50 Library Science Core Questions.',
+      'Part 2: 50 General Paper Questions (15 GK, 10 Bihar GK, 15 Reasoning, 10 Computer).',
+      'Attempt all questions and review marked answers before final submission.',
+    ],
+    sections: [
+      { id: 'sec-ls-06', label: 'Library & Information Science', subjectId: 'library-science',    questionCount: 50 },
+      { id: 'sec-gk-06', label: 'General Knowledge',             subjectId: 'general-knowledge',  questionCount: 15 },
+      { id: 'sec-bh-06', label: 'Bihar GK & Heritage',          subjectId: 'bihar-gk',           questionCount: 10 },
+      { id: 'sec-rs-06', label: 'Logical Reasoning',            subjectId: 'reasoning',          questionCount: 15 },
+      { id: 'sec-cp-06', label: 'Computer Awareness',            subjectId: 'computer',           questionCount: 10 },
+    ],
+  },
+  {
+    id: 'mt-007',
+    title: 'Full LET Mock Test — Set 3',
+    description:
+      'Full LET examination test series Set 3 with balanced high-weightage questions from Classification, Cataloguing, Reference Services, and General Paper.',
+    totalQuestions: 100,
+    durationMinutes: 120,
+    marksPerQuestion: 1,
+    negativeMarks: 0,
+    instructions: [
+      'Real exam time simulator: 120 minutes for 100 questions.',
+      'Covers in-depth DDC, CC, AACR-2, Dublin Core, Five Laws, and General Paper.',
+      'No negative marking — maximize your attempts.',
+    ],
+    sections: [
+      { id: 'sec-ls-07', label: 'Library & Information Science', subjectId: 'library-science',    questionCount: 50 },
+      { id: 'sec-gk-07', label: 'General Knowledge',             subjectId: 'general-knowledge',  questionCount: 15 },
+      { id: 'sec-bh-07', label: 'Bihar GK & History',           subjectId: 'bihar-gk',           questionCount: 10 },
+      { id: 'sec-rs-07', label: 'Reasoning Ability',            subjectId: 'reasoning',          questionCount: 15 },
+      { id: 'sec-cp-07', label: 'Computer Awareness',            subjectId: 'computer',           questionCount: 10 },
+    ],
+  },
+  {
+    id: 'mt-008',
+    title: 'Full LET Mock Test — Set 4 (Speed Booster)',
+    description:
+      'Speed and accuracy booster full-length test designed to train pacing and quick decision making for the Bihar Librarian LET 2026 exam.',
+    totalQuestions: 100,
+    durationMinutes: 100,
+    marksPerQuestion: 1,
+    negativeMarks: 0,
+    instructions: [
+      'Fast-paced 100 questions in 100 minutes (1 minute per question average).',
+      'Sharpens time management across both Library Science and General Paper.',
+      'Review answers and learn from detailed bilingual solutions after submission.',
+    ],
+    sections: [
+      { id: 'sec-ls-08', label: 'Library Science Core',          subjectId: 'library-science',    questionCount: 50 },
+      { id: 'sec-gk-08', label: 'General Awareness',             subjectId: 'general-knowledge',  questionCount: 15 },
+      { id: 'sec-bh-08', label: 'Bihar Special GK',              subjectId: 'bihar-gk',           questionCount: 10 },
+      { id: 'sec-rs-08', label: 'Verbal & Non-Verbal Reasoning', subjectId: 'reasoning',          questionCount: 15 },
+      { id: 'sec-cp-08', label: 'Information Technology',        subjectId: 'computer',           questionCount: 10 },
+    ],
+  },
+  {
+    id: 'mt-009',
+    title: 'Full LET Mock Test — Set 5 (Final Grand Simulation)',
+    description:
+      'The comprehensive benchmark mock test reflecting expected question difficulty and topic distribution for the upcoming 2026 exam.',
+    totalQuestions: 100,
+    durationMinutes: 120,
+    marksPerQuestion: 1,
+    negativeMarks: 0,
+    instructions: [
+      'Comprehensive final rehearsal mock exam.',
+      '50 Questions Library Science + 50 Questions General Paper.',
+      'Simulate actual test room conditions without distractions.',
+    ],
+    sections: [
+      { id: 'sec-ls-09', label: 'Library & Information Science', subjectId: 'library-science',    questionCount: 50 },
+      { id: 'sec-gk-09', label: 'General Knowledge',             subjectId: 'general-knowledge',  questionCount: 15 },
+      { id: 'sec-bh-09', label: 'Bihar GK',                      subjectId: 'bihar-gk',           questionCount: 10 },
+      { id: 'sec-rs-09', label: 'Reasoning',                     subjectId: 'reasoning',          questionCount: 15 },
+      { id: 'sec-cp-09', label: 'Computer Awareness',            subjectId: 'computer',           questionCount: 10 },
+    ],
+  },
+  {
+    id: 'mt-010',
+    title: 'Library Science Advanced Core Drill — Set A',
+    description:
+      '50-question deep-dive into Units 1–3: Foundations of LIS, Classification schemes (DDC, UDC, CC), and Cataloguing standards (AACR-2, CCC, MARC21).',
+    totalQuestions: 50,
+    durationMinutes: 60,
+    marksPerQuestion: 1,
+    negativeMarks: 0,
+    instructions: [
+      '50 questions on core classification, cataloguing, and library legislation.',
+      'Time: 60 minutes. No negative marking.',
+      'Focus on notation rules, main classes, and Ranganathan principles.',
+    ],
+    sections: [
+      { id: 'sec-ls-10', label: 'Library Science Core A', subjectId: 'library-science', questionCount: 50 },
+    ],
+  },
+  {
+    id: 'mt-011',
+    title: 'Library Science Advanced Core Drill — Set B',
+    description:
+      '50-question deep-dive into Units 4–6: Library Management, Reference & Information Sources, Digital Libraries, Koha, and Automation Networks.',
+    totalQuestions: 50,
+    durationMinutes: 60,
+    marksPerQuestion: 1,
+    negativeMarks: 0,
+    instructions: [
+      '50 questions covering Management, Reference Services, Digital Repositories, and ILMS software.',
+      'Duration: 60 minutes. All questions are multiple choice.',
+    ],
+    sections: [
+      { id: 'sec-ls-11', label: 'Library Science Core B', subjectId: 'library-science', questionCount: 50 },
+    ],
+  },
+  {
+    id: 'mt-012',
+    title: 'Bihar Special & General Knowledge Championship',
+    description:
+      '40-question high-scoring drill focusing on Bihar History, Geography, Khuda Bakhsh Library, Rajgir, Nalanda, and National Indian Polity/GK.',
+    totalQuestions: 40,
+    durationMinutes: 45,
+    marksPerQuestion: 1,
+    negativeMarks: 0,
+    instructions: [
+      '40 questions dedicated to maximizing your General Paper score.',
+      '25 questions Bihar Special + 15 questions Indian Polity, History, and Science.',
+      'Duration: 45 minutes.',
+    ],
+    sections: [
+      { id: 'sec-bh-12', label: 'Bihar GK & Heritage', subjectId: 'bihar-gk',          questionCount: 25 },
+      { id: 'sec-gk-12', label: 'General Knowledge',   subjectId: 'general-knowledge', questionCount: 15 },
+    ],
+  },
+  {
+    id: 'mt-013',
+    title: 'Reasoning & Analytical Ability Marathon',
+    description:
+      '30-question intensive reasoning test covering Coding-Decoding, Blood Relations, Syllogisms, Number Series, and Direction Sense for LET 2026.',
+    totalQuestions: 30,
+    durationMinutes: 35,
+    marksPerQuestion: 1,
+    negativeMarks: 0,
+    instructions: [
+      '30 reasoning questions in 35 minutes.',
+      'Test your speed and logic on questions frequently asked in Bihar state teacher and librarian exams.',
+    ],
+    sections: [
+      { id: 'sec-rs-13', label: 'Reasoning & Mental Ability', subjectId: 'reasoning', questionCount: 30 },
+    ],
+  },
+  {
+    id: 'mt-014',
+    title: 'Computer Awareness & Digital Library Systems',
+    description:
+      '30 questions on Computer Fundamentals, Hardware/Software, Networking protocols, DBMS, Boolean Search, and Koha/DSpace digital library tools.',
+    totalQuestions: 30,
+    durationMinutes: 30,
+    marksPerQuestion: 1,
+    negativeMarks: 0,
+    instructions: [
+      '30 questions on Computer Fundamentals and Digital Library IT tools.',
+      '20 Computer Awareness questions + 10 Digital Library Systems questions.',
+      'Duration: 30 minutes.',
+    ],
+    sections: [
+      { id: 'sec-cp-14', label: 'Computer Awareness', subjectId: 'computer',        questionCount: 20 },
+      { id: 'sec-ls-14', label: 'Digital Libraries',  subjectId: 'library-science', questionCount: 10 },
+    ],
+  },
+  {
+    id: 'mt-015',
+    title: 'Super 50 High-Yield Mixed Booster',
+    description:
+      'Curated 50-question all-subject booster containing the most frequently repeated questions in Library Science and General Paper competitive examinations.',
+    totalQuestions: 50,
+    durationMinutes: 60,
+    marksPerQuestion: 1,
+    negativeMarks: 0,
+    instructions: [
+      '50 high-yield questions covering all 5 syllabus areas in 60 minutes.',
+      '25 Library Science + 10 Bihar GK + 5 GK + 5 Reasoning + 5 Computer.',
+      'Perfect for quick daily performance evaluation.',
+    ],
+    sections: [
+      { id: 'sec-ls-15', label: 'Library Science',        subjectId: 'library-science',    questionCount: 25 },
+      { id: 'sec-bh-15', label: 'Bihar GK',               subjectId: 'bihar-gk',           questionCount: 10 },
+      { id: 'sec-gk-15', label: 'General Knowledge',      subjectId: 'general-knowledge',  questionCount: 5  },
+      { id: 'sec-rs-15', label: 'Logical Reasoning',     subjectId: 'reasoning',          questionCount: 5  },
+      { id: 'sec-cp-15', label: 'Computer Fundamentals',  subjectId: 'computer',           questionCount: 5  },
+    ],
+  },
 ];

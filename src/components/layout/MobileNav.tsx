@@ -1,11 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, BookOpen, ClipboardList, Bookmark, Newspaper } from 'lucide-react';
+import { Home, BookOpen, ClipboardList, Bookmark, Flame } from 'lucide-react';
 
 const mobileNav = [
   { to: '/', label: 'Home', Icon: Home },
+  { to: '/marathon', label: 'Marathon', Icon: Flame },
   { to: '/practice', label: 'Practice', Icon: BookOpen },
   { to: '/mock-test', label: 'Tests', Icon: ClipboardList },
-  { to: '/current-affairs', label: 'News', Icon: Newspaper },
   { to: '/bookmarks', label: 'Saved', Icon: Bookmark },
 ];
 

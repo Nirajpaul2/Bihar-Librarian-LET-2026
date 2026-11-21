@@ -16,6 +16,7 @@ import MockTestList from '@/pages/MockTestList';
 import MockTestPage from '@/pages/MockTestPage';
 import CurrentAffairs from '@/pages/CurrentAffairs';
 import Bookmarks from '@/pages/Bookmarks';
+import Marathon from '@/pages/Marathon';
 import NotFound from '@/pages/NotFound';
 
 function AppLayout() {
@@ -59,6 +60,7 @@ function AppLayout() {
           <Route path="/syllabus" element={<Syllabus />} />
           <Route path="/practice" element={<PracticeHub />} />
           <Route path="/practice/session" element={<PracticeSession />} />
+          <Route path="/marathon" element={<Marathon />} />
           <Route path="/mock-test" element={<MockTestList />} />
           <Route path="/mock-test/:testId" element={<MockTestPage />} />
           <Route path="/current-affairs" element={<CurrentAffairs />} />

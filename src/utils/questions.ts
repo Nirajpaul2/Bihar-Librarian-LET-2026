@@ -50,6 +50,46 @@ export function getDailyQuestions(questions: Question[], count = 10): Question[]
   return arr.slice(0, count);
 }
 
+// Get questions for a specific practice set / marathon day (deterministic, balanced 25Q)
+export function getPracticeSetQuestions(
+  questions: Question[],
+  setNumber: number,
+  count = 25
+): Question[] {
+  const lsPool = questions.filter(q => q.subject === 'library-science');
+  const bhPool = questions.filter(q => q.subject === 'bihar-gk');
+  const rsPool = questions.filter(q => q.subject === 'reasoning');
+  const cpPool = questions.filter(q => q.subject === 'computer');
+  const gkPool = questions.filter(q => q.subject === 'general-knowledge');
+
+  const idx = Math.max(1, setNumber) - 1;
+  const lsCount = 15;
+  const bhCount = 3;
+  const rsCount = 3;
+  const cpCount = 2;
+  const gkCount = 2;
+
+  const getSlice = (pool: Question[], startCount: number, offset: number) => {
+    if (pool.length === 0) return [];
+    const start = (offset * startCount) % pool.length;
+    const res: Question[] = [];
+    for (let i = 0; i < startCount; i++) {
+      res.push(pool[(start + i) % pool.length]);
+    }
+    return res;
+  };
+
+  const selected = [
+    ...getSlice(lsPool, lsCount, idx),
+    ...getSlice(bhPool, bhCount, idx),
+    ...getSlice(rsPool, rsCount, idx),
+    ...getSlice(cpPool, cpCount, idx),
+    ...getSlice(gkPool, gkCount, idx),
+  ];
+
+  return selected.slice(0, count);
+}
+
 // Compute topic question counts from a question array
 export function computeTopicCounts(questions: Question[]): Record<string, number> {
   const counts: Record<string, number> = {};

@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, ChevronLeft } from 'lucide-react';
 import type { AnswerKey } from '@/types';
@@ -7,7 +7,7 @@ import {
   getQuestionsBySubject,
   getQuestionsByTopic,
 } from '@/data/questions';
-import { pickQuestions, getDailyQuestions, shuffle } from '@/utils/questions';
+import { pickQuestions, getDailyQuestions, getPracticeSetQuestions, shuffle } from '@/utils/questions';
 import { useBookmarks } from '@/hooks/useBookmarks';
 import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
 import PaywallModal from '@/components/payment/PaywallModal';
@@ -26,6 +26,9 @@ export default function PracticeSession() {
   const unitId = searchParams.get('unit') as string | null;
   const topicId = searchParams.get('topic') as string | null;
 
+  const setParam = searchParams.get('day') || searchParams.get('set');
+  const setNum = setParam ? Math.max(1, parseInt(setParam, 10) || 1) : 1;
+
   const {
     isUnlocked,
     isPaywallOpen,
@@ -38,6 +41,7 @@ export default function PracticeSession() {
 
   // Build question set based on mode/filters
   const questions = useMemo(() => {
+    if (mode === 'marathon' || mode === 'set') return getPracticeSetQuestions(allQuestions, setNum, 25);
     if (mode === 'daily') return getDailyQuestions(allQuestions, QUICK_COUNT);
     if (mode === 'bookmarked') {
       const ids = [...bookmarks];
@@ -52,7 +56,7 @@ export default function PracticeSession() {
     }
     if (subjectId) return pickQuestions(getQuestionsBySubject(subjectId as any), DEFAULT_COUNT);
     return pickQuestions(allQuestions, DEFAULT_COUNT);
-  }, [mode, subjectId, unitId, topicId, bookmarks]);
+  }, [mode, setNum, subjectId, unitId, topicId, bookmarks]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, AnswerKey | null>>({});
@@ -100,8 +104,24 @@ export default function PracticeSession() {
   }).length;
   const incorrect = Object.keys(answers).length - correct;
 
+  // Save marathon progress on session complete
+  useEffect(() => {
+    if (isComplete && (mode === 'marathon' || mode === 'set')) {
+      try {
+        localStorage.setItem(`marathon_day_${setNum}_score`, JSON.stringify({
+          score: correct,
+          total: questions.length,
+          date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }),
+        }));
+      } catch (e) {
+        // Ignore quota errors
+      }
+    }
+  }, [isComplete, mode, setNum, correct, questions.length]);
+
   // Build header label
   const sessionLabel = useMemo(() => {
+    if (mode === 'marathon' || mode === 'set') return `Marathon Day ${setNum} (Practice Set ${setNum})`;
     if (mode === 'quick') return 'Quick Practice';
     if (mode === 'daily') return "Today's Daily Challenge";
     if (mode === 'bookmarked') return 'Bookmarked Questions';
@@ -121,10 +141,13 @@ export default function PracticeSession() {
       return subject?.label || 'Subject Practice';
     }
     return 'Practice Session';
-  }, [mode, subjectId, unitId, topicId]);
+  }, [mode, setNum, subjectId, unitId, topicId]);
 
-  // Locked content check: Unit 1 of Library Science is Free; other units & subjects require ₹9
+  // Locked content check:
+  // Marathon Day 1 / Set 1 is Free; Days 2-10 require unlock.
+  // Library Science Unit 1 is Free; other units & subjects require ₹9.
   const isContentLocked = !isUnlocked && (
+    ((mode === 'marathon' || mode === 'set') && setNum > 1) ||
     (subjectId && subjectId !== 'library-science') ||
     (unitId && (subjectId !== 'library-science' || unitId !== 'foundations'))
   );

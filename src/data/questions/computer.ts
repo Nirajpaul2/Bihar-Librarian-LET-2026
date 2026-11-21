@@ -300,5 +300,755 @@ export const computerQuestions: Question[] = [
     topic: 'internet-email',
     topicLabel: 'Internet & Email',
     difficulty: 'easy'
+  },
+  {
+    "id": "cp-021",
+    "question": "What is the length of a standard Media Access Control (MAC) hardware address?",
+    "questionHindi": "नेटवर्क इंटरफेस कार्ड के मानक मीडिया एक्सेस कंट्रोल (MAC) एड्रेस की कुल लंबाई कितनी होती है?",
+    "options": {
+      "A": "32 bits",
+      "B": "48 bits (6 bytes)",
+      "C": "64 bits",
+      "D": "128 bits"
+    },
+    "optionsHindi": {
+      "A": "32 बिट्स",
+      "B": "48 बिट्स (6 बाइट्स - 12 हेक्साडेसिमल अंक)",
+      "C": "64 बिट्स",
+      "D": "128 बिट्स"
+    },
+    "correct": "B",
+    "explanation": "A MAC address is a permanent physical hardware identifier consisting of 48 bits (6 bytes), typically written as 12 hexadecimal digits separated by colons or hyphens.",
+    "explanationHindi": "MAC एड्रेस नेटवर्क कार्ड का अद्वितीय भौतिक हार्डवेयर पता होता है, जो 48 बिट्स (6 बाइट्स) का होता है और हेक्साडेसिमल प्रारूप में लिखा जाता है।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "internet-email",
+    "topicLabel": "Internet & Networking",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-022",
+    "question": "Which technology is specifically used by banking institutions to process cheques by reading magnetic ink characters?",
+    "questionHindi": "बैंकों में चेक पर चुंबकीय स्याही से मुद्रित अंकों को तेजी से पढ़ने के लिए किस उपकरण का उपयोग किया जाता है?",
+    "options": {
+      "A": "OMR",
+      "B": "OCR",
+      "C": "MICR",
+      "D": "Barcode Reader"
+    },
+    "optionsHindi": {
+      "A": "ओएमआर (OMR)",
+      "B": "ओसीआर (OCR)",
+      "C": "एमआईसीआर (MICR)",
+      "D": "बारकोड स्कैनर"
+    },
+    "correct": "C",
+    "explanation": "MICR (Magnetic Ink Character Recognition) reads characters printed in specialized magnetic ink at the bottom of bank cheques (9-digit MICR code).",
+    "explanationHindi": "MICR (मैग्नेटिक इंक कैरेक्टर रिकॉग्निशन) तकनीक का उपयोग बैंकों में चेक के नीचे मुद्रित 9 अंकों के कोड को चुम्बकीय रूप से पहचानने और प्रोसेस करने हेतु किया जाता है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "hardware-software",
+    "topicLabel": "Hardware & Devices",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-023",
+    "question": "In computer networking, which network topology connects every computer to a central device called a Switch or Hub?",
+    "questionHindi": "कंप्यूटर नेटवर्किंग में किस टोपोलॉजी में सभी नोड्स (कंप्यूटर्स) एक केंद्रीय उपकरण (Switch/Hub) से जुड़े होते हैं?",
+    "options": {
+      "A": "Ring Topology",
+      "B": "Bus Topology",
+      "C": "Star Topology",
+      "D": "Mesh Topology"
+    },
+    "optionsHindi": {
+      "A": "रिंग टोपोलॉजी",
+      "B": "बस टोपोलॉजी",
+      "C": "स्टार टोपोलॉजी (Star Topology)",
+      "D": "मेश टोपोलॉजी"
+    },
+    "correct": "C",
+    "explanation": "In a Star topology, all nodes are individually connected to a central connection point like a switch or hub. If one cable fails, only that node is disconnected.",
+    "explanationHindi": "स्टार टोपोलॉजी में सभी कंप्यूटर अलग-अलग केबल द्वारा एक केंद्रीय स्विच या हब से जुड़े होते हैं, जिससे एक नोड के खराब होने पर पूरा नेटवर्क बाधित नहीं होता।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "internet-email",
+    "topicLabel": "Network Topologies",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-024",
+    "question": "Which standard protocol is used for securely transmitting encrypted web pages between a browser and a web server over port 443?",
+    "questionHindi": "वेब ब्राउज़र और सर्वर के मध्य एन्क्रिप्टेड और सुरक्षित डेटा संचार हेतु पोर्ट 443 पर किस प्रोटोकॉल का उपयोग होता है?",
+    "options": {
+      "A": "HTTP",
+      "B": "HTTPS",
+      "C": "FTP",
+      "D": "SMTP"
+    },
+    "optionsHindi": {
+      "A": "HTTP",
+      "B": "HTTPS (हाइपरटेक्स्ट ट्रांसफर प्रोटोकॉल सिक्योर)",
+      "C": "FTP",
+      "D": "SMTP"
+    },
+    "correct": "B",
+    "explanation": "HTTPS (Hypertext Transfer Protocol Secure) operates over port 443 and encrypts communications using SSL/TLS protocols.",
+    "explanationHindi": "HTTPS पोर्ट 443 पर काम करता है और SSL/TLS एन्क्रिप्शन के माध्यम से यूजर और वेबसाइट के बीच डेटा को सुरक्षित (Secure) बनाता है।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "cyber-security",
+    "topicLabel": "Internet Security & Protocols",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-025",
+    "question": "In Microsoft Excel, what symbol is prefixed before a column letter or row number to make it an absolute cell reference?",
+    "questionHindi": "माइक्रोसॉफ्ट एक्सेल (MS Excel) में किसी फॉर्मूले में सेल संदर्भ को 'एब्सोल्यूट' (स्थिर) बनाने के लिए किस चिह्न का प्रयोग किया जाता है?",
+    "options": {
+      "A": "# (Hash)",
+      "B": "@ (At)",
+      "C": "$ (Dollar)",
+      "D": "& (Ampersand)"
+    },
+    "optionsHindi": {
+      "A": "# (हैश)",
+      "B": "@ (एट)",
+      "C": "$ (डॉलर चिह्न - जैसे $A$1)",
+      "D": "& (एम्परसेंड)"
+    },
+    "correct": "C",
+    "explanation": "The dollar sign ($) is used in Excel to lock rows and columns during formula autofill (e.g. $A$1 is an absolute reference).",
+    "explanationHindi": "एक्सेल में सूत्र (Formula) कॉपी करते समय रो या कॉलम को लॉक (स्थिर) रखने हेतु डॉलर ($) चिह्न (उदा. $A$1) का उपयोग किया जाता है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "ms-office",
+    "topicLabel": "MS Office Applications",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-026",
+    "question": "In relational databases (RDBMS), what is a column or set of columns in one table that references the primary key of another table called?",
+    "questionHindi": "रिलेशनल डेटाबेस (RDBMS) में वह फ़ील्ड जो दूसरी तालिका की प्राइमरी की (Primary Key) को संदर्भित करती है, क्या कहलाती है?",
+    "options": {
+      "A": "Candidate Key",
+      "B": "Super Key",
+      "C": "Foreign Key",
+      "D": "Composite Key"
+    },
+    "optionsHindi": {
+      "A": "कैंडिडेट की",
+      "B": "सुपर की",
+      "C": "फॉरेन की (Foreign Key)",
+      "D": "कंपोजिट की"
+    },
+    "correct": "C",
+    "explanation": "A Foreign Key is a field in a relational table that matches the primary key column of another table, creating a relational link between them.",
+    "explanationHindi": "फॉरेन की (Foreign Key) किसी तालिका का वह कॉलम होता है जो दूसरी संबंधित तालिका की प्राइमरी की से लिंक स्थापित करता है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "hardware-software",
+    "topicLabel": "Database Systems",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-027",
+    "question": "Which malicious software locks or encrypts a victim's files and demands financial payment to restore access?",
+    "questionHindi": "वह कौन सा दुर्भावनापूर्ण सॉफ्टवेयर (Malware) है जो यूजर की फाइलों को एन्क्रिप्ट/लॉक कर देता है और उन्हें खोलने हेतु फिरौती (रकम) मांगता है?",
+    "options": {
+      "A": "Spyware",
+      "B": "Adware",
+      "C": "Ransomware",
+      "D": "Worm"
+    },
+    "optionsHindi": {
+      "A": "स्पाइवेयर",
+      "B": "एडवेयर",
+      "C": "रैनसमवेयर (Ransomware)",
+      "D": "वॉर्म"
+    },
+    "correct": "C",
+    "explanation": "Ransomware is a type of extortion malware that encrypts files and threatens to publish or permanently delete data unless a ransom is paid.",
+    "explanationHindi": "रैनसमवेयर (जैसे WannaCry) कंप्यूटर के डेटा को एन्क्रिप्ट कर बंधक बना लेता है और डिक्रिप्शन की (Key) देने के बदले फिरौती की मांग करता है।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "cyber-security",
+    "topicLabel": "Cyber Security",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-028",
+    "question": "In the OSI 7-Layer Reference Model, which layer is responsible for routing data packets from source to destination across different networks?",
+    "questionHindi": "OSI 7-लेयर संदर्भ मॉडल में विभिन्न नेटवर्कों के मध्य डेटा पैकेटों की रूटिंग (Routing) किस परत का मुख्य कार्य है?",
+    "options": {
+      "A": "Data Link Layer",
+      "B": "Network Layer (Layer 3)",
+      "C": "Transport Layer",
+      "D": "Physical Layer"
+    },
+    "optionsHindi": {
+      "A": "डेटा लिंक लेयर",
+      "B": "नेटवर्क लेयर (लेयर 3 - राउटर)",
+      "C": "ट्रांसपोर्ट लेयर",
+      "D": "फिजिकल लेयर"
+    },
+    "correct": "B",
+    "explanation": "The Network Layer (Layer 3) handles logical IP addressing, packet forwarding, and dynamic routing across intermediate routers.",
+    "explanationHindi": "नेटवर्क लेयर (Layer 3) लॉजिकल एड्रेसिंग (IP) और राउटिंग के जरिए पैकेट को स्रोत से गंतव्य तक पहुँचाने का कार्य करती है।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "internet-email",
+    "topicLabel": "OSI Network Model",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-029",
+    "question": "Which open-source operating system kernel was created by Linus Torvalds in 1991?",
+    "questionHindi": "1991 में लाइनस टोरवाल्ड्स (Linus Torvalds) द्वारा किस ओपन-सोर्स ऑपरेटिंग सिस्टम कर्नेल का निर्माण किया गया था?",
+    "options": {
+      "A": "UNIX",
+      "B": "Linux",
+      "C": "MS-DOS",
+      "D": "FreeBSD"
+    },
+    "optionsHindi": {
+      "A": "यूनिक्स (UNIX)",
+      "B": "लिनक्स (Linux)",
+      "C": "एमएस-डॉस (MS-DOS)",
+      "D": "फ्री-बीएसडी"
+    },
+    "correct": "B",
+    "explanation": "Linus Torvalds released the initial Linux kernel in 1991 as free, open-source software under the GNU General Public License.",
+    "explanationHindi": "1991 में लाइनस टोरवाल्ड्स ने लिनक्स (Linux) कर्नेल तैयार किया, जो आज सर्वर और पुस्तकालय ऑटोमेशन में सर्वाधिक प्रयुक्त ओपन-सोर्स ऑपरेटिंग सिस्टम है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "operating-systems",
+    "topicLabel": "Operating Systems",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-030",
+    "question": "What is the primary function of a DNS (Domain Name System) server on the Internet?",
+    "questionHindi": "इंटरनेट पर DNS (डोमेन नेम सिस्टम) सर्वर का प्राथमिक कार्य क्या होता है?",
+    "options": {
+      "A": "To assign MAC addresses",
+      "B": "To translate human-readable domain names into machine IP addresses",
+      "C": "To store email messages",
+      "D": "To scan incoming traffic for viruses"
+    },
+    "optionsHindi": {
+      "A": "मैक एड्रेस आवंटित करना",
+      "B": "डोमेन नाम (जैसे google.com) को संख्यात्मक IP पते में अनुवादित करना",
+      "C": "ईमेल संदेशों को स्टोर करना",
+      "D": "वायरस को स्कैन करना"
+    },
+    "correct": "B",
+    "explanation": "DNS acts as the phonebook of the Internet by translating hostnames (like biharlibrarian2026.aiwazir.com) into IP addresses that computers understand.",
+    "explanationHindi": "DNS इंटरनेट की टेलीफोन डायरेक्टरी की तरह कार्य करता है, जो मानवीय रूप से पढ़े जाने वाले डोमेन नेम को संख्यात्मक IP एड्रेस में बदलता है।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "internet-email",
+    "topicLabel": "Internet & Networking",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-031",
+    "question": "In Microsoft PowerPoint, which special view allows you to make universal design changes (like logo, font, bullets) to all slides simultaneously?",
+    "questionHindi": "माइक्रोसॉफ्ट पावरपॉइंट में सभी स्लाइड्स में एक साथ लेआउट, लोगो या फॉन्ट बदलने हेतु किस व्यू का उपयोग किया जाता है?",
+    "options": {
+      "A": "Slide Sorter View",
+      "B": "Slide Master View",
+      "C": "Notes Page View",
+      "D": "Reading View"
+    },
+    "optionsHindi": {
+      "A": "स्लाइड सॉर्टर व्यू",
+      "B": "स्लाइड मास्टर व्यू (Slide Master)",
+      "C": "नोट्स पेज व्यू",
+      "D": "रीडिंग व्यू"
+    },
+    "correct": "B",
+    "explanation": "The Slide Master view enables editing the top-level master slide to instantly apply unified branding, headers, fonts, and backgrounds across all presentation slides.",
+    "explanationHindi": "स्लाइड मास्टर (Slide Master) में किया गया कोई भी बदलाव (लोगो, थीम, हेडर) प्रस्तुति की प्रत्येक स्लाइड पर स्वतः लागू हो जाता है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "ms-office",
+    "topicLabel": "MS Office Applications",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-032",
+    "question": "Which SQL statement is used to extract data from an existing database table?",
+    "questionHindi": "डेटाबेस तालिका से डेटा को पुनः प्राप्त (Read/Fetch) करने के लिए किस SQL कमांड का उपयोग किया जाता है?",
+    "options": {
+      "A": "GET",
+      "B": "EXTRACT",
+      "C": "SELECT",
+      "D": "FETCH"
+    },
+    "optionsHindi": {
+      "A": "GET",
+      "B": "EXTRACT",
+      "C": "SELECT (सेलेक्ट)",
+      "D": "FETCH"
+    },
+    "correct": "C",
+    "explanation": "The SELECT statement in Structured Query Language (SQL) is used to query and retrieve data from one or more database tables.",
+    "explanationHindi": "SQL में डेटाबेस की तालिका से आवश्यक रिकॉर्ड प्राप्त करने के लिए 'SELECT' कमांड (उदा. SELECT * FROM Books;) का उपयोग किया जाता है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "hardware-software",
+    "topicLabel": "Database Systems",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-033",
+    "question": "What is the default port number assigned to the Simple Mail Transfer Protocol (SMTP) for sending outgoing emails?",
+    "questionHindi": "आउटगोइंग ईमेल भेजने के लिए सिंपल मेल ट्रांसफर प्रोटोकॉल (SMTP) का मानक पोर्ट नंबर क्या है?",
+    "options": {
+      "A": "Port 21",
+      "B": "Port 25",
+      "C": "Port 80",
+      "D": "Port 110"
+    },
+    "optionsHindi": {
+      "A": "पोर्ट 21 (FTP)",
+      "B": "पोर्ट 25 (SMTP)",
+      "C": "पोर्ट 80 (HTTP)",
+      "D": "पोर्ट 110 (POP3)"
+    },
+    "correct": "B",
+    "explanation": "Port 25 is the standard designated TCP port for unencrypted SMTP mail relay between mail servers (Port 587 for submission with TLS).",
+    "explanationHindi": "मेल सर्वर के मध्य ईमेल भेजने के लिए SMTP प्रोटोकॉल मानक पोर्ट 25 का उपयोग करता है।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "internet-email",
+    "topicLabel": "Internet & Email",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cp-034",
+    "question": "Which keyboard shortcut in Windows opens the Task Manager directly without going through intermediate screens?",
+    "questionHindi": "विंडोज ऑपरेटिंग सिस्टम में सीधे टास्क मैनेजर (Task Manager) खोलने का शॉर्टकट क्या है?",
+    "options": {
+      "A": "Ctrl + Shift + Esc",
+      "B": "Ctrl + Alt + Delete",
+      "C": "Alt + F4",
+      "D": "Windows Key + T"
+    },
+    "optionsHindi": {
+      "A": "Ctrl + Shift + Esc",
+      "B": "Ctrl + Alt + Delete",
+      "C": "Alt + F4",
+      "D": "Windows + T"
+    },
+    "correct": "A",
+    "explanation": "Pressing Ctrl + Shift + Esc opens the Windows Task Manager directly in one step.",
+    "explanationHindi": "Ctrl + Shift + Esc शॉर्टकट सीधे विंडोज टास्क मैनेजर को खोल देता है, जिससे रनिंग प्रोग्राम और सीपीयू यूसेज देखा जा सकता है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "operating-systems",
+    "topicLabel": "Operating Systems & Shortcuts",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-035",
+    "question": "Which optical storage medium typically has a storage capacity of approximately 25 GB on a single-layer disc?",
+    "questionHindi": "किस ऑप्टिकल स्टोरेज डिस्क की सिंगल-लेयर क्षमता सामान्यतः लगभग 25 GB होती है?",
+    "options": {
+      "A": "CD-ROM",
+      "B": "DVD-R",
+      "C": "Blu-ray Disc (BD)",
+      "D": "Floppy Disk"
+    },
+    "optionsHindi": {
+      "A": "सीडी (CD - 700 MB)",
+      "B": "डीवीडी (DVD - 4.7 GB)",
+      "C": "ब्लू-रे डिस्क (Blu-ray - 25 GB)",
+      "D": "फ्लॉपी डिस्क (1.44 MB)"
+    },
+    "correct": "C",
+    "explanation": "A standard single-layer Blu-ray Disc has a capacity of 25 GB (50 GB on dual-layer) using a 405nm blue-violet laser.",
+    "explanationHindi": "ब्लू-रे डिस्क (Blu-ray Disc) में नीले-बैंगनी लेजर का उपयोग होता है और इसकी सिंगल-लेयर स्टोरेज क्षमता 25 GB होती है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "hardware-software",
+    "topicLabel": "Hardware & Storage",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-036",
+    "question": "In cyber security, a deceptive attempt to steal sensitive personal information (such as passwords and credit card credentials) by masquerading as a trustworthy entity in an email is called:",
+    "questionHindi": "साइबर सुरक्षा में ईमेल या फर्जी लिंक द्वारा बैंक जैसी प्रतिष्ठित संस्था बनकर यूजरनेम व पासवर्ड चुराने की धोखाधड़ी को क्या कहते हैं?",
+    "options": {
+      "A": "Phishing",
+      "B": "Denial of Service (DoS)",
+      "C": "SQL Injection",
+      "D": "Rootkit"
+    },
+    "optionsHindi": {
+      "A": "फ़िशिंग (Phishing)",
+      "B": "डिनायल ऑफ सर्विस (DoS)",
+      "C": "एसक्यूएल इंजेक्शन",
+      "D": "रूटकिट"
+    },
+    "correct": "A",
+    "explanation": "Phishing involves spoofed emails, deceptive websites, and social engineering to trick individuals into disclosing confidential credentials.",
+    "explanationHindi": "फ़िशिंग (Phishing) एक प्रकार का सामाजिक इंजीनियरिंग साइबर हमला है जिसमें जाली ईमेल द्वारा गोपनीय वित्तीय जानकारी चुराई जाती है।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "cyber-security",
+    "topicLabel": "Cyber Security",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-037",
+    "question": "What is the address space size of the next-generation Internet Protocol version 6 (IPv6)?",
+    "questionHindi": "इंटरनेट प्रोटोकॉल संस्करण 6 (IPv6) का एड्रेस साइज कितने बिट्स का होता है?",
+    "options": {
+      "A": "32 bits",
+      "B": "64 bits",
+      "C": "128 bits",
+      "D": "256 bits"
+    },
+    "optionsHindi": {
+      "A": "32 बिट्स (IPv4)",
+      "B": "64 बिट्स",
+      "C": "128 बिट्स (IPv6)",
+      "D": "256 बिट्स"
+    },
+    "correct": "C",
+    "explanation": "IPv6 addresses are 128 bits long (yielding 2^128 unique addresses), compared to IPv4 which uses 32 bits.",
+    "explanationHindi": "IPv6 एड्रेस 128 बिट्स का होता है (8 समूहों में 16-बिट हेक्साडेसिमल ब्लॉक), जबकि पुराना IPv4 एड्रेस 32 बिट्स का होता है।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "internet-email",
+    "topicLabel": "IP Addressing",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-038",
+    "question": "Which Unix/Linux command is used to display the current active working directory path?",
+    "questionHindi": "यूनिक्स / लिनक्स (Linux) में वर्तमान वर्किंग डायरेक्टरी का पूर्ण पथ देखने के लिए किस कमांड का उपयोग किया जाता है?",
+    "options": {
+      "A": "dir",
+      "B": "pwd",
+      "C": "cd",
+      "D": "ls"
+    },
+    "optionsHindi": {
+      "A": "dir",
+      "B": "pwd (Print Working Directory)",
+      "C": "cd",
+      "D": "ls"
+    },
+    "correct": "B",
+    "explanation": "The 'pwd' command stands for 'Print Working Directory' and prints the full pathname of the current working directory in Unix/Linux shell.",
+    "explanationHindi": "लिनक्स टर्मिनल में 'pwd' कमांड का पूर्ण रूप 'Print Working Directory' है, जो स्क्रीन पर वर्तमान डायरेक्टरी का पूरा पाथ दिखाता है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "operating-systems",
+    "topicLabel": "Operating Systems & Commands",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-039",
+    "question": "In Microsoft Word, what feature allows automated creation of multiple personalized letters, envelopes, or certificates from a single template and data source?",
+    "questionHindi": "माइक्रोसॉफ्ट वर्ड में एक ही दस्तावेज टेम्पलेट से कई व्यक्तियों हेतु व्यक्तिगत पत्र या प्रमाण पत्र तैयार करने वाले फीचर को क्या कहते हैं?",
+    "options": {
+      "A": "AutoCorrect",
+      "B": "Mail Merge",
+      "C": "Macro",
+      "D": "Track Changes"
+    },
+    "optionsHindi": {
+      "A": "ऑटोकरेक्ट",
+      "B": "मेल मर्ज (Mail Merge)",
+      "C": "मैक्रो",
+      "D": "ट्रैक चेंजेस"
+    },
+    "correct": "B",
+    "explanation": "Mail Merge merges a main Word document template with a data spreadsheet (Excel/Access) to produce customized batch correspondence.",
+    "explanationHindi": "मेल मर्ज (Mail Merge) के माध्यम से एक मुख्य पत्र प्रारूप को एक्सेल डेटाबेस से जोड़कर सैकड़ों लोगों के नाम के अलग-अलग पत्र एक क्लिक में बन जाते हैं।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "ms-office",
+    "topicLabel": "MS Office Applications",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-040",
+    "question": "What is the primary function of a network Firewall?",
+    "questionHindi": "कंप्यूटर नेटवर्क में फ़ायरवॉल (Firewall) का प्राथमिक कार्य क्या होता है?",
+    "options": {
+      "A": "To accelerate broadband speed",
+      "B": "To monitor and filter incoming and outgoing network traffic based on security rules",
+      "C": "To create physical backup copies of hard disks",
+      "D": "To convert analog signals into digital signals"
+    },
+    "optionsHindi": {
+      "A": "इंटरनेट स्पीड बढ़ाना",
+      "B": "सुरक्षा नियमों के आधार पर आने-जाने वाले ट्रैफिक की निगरानी एवं अनाधिकृत प्रवेश रोकना",
+      "C": "हार्ड डिस्क का बैकअप बनाना",
+      "D": "एनालॉग को डिजिटल सिग्नल में बदलना"
+    },
+    "correct": "B",
+    "explanation": "A firewall acts as a security barrier between a trusted internal network and untrusted external networks (like the Internet), inspecting packets against configured access rules.",
+    "explanationHindi": "फ़ायरवॉल एक सुरक्षा कवच है जो पूर्वनिर्धारित सुरक्षा नियमों के आधार पर नेटवर्क ट्रैफिक की जांच करता है और बाहरी अनाधिकृत पहुंच को रोकता है।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "cyber-security",
+    "topicLabel": "Network Security",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-041",
+    "question": "What is the small piece of data stored on the user's computer by a web browser while browsing a website called?",
+    "questionHindi": "वेबसाइट ब्राउज़ करते समय यूजर की प्राथमिकताओं और सत्र जानकारी को क्लाइंट कंप्यूटर पर स्टोर करने वाली छोटी फाइल क्या कहलाती है?",
+    "options": {
+      "A": "Cookie",
+      "B": "Plugin",
+      "C": "Applet",
+      "D": "Cache"
+    },
+    "optionsHindi": {
+      "A": "कुकी (Cookie)",
+      "B": "प्लगइन",
+      "C": "एप्लेट",
+      "D": "कैश"
+    },
+    "correct": "A",
+    "explanation": "Cookies are small text files created by a web server and stored on the user's device to track session states, logins, and preferences.",
+    "explanationHindi": "कुकीज़ (Cookies) वेबसाइट द्वारा यूजर के ब्राउज़र में सहेजी गई छोटी टेक्स्ट फाइलें होती हैं जो लॉगिन स्थिति और प्राथमिकताओं को याद रखती हैं।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "internet-email",
+    "topicLabel": "Web & Browsers",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-042",
+    "question": "Which of the following is considered an open-source relational database management system (RDBMS)?",
+    "questionHindi": "निम्नलिखित में से कौन सा एक ओपन-सोर्स रिलेशनल डेटाबेस मैनेजमेंट सिस्टम (RDBMS) है?",
+    "options": {
+      "A": "Oracle Database",
+      "B": "PostgreSQL",
+      "C": "Microsoft SQL Server",
+      "D": "IBM DB2"
+    },
+    "optionsHindi": {
+      "A": "ओरेकल डेटाबेस",
+      "B": "पोस्टग्रे-एसक्यूएल (PostgreSQL) / MySQL",
+      "C": "माइक्रोसॉफ्ट एसक्यूएल सर्वर",
+      "D": "आईबीएम डीबी2"
+    },
+    "correct": "B",
+    "explanation": "PostgreSQL (along with MySQL) is an enterprise-grade, powerful open-source object-relational database system.",
+    "explanationHindi": "PostgreSQL और MySQL प्रसिद्ध ओपन-सोर्स RDBMS हैं, जबकि Oracle, MS SQL Server और DB2 वाणिज्यिक (Proprietary) डेटाबेस हैं।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "hardware-software",
+    "topicLabel": "Database Systems",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-043",
+    "question": "What does RAID stand for in computer storage systems?",
+    "questionHindi": "कंप्यूटर डेटा स्टोरेज तकनीक में RAID का पूर्ण रूप क्या होता है?",
+    "options": {
+      "A": "Redundant Array of Independent Disks",
+      "B": "Random Access Information Device",
+      "C": "Reliable Array of Integrated Drives",
+      "D": "Rapid Access Interface Disc"
+    },
+    "optionsHindi": {
+      "A": "रिडंडेंट एरे ऑफ इंडिपेंडेंट डिस्क (Redundant Array of Independent Disks)",
+      "B": "रैंडम एक्सेस इंफॉर्मेशन डिवाइस",
+      "C": "रिलायबल एरे ऑफ इंटीग्रेटेड ड्राइव्स",
+      "D": "रैपिड एक्सेस इंटरफेस डिस्क"
+    },
+    "correct": "A",
+    "explanation": "RAID (Redundant Array of Independent Disks) combines multiple physical disk drives into a single logical unit for redundancy, fault tolerance, and performance.",
+    "explanationHindi": "RAID का पूर्ण रूप 'Redundant Array of Independent Disks' है, जो डेटा सुरक्षा और डिस्क विफलता से बचाव हेतु कई हार्ड डिस्क को एक साथ जोड़ता है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "hardware-software",
+    "topicLabel": "Storage Technology",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cp-044",
+    "question": "Which wireless communication technology operates in the 2.4 GHz or 5 GHz ISM radio bands following the IEEE 802.11 standards?",
+    "questionHindi": "IEEE 802.11 मानकों के अंतर्गत 2.4 GHz या 5 GHz रेडियो तरंगों पर काम करने वाली वायरलेस तकनीक कौन सी है?",
+    "options": {
+      "A": "Bluetooth",
+      "B": "Wi-Fi",
+      "C": "NFC",
+      "D": "Zigbee"
+    },
+    "optionsHindi": {
+      "A": "ब्लूटूथ (Bluetooth - 802.15)",
+      "B": "वाई-फ़ाई (Wi-Fi - IEEE 802.11)",
+      "C": "एनएफसी (NFC)",
+      "D": "जिगबी"
+    },
+    "correct": "B",
+    "explanation": "Wi-Fi wireless local area network technology operates under IEEE 802.11 specifications across 2.4 GHz, 5 GHz, and 6 GHz bands.",
+    "explanationHindi": "वाई-फ़ाई (Wireless Fidelity) IEEE 802.11 मानक पर आधारित लोकल एरिया नेटवर्क तकनीक है।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "internet-email",
+    "topicLabel": "Wireless Networking",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-045",
+    "question": "What is the maximum number of rows supported in a single worksheet of modern Microsoft Excel (.xlsx)?",
+    "questionHindi": "आधुनिक माइक्रोसॉफ्ट एक्सेल (.xlsx) की एक एकल वर्कशीट में पंक्तियों (Rows) की अधिकतम संख्या कितनी होती है?",
+    "options": {
+      "A": "65,536",
+      "B": "1,048,576",
+      "C": "524,288",
+      "D": "2,097,152"
+    },
+    "optionsHindi": {
+      "A": "65,536 (पुराना .xls)",
+      "B": "1,048,576 (10 लाख 48 हजार 576 पंक्तियाँ)",
+      "C": "524,288",
+      "D": "2,097,152"
+    },
+    "correct": "B",
+    "explanation": "Modern Excel worksheets have exactly 1,048,576 rows and 16,384 columns (up to XFD). The older .xls format supported 65,536 rows.",
+    "explanationHindi": "एक्सेल 2007 और उसके बाद के संस्करणों में कुल 1,048,576 पंक्तियाँ (Rows) और 16,384 कॉलम होते हैं।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "ms-office",
+    "topicLabel": "MS Excel Features",
+    "difficulty": "hard"
+  },
+  {
+    "id": "cp-046",
+    "question": "Which protocol is used by web clients to retrieve and sync emails while leaving the master copies on the mail server?",
+    "questionHindi": "ईमेल क्लाइंट्स द्वारा सर्वर से ईमेल पढ़ने और कई उपकरणों पर सिंक रखने हेतु किस आधुनिक प्रोटोकॉल का उपयोग किया जाता है?",
+    "options": {
+      "A": "POP3",
+      "B": "IMAP",
+      "C": "SMTP",
+      "D": "SNMP"
+    },
+    "optionsHindi": {
+      "A": "POP3 (ईमेल डाउनलोड कर सर्वर से हटाता है)",
+      "B": "IMAP (ईमेल को सर्वर पर सिंक रखता है)",
+      "C": "SMTP",
+      "D": "SNMP"
+    },
+    "correct": "B",
+    "explanation": "IMAP (Internet Message Access Protocol, port 143/993) keeps messages on the server and synchronizes read/unread status across all phones and computers.",
+    "explanationHindi": "IMAP (इंटरनेट मैसेज एक्सेस प्रोटोकॉल) ईमेल को सर्वर पर ही रखता है जिससे यूजर मोबाइल व कंप्यूटर दोनों पर एक जैसा इनबॉक्स देख सकते हैं।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "internet-email",
+    "topicLabel": "Email Protocols",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-047",
+    "question": "What type of software is Adobe Acrobat Reader categorized as?",
+    "questionHindi": "एडोब एक्रोबेट रीडर (Adobe Acrobat Reader) किस श्रेणी का सॉफ्टवेयर है?",
+    "options": {
+      "A": "System Software",
+      "B": "Application Software / Freeware",
+      "C": "Firmware",
+      "D": "Operating System"
+    },
+    "optionsHindi": {
+      "A": "सिस्टम सॉफ्टवेयर",
+      "B": "एप्लीकेशन सॉफ्टवेयर (फ्रीवेयर)",
+      "C": "फर्मवेयर",
+      "D": "ऑपरेटिंग सिस्टम"
+    },
+    "correct": "B",
+    "explanation": "Adobe Acrobat Reader is an application software (distributed as freeware) designed to view, print, and annotate Portable Document Format (PDF) files.",
+    "explanationHindi": "एडोब रीडर एक एप्लीकेशन सॉफ्टवेयर है जिसका उपयोग पीडीएफ (PDF) फाइलों को पढ़ने और देखने के लिए किया जाता है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "hardware-software",
+    "topicLabel": "Software Classifications",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-048",
+    "question": "Which component inside a CPU performs arithmetic calculations (such as addition and subtraction) and logical comparisons (such as AND, OR)?",
+    "questionHindi": "सेंट्रल प्रोसेसिंग यूनिट (CPU) का कौन सा घटक अंकगणितीय गणनाओं और तार्किक तुलनाओं का निष्पादन करता है?",
+    "options": {
+      "A": "Control Unit (CU)",
+      "B": "Arithmetic Logic Unit (ALU)",
+      "C": "Registers",
+      "D": "Cache Memory"
+    },
+    "optionsHindi": {
+      "A": "कंट्रोल यूनिट (CU)",
+      "B": "अरिथमेटिक लॉजिक यूनिट (ALU)",
+      "C": "रजिस्टर",
+      "D": "कैश मेमोरी"
+    },
+    "correct": "B",
+    "explanation": "The ALU (Arithmetic Logic Unit) executes all mathematical operations (+, -, *, /) and logical comparisons (=, <, >, AND, OR) inside the microprocessor.",
+    "explanationHindi": "CPU का ALU (अंकगणित और तर्क इकाई) सभी प्रकार की जोड़-घटाव और सत्य/असत्य जैसे तार्किक निर्णय लेने का कार्य करता है।",
+    "subject": "computer",
+    "unit": "computer-basics",
+    "topic": "hardware-software",
+    "topicLabel": "Computer Architecture",
+    "difficulty": "easy"
+  },
+  {
+    "id": "cp-049",
+    "question": "Which of the following describes an IP address assigned dynamically and temporarily to a computer every time it connects to a network?",
+    "questionHindi": "कंप्यूटर के नेटवर्क से जुड़ने पर DHCP सर्वर द्वारा अस्थायी रूप से दिए जाने वाले IP पते को क्या कहते हैं?",
+    "options": {
+      "A": "Static IP Address",
+      "B": "Dynamic IP Address",
+      "C": "MAC Address",
+      "D": "Broadcast Address"
+    },
+    "optionsHindi": {
+      "A": "स्टैटिक IP पता",
+      "B": "डायनामिक IP पता (Dynamic IP)",
+      "C": "मैक पता",
+      "D": "ब्रॉडकास्ट पता"
+    },
+    "correct": "B",
+    "explanation": "Dynamic IP addresses are temporarily leased to client devices by a DHCP (Dynamic Host Configuration Protocol) server from an available address pool.",
+    "explanationHindi": "डायनामिक IP एड्रेस DHCP प्रोटोकॉल द्वारा ऑटोमैटिक रूप से आवंटित किया जाता है, जो डिवाइस के पुनः कनेक्ट होने पर बदल सकता है।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "internet-email",
+    "topicLabel": "Networking Concepts",
+    "difficulty": "medium"
+  },
+  {
+    "id": "cp-050",
+    "question": "What is the primary objective of implementing Two-Factor Authentication (2FA) for online accounts?",
+    "questionHindi": "ऑनलाइन खातों में टू-फैक्टर ऑथेंटिकेशन (2FA) लागू करने का प्राथमिक उद्देश्य क्या होता है?",
+    "options": {
+      "A": "To compress uploaded files",
+      "B": "To require two separate forms of identification (e.g. password + OTP) before granting access",
+      "C": "To double internet download bandwidth",
+      "D": "To auto-generate strong master passwords"
+    },
+    "optionsHindi": {
+      "A": "फाइल का आकार छोटा करना",
+      "B": "सुरक्षा बढ़ाने हेतु पासवर्ड के साथ एक अतिरिक्त सत्यापन कोड (जैसे OTP या बायोमेट्रिक) मांगना",
+      "C": "इंटरनेट स्पीड दोगुनी करना",
+      "D": "पासवर्ड रीसेट करना"
+    },
+    "correct": "B",
+    "explanation": "Two-Factor Authentication (2FA) bolsters defense by requiring two distinct factors: something you know (password) and something you have (OTP on phone or authenticator app).",
+    "explanationHindi": "2FA सुरक्षा की एक मजबूत परत है जो पासवर्ड लीक होने पर भी बिना मोबाइल OTP या बायोमेट्रिक सत्यापन के खाते में प्रवेश नहीं होने देती।",
+    "subject": "computer",
+    "unit": "internet-security",
+    "topic": "cyber-security",
+    "topicLabel": "Cyber Security & Authentication",
+    "difficulty": "easy"
   }
 ];

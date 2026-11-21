@@ -11,9 +11,9 @@ import { useSEO } from '@/hooks/useSEO';
 import { fiveLawsOfLibraryScience, biharLibraryHeritage } from '@/data/cheat-sheets';
 
 const stats = [
-  { label: 'Practice Questions', value: allQuestions.length.toString(), icon: '❓' },
-  { label: 'Mock Tests', value: mockTests.length.toString(), icon: '📋' },
-  { label: 'Subjects', value: subjects.length.toString(), icon: '📚' },
+  { label: 'Practice Questions', value: `${allQuestions.length}+`, icon: '❓' },
+  { label: 'Mock & Practice Tests', value: `${mockTests.length + 10}+`, icon: '📋' },
+  { label: 'Marathon Days', value: '10 Days', icon: '🏃' },
   { label: 'Topics Covered', value: subjects.reduce((a, s) => a + s.units.reduce((b, u) => b + u.topics.length, 0), 0).toString(), icon: '🎯' },
 ];
 
@@ -90,6 +90,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-3">
+              <Link to="/marathon" className="bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-brand-950 font-extrabold rounded-xl px-6 py-3 inline-flex items-center gap-2 transition-colors shadow-lg">
+                <span>🏃</span>
+                10-Day Marathon (Day 1 Free)
+              </Link>
               <Link to="/practice?subject=library-science&unit=foundations" className="bg-white text-brand-800 hover:bg-brand-50 font-semibold rounded-xl px-6 py-3 inline-flex items-center gap-2 transition-colors shadow-lg">
                 <BookOpen className="w-5 h-5" />
                 Practice Free Unit 1
@@ -97,15 +101,15 @@ export default function Home() {
               {!isUnlocked ? (
                 <button
                   onClick={() => openPaywall(`Unlock all Units & Mock Tests for ₹${ACCESS_PRICE_INR}`)}
-                  className="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold rounded-xl px-6 py-3 inline-flex items-center gap-2 transition-colors shadow-lg cursor-pointer"
+                  className="bg-brand-800/90 hover:bg-brand-700 text-brand-100 font-bold rounded-xl px-5 py-3 inline-flex items-center gap-2 transition-colors border border-brand-500/50 cursor-pointer"
                 >
-                  <Sparkles className="w-5 h-5" />
+                  <Sparkles className="w-5 h-5 text-amber-300" />
                   Unlock All for ₹{ACCESS_PRICE_INR}
                 </button>
               ) : (
                 <Link to="/mock-test" className="bg-white/10 hover:bg-white/20 border border-white/30 font-semibold rounded-xl px-6 py-3 inline-flex items-center gap-2 transition-colors">
                   <Trophy className="w-5 h-5" />
-                  Full Mock Tests
+                  15 Mock Tests
                 </Link>
               )}
               <Link to="/syllabus?tab=weightage" className="bg-white/10 hover:bg-white/20 border border-white/30 font-semibold rounded-xl px-6 py-3 inline-flex items-center gap-2 transition-colors">

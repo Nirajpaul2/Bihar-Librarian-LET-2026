@@ -7,11 +7,12 @@ import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
 
 const navLinks = [
   { to: '/', label: 'Home' },
+  { to: '/marathon', label: '🏃 Marathon (Day 1-10)' },
+  { to: '/practice', label: 'Practice' },
+  { to: '/mock-test', label: 'Mock Tests' },
   { to: '/syllabus', label: 'Syllabus & Weightage' },
   { to: '/syllabus?tab=cheatsheet', label: 'Quick Revision' },
   { to: '/syllabus?tab=studyplan', label: '30-Day Plan' },
-  { to: '/practice', label: 'Practice' },
-  { to: '/mock-test', label: 'Mock Tests' },
   { to: '/current-affairs', label: 'Current Affairs' },
 ];
 
