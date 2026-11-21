@@ -213,7 +213,7 @@ export default function PaywallModal({
                 Special Offer · 91% OFF
               </span>
               <span className="text-xs text-green-600 dark:text-green-400 font-semibold">
-                Unit 1 Free
+                Unit 1 & Mock Set 1 Free
               </span>
             </div>
             <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
@@ -322,7 +322,7 @@ export default function PaywallModal({
             <div className="space-y-2 mb-4 text-xs sm:text-sm">
               {[
                 'All 6 Technical Library Science Units (Classification, Cataloguing, Management, Digital)',
-                'Full 150-Question Timed Mock Tests (120 Mins) with Section-wise Analysis',
+                '15 Full 150-Question Timed Mock Tests (Set 1 Free, Sets 2–15 included)',
                 'Part 2 General Paper: Bihar GK, Reasoning, Computer Awareness & GK',
                 '10-Day Intensive Exam Sprint Plan with Daily Core & General Targets (BPSC Countdown)',
                 'Save Difficult Questions with Bookmark Review Mode',

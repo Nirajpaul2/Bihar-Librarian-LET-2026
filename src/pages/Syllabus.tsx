@@ -692,8 +692,8 @@ export default function Syllabus() {
             <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
               Test your preparation with a timed 150-question mock test matching the LET 2026 pattern.
             </p>
-            <Link to="/mock-test" className="btn-primary">
-              Take Mock Test Now
+            <Link to="/mock-test/mt-001" className="btn-primary">
+              Take Free Mock Test Set 1 →
             </Link>
           </div>
         </div>

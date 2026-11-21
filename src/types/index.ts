@@ -85,6 +85,7 @@ export interface MockTestConfig {
   negativeMarks: number;
   instructions: string[];
   sections: MockTestSection[];
+  isFree?: boolean;
 }
 
 export interface MockTestSection {

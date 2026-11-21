@@ -7,8 +7,9 @@ export const mockTests: MockTestConfig[] = [
   {
     id: 'mt-001',
     title: 'Full LET Mock Test — Set 1',
+    isFree: true,
     description:
-      'Complete 150-question mock test matching the Bihar Librarian LET 2026 pattern — 100 Library Science + 50 General Paper (GK, Bihar GK, Reasoning, Computer). No negative marking.',
+      'Complete 150-question mock test matching the Bihar Librarian LET 2026 pattern — 100 Library Science + 50 General Paper (GK, Bihar GK, Reasoning, Computer). 100% Free for all candidates.',
     totalQuestions: 100, // Limited by available questions; full 150 when bank grows
     durationMinutes: 120,
     marksPerQuestion: 1,

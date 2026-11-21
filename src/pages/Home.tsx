@@ -68,7 +68,7 @@ export default function Home() {
               </h1>
 
               <p className="text-brand-100 text-sm sm:text-base lg:text-lg mb-6 leading-relaxed max-w-2xl">
-                420+ Curated Bilingual MCQs covering <strong>100 Marks Library Science Core</strong> + <strong>50 Marks General Paper</strong> (Bihar GK, Reasoning, Computer) with instant Devanagari Hindi solutions. <strong>Unit 1 & Day 1 are 100% Free!</strong>
+                420+ Curated Bilingual MCQs covering <strong>100 Marks Library Science Core</strong> + <strong>50 Marks General Paper</strong> (Bihar GK, Reasoning, Computer) with instant Devanagari Hindi solutions. <strong>Unit 1, Day 1 & Mock Set 1 are 100% Free!</strong>
               </p>
 
               {/* Quick stats badges */}
@@ -83,7 +83,7 @@ export default function Home() {
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-2.5 sm:p-3 text-center">
                   <div className="text-base sm:text-xl font-extrabold text-emerald-300">{mockTests.length} Tests</div>
-                  <div className="text-[10px] sm:text-xs text-brand-200 font-medium">Timed LET Mocks</div>
+                  <div className="text-[10px] sm:text-xs text-brand-200 font-medium">Mocks (Set 1 Free)</div>
                 </div>
               </div>
 
@@ -495,7 +495,7 @@ export default function Home() {
               className="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow cursor-pointer flex items-center gap-1.5"
             >
               <Trophy className="w-4 h-4" />
-              <span>Browse 15 Mock Tests →</span>
+              <span>Browse 15 Mock Tests (Set 1 Free) →</span>
             </Link>
           </div>
         </div>

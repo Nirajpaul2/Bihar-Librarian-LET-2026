@@ -33,6 +33,9 @@ function TestInfoScreen({
   const test = mockTests.find(t => t.id === testId);
   if (!test) return <div className="p-8 text-center text-gray-500">Test not found.</div>;
 
+  const isTestFree = test.isFree || test.id === 'mt-001';
+  const canAccess = isTestFree || isUnlocked;
+
   return (
     <div className="max-w-2xl mx-auto px-4 py-8 pb-24 md:pb-8">
       <Link to="/mock-test" className="btn-ghost mb-4 -ml-2">
@@ -41,7 +44,22 @@ function TestInfoScreen({
       </Link>
 
       <div className="card p-6 mb-6">
-        <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{test.title}</h1>
+        <div className="flex items-center gap-2 flex-wrap mb-2">
+          <h1 className="text-xl font-bold text-gray-900 dark:text-white">{test.title}</h1>
+          {isTestFree ? (
+            <span className="text-[11px] bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 font-extrabold px-3 py-1 rounded-full flex items-center gap-1">
+              🎉 100% FREE TEST
+            </span>
+          ) : !isUnlocked ? (
+            <span className="text-[11px] bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
+              <Lock className="w-3 h-3" /> ₹{ACCESS_PRICE_INR} to Unlock
+            </span>
+          ) : (
+            <span className="text-[11px] bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 font-bold px-2.5 py-0.5 rounded-full">
+              UNLOCKED
+            </span>
+          )}
+        </div>
         <p className="text-gray-500 dark:text-gray-400 text-sm mb-5">{test.description}</p>
 
         <div className="grid grid-cols-3 gap-4 mb-6">
@@ -77,9 +95,14 @@ function TestInfoScreen({
         </div>
       </div>
 
-      {isUnlocked ? (
-        <button onClick={onStart} className="btn-primary w-full text-base py-4 flex items-center justify-center gap-2">
-          Start Test Now
+      {canAccess ? (
+        <button
+          onClick={onStart}
+          className={`btn-primary w-full text-base py-4 flex items-center justify-center gap-2 ${
+            isTestFree ? 'bg-emerald-600 hover:bg-emerald-700 border-emerald-600 shadow-emerald-600/25' : ''
+          }`}
+        >
+          {isTestFree ? 'Start Free Test Now' : 'Start Test Now'}
           <ArrowRight className="w-5 h-5" />
         </button>
       ) : (
@@ -124,9 +147,11 @@ export default function MockTestPage() {
   const { toggle, isBookmarked } = useBookmarks();
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
 
+  const isTestFree = test?.isFree || test?.id === 'mt-001';
+
   const startTest = useCallback(() => {
     if (!test) return;
-    if (!isUnlocked) {
+    if (!isTestFree && !isUnlocked) {
       openPaywall(`Unlock ${test.title} for ₹${ACCESS_PRICE_INR}`);
       return;
     }
@@ -144,7 +169,7 @@ export default function MockTestPage() {
     setAnswers({});
     setMarkedForReview(new Set());
     setPhase('active');
-  }, [test, isUnlocked, openPaywall]);
+  }, [test, isTestFree, isUnlocked, openPaywall]);
 
   // Timer
   useEffect(() => {
@@ -534,6 +559,7 @@ function MockTestResultInline({
   questions: import('@/types').Question[];
   answers: Record<string, AnswerKey | null>;
 }) {
+  const { isUnlocked, openPaywall } = usePayment();
   const { language, setLanguage } = useLanguage();
   const [showReview, setShowReview] = useState(false);
   const [reviewIndex, setReviewIndex] = useState(0);
@@ -769,17 +795,41 @@ function MockTestResultInline({
         </div>
       )}
 
-      {/* Actions */}
-      <div className="flex flex-col gap-3">
-        <button onClick={() => setShowReview(true)} className="btn-primary w-full">
-          Review All Answers
-        </button>
-        <Link to="/mock-test" className="btn-secondary w-full text-center">
-          Take Another Test
-        </Link>
-        <Link to="/practice" className="btn-ghost w-full text-center text-sm">
-          Practice More Questions
-        </Link>
+      {/* Actions & Next Steps */}
+      <div className="space-y-3">
+        {/* Pro Upsell after free test */}
+        {!isUnlocked && (
+          <div className="card p-5 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/20 border border-amber-200 dark:border-amber-800/50 text-center">
+            <span className="text-[11px] font-bold bg-amber-200 dark:bg-amber-900 text-amber-900 dark:text-amber-200 px-2.5 py-0.5 rounded-full uppercase">
+              {test.isFree || test.id === 'mt-001' ? 'Free Mock Completed!' : 'Unlock Remaining Tests'}
+            </span>
+            <h4 className="text-base font-bold text-gray-900 dark:text-white mt-2 mb-1">
+              Ready to Practice 14 More Full LET Mock Tests?
+            </h4>
+            <p className="text-xs text-gray-600 dark:text-gray-300 mb-3.5 max-w-md mx-auto">
+              Unlock Mock Tests Sets 2–15, all remaining 5 technical units, and the 10-Day Exam Marathon for just ₹{ACCESS_PRICE_INR}.
+            </p>
+            <button
+              onClick={() => openPaywall(`Unlock all Mock Tests Sets 2–15 for ₹${ACCESS_PRICE_INR}`)}
+              className="btn-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 py-2.5 px-6 font-bold text-sm cursor-pointer shadow-md"
+            >
+              <Sparkles className="w-4 h-4 text-amber-300" />
+              Unlock All 15 Mock Tests for ₹{ACCESS_PRICE_INR}
+            </button>
+          </div>
+        )}
+
+        <div className="flex flex-col gap-3">
+          <button onClick={() => setShowReview(true)} className="btn-primary w-full">
+            Review All Answers & Explanations
+          </button>
+          <Link to="/mock-test" className="btn-secondary w-full text-center">
+            Take Another Test
+          </Link>
+          <Link to="/practice" className="btn-ghost w-full text-center text-sm">
+            Practice More Questions
+          </Link>
+        </div>
       </div>
     </div>
   );
