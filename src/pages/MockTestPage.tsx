@@ -272,7 +272,7 @@ export default function MockTestPage() {
         onSubmit={() => setShowSubmitConfirm(true)}
       />
 
-      <div className="flex flex-1 max-w-4xl mx-auto w-full px-4 py-6 gap-6">
+      <div className="flex flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-6 gap-6">
         {/* Main question area */}
         <div className="flex-1 min-w-0 space-y-5">
           {/* Meta */}
@@ -467,9 +467,16 @@ export default function MockTestPage() {
         </div>
 
         {/* Question Nav - Desktop sidebar */}
-        <div className="hidden lg:block w-72 shrink-0">
-          <div className="card p-4 sticky top-24">
-            <h3 className="font-semibold text-gray-900 dark:text-white text-sm mb-4">Question Navigator</h3>
+        <div className="hidden lg:block w-80 lg:w-[350px] shrink-0">
+          <div className="card p-4 sticky top-20 shadow-md">
+            <div className="flex items-center justify-between mb-3 pb-2 border-b border-gray-100 dark:border-gray-800">
+              <h3 className="font-bold text-gray-900 dark:text-white text-sm">
+                Question Navigator
+              </h3>
+              <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                {answeredCount}/{questions.length} Answered
+              </span>
+            </div>
             <QuestionNav
               total={questions.length}
               currentIndex={currentIndex}
@@ -480,7 +487,7 @@ export default function MockTestPage() {
             />
             <button
               onClick={() => setShowSubmitConfirm(true)}
-              className="w-full mt-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold text-sm transition-colors"
+              className="w-full mt-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-bold text-sm transition-colors shadow-sm cursor-pointer"
             >
               Submit Test
             </button>
@@ -491,20 +498,30 @@ export default function MockTestPage() {
       {/* Mobile: Question nav drawer */}
       <button
         onClick={() => setShowNav(true)}
-        className="lg:hidden fixed bottom-6 right-4 w-12 h-12 bg-brand-600 text-white rounded-full shadow-lg flex items-center justify-center"
+        className="lg:hidden fixed bottom-6 right-4 w-12 h-12 bg-brand-600 hover:bg-brand-700 text-white rounded-full shadow-xl flex items-center justify-center z-40 transition-transform active:scale-95"
+        title="Open Question Navigator"
+        aria-label="Open Question Navigator"
       >
         <List className="w-5 h-5" />
       </button>
 
       {showNav && (
-        <div className="fixed inset-0 z-50 bg-black/50" onClick={() => setShowNav(false)}>
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4" onClick={() => setShowNav(false)}>
           <div
-            className="absolute bottom-0 left-0 right-0 bg-white dark:bg-gray-900 rounded-t-2xl p-5 max-h-[80vh] overflow-y-auto"
+            className="w-full sm:max-w-md bg-white dark:bg-gray-900 rounded-t-3xl sm:rounded-2xl p-5 max-h-[85vh] overflow-y-auto shadow-2xl animate-slide-up"
             onClick={e => e.stopPropagation()}
           >
-            <h3 className="font-semibold text-gray-900 dark:text-white text-sm mb-4">
-              Question Navigator ({answeredCount}/{questions.length} answered)
-            </h3>
+            <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-100 dark:border-gray-800">
+              <h3 className="font-bold text-gray-900 dark:text-white text-sm">
+                Question Navigator ({answeredCount}/{questions.length} answered)
+              </h3>
+              <button
+                onClick={() => setShowNav(false)}
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-xs font-semibold px-2 py-1 rounded-lg"
+              >
+                ✕ Close
+              </button>
+            </div>
             <QuestionNav
               total={questions.length}
               currentIndex={currentIndex}
@@ -513,10 +530,15 @@ export default function MockTestPage() {
               questionIds={questions.map(q => q.id)}
               onNavigate={i => { setCurrentIndex(i); setShowNav(false); }}
             />
-            <div className="flex gap-3 mt-4">
-              <button onClick={() => setShowNav(false)} className="btn-secondary flex-1">Close</button>
-              <button onClick={() => { setShowNav(false); setShowSubmitConfirm(true); }} className="flex-1 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-semibold text-sm transition-colors">
-                Submit
+            <div className="flex gap-3 mt-4 pt-2 border-t border-gray-100 dark:border-gray-800">
+              <button onClick={() => setShowNav(false)} className="btn-secondary flex-1 text-sm py-2.5">
+                Back to Test
+              </button>
+              <button
+                onClick={() => { setShowNav(false); setShowSubmitConfirm(true); }}
+                className="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-sm transition-colors shadow"
+              >
+                Submit Test
               </button>
             </div>
           </div>
