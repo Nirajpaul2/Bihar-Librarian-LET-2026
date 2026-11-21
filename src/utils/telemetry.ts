@@ -6,7 +6,7 @@
  *  - Measurement ID: G-SYWKVX2FLY
  *  - Automatic SPA Page View Tracking
  *  - Candidate Drop-off / Screen Exit Events
- *  - ₹9 Paywall View & E-Commerce Purchase Conversions
+ *  - ₹19 Paywall View & E-Commerce Purchase Conversions
  *
  * Dual Mode:
  *  1. Google Analytics 4 (analytics.google.com)
@@ -191,16 +191,16 @@ async function sendEvent(eventType: string, screenTitle: string, extraData: Reco
 
     if (eventType === 'paywall_view') {
       window.gtag('event', 'view_item', {
-        items: [{ item_name: 'Bihar Librarian LET Full Pass', price: 9.0, currency: 'INR' }],
+        items: [{ item_name: 'Bihar Librarian LET Full Pass', price: 19.0, currency: 'INR' }],
         screen_name: screenTitle,
         context: extraData.context || '',
       });
     } else if (eventType === 'payment_success' || extraData.action === 'payment_success') {
       window.gtag('event', 'purchase', {
         transaction_id: extraData.paymentId || `pay_${Date.now()}`,
-        value: 9.0,
+        value: 19.0,
         currency: 'INR',
-        items: [{ item_name: 'Bihar Librarian LET Full Pass', price: 9.0 }],
+        items: [{ item_name: 'Bihar Librarian LET Full Pass', price: 19.0 }],
       });
     }
 
@@ -285,7 +285,7 @@ export function trackAction(actionName: string, details: Record<string, any> = {
 
 // 8. Track Paywall Modal Views (Intent)
 export function trackPaywallView(contextText?: string) {
-  sendEvent('paywall_view', '₹9 Complete LET Paywall Modal', {
+  sendEvent('paywall_view', '₹19 Complete LET Paywall Modal', {
     context: contextText || '',
   });
 }
@@ -361,7 +361,7 @@ export async function getAnalyticsSummary(): Promise<AnalyticsSummary> {
       exit_counts: local.exits || {},
       funnel: {
         total_sessions: totalSessions,
-        paywall_views: local.paywall_views || (local.screens['₹9 Complete LET Paywall Modal'] || 0),
+        paywall_views: local.paywall_views || (local.screens['₹19 Complete LET Paywall Modal'] || local.screens['₹9 Complete LET Paywall Modal'] || 0),
         paid_count: paidCount,
         conversion_rate: convRate,
       },

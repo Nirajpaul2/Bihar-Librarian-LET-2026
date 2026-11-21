@@ -145,7 +145,7 @@ export default function PracticeSession() {
 
   // Locked content check:
   // Marathon Day 1 / Set 1 is Free; Days 2-10 require unlock.
-  // Library Science Unit 1 is Free; other units & subjects require ₹9.
+  // Library Science Unit 1 is Free; other units & subjects require ₹19.
   const isContentLocked = !isUnlocked && (
     ((mode === 'marathon' || mode === 'set') && setNum > 1) ||
     (subjectId && subjectId !== 'library-science') ||

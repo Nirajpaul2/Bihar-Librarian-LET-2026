@@ -198,7 +198,7 @@ export default function AnalyticsModal({ isOpen, onClose }: AnalyticsModalProps)
 
               <div className="bg-gray-50 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-800 rounded-2xl p-3.5 text-center">
                 <div className="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">
-                  ₹9 Enrolled Pass
+                  ₹19 Enrolled Pass
                 </div>
                 <div className="text-2xl font-extrabold text-green-600 dark:text-green-400">
                   {data.funnel.paid_count}
@@ -297,7 +297,7 @@ export default function AnalyticsModal({ isOpen, onClose }: AnalyticsModalProps)
               </div>
             </div>
 
-            {/* ₹9 Candidate Conversion Funnel */}
+            {/* ₹19 Candidate Conversion Funnel */}
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border border-blue-200 dark:border-blue-900/50 rounded-2xl p-4 mb-6">
               <div className="font-bold text-sm text-gray-900 dark:text-white mb-3">
                 🎯 Candidate Conversion Funnel (Visitors ➔ Paid Pass)
@@ -334,7 +334,7 @@ export default function AnalyticsModal({ isOpen, onClose }: AnalyticsModalProps)
 
                 <div>
                   <div className="text-[11px] text-green-700 dark:text-green-400 font-semibold uppercase">
-                    Step 3: ₹9 Full Pass
+                    Step 3: ₹19 Full Pass
                   </div>
                   <div className="text-2xl font-extrabold text-green-600 dark:text-green-400 mt-0.5">
                     {data.funnel.paid_count}

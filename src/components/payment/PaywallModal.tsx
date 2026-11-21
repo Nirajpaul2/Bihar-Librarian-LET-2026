@@ -112,7 +112,7 @@ export default function PaywallModal({
     try {
       const options = {
         key: RAZORPAY_KEY_ID,
-        amount: ACCESS_PRICE_INR * 100, // in paise: 900 = Rs 9
+        amount: ACCESS_PRICE_INR * 100, // in paise: 1900 = Rs 19
         currency: 'INR',
         name: 'Bihar Librarian LET 2026',
         description: 'Lifetime Full Access — All Units & 150Q Mock Tests',
@@ -210,7 +210,7 @@ export default function PaywallModal({
             <div className="flex items-center gap-2">
               <span className="bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 text-[11px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
                 <Sparkles className="w-3 h-3" />
-                Special Offer · 91% OFF
+                Special Offer · 81% OFF
               </span>
               <span className="text-xs text-green-600 dark:text-green-400 font-semibold">
                 Unit 1 & Mock Set 1 Free
@@ -307,7 +307,7 @@ export default function PaywallModal({
                     </span>
                     <span className="text-sm text-gray-400 line-through">₹99</span>
                     <span className="text-xs font-semibold text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-950/60 px-2 py-0.5 rounded-full">
-                      Save ₹90
+                      Save ₹80
                     </span>
                   </div>
                 </div>
@@ -630,7 +630,7 @@ export default function PaywallModal({
             <div className="bg-gray-50 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 mb-4 space-y-2 text-xs">
               <div className="flex justify-between items-center text-gray-500 dark:text-gray-400">
                 <span>Access Level:</span>
-                <span className="font-bold text-gray-900 dark:text-white">Full Lifetime Access (₹9)</span>
+                <span className="font-bold text-gray-900 dark:text-white">Full Lifetime Access (₹{ACCESS_PRICE_INR})</span>
               </div>
               <div className="flex justify-between items-center text-gray-500 dark:text-gray-400">
                 <span>Units Unlocked:</span>

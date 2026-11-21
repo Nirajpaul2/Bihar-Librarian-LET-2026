@@ -18,7 +18,7 @@ The platform is designed to take students from study to practice, mock testing, 
 
 * **Freemium Access Model**:
   * **Unit 1 (Foundations of Library Science)** is **100% FREE** for all students.
-  * Razorpay integration (₹9 one-time lifetime access) to unlock Units 2–6, General Paper, and Full 150Q Mock Tests.
+  * Razorpay integration (₹19 one-time lifetime access) to unlock Units 2–6, General Paper, and Full 150Q Mock Tests.
 * **Interactive 4-Tab Syllabus Explorer**:
   * 📋 *Exam Overview* — Blueprint and exam rules.
   * ⚖️ *Topic-Wise Weightage Analysis* — Tier 1 (45%), Tier 2 (35%), Tier 3 (20%) breakdown.

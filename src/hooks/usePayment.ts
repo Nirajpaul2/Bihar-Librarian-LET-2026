@@ -13,7 +13,7 @@ export const RAZORPAY_KEY_ID =
   import.meta.env.VITE_RAZORPAY_KEY_ID || 'rzp_live_TDeXjTGJZV2T7v';
 
 export const RAZORPAY_FALLBACK_LINK = 'https://rzp.io/rzp/f8vkVi7Y';
-export const ACCESS_PRICE_INR = 9;
+export const ACCESS_PRICE_INR = 19;
 
 // WhatsApp Support Information
 export const WHATSAPP_SUPPORT_NUMBER = '9942419837';
