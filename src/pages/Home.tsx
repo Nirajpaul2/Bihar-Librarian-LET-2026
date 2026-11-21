@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   BookOpen, Brain, Trophy, Bookmark, ChevronRight, ArrowRight,
-  GraduationCap, Sparkles, Lock, ShieldCheck, Check, Zap,
+  GraduationCap, Sparkles, Lock, ShieldCheck, Check, Zap, CheckCircle2, XCircle
 } from 'lucide-react';
 import { allQuestions } from '@/data/questions';
 import { subjects } from '@/data/subjects';
@@ -46,6 +47,13 @@ const features = [
 
 export default function Home() {
   const { isUnlocked, openPaywall } = usePayment();
+  const [selectedDemoOpt, setSelectedDemoOpt] = useState<string | null>(null);
+  const [showDemoExplanation, setShowDemoExplanation] = useState(false);
+
+  const handleDemoSelect = (opt: string) => {
+    setSelectedDemoOpt(opt);
+    setShowDemoExplanation(true);
+  };
 
   useSEO({
     title: 'Home — Exam Prep Portal',
@@ -57,66 +65,188 @@ export default function Home() {
     <div className="space-y-0">
 
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-brand-900 via-brand-800 to-indigo-950 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-48 translate-x-48" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full translate-y-32 -translate-x-32" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
-          <div className="max-w-3xl">
-            {/* Logo & Badge */}
-            <div className="flex items-center gap-3 sm:gap-4 mb-6">
-              <img
-                src="/logo.png"
-                alt="Bihar Library LET 2026 Logo"
-                className="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-2xl bg-white p-1.5 shadow-xl shrink-0 border border-white/20"
-              />
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium">
-                <GraduationCap className="w-4 h-4 text-brand-200" />
-                <span>Bihar Librarian LET 2026 (BSEB)</span>
-                <span className="hidden sm:inline text-brand-300">· 150 Marks · No Negative Marking</span>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Column: Brand & Hero CTAs (7 cols) */}
+            <div className="lg:col-span-7">
+              {/* Logo & Badge */}
+              <div className="flex items-center gap-3 sm:gap-4 mb-5">
+                <img
+                  src="/logo.png"
+                  alt="Bihar Library LET 2026 Logo"
+                  className="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-2xl bg-white p-1.5 shadow-xl shrink-0 border border-white/20"
+                />
+                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium">
+                  <GraduationCap className="w-4 h-4 text-brand-200" />
+                  <span>Bihar Librarian LET 2026 (BSEB)</span>
+                  <span className="hidden sm:inline text-brand-300">· 150 Marks · No Negative Marking</span>
+                </div>
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 tracking-tight">
+                Prepare Smart.<br />
+                <span className="bg-gradient-to-r from-amber-300 via-amber-200 to-yellow-100 bg-clip-text text-transparent">
+                  Practice Daily.
+                </span><br />
+                Crack Bihar Librarian LET 2026.
+              </h1>
+
+              <p className="text-brand-100 text-sm sm:text-base lg:text-lg mb-6 leading-relaxed max-w-2xl">
+                420+ Curated Bilingual MCQs covering <strong>100 Marks Library Science Core</strong> + <strong>50 Marks General Paper</strong> (Bihar GK, Reasoning, Computer) with instant Devanagari Hindi solutions. <strong>Unit 1 & Day 1 are 100% Free!</strong>
+              </p>
+
+              {/* Quick stats badges */}
+              <div className="grid grid-cols-3 gap-2.5 sm:gap-3 mb-6 max-w-lg">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-2.5 sm:p-3 text-center">
+                  <div className="text-base sm:text-xl font-extrabold text-white">{allQuestions.length}+</div>
+                  <div className="text-[10px] sm:text-xs text-brand-200 font-medium">Bilingual MCQs</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-2.5 sm:p-3 text-center">
+                  <div className="text-base sm:text-xl font-extrabold text-amber-300">10 Days</div>
+                  <div className="text-[10px] sm:text-xs text-brand-200 font-medium">Daily Marathon</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-2.5 sm:p-3 text-center">
+                  <div className="text-base sm:text-xl font-extrabold text-emerald-300">{mockTests.length} Tests</div>
+                  <div className="text-[10px] sm:text-xs text-brand-200 font-medium">Timed LET Mocks</div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-3">
+                <Link to="/marathon" className="bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-brand-950 font-extrabold rounded-xl px-5 py-3 inline-flex items-center gap-2 transition-all shadow-lg shadow-amber-500/20 text-sm transform hover:-translate-y-0.5">
+                  <span>🏃</span>
+                  <span>10-Day Marathon</span>
+                  <span className="bg-brand-950/20 text-brand-950 px-2 py-0.5 rounded text-[10px] font-bold">FREE</span>
+                </Link>
+                <Link to="/practice?subject=library-science&unit=foundations" className="bg-white text-brand-800 hover:bg-brand-50 font-semibold rounded-xl px-4 py-3 inline-flex items-center gap-2 transition-colors shadow-lg text-sm">
+                  <BookOpen className="w-4 h-4" />
+                  Practice Free Unit 1
+                </Link>
+                {!isUnlocked ? (
+                  <button
+                    onClick={() => openPaywall(`Unlock all Units & Mock Tests for ₹${ACCESS_PRICE_INR}`)}
+                    className="bg-brand-800/90 hover:bg-brand-700 text-brand-100 font-bold rounded-xl px-4 py-3 inline-flex items-center gap-2 transition-colors border border-brand-500/50 cursor-pointer text-sm"
+                  >
+                    <Sparkles className="w-4 h-4 text-amber-300" />
+                    Unlock All for ₹{ACCESS_PRICE_INR}
+                  </button>
+                ) : (
+                  <Link to="/mock-test" className="bg-white/10 hover:bg-white/20 border border-white/30 font-semibold rounded-xl px-4 py-3 inline-flex items-center gap-2 transition-colors text-sm">
+                    <Trophy className="w-4 h-4 text-amber-300" />
+                    15 Mock Tests
+                  </Link>
+                )}
+                <Link to="/syllabus?tab=weightage" className="bg-white/10 hover:bg-white/20 border border-white/30 font-semibold rounded-xl px-3.5 py-3 inline-flex items-center gap-1.5 transition-colors text-xs text-brand-100">
+                  Weightage
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-              Prepare Smart.<br />
-              <span className="text-brand-200">Practice Daily.</span><br />
-              Crack Bihar Librarian LET 2026.
-            </h1>
+            {/* Right Column: Interactive Live Bilingual Practice Card (5 cols) */}
+            <div className="lg:col-span-5">
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 sm:p-6 shadow-2xl relative text-left">
+                
+                {/* Card Top Label */}
+                <div className="flex items-center justify-between gap-2 mb-3 text-xs">
+                  <span className="inline-flex items-center gap-1.5 bg-amber-400 text-brand-950 font-extrabold px-2.5 py-0.5 rounded-full text-[10px]">
+                    <Sparkles className="w-3 h-3" />
+                    LIVE INTERACTIVE DEMO · DAY 1
+                  </span>
+                  <span className="text-brand-200 text-[11px] font-mono">
+                    LET 2026 Sample
+                  </span>
+                </div>
 
-            <p className="text-brand-100 text-base sm:text-lg mb-8 leading-relaxed">
-              Targeted preparation for 100 Marks Library Science + 50 Marks General Paper with topic-wise weightage, 
-              30-day structured study plan, and timed exam simulators. <strong>Unit 1 is 100% Free!</strong>
-            </p>
+                {/* Bilingual Question text */}
+                <div className="space-y-1.5 mb-4">
+                  <p className="text-xs sm:text-sm font-semibold text-white leading-snug">
+                    The word "Library" is derived from the Latin word:
+                  </p>
+                  <p className="text-xs sm:text-sm font-medium text-amber-200 leading-snug">
+                    "लाइब्रेरी" (Library) शब्द लैटिन भाषा के किस मूल शब्द से उत्पन्न हुआ है?
+                  </p>
+                </div>
 
-            <div className="flex flex-wrap gap-3">
-              <Link to="/marathon" className="bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-brand-950 font-extrabold rounded-xl px-6 py-3 inline-flex items-center gap-2 transition-colors shadow-lg">
-                <span>🏃</span>
-                10-Day Marathon (Day 1 Free)
-              </Link>
-              <Link to="/practice?subject=library-science&unit=foundations" className="bg-white text-brand-800 hover:bg-brand-50 font-semibold rounded-xl px-6 py-3 inline-flex items-center gap-2 transition-colors shadow-lg">
-                <BookOpen className="w-5 h-5" />
-                Practice Free Unit 1
-              </Link>
-              {!isUnlocked ? (
-                <button
-                  onClick={() => openPaywall(`Unlock all Units & Mock Tests for ₹${ACCESS_PRICE_INR}`)}
-                  className="bg-brand-800/90 hover:bg-brand-700 text-brand-100 font-bold rounded-xl px-5 py-3 inline-flex items-center gap-2 transition-colors border border-brand-500/50 cursor-pointer"
-                >
-                  <Sparkles className="w-5 h-5 text-amber-300" />
-                  Unlock All for ₹{ACCESS_PRICE_INR}
-                </button>
-              ) : (
-                <Link to="/mock-test" className="bg-white/10 hover:bg-white/20 border border-white/30 font-semibold rounded-xl px-6 py-3 inline-flex items-center gap-2 transition-colors">
-                  <Trophy className="w-5 h-5" />
-                  15 Mock Tests
-                </Link>
-              )}
-              <Link to="/syllabus?tab=weightage" className="bg-white/10 hover:bg-white/20 border border-white/30 font-semibold rounded-xl px-6 py-3 inline-flex items-center gap-2 transition-colors">
-                Weightage & Plan
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+                {/* Options */}
+                <div className="space-y-2 text-xs">
+                  {[
+                    { key: 'A', en: 'Liber', hi: 'लिबर (Liber)', isCorrect: true },
+                    { key: 'B', en: 'Libre', hi: 'लिब्रे (Libre)', isCorrect: false },
+                    { key: 'C', en: 'Libraria', hi: 'लाइब्रेरिया (Libraria)', isCorrect: false },
+                    { key: 'D', en: 'Libros', hi: 'लिबरोस (Libros)', isCorrect: false },
+                  ].map(opt => {
+                    const isSelected = selectedDemoOpt === opt.key;
+                    let btnStyle = 'bg-white/10 hover:bg-white/20 border-white/20 text-white';
+                    if (selectedDemoOpt) {
+                      if (opt.isCorrect) {
+                        btnStyle = 'bg-emerald-600/90 border-emerald-400 text-white font-bold shadow-sm';
+                      } else if (isSelected && !opt.isCorrect) {
+                        btnStyle = 'bg-rose-600/90 border-rose-400 text-white font-bold';
+                      } else {
+                        btnStyle = 'bg-white/5 border-white/10 text-white/60';
+                      }
+                    }
+
+                    return (
+                      <button
+                        key={opt.key}
+                        onClick={() => handleDemoSelect(opt.key)}
+                        className={`w-full text-left p-3 rounded-xl border transition-all flex items-center justify-between cursor-pointer ${btnStyle}`}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className="w-5 h-5 rounded-md bg-white/20 text-[11px] font-bold flex items-center justify-center shrink-0">
+                            {opt.key}
+                          </span>
+                          <span className="text-xs">{opt.hi}</span>
+                        </div>
+                        {selectedDemoOpt && opt.isCorrect && (
+                          <CheckCircle2 className="w-4 h-4 text-emerald-200 shrink-0" />
+                        )}
+                        {selectedDemoOpt && isSelected && !opt.isCorrect && (
+                          <XCircle className="w-4 h-4 text-rose-200 shrink-0" />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Explanation Box */}
+                {showDemoExplanation && (
+                  <div className="mt-3.5 p-3.5 bg-emerald-950/70 border border-emerald-500/50 rounded-xl text-xs space-y-1 animate-fade-in">
+                    <div className="font-bold text-emerald-300 flex items-center gap-1.5 text-xs">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <span>Correct: Option A (Liber / लिबर)</span>
+                    </div>
+                    <p className="text-brand-100 text-[11px] leading-relaxed">
+                      "Library" शब्द लैटिन भाषा के <strong>"Liber"</strong> शब्द से बना है, जिसका शाब्दिक अर्थ 'पुस्तक' या 'पेड़ की भीतरी छाल' होता है।
+                    </p>
+                    <div className="pt-2 flex items-center justify-between">
+                      <Link
+                        to="/marathon"
+                        className="text-[11px] font-bold text-amber-300 hover:text-amber-200 flex items-center gap-1 underline underline-offset-2"
+                      >
+                        <span>Start Complete Day 1 Marathon (Free) →</span>
+                      </Link>
+                    </div>
+                  </div>
+                )}
+
+                {!showDemoExplanation && (
+                  <div className="text-[11px] text-brand-200/80 text-center mt-3">
+                    👆 Click any option above to test instant feedback!
+                  </div>
+                )}
+
+              </div>
             </div>
+
           </div>
         </div>
       </section>

@@ -105,6 +105,7 @@ export default function Marathon() {
 
   const completedCount = Object.keys(progress).length;
   const progressPercent = Math.round((completedCount / 10) * 100);
+  const nextActiveDay = Array.from({ length: 10 }, (_, i) => i + 1).find(d => !progress[d]) || 1;
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 pb-24 md:pb-8">
@@ -129,36 +130,49 @@ export default function Marathon() {
         </div>
       </div>
 
-      {/* Progress card */}
-      <div className="card p-5 mb-6 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800/80 border border-gray-200 dark:border-gray-800 shadow-sm">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-brand-100 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 flex items-center justify-center font-bold">
-              <Flame className="w-5 h-5 text-orange-500" />
+      {/* Gamified Streak & Progress card */}
+      <div className="card p-5 mb-6 bg-gradient-to-br from-white to-amber-50/30 dark:from-gray-900 dark:to-amber-950/20 border border-amber-200/80 dark:border-amber-900/50 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-orange-500/10 dark:bg-orange-500/20 text-orange-600 dark:text-orange-400 border border-orange-500/30 flex items-center justify-center text-2xl font-bold shadow-xs">
+              🔥
             </div>
             <div>
-              <div className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Marathon Journey
+              <div className="flex items-center gap-2">
+                <span className="text-sm sm:text-base font-extrabold text-gray-900 dark:text-white">
+                  {completedCount > 0 ? `${completedCount}-Day Practice Streak!` : 'Start Your Day 1 Streak!'}
+                </span>
+                <span className="text-[10px] bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-300 font-bold px-2 py-0.5 rounded-full">
+                  STREAK
+                </span>
               </div>
-              <div className="text-base font-bold text-gray-900 dark:text-white">
-                {completedCount} of 10 Days Completed ({progressPercent}%)
-              </div>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                {completedCount < 10
+                  ? `Target: Complete Day ${nextActiveDay} today to advance your score.`
+                  : '🎉 Congratulations! You have completed all 10 Marathon Days!'}
+              </p>
             </div>
           </div>
-          <div className="text-xs text-gray-500 dark:text-gray-400 sm:text-right">
-            <span>Target: 250 Curated Bilingual MCQs</span>
-            <div className="text-brand-600 dark:text-brand-400 font-semibold mt-0.5">
-              100% Aligned with BSEB LET 2026 Pattern
+          <div className="text-left sm:text-right shrink-0">
+            <div className="text-xs text-gray-500 dark:text-gray-400 font-medium">Curated Questions Solved</div>
+            <div className="text-lg sm:text-xl font-extrabold text-amber-600 dark:text-amber-400">
+              {completedCount * 25} <span className="text-xs font-semibold text-gray-400">/ 250 Qs</span>
             </div>
           </div>
         </div>
 
-        {/* Progress Bar */}
-        <div className="w-full bg-gray-200 dark:bg-gray-700 h-2.5 rounded-full overflow-hidden">
-          <div
-            className="bg-gradient-to-r from-amber-500 to-brand-600 h-2.5 rounded-full transition-all duration-500"
-            style={{ width: `${progressPercent}%` }}
-          />
+        {/* Progress Bar with Milestones */}
+        <div>
+          <div className="flex justify-between text-[11px] text-gray-500 dark:text-gray-400 font-semibold mb-1.5">
+            <span>Overall Roadmap: {completedCount} / 10 Days</span>
+            <span>{progressPercent}% Complete</span>
+          </div>
+          <div className="w-full bg-gray-200 dark:bg-gray-700 h-2.5 rounded-full overflow-hidden">
+            <div
+              className="bg-gradient-to-r from-amber-500 via-orange-500 to-emerald-500 h-2.5 rounded-full transition-all duration-500"
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
         </div>
       </div>
 
@@ -203,6 +217,7 @@ export default function Marathon() {
         {MARATHON_DAYS.map(item => {
           const isDayUnlocked = item.isFree || isUnlocked;
           const dayResult = progress[item.day];
+          const isNextTarget = item.day === nextActiveDay && !dayResult;
 
           return (
             <div
@@ -210,6 +225,8 @@ export default function Marathon() {
               className={`card p-5 transition-all border ${
                 dayResult
                   ? 'border-green-200 dark:border-green-900/60 bg-green-50/20 dark:bg-green-950/10'
+                  : isNextTarget
+                  ? 'border-amber-400 dark:border-amber-500 ring-2 ring-amber-400/30 bg-amber-50/20 dark:bg-amber-950/20 shadow-md'
                   : 'hover:shadow-md hover:border-brand-200 dark:hover:border-brand-700'
               }`}
             >
@@ -219,6 +236,8 @@ export default function Marathon() {
                     className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0 mt-0.5 ${
                       dayResult
                         ? 'bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300'
+                        : isNextTarget
+                        ? 'bg-amber-400 text-brand-950 font-extrabold shadow-sm'
                         : item.isFree
                         ? 'bg-brand-600 text-white shadow-xs'
                         : isUnlocked
@@ -238,6 +257,11 @@ export default function Marathon() {
                       <h3 className="font-bold text-gray-900 dark:text-white text-sm sm:text-base">
                         Day {item.day} · Practice Set {item.day}
                       </h3>
+                      {isNextTarget && (
+                        <span className="text-[10px] bg-amber-400 text-brand-950 font-extrabold px-2 py-0.5 rounded-full animate-pulse shadow-xs">
+                          👉 NEXT TARGET
+                        </span>
+                      )}
                       {item.isFree ? (
                         <span className="text-[10px] bg-green-100 text-green-700 dark:bg-green-900/50 dark:text-green-300 font-extrabold px-2 py-0.5 rounded-full">
                           100% FREE
