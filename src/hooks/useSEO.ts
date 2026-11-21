@@ -48,7 +48,7 @@ export function useSEO({ title, description, keywords, canonicalPath }: SEOProps
     if (canonicalPath) {
       const canonical = document.querySelector('link[rel="canonical"]');
       if (canonical) {
-        canonical.setAttribute('href', `https://biharlibrarian.in${canonicalPath}`);
+        canonical.setAttribute('href', `https://biharlibrarian2026.aiwazir.com${canonicalPath}`);
       }
     }
   }, [title, description, keywords, canonicalPath]);

@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://biharlibrarian.in/sitemap.xml
+Sitemap: https://biharlibrarian2026.aiwazir.com/sitemap.xml
