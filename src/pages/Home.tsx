@@ -77,45 +77,67 @@ export default function Home() {
                   <div className="text-base sm:text-xl font-extrabold text-white">{allQuestions.length}+</div>
                   <div className="text-[10px] sm:text-xs text-brand-200 font-medium">Bilingual MCQs</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-2.5 sm:p-3 text-center">
-                  <div className="text-base sm:text-xl font-extrabold text-amber-300">10 Days</div>
+                <Link
+                  to="/marathon"
+                  className="bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/15 rounded-xl p-2.5 sm:p-3 text-center transition-all group block"
+                >
+                  <div className="text-base sm:text-xl font-extrabold text-amber-300 group-hover:scale-105 transition-transform">10 Days</div>
                   <div className="text-[10px] sm:text-xs text-brand-200 font-medium">Daily Marathon</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-xl p-2.5 sm:p-3 text-center">
-                  <div className="text-base sm:text-xl font-extrabold text-emerald-300">{mockTests.length} Tests</div>
-                  <div className="text-[10px] sm:text-xs text-brand-200 font-medium">Mocks (Set 1 Free)</div>
-                </div>
+                </Link>
+                <Link
+                  to="/mock-test/mt-001"
+                  className="bg-emerald-500/20 hover:bg-emerald-500/30 backdrop-blur-sm border border-emerald-400/40 rounded-xl p-2.5 sm:p-3 text-center transition-all group block"
+                >
+                  <div className="text-base sm:text-xl font-extrabold text-emerald-300 group-hover:scale-105 transition-transform">{mockTests.length} Tests</div>
+                  <div className="text-[10px] sm:text-xs text-emerald-200 font-bold flex items-center justify-center gap-0.5">
+                    <span>Set 1 Free</span>
+                    <ChevronRight className="w-3 h-3 inline" />
+                  </div>
+                </Link>
               </div>
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-3">
-                <Link to="/marathon" className="bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-brand-950 font-extrabold rounded-xl px-5 py-3 inline-flex items-center gap-2 transition-all shadow-lg shadow-amber-500/20 text-sm transform hover:-translate-y-0.5">
+                <Link
+                  to="/mock-test/mt-001"
+                  className="bg-emerald-400 hover:bg-emerald-300 active:bg-emerald-500 text-brand-950 font-extrabold rounded-xl px-4 sm:px-5 py-3 inline-flex items-center gap-2 transition-all shadow-lg shadow-emerald-500/20 text-sm transform hover:-translate-y-0.5"
+                >
+                  <span>📋</span>
+                  <span>Free Mock Test Set 1</span>
+                  <span className="bg-brand-950 text-emerald-300 px-1.5 py-0.5 rounded text-[10px] font-black uppercase">FREE</span>
+                </Link>
+                <Link
+                  to="/marathon"
+                  className="bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-brand-950 font-extrabold rounded-xl px-4 py-3 inline-flex items-center gap-2 transition-all shadow-lg shadow-amber-500/20 text-sm transform hover:-translate-y-0.5"
+                >
                   <span>🏃</span>
                   <span>10-Day Marathon</span>
-                  <span className="bg-brand-950/20 text-brand-950 px-2 py-0.5 rounded text-[10px] font-bold">FREE</span>
+                  <span className="bg-brand-950/20 text-brand-950 px-1.5 py-0.5 rounded text-[10px] font-bold">FREE</span>
                 </Link>
-                <Link to="/practice?subject=library-science&unit=foundations" className="bg-white text-brand-800 hover:bg-brand-50 font-semibold rounded-xl px-4 py-3 inline-flex items-center gap-2 transition-colors shadow-lg text-sm">
+                <Link
+                  to="/practice?subject=library-science&unit=foundations"
+                  className="bg-white text-brand-800 hover:bg-brand-50 font-semibold rounded-xl px-3.5 py-3 inline-flex items-center gap-2 transition-colors shadow-lg text-sm"
+                >
                   <BookOpen className="w-4 h-4" />
-                  Practice Free Unit 1
+                  Unit 1 Free
                 </Link>
                 {!isUnlocked ? (
                   <button
                     onClick={() => openPaywall(`Unlock all Units & Mock Tests for ₹${ACCESS_PRICE_INR}`)}
-                    className="bg-brand-800/90 hover:bg-brand-700 text-brand-100 font-bold rounded-xl px-4 py-3 inline-flex items-center gap-2 transition-colors border border-brand-500/50 cursor-pointer text-sm"
+                    className="bg-brand-800/90 hover:bg-brand-700 text-brand-100 font-bold rounded-xl px-3.5 py-3 inline-flex items-center gap-2 transition-colors border border-brand-500/50 cursor-pointer text-sm"
                   >
                     <Sparkles className="w-4 h-4 text-amber-300" />
-                    Unlock All for ₹{ACCESS_PRICE_INR}
+                    Unlock for ₹{ACCESS_PRICE_INR}
                   </button>
                 ) : (
-                  <Link to="/mock-test" className="bg-white/10 hover:bg-white/20 border border-white/30 font-semibold rounded-xl px-4 py-3 inline-flex items-center gap-2 transition-colors text-sm">
+                  <Link
+                    to="/mock-test"
+                    className="bg-white/10 hover:bg-white/20 border border-white/30 font-semibold rounded-xl px-4 py-3 inline-flex items-center gap-2 transition-colors text-sm"
+                  >
                     <Trophy className="w-4 h-4 text-amber-300" />
                     15 Mock Tests
                   </Link>
                 )}
-                <Link to="/syllabus?tab=weightage" className="bg-white/10 hover:bg-white/20 border border-white/30 font-semibold rounded-xl px-3.5 py-3 inline-flex items-center gap-1.5 transition-colors text-xs text-brand-100">
-                  Weightage
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
               </div>
             </div>
 
@@ -217,6 +239,63 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Free Full LET Mock Test Set 1 Card */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-8 pb-2">
+        <div className="bg-gradient-to-r from-emerald-950 via-teal-950 to-brand-950 rounded-3xl p-6 sm:p-7 text-white border border-emerald-500/40 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6 relative overflow-hidden">
+          {/* Subtle glow effect */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/3 w-64 h-64 bg-teal-400/10 rounded-full blur-2xl pointer-events-none" />
+
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 relative z-10">
+            <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 flex items-center justify-center text-3xl shrink-0 shadow-inner">
+              📋
+            </div>
+            <div>
+              <div className="flex items-center gap-2 flex-wrap mb-1">
+                <span className="bg-emerald-400 text-brand-950 font-black text-[10px] px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                  🎉 100% Free Full Mock Test
+                </span>
+                <span className="text-xs text-emerald-200/90 font-medium">
+                  Official 120-Min CBT Exam Simulator
+                </span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-extrabold text-white">
+                Full LET Mock Test — Set 1
+              </h2>
+              <p className="text-xs sm:text-sm text-emerald-100/80 mt-1 max-w-2xl leading-relaxed">
+                Test yourself under real exam conditions: <strong>100 Questions</strong> (50 Library Science Core + 50 General Paper: Bihar GK, Reasoning, Computer) with live countdown timer, interactive palette, and instant bilingual score analysis.
+              </p>
+              <div className="flex flex-wrap items-center gap-3 mt-3 text-xs text-emerald-200/90">
+                <span className="flex items-center gap-1">⏱️ 120 Mins</span>
+                <span>•</span>
+                <span className="flex items-center gap-1">🎯 100 Marks</span>
+                <span>•</span>
+                <span className="flex items-center gap-1">🚫 No Negative Marking</span>
+                <span>•</span>
+                <span className="flex items-center gap-1">🌐 Bilingual (हिन्दी + English)</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 relative z-10 w-full sm:w-auto">
+            <Link
+              to="/mock-test/mt-001"
+              className="bg-emerald-400 hover:bg-emerald-300 active:bg-emerald-500 text-brand-950 font-extrabold px-6 py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-emerald-950/50 flex items-center justify-center gap-2 w-full sm:w-auto transform hover:-translate-y-0.5 cursor-pointer"
+            >
+              <Trophy className="w-4 h-4 text-brand-950" />
+              <span>Start Free Mock Test 1</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              to="/mock-test"
+              className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-4 py-3.5 rounded-xl text-xs sm:text-sm transition-colors text-center w-full sm:w-auto"
+            >
+              Browse All 15 Mocks
+            </Link>
           </div>
         </div>
       </section>
