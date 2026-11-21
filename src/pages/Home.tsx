@@ -9,14 +9,6 @@ import { subjects } from '@/data/subjects';
 import { mockTests } from '@/data/mock-tests';
 import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
 import { useSEO } from '@/hooks/useSEO';
-import { fiveLawsOfLibraryScience, biharLibraryHeritage } from '@/data/cheat-sheets';
-
-const stats = [
-  { label: 'Practice Questions', value: `${allQuestions.length}+`, icon: '❓' },
-  { label: 'Mock & Practice Tests', value: `${mockTests.length + 10}+`, icon: '📋' },
-  { label: 'Marathon Days', value: '10 Days', icon: '🏃' },
-  { label: 'Topics Covered', value: subjects.reduce((a, s) => a + s.units.reduce((b, u) => b + u.topics.length, 0), 0).toString(), icon: '🎯' },
-];
 
 const features = [
   {
@@ -389,66 +381,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Dr. S. R. Ranganathan & Five Laws Feature Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
-        <div className="card p-6 sm:p-8 bg-gradient-to-br from-white to-blue-50/40 dark:from-gray-900 dark:to-gray-800/40 border border-brand-100 dark:border-brand-900/60 shadow-sm">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-brand-700 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                SRR
-              </div>
-              <div>
-                <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
-                  Dr. S. R. Ranganathan & Five Laws of Library Science
-                </h2>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                  The intellectual foundation of Indian Library Science (1931) · Core exam questions
-                </p>
-              </div>
-            </div>
-            <Link
-              to="/syllabus?tab=cheatsheet"
-              className="text-xs font-semibold text-brand-700 dark:text-brand-400 hover:underline flex items-center gap-1 self-start md:self-auto"
-            >
-              Open Full Revision Tables <ChevronRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {fiveLawsOfLibraryScience.slice(0, 3).map((item, idx) => (
-              <div key={idx} className="p-4 rounded-2xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700/60 shadow-xs flex flex-col justify-between">
-                <div>
-                  <span className="text-[10px] font-bold bg-brand-100 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 px-2 py-0.5 rounded-full">
-                    {item.law}
-                  </span>
-                  <h3 className="font-bold text-sm text-gray-900 dark:text-white mt-1.5 mb-1">
-                    "{item.title}"
-                  </h3>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-                    {item.implications}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {stats.map(stat => (
-              <div key={stat.label} className="text-center p-4 rounded-2xl bg-gray-50 dark:bg-gray-800">
-                <div className="text-2xl mb-1">{stat.icon}</div>
-                <div className="text-2xl font-bold text-brand-700 dark:text-brand-400">{stat.value}</div>
-                <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
