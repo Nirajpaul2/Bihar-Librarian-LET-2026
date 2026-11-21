@@ -1,41 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  BookOpen, Brain, Trophy, Bookmark, ChevronRight, ArrowRight,
-  GraduationCap, Sparkles, Lock, ShieldCheck, Check, Zap, CheckCircle2, XCircle
+  BookOpen, Trophy, ChevronRight, ArrowRight,
+  GraduationCap, Sparkles, Lock, CheckCircle2, XCircle
 } from 'lucide-react';
 import { allQuestions } from '@/data/questions';
 import { subjects } from '@/data/subjects';
 import { mockTests } from '@/data/mock-tests';
 import { usePayment, ACCESS_PRICE_INR } from '@/hooks/usePayment';
 import { useSEO } from '@/hooks/useSEO';
-
-const features = [
-  {
-    icon: <BookOpen className="w-6 h-6" />,
-    title: 'Topic-wise Practice',
-    description: 'Practice MCQs by subject, unit or topic with instant feedback and detailed explanations.',
-    color: 'bg-blue-50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400',
-  },
-  {
-    icon: <Trophy className="w-6 h-6" />,
-    title: 'Timed Mock Tests',
-    description: 'Take full-length mock tests with a real exam timer, question navigation and result analysis.',
-    color: 'bg-amber-50 dark:bg-amber-950/30 text-amber-600 dark:text-amber-400',
-  },
-  {
-    icon: <Brain className="w-6 h-6" />,
-    title: 'Smart Study & Syllabus',
-    description: 'Browse the complete syllabus, understand topic weightage and follow our 30-day study plan.',
-    color: 'bg-purple-50 dark:bg-purple-950/30 text-purple-600 dark:text-purple-400',
-  },
-  {
-    icon: <Bookmark className="w-6 h-6" />,
-    title: 'Save Difficult Questions',
-    description: 'Bookmark tricky questions and practice them separately to strengthen weak areas.',
-    color: 'bg-green-50 dark:bg-green-950/30 text-green-600 dark:text-green-400',
-  },
-];
 
 export default function Home() {
   const { isUnlocked, openPaywall } = usePayment();
@@ -243,36 +216,98 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Freemium Highlight Strip */}
-      {!isUnlocked && (
-        <div className="bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 text-brand-950 py-3 px-4 shadow-sm">
-          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm font-semibold">
-            <div className="flex items-center gap-2 text-center sm:text-left">
-              <span className="bg-brand-950 text-white text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-full">
-                Special Offer
-              </span>
-              <span>
-                Unit 1 (Foundations) is 100% Free! Unlock all remaining units & 150Q Mock Tests for just <strong>₹{ACCESS_PRICE_INR}</strong> (One-time lifetime access).
-              </span>
+      {/* 10-Day Marathon Track (Practice Sets 1-10) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+        <div className="bg-white dark:bg-gray-900 rounded-3xl border border-gray-200 dark:border-gray-800 p-6 sm:p-8 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-gray-100 dark:border-gray-800">
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 flex items-center justify-center text-xl shrink-0">
+                🏃
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h2 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
+                    10-Day Exam Marathon (Practice Sets 1–10)
+                  </h2>
+                  <span className="text-[10px] bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300 font-extrabold px-2 py-0.5 rounded-full uppercase">
+                    Daily 25 Qs
+                  </span>
+                </div>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+                  15 Core Library Science + 10 General Paper (Bihar GK, Reasoning, Computer, GK) · Day 1 is 100% Free!
+                </p>
+              </div>
             </div>
-            <div className="flex items-center gap-2 shrink-0">
-              <button
-                onClick={() => openPaywall('Restore your access', 'restore')}
-                className="bg-amber-600/30 hover:bg-amber-600/40 text-brand-950 font-bold px-3 py-1.5 rounded-xl text-xs transition-colors cursor-pointer border border-brand-950/20"
-              >
-                Already Paid? Restore
-              </button>
-              <button
-                onClick={() => openPaywall(`Unlock Full Access for ₹${ACCESS_PRICE_INR}`, 'pay')}
-                className="bg-brand-900 hover:bg-brand-800 text-white font-bold px-4 py-1.5 rounded-xl text-xs transition-colors shrink-0 shadow flex items-center gap-1 cursor-pointer"
-              >
-                <Lock className="w-3.5 h-3.5" />
-                Pay ₹{ACCESS_PRICE_INR} & Unlock
-              </button>
-            </div>
+            <Link
+              to="/marathon"
+              className="text-xs font-bold text-brand-700 dark:text-brand-400 hover:underline flex items-center gap-1 shrink-0"
+            >
+              <span>Full Marathon Roadmap</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+            {Array.from({ length: 10 }, (_, i) => i + 1).map(dayNum => {
+              const isDayFree = dayNum === 1;
+              const hasAccess = isDayFree || isUnlocked;
+
+              return (
+                <div
+                  key={dayNum}
+                  className={`card p-3.5 rounded-2xl flex flex-col justify-between transition-all ${
+                    isDayFree
+                      ? 'border-emerald-300 dark:border-emerald-800 bg-emerald-50/20 dark:bg-emerald-950/20'
+                      : 'hover:border-brand-200 dark:hover:border-brand-700'
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-xs font-bold text-gray-900 dark:text-white">
+                        Day {dayNum}
+                      </span>
+                      {isDayFree ? (
+                        <span className="text-[9px] bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300 font-extrabold px-1.5 py-0.5 rounded">
+                          FREE
+                        </span>
+                      ) : hasAccess ? (
+                        <span className="text-[9px] bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 font-bold px-1.5 py-0.5 rounded">
+                          PRO
+                        </span>
+                      ) : (
+                        <Lock className="w-3 h-3 text-amber-500" />
+                      )}
+                    </div>
+                    <div className="text-[11px] text-gray-500 dark:text-gray-400 leading-tight">
+                      Practice Set {dayNum} · 25 Qs
+                    </div>
+                  </div>
+
+                  <div className="mt-3.5">
+                    {hasAccess ? (
+                      <Link
+                        to={`/practice/session?mode=marathon&day=${dayNum}`}
+                        className={`w-full text-center block text-xs font-bold py-1.5 rounded-xl transition-colors ${
+                          isDayFree ? 'btn-primary' : 'bg-brand-600 hover:bg-brand-700 text-white'
+                        }`}
+                      >
+                        Start
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => openPaywall(`Unlock Marathon Day ${dayNum} for ₹${ACCESS_PRICE_INR}`)}
+                        className="w-full text-center block text-xs font-bold bg-amber-500 hover:bg-amber-600 text-white py-1.5 rounded-xl transition-colors cursor-pointer"
+                      >
+                        Unlock
+                      </button>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
-      )}
+      </section>
 
       {/* Exam Framework & Weightage Snapshot Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
@@ -433,87 +468,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="bg-gray-50 dark:bg-gray-900/50 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white text-center mb-8">
-            Everything You Need to Prepare
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {features.map(f => (
-              <div key={f.title} className="card p-5">
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${f.color}`}>
-                  {f.icon}
-                </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{f.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{f.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Mock Tests CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-        <div className="bg-gradient-to-r from-brand-700 to-brand-600 rounded-2xl p-8 text-white text-center">
-          <Trophy className="w-10 h-10 mx-auto mb-4 text-brand-200" />
-          <h2 className="text-xl font-bold mb-2">Ready for a Full LET Mock Test?</h2>
-          <p className="text-brand-100 text-sm mb-6 max-w-md mx-auto">
-            Test your preparation with timed mock tests covering all subjects. Get instant results and review your answers.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link to="/mock-test" className="bg-white text-brand-800 hover:bg-brand-50 font-semibold rounded-xl px-8 py-3 inline-flex items-center gap-2 transition-colors">
-              <Trophy className="w-5 h-5" />
-              Browse Mock Tests
-            </Link>
-            {!isUnlocked && (
-              <button
-                onClick={() => openPaywall(`Unlock all Mock Tests for ₹${ACCESS_PRICE_INR}`)}
-                className="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold rounded-xl px-6 py-3 inline-flex items-center gap-2 transition-colors cursor-pointer"
-              >
-                <Sparkles className="w-5 h-5" />
-                Unlock for ₹{ACCESS_PRICE_INR}
-              </button>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Current Affairs teaser */}
-      <section className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h2 className="text-xl font-bold text-gray-900 dark:text-white">Current Affairs</h2>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Stay updated with relevant library and Bihar news</p>
+      {/* Compact Bottom Mock Tests Bar */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 pb-16">
+        <div className="bg-gradient-to-r from-brand-900 via-indigo-900 to-brand-800 rounded-3xl p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6 border border-brand-700/60 shadow-md">
+          <div className="flex items-center gap-4 text-center sm:text-left">
+            <div className="w-12 h-12 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl shrink-0">
+              📋
             </div>
-            <Link to="/current-affairs" className="text-sm text-brand-700 dark:text-brand-400 font-medium flex items-center gap-1 hover:underline">
-              View all <ChevronRight className="w-4 h-4" />
-            </Link>
+            <div>
+              <h3 className="text-base sm:text-lg font-bold">
+                Ready for Timed LET Examination Simulation?
+              </h3>
+              <p className="text-xs sm:text-sm text-brand-200 mt-0.5">
+                Practice 15 Full-Length & Subject-wise Mock Tests with real exam timer, question palette, and detailed scorecards.
+              </p>
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[
-              { title: 'NDLI Expansion to 90M+ Resources', category: 'India', date: 'Aug 2026', icon: '📚' },
-              { title: 'Bihar Librarian Recruitment 2026 Announced', category: 'Bihar', date: 'Jun 2026', icon: '📋' },
-              { title: 'e-Granthalaya 4.0 Released by NIC', category: 'Tech', date: 'Jul 2026', icon: '💻' },
-            ].map(item => (
-              <Link key={item.title} to="/current-affairs" className="card p-4 hover:shadow-md transition-all group">
-                <div className="flex items-start gap-3">
-                  <span className="text-2xl">{item.icon}</span>
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-xs font-medium bg-brand-50 dark:bg-brand-950/40 text-brand-700 dark:text-brand-400 px-2 py-0.5 rounded-full">
-                        {item.category}
-                      </span>
-                      <span className="text-xs text-gray-400">{item.date}</span>
-                    </div>
-                    <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-brand-700 dark:group-hover:text-brand-400 transition-colors">
-                      {item.title}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            ))}
+          <div className="flex items-center gap-3 shrink-0">
+            <Link
+              to="/mock-test"
+              className="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow cursor-pointer flex items-center gap-1.5"
+            >
+              <Trophy className="w-4 h-4" />
+              <span>Browse 15 Mock Tests →</span>
+            </Link>
           </div>
         </div>
       </section>
