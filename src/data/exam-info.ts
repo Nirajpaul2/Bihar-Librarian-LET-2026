@@ -273,56 +273,123 @@ export const generalPaperTopics = [
   },
 ];
 
-// ─── 30-Day Study Plan ───────────────────────────────────────────────────────
+// ─── 10-Day Final Sprint Study Plan (Exam Countdown Mode) ───────────────────────
 
 export interface StudyDay {
   day: number;
-  phase: 1 | 2 | 3 | 4;
+  phase: 1 | 2 | 3;
   coreTask: string;
   coreFocus: string;
   generalTask: string;
 }
 
 export const studyPlan: StudyDay[] = [
-  // Phase 1: Days 1–10
-  { day: 1,  phase: 1, coreTask: 'Five Laws of Library Science', coreFocus: 'S.R. Ranganathan\'s Five Laws (1931), implications, and variants', generalTask: 'Bihar History — Ancient Bihar, Mauryan Empire, Buddhism & Jainism' },
-  { day: 2,  phase: 1, coreTask: 'Library Legislation in India', coreFocus: 'Model Public Library Bill, Delivery of Books Act, state-wise chronological years (incl. Bihar 2008)', generalTask: 'Bihar Geography — Rivers, climate, and soil distribution' },
-  { day: 3,  phase: 1, coreTask: 'Professional Associations', coreFocus: 'ILA, IASLIC, ALA, IFLA — objectives, headquarters, and key publications', generalTask: 'Modern Indian History — Freedom struggle & 1857 revolt in Bihar' },
-  { day: 4,  phase: 1, coreTask: 'Library Classification: Fundamentals', coreFocus: 'Purpose, terminology (Genus, Species, Facet), types of classification (enumerative, faceted)', generalTask: 'Indian Polity — Fundamental Rights, DPSP, and key constitutional amendments' },
-  { day: 5,  phase: 1, coreTask: 'Dewey Decimal Classification (DDC)', coreFocus: 'Ten main classes (000–900), structure, Table 1 (Standard Subdivisions), Table 2 (Geographic), auxiliary schedules', generalTask: 'Reasoning — Series, analogies, and coding-decoding' },
-  { day: 6,  phase: 1, coreTask: 'Colon Classification (CC)', coreFocus: 'PMEST fundamental categories, connecting symbols, main classes, personality-matter-energy-space-time', generalTask: 'Basic Arithmetic — Percentages and ratios' },
-  { day: 7,  phase: 1, coreTask: 'Cataloguing Principles', coreFocus: 'Objectives of catalogue, physical forms, inner forms — Author, Title, Subject, Classified catalogues', generalTask: 'Computer Literacy — Hardware, memory units: RAM, ROM, Cache' },
-  { day: 8,  phase: 1, coreTask: 'Cataloguing Codes (AACR-2 & CCC)', coreFocus: 'Structure, rules for choice and rendering of headings, personal vs corporate authors, three-author rule', generalTask: 'Bihar GK — State administrative setup, districts, and budget highlights' },
-  { day: 9,  phase: 1, coreTask: 'Subject Cataloguing & Indexing', coreFocus: 'Sears List of Subject Headings (SLSH), Chain Procedure, POPSI, PRECIS indexing techniques', generalTask: 'Reasoning — Blood relations and direction sense' },
-  { day: 10, phase: 1, coreTask: 'Phase 1 Assessment & Review', coreFocus: 'Revise Days 1–9 and solve 100 MCQs specifically on DDC, CC, and AACR-2', generalTask: 'Full general paper revision of Days 1–9 topics' },
-  // Phase 2: Days 11–20
-  { day: 11, phase: 2, coreTask: 'Library Management Principles', coreFocus: 'Fayol\'s 14 principles, POSDCORB applied to libraries, scientific management (F.W. Taylor)', generalTask: 'Indian Economy — Planning Commission to NITI Aayog, basic inflation terms' },
-  { day: 12, phase: 2, coreTask: 'Acquisition & Technical Processing', coreFocus: 'Book selection tools, ordering, accessioning, accessioning register, technical preparation, accession number', generalTask: 'Computer Literacy — Software types, system vs application software, OS basics' },
-  { day: 13, phase: 2, coreTask: 'Circulation & Periodical Section', coreFocus: 'Browne System, Newark System, Detroit System; Kardex system for serial control; Three-Card System (Ranganathan)', generalTask: 'Current Affairs — National awards, summits, and sports updates' },
-  { day: 14, phase: 2, coreTask: 'Stock Verification, Weeding & Budgeting', coreFocus: 'Weeding policies (5th Law basis), binding, shelf rectification, PPBS, Zero-Based Budgeting (Peter Phyrr)', generalTask: 'Elementary Mathematics — Time & work, simple interest' },
-  { day: 15, phase: 2, coreTask: 'Reference Services', coreFocus: 'Ready reference vs Long-range reference, reference interview techniques, types of reference sources', generalTask: 'Reasoning — Syllogisms and logical deduction' },
-  { day: 16, phase: 2, coreTask: 'Information Services & Sources', coreFocus: 'CAS vs SDI, primary/secondary/tertiary sources, Encyclopaedia Britannica, Europa World Year Book, almanacs', generalTask: 'General Science — Everyday physics, vitamins, human body systems' },
-  { day: 17, phase: 2, coreTask: 'Library Automation Systems', coreFocus: 'ILMS — KOHA, SOUL, LibSys, e-Granthalaya; barcode vs RFID technology; OPAC features', generalTask: 'Computer Awareness — Networking basics: LAN, WAN, IP address, web browsers' },
-  { day: 18, phase: 2, coreTask: 'Information Networks & Consortia', coreFocus: 'INFLIBNET (e-ShodhSindhu, Shodhganga), DELNET, OCLC, NDLI, resource sharing and consortia benefits', generalTask: 'Bihar Current Affairs — State schemes and development projects' },
-  { day: 19, phase: 2, coreTask: 'Metadata & Digital Standards', coreFocus: 'MARC 21 fields, Dublin Core 15 elements, OAI-PMH, DSpace, EPrints, open-access institutional repositories', generalTask: 'Environmental Studies — Bio-reserves, climate pacts' },
-  { day: 20, phase: 2, coreTask: 'Phase 2 Assessment & Review', coreFocus: 'Revise Days 11–19 and complete 100-question timed practice set on Library Automation and Management', generalTask: 'Full general paper revision of Days 11–19 topics' },
-  // Phase 3: Days 21–25
-  { day: 21, phase: 3, coreTask: 'Indian Public Library Acts — Master Table', coreFocus: 'Memorize state-wise years: Tamil Nadu 1948, Andhra Pradesh 1960, Maharashtra 1967, Bihar 2008, etc.', generalTask: 'Mixed Reasoning set — 25 questions timed practice' },
-  { day: 22, phase: 3, coreTask: 'Classification Notations & Mnemonics', coreFocus: 'DDC Table 1 (Standard Subdivisions), Table 2 (Geographic Areas); CC fundamental common facets deep-dive', generalTask: 'General Science & Environmental Biology revision' },
-  { day: 23, phase: 3, coreTask: 'Reference Works Deep Dive', coreFocus: 'Landmark reference works — Encyclopaedia Britannica structure, Europa World Year Book, Webster\'s, Who\'s Who', generalTask: 'Modern Indian History & National Movement revision' },
-  { day: 24, phase: 3, coreTask: 'Information Seeking Behaviour & User Studies', coreFocus: 'User profiles, information literacy models — SCONUL, Big6; Bibliometrics — Bradford, Lotka, Zipf\'s laws', generalTask: 'Indian Constitution Articles — Fundamental Duties, President\'s rule, Panchayati Raj' },
-  { day: 25, phase: 3, coreTask: 'Comprehensive General Studies Revision', coreFocus: 'Revise all library legislation dates, association details, and digital library names', generalTask: 'Bihar GK — census figures, geography, key landmarks, cultural facts' },
-  // Phase 4: Days 26–30
-  { day: 26, phase: 4, coreTask: 'Full-Length Mock Test 1 (150 Questions)', coreFocus: 'Strict 2-hour timed drill (120 min); analyze incorrect questions especially in core section', generalTask: 'Attempt all 50 general paper questions. Note weak areas.' },
-  { day: 27, phase: 4, coreTask: 'Targeted Revision of Weak Spots', coreFocus: 'Review chapters identified as weak during Mock 1 — e.g., cataloguing entries or state Acts', generalTask: 'Revise Bihar GK and Reasoning weak areas from Mock 1' },
-  { day: 28, phase: 4, coreTask: 'Full-Length Mock Test 2 (150 Questions)', coreFocus: 'Simulate full exam conditions — aim for under 48 seconds per question (120 min ÷ 150 Q)', generalTask: 'Attempt all sections — aim for improved accuracy over Mock 1' },
-  { day: 29, phase: 4, coreTask: 'Formula & Year Rapid-Fire Revision', coreFocus: 'Quick review of all foundational years, association founders, publication titles, DDC schedules 000–900', generalTask: 'Rapid-fire Bihar GK, GK current affairs, and Reasoning shortcuts' },
-  { day: 30, phase: 4, coreTask: 'Final Rest & Light Review', coreFocus: 'Skim summary notes only — rest is a priority before the exam. Trust your preparation.', generalTask: 'Light revision of Bihar GK dates. No new topics.' },
+  // Phase 1: Days 1–4 (Core Heavyweight Paper: Foundations, Classification & Cataloguing — 60% of LET Marks)
+  {
+    day: 1,
+    phase: 1,
+    coreTask: 'Five Laws of Library Science & Concept of Library',
+    coreFocus: 'Dr. S.R. Ranganathan\'s 5 Laws (1931) implications, variants, and open access system principles.',
+    generalTask: 'Bihar History & Geography — Ancient Nalanda & Vikramshila, Mauryan Empire, Rivers and Soil.',
+  },
+  {
+    day: 2,
+    phase: 1,
+    coreTask: 'Dewey Decimal Classification (DDC) & Colon Classification (CC)',
+    coreFocus: 'DDC 10 Main Classes (000–900), Table 1 & Table 2; CC PMEST categories, connecting symbols & facet formula.',
+    generalTask: 'Logical Reasoning — Coding-Decoding, Number Series & Analogies frequently asked in Bihar exams.',
+  },
+  {
+    day: 3,
+    phase: 1,
+    coreTask: 'Cataloguing Codes (AACR-2 & CCC) and Subject Indexing',
+    coreFocus: 'AACR-2 structure, heading rules, single/three-author rules, CCC, SLSH, POPSI & PRECIS indexing.',
+    generalTask: 'Bihar Cultural Heritage & Libraries — Khuda Bakhsh Oriental Library, Sachchidananda Sinha Library & 1857 Revolt.',
+  },
+  {
+    day: 4,
+    phase: 1,
+    coreTask: 'Library Management Principles, POSDCORB & Budgeting',
+    coreFocus: 'Fayol\'s 14 principles, POSDCORB, book selection tools, accession register, PPBS & Zero-Based Budgeting (ZBB).',
+    generalTask: 'Computer Fundamentals — Input/Output hardware, CPU, RAM, ROM, Cache, and byte memory conversions.',
+  },
+
+  // Phase 2: Days 5–7 (Services, Digital Automation & All State Library Legislation)
+  {
+    day: 5,
+    phase: 2,
+    coreTask: 'Reference & Information Services (CAS vs SDI)',
+    coreFocus: 'Ready vs Long-Range reference, CAS vs SDI alert services, bibliographies, encyclopedias & yearbooks.',
+    generalTask: 'General Paper — Indian Constitution (Preamble, Fundamental Rights, DPSP) & Direction Sense reasoning.',
+  },
+  {
+    day: 6,
+    phase: 2,
+    coreTask: 'Library Automation (Koha, SOUL) & Digital Standards (MARC 21)',
+    coreFocus: 'ILMS software (Koha, SOUL, e-Granthalaya), RFID vs Barcode, MARC 21 fields, Dublin Core 15 elements & DSpace.',
+    generalTask: 'Bihar Government Welfare Schemes — Kanya Utthan Yojana, Student Credit Card & Computer Software/OS.',
+  },
+  {
+    day: 7,
+    phase: 2,
+    coreTask: 'Indian Public Library Acts (All 19 States) & Bihar Act 2008',
+    coreFocus: 'Memorize all 19 state library acts chronologically (Tamil Nadu 1948 to Arunachal 2009), Bihar Act 2008 & ILA/IASLIC.',
+    generalTask: 'Verbal Reasoning — Blood Relations, Syllogisms & sitting arrangement tricks.',
+  },
+
+  // Phase 3: Days 8–10 (General Paper Booster, Full 150Q CBT Mocks & Final Countdown)
+  {
+    day: 8,
+    phase: 3,
+    coreTask: 'Information Networks (INFLIBNET, DELNET, NDLI) & Consortia',
+    coreFocus: 'Shodhganga, e-ShodhSindhu, DELNET, National Digital Library of India (NDLI) & Open Access repositories.',
+    generalTask: 'Computer Networking & Cybersecurity — LAN, WAN, IP address, protocols, malware & firewall concepts.',
+  },
+  {
+    day: 9,
+    phase: 3,
+    coreTask: 'Full-Length Timed LET Mock Test 1 (150 Questions Simulation)',
+    coreFocus: 'Simulate official BSEB 120-minute timed exam: 100 Library Science + 50 General Paper. Analyze weak topics.',
+    generalTask: 'Rapid error analysis of missed questions; strengthen high-weightage formulas.',
+  },
+  {
+    day: 10,
+    phase: 3,
+    coreTask: 'Rapid-Fire Formula, Year Memorization & Full Mock Test 2',
+    coreFocus: 'Last-mile quick revision of all 19 state act years, DDC main classes, Ranganathan dates & final confidence booster.',
+    generalTask: 'Final review of Bihar GK statistics, national current affairs, and positive exam mindset.',
+  },
 ];
 
 export const phaseInfo = [
-  { phase: 1, label: 'Phase 1', subtitle: 'Core Foundations', days: 'Days 1–10', color: 'blue',  bgClass: 'bg-blue-600',  lightBg: 'bg-blue-50 dark:bg-blue-950/30',  goal: 'Lock down Unit 1 (Foundations) and Unit 2 (Classification & Cataloguing) — ~40% of core paper' },
-  { phase: 2, label: 'Phase 2', subtitle: 'Operations & Digital', days: 'Days 11–20', color: 'purple', bgClass: 'bg-purple-600', lightBg: 'bg-purple-50 dark:bg-purple-950/30', goal: 'Master Unit 3 (Management), Unit 4 (Services), and Units 5 & 6 (Automation & Networks)' },
-  { phase: 3, label: 'Phase 3', subtitle: 'Consolidation', days: 'Days 21–25', color: 'amber',  bgClass: 'bg-amber-500',  lightBg: 'bg-amber-50 dark:bg-amber-950/30',  goal: 'Clear factual memory — dates, timelines, legislation years, association details' },
-  { phase: 4, label: 'Phase 4', subtitle: 'Mock & Polish', days: 'Days 26–30', color: 'green',  bgClass: 'bg-green-600',  lightBg: 'bg-green-50 dark:bg-green-950/30',  goal: 'Build exam stamina with full 150Q / 120-minute mock tests and targeted revision' },
+  {
+    phase: 1,
+    label: 'Phase 1 (Days 1–4)',
+    subtitle: 'Core Heavyweight Paper',
+    days: 'Days 1–4',
+    color: 'blue',
+    bgClass: 'bg-blue-600',
+    lightBg: 'bg-blue-50 dark:bg-blue-950/30',
+    goal: 'Lock down Unit 1 (Foundations), Unit 2 (Classification & Cataloguing), and Unit 3 (Management) — accounts for ~65% of exam marks.',
+  },
+  {
+    phase: 2,
+    label: 'Phase 2 (Days 5–7)',
+    subtitle: 'Services, Automation & Acts',
+    days: 'Days 5–7',
+    color: 'purple',
+    bgClass: 'bg-purple-600',
+    lightBg: 'bg-purple-50 dark:bg-purple-950/30',
+    goal: 'Master Reference/CAS/SDI, Koha/ILMS automation, MARC 21, and all 19 Indian State Public Library Acts (incl. Bihar 2008).',
+  },
+  {
+    phase: 3,
+    label: 'Phase 3 (Days 8–10)',
+    subtitle: 'Full Mock Exams & Final Polish',
+    days: 'Days 8–10',
+    color: 'emerald',
+    bgClass: 'bg-emerald-600',
+    lightBg: 'bg-emerald-50 dark:bg-emerald-950/30',
+    goal: 'Network tools, Computer/Reasoning speed shortcuts, and taking two full 150Q / 120-minute timed LET CBT simulation tests.',
+  },
 ];

@@ -12,7 +12,7 @@ const navLinks = [
   { to: '/mock-test', label: 'Mock Tests' },
   { to: '/syllabus', label: 'Syllabus & Weightage' },
   { to: '/syllabus?tab=cheatsheet', label: 'Quick Revision' },
-  { to: '/syllabus?tab=studyplan', label: '30-Day Plan' },
+  { to: '/syllabus?tab=studyplan', label: '⚡ 10-Day Plan' },
   { to: '/current-affairs', label: 'Current Affairs' },
 ];
 

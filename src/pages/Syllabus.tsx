@@ -31,7 +31,7 @@ const tabTitles: Record<ActiveTab, string> = {
   overview: 'Exam Pattern & Framework',
   weightage: 'Topic Weightage Analysis',
   syllabus: 'Detailed Technical Syllabus',
-  studyplan: '30-Day Master Study Plan',
+  studyplan: '10-Day Exam Countdown Sprint Plan',
   cheatsheet: 'Quick Revision Cheat Sheets (DDC, CC, Acts)',
 };
 
@@ -62,7 +62,7 @@ export default function Syllabus() {
     { key: 'overview',   label: 'Exam Overview', icon: '📋' },
     { key: 'weightage',  label: 'Topic Weightage', icon: '⚖️' },
     { key: 'syllabus',   label: 'Full Syllabus', icon: '📖' },
-    { key: 'studyplan',  label: '30-Day Plan', icon: '📅' },
+    { key: 'studyplan',  label: '⚡ 10-Day Plan', icon: '⚡' },
     { key: 'cheatsheet', label: 'Quick Revision', icon: '⚡' },
   ];
 
@@ -81,7 +81,7 @@ export default function Syllabus() {
               Bihar Librarian LET 2026
             </h1>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
-              Syllabus · Topic Weightage · 30-Day Study Plan
+              Syllabus · Topic Weightage · 10-Day Final Sprint Plan
             </p>
           </div>
         </div>
@@ -547,20 +547,44 @@ export default function Syllabus() {
         </div>
       )}
 
-      {/* ── TAB: 30-DAY STUDY PLAN ── */}
+      {/* ── TAB: 10-DAY STUDY PLAN ── */}
       {activeTab === 'studyplan' && (
         <div className="space-y-5 animate-fade-in">
+          {/* Urgent Exam Notice */}
+          <div className="rounded-2xl bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 p-0.5 shadow-md">
+            <div className="bg-white dark:bg-gray-900 rounded-[15px] p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-950/60 text-red-600 dark:text-red-400 flex items-center justify-center text-xl shrink-0 font-bold">
+                  🚨
+                </div>
+                <div>
+                  <div className="text-xs font-extrabold text-red-600 dark:text-red-400 uppercase tracking-wider">
+                    Official Exam Alert · 10 Days Remaining
+                  </div>
+                  <h3 className="text-sm sm:text-base font-bold text-gray-900 dark:text-white">
+                    BPSC Announced Exam Date: 10-Day Intensive Crash Roadmap
+                  </h3>
+                </div>
+              </div>
+              <Link
+                to="/marathon"
+                className="btn-primary text-xs py-2 px-3.5 shrink-0 flex items-center gap-1.5 shadow-sm"
+              >
+                <span>🏃 Go to 10-Day Marathon</span>
+              </Link>
+            </div>
+          </div>
+
           {/* Plan overview */}
           <div className="card p-4">
             <h2 className="font-bold text-gray-900 dark:text-white text-sm mb-2 flex items-center gap-2">
               <Calendar className="w-4 h-4 text-brand-600 dark:text-brand-400" />
-              30-Day Bihar Librarian LET Study Plan
+              10-Day Master Sprint Plan (150 Marks Syllabus)
             </h2>
             <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-              Daily schedule: <strong>3.5 hours Core Library Science</strong> + <strong>1.5 hours General Paper / Bihar GK</strong>.
-              High-yield technical topics first, full mock tests in the final week.
+              Daily crash routine: <strong>2.5 hours Core Library Science</strong> + <strong>1 hour General Paper & Bihar GK</strong> + <strong>25 MCQs Marathon Practice Set</strong>. Day 1 is 100% Free!
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
               {phaseInfo.map(p => (
                 <div key={p.phase} className={`rounded-xl p-3 text-center ${p.lightBg}`}>
                   <div className={`w-7 h-7 ${p.bgClass} text-white rounded-lg flex items-center justify-center text-xs font-bold mx-auto mb-1.5`}>
@@ -603,7 +627,7 @@ export default function Syllabus() {
                   <div className="flex items-start gap-2 bg-white/60 dark:bg-gray-900/40 rounded-xl px-3 py-2">
                     <Target className="w-4 h-4 text-brand-600 dark:text-brand-400 shrink-0 mt-0.5" />
                     <p className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
-                      <strong>Goal:</strong> {phase.goal}
+                      <strong>Sprint Goal:</strong> {phase.goal}
                     </p>
                   </div>
                 </div>
@@ -619,11 +643,24 @@ export default function Syllabus() {
                           <div className="flex-1 min-w-0">
                             {/* Core task */}
                             <div className="mb-2">
-                              <div className="flex items-center gap-1.5 mb-1">
-                                <BookOpen className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 shrink-0" />
-                                <span className="text-xs font-semibold text-brand-700 dark:text-brand-400 uppercase tracking-wide">
-                                  Library Science (3.5 hrs)
-                                </span>
+                              <div className="flex items-center justify-between gap-2 mb-1">
+                                <div className="flex items-center gap-1.5">
+                                  <BookOpen className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 shrink-0" />
+                                  <span className="text-xs font-semibold text-brand-700 dark:text-brand-400 uppercase tracking-wide">
+                                    Library Science Core (2.5 hrs)
+                                  </span>
+                                </div>
+                                <Link
+                                  to={`/practice/session?mode=marathon&day=${day.day}`}
+                                  className={`text-[11px] font-bold px-2.5 py-1 rounded-lg transition-colors flex items-center gap-1 shrink-0 ${
+                                    day.day === 1
+                                      ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                                      : 'bg-brand-600 hover:bg-brand-700 text-white'
+                                  }`}
+                                >
+                                  <span>Day {day.day} Set (25Q)</span>
+                                  <span>→</span>
+                                </Link>
                               </div>
                               <p className="text-sm font-semibold text-gray-900 dark:text-white">{day.coreTask}</p>
                               <p className="text-xs text-gray-600 dark:text-gray-400 mt-0.5 leading-relaxed">{day.coreFocus}</p>
@@ -633,7 +670,7 @@ export default function Syllabus() {
                               <div className="flex items-center gap-1.5 mb-1">
                                 <Zap className="w-3.5 h-3.5 text-green-600 dark:text-green-400 shrink-0" />
                                 <span className="text-xs font-semibold text-green-700 dark:text-green-400 uppercase tracking-wide">
-                                  General Paper (1.5 hrs)
+                                  General Paper & Bihar GK (1 hr)
                                 </span>
                               </div>
                               <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{day.generalTask}</p>

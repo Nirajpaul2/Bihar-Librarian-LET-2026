@@ -37,9 +37,10 @@ export default function Footer() {
             <h3 className="text-white font-semibold text-sm mb-3">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               {[
+                { to: '/marathon', label: '🏃 10-Day Marathon (Day 1-10)' },
+                { to: '/syllabus?tab=studyplan', label: '⚡ 10-Day Sprint Plan' },
                 { to: '/syllabus', label: 'Exam Overview & Syllabus' },
                 { to: '/syllabus?tab=weightage', label: '⚖️ Topic Weightage Analysis' },
-                { to: '/syllabus?tab=studyplan', label: '📅 30-Day Study Plan' },
                 { to: '/practice', label: 'Practice Questions' },
                 { to: '/mock-test', label: 'Full Mock Tests (150Q)' },
                 { to: '/current-affairs', label: 'Current Affairs' },

@@ -47,10 +47,15 @@ export default function Home() {
                   alt="Bihar Library LET 2026 Logo"
                   className="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-2xl bg-white p-1.5 shadow-xl shrink-0 border border-white/20"
                 />
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium">
-                  <GraduationCap className="w-4 h-4 text-brand-200" />
-                  <span>Bihar Librarian LET 2026 (BSEB)</span>
-                  <span className="hidden sm:inline text-brand-300">· 150 Marks · No Negative Marking</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="inline-flex items-center gap-1.5 bg-red-500/20 text-red-200 border border-red-500/40 rounded-full px-3 py-1 text-xs font-bold animate-pulse">
+                    <span>🚨</span>
+                    <span>BPSC Exam Announced: 10 Days Left</span>
+                  </div>
+                  <div className="hidden sm:inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-xs font-medium">
+                    <GraduationCap className="w-3.5 h-3.5 text-brand-200" />
+                    <span>150 Marks · No Negative Marking</span>
+                  </div>
                 </div>
               </div>
 
@@ -341,7 +346,7 @@ export default function Home() {
                 to="/syllabus?tab=studyplan"
                 className="text-xs font-semibold bg-green-50 hover:bg-green-100 dark:bg-green-950/40 dark:hover:bg-green-900/60 text-green-700 dark:text-green-300 px-3.5 py-2 rounded-xl border border-green-200 dark:border-green-800 transition-colors"
               >
-                📅 30-Day Plan
+                ⚡ 10-Day Sprint Plan
               </Link>
             </div>
           </div>

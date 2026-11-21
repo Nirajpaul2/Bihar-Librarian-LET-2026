@@ -324,7 +324,7 @@ export default function PaywallModal({
                 'All 6 Technical Library Science Units (Classification, Cataloguing, Management, Digital)',
                 'Full 150-Question Timed Mock Tests (120 Mins) with Section-wise Analysis',
                 'Part 2 General Paper: Bihar GK, Reasoning, Computer Awareness & GK',
-                '30-Day Structured Study Plan with Daily Core & General Targets',
+                '10-Day Intensive Exam Sprint Plan with Daily Core & General Targets (BPSC Countdown)',
                 'Save Difficult Questions with Bookmark Review Mode',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
