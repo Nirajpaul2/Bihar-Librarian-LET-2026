@@ -72,7 +72,7 @@ export default function Header() {
             {!isUnlocked ? (
               <button
                 onClick={() => openPaywall(`Unlock full website access for ₹${ACCESS_PRICE_INR}`, 'pay')}
-                className="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold text-xs px-3 py-1.5 rounded-xl shadow-xs transition-colors flex items-center gap-1 cursor-pointer"
+                className="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-xs px-3 py-1.5 rounded-xl shadow-xs transition-colors flex items-center gap-1 cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span className="hidden sm:inline">Unlock for</span> ₹{ACCESS_PRICE_INR}
@@ -133,7 +133,7 @@ export default function Header() {
                     setMenuOpen(false);
                     openPaywall(`Unlock full website access for ₹${ACCESS_PRICE_INR}`, 'pay');
                   }}
-                  className="w-full bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold text-xs p-3 rounded-xl shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                  className="w-full bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-xs p-3 rounded-xl shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <Sparkles className="w-4 h-4" />
                   Unlock Full Access for ₹{ACCESS_PRICE_INR} (Unit 1 Free)

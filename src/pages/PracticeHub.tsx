@@ -87,7 +87,7 @@ export default function PracticeHub() {
         <div className="mb-8 rounded-2xl bg-gradient-to-r from-brand-900 via-brand-800 to-indigo-900 text-white p-5 shadow-sm border border-brand-700/60">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <div className="inline-flex items-center gap-1.5 bg-amber-400 text-brand-950 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full mb-2">
+              <div className="inline-flex items-center gap-1.5 bg-emerald-400 text-slate-950 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full mb-2">
                 <Sparkles className="w-3.5 h-3.5" />
                 Launch Offer · Just ₹{ACCESS_PRICE_INR}
               </div>
@@ -108,7 +108,7 @@ export default function PracticeHub() {
               </button>
               <button
                 onClick={() => openPaywall('Unlock all 6 Library Science units and Full Mock Tests', 'pay')}
-                className="bg-amber-400 hover:bg-amber-300 active:bg-amber-500 text-brand-950 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
+                className="bg-emerald-400 hover:bg-emerald-300 active:bg-emerald-500 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer"
               >
                 <Sparkles className="w-4 h-4" />
                 Unlock All for ₹{ACCESS_PRICE_INR}

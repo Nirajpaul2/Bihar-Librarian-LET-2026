@@ -147,7 +147,7 @@ export default function Home() {
                 
                 {/* Card Top Label */}
                 <div className="flex items-center justify-between gap-2 mb-3 text-xs">
-                  <span className="inline-flex items-center gap-1.5 bg-amber-400 text-brand-950 font-extrabold px-2.5 py-0.5 rounded-full text-[10px]">
+                  <span className="inline-flex items-center gap-1.5 bg-emerald-400 text-slate-950 font-extrabold px-2.5 py-0.5 rounded-full text-[10px]">
                     <Sparkles className="w-3 h-3" />
                     LIVE INTERACTIVE DEMO · DAY 1
                   </span>
@@ -571,7 +571,7 @@ export default function Home() {
           <div className="flex items-center gap-3 shrink-0">
             <Link
               to="/mock-test"
-              className="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow cursor-pointer flex items-center gap-1.5"
+              className="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow cursor-pointer flex items-center gap-1.5"
             >
               <Trophy className="w-4 h-4" />
               <span>Browse 15 Mock Tests (Set 1 Free) →</span>

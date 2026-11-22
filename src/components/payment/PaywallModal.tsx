@@ -127,7 +127,7 @@ export default function PaywallModal({
           access: 'Full Lifetime',
         },
         theme: {
-          color: '#1d4ed8',
+          color: '#4338ca',
         },
         handler: function (response: any) {
           const paymentId = response.razorpay_payment_id || `pay_${Date.now()}`;
@@ -208,7 +208,7 @@ export default function PaywallModal({
           />
           <div>
             <div className="flex items-center gap-2">
-              <span className="bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 text-[11px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
+              <span className="bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 text-[11px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
                 <Sparkles className="w-3 h-3" />
                 Special Offer · 81% OFF
               </span>
@@ -254,7 +254,7 @@ export default function PaywallModal({
                     : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                 }`}
               >
-                <Zap className="w-3.5 h-3.5 text-amber-500 fill-current" />
+                <Zap className="w-3.5 h-3.5 text-emerald-500 fill-current" />
                 Unlock for ₹{ACCESS_PRICE_INR}
               </button>
             )}
@@ -306,7 +306,7 @@ export default function PaywallModal({
                       ₹{ACCESS_PRICE_INR}
                     </span>
                     <span className="text-sm text-gray-400 line-through">₹99</span>
-                    <span className="text-xs font-semibold text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-950/60 px-2 py-0.5 rounded-full">
+                    <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full">
                       Save ₹80
                     </span>
                   </div>

@@ -54,7 +54,7 @@ export default function MockTestList() {
             </button>
             <button
               onClick={() => openPaywall(`Unlock all Mock Tests for ₹${ACCESS_PRICE_INR}`, 'pay')}
-              className="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold px-4 py-2 rounded-xl text-xs sm:text-sm transition-colors flex items-center justify-center gap-1.5 shadow cursor-pointer"
+              className="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold px-4 py-2 rounded-xl text-xs sm:text-sm transition-colors flex items-center justify-center gap-1.5 shadow cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
               Unlock for ₹{ACCESS_PRICE_INR}

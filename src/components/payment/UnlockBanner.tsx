@@ -40,7 +40,7 @@ export default function UnlockBanner({ onOpenPaywall }: UnlockBannerProps) {
     <div className="bg-gradient-to-r from-brand-900 via-brand-800 to-indigo-900 text-white text-xs py-2 px-4 shadow-sm border-b border-brand-700/50">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
         <div className="flex items-center gap-2 text-center sm:text-left">
-          <span className="bg-amber-400 text-brand-950 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full shrink-0">
+          <span className="bg-emerald-400 text-slate-950 text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full shrink-0">
             Launch Offer
           </span>
           <span className="text-brand-100 text-xs">
@@ -57,7 +57,7 @@ export default function UnlockBanner({ onOpenPaywall }: UnlockBannerProps) {
           </button>
           <button
             onClick={() => handleOpen('pay')}
-            className="bg-amber-400 hover:bg-amber-300 text-brand-950 font-bold px-3 py-1 rounded-lg text-xs transition-colors shrink-0 shadow flex items-center gap-1 cursor-pointer"
+            className="bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold px-3 py-1 rounded-lg text-xs transition-colors shrink-0 shadow flex items-center gap-1 cursor-pointer"
           >
             <Sparkles className="w-3 h-3" />
             Unlock All for ₹{ACCESS_PRICE_INR}
